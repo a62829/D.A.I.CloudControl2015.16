@@ -475,6 +475,12 @@
     <Compile Include="webforms\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="webforms\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Ws\c23EditarRepresentanteLegal.asmx.cs">
       <DependentUpon>c23EditarRepresentanteLegal.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -496,6 +502,7 @@
     <Content Include="webforms\InterfaceProcesso.aspx" />
     <Content Include="webforms\InterfaceRelatorios.aspx" />
     <Content Include="webforms\login.aspx" />
+    <Content Include="webforms\WebForm1.aspx" />
     <Content Include="Ws\c23EditarRepresentanteLegal.asmx" />
     <Content Include="Ws\ControloDeEntidades.asmx" />
     <Content Include="Ws\gestaoIdentidade.asmx" />
