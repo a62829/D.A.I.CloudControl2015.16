@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Web;
 
 namespace ajuUminho.App_Code
@@ -32,14 +33,27 @@ namespace ajuUminho.App_Code
 
         public d21RepresentanteLegalDto  getRepresentanteLegal(string id)
         {
-            d21RepresentanteLegal x = new d21RepresentanteLegal();
-            return x.getRepresentanteLegal(id);
+            d21RepresentanteLegal rl = new d21RepresentanteLegal();
+            return rl.getRepresentanteLegal(id);
         }
 
         public void setRepresentanteLegal(d21RepresentanteLegalDto rldto)
         {
-            d21RepresentanteLegal x = new d21RepresentanteLegal();
-            x.setRepresentanteLegal(rldto.nome, rldto.morada, rldto.codPostal, rldto.localidade, rldto.email, rldto.telefone, rldto.telemovel, rldto.fax, rldto.cc, rldto.iban, rldto.nif, rldto.lastChangeBy, rldto.id);
+            d21RepresentanteLegal rl = new d21RepresentanteLegal();
+            rl.setRepresentanteLegal(rldto.nome, rldto.morada, rldto.codPostal, rldto.localidade, rldto.email, rldto.telefone, rldto.telemovel, rldto.fax, rldto.cc, rldto.iban, rldto.nif, rldto.lastChangeBy, rldto.id);
         }
+
+        public void guardar(d21RepresentanteLegalDto rldto)
+        {
+            d21RepresentanteLegal rl = new d21RepresentanteLegal();
+            rl.guardar(rldto.nome, rldto.morada, rldto.codPostal, rldto.localidade, rldto.email, rldto.telefone, rldto.telemovel, rldto.fax, rldto.cc, rldto.iban, rldto.nif, rldto.lastChangeBy);
+        }
+
+        public DataTable getListaRepresentanteLegal()
+        {
+            d21RepresentanteLegal rl = new d21RepresentanteLegal();
+            return rl.getRepresentanteLegal(id);
+        }
+
     }
 }

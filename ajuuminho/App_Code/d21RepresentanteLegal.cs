@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Web;
 
 namespace ajuUminho.App_Code
 {
@@ -37,7 +34,7 @@ namespace ajuUminho.App_Code
 
 
 
-        public DataTable getListaRepresentantesLegais()
+        public DataTable getListaRepresentanteLegal()
         {
             SqlDataReader reader;
             cmd.CommandText = "SELECT id, nome FROM [dbo].[representanteLegal];";
@@ -49,6 +46,8 @@ namespace ajuUminho.App_Code
             dataTable.Load(reader);
             con.Close();
             return dataTable;
+
+
         }
 
 
@@ -115,57 +114,5 @@ namespace ajuUminho.App_Code
             con.Close();
         }
 
-        public string getID(string cc)
-        {
-            con.Open();
-            cmd.Parameters.AddWithValue("@cc", cc);
-            cmd.CommandText = "SELECT id FROM dbo.representantelegal WHERE cc = @cc";
-            cmd.CommandType = CommandType.Text;
-            string id = cmd.ExecuteNonQuery().ToString();
-            
-            con.Close();
-            
-            
-            return id;
-
-        }
-
-        public bool ccUnique (string cc, string id)
-        {
-            SqlDataReader reader;
-            SqlDataReader reader2;
-            DataTable dt = new DataTable();
-            con.Open();
-            cmd.Parameters.AddWithValue("@cc", cc);
-            cmd.CommandText = "SELECT * FROM dbo.representantelegal WHERE cc = @cc";
-            cmd.CommandType = CommandType.Text;
-            reader = cmd.ExecuteReader();
-            dt.Load(reader);
-            if (dt.Rows.Count == 1)
-            {
-                cmd.Parameters.AddWithValue("id", id);
-                cmd.CommandText = "SELECT * FROM dbo.representantelegal WHERE cc = @cc AND id = @id";
-                cmd.CommandType = CommandType.Text;
-                reader2 = cmd.ExecuteReader();
-                dt.Load(reader2);
-                if (dt.Rows.Count == 1)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else if (dt.Rows.Count == 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
     }
 }
