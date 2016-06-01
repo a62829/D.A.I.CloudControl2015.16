@@ -25,14 +25,14 @@ namespace ajuUminho.Ws
         public void editarRepresentanteLegal(string nome, string morada, string codPostal, string localidade, string email,
             string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
-            // efetuar controlos
-            d21RepresentanteLegal rl = new d21RepresentanteLegal();
-            var id = rl.getID(cc);
-            if (rl.ccUnique(cc, id) == true)
-            {
-                rl.SetRepresentanteLegal(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy, id);
-            }
-            
+            //// efetuar controlos
+            //d21RepresentanteLegal rl = new d21RepresentanteLegal();
+            //var id = rl.getID(cc);
+            //if (rl.ccUnique(cc, id) == true)
+            //{
+            //    rl.setRepresentanteLegal(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy, id);
+            //}
+
         }
 
         [WebMethod]
@@ -44,13 +44,13 @@ namespace ajuUminho.Ws
 
         }
 
-        [WebMethod]
-        public DataTable listarRepresentantesLegais()
-        {
-            d21RepresentanteLegal rl = new d21RepresentanteLegal();
-            DataTable dt = rl.getListaRepresentantesLegais();
-            return dt;
-        }
+        //[WebMethod]
+        //public DataTable listarRepresentantesLegais()
+        //{
+        //    d21RepresentanteLegal rl = new d21RepresentanteLegal();
+        //    DataTable dt = rl.getListaRepresentanteLegal();
+        //    return dt;
+        //}
 
         [WebMethod]
         public d21RepresentanteLegalDto getRepresentanteLegal(string id)
@@ -63,8 +63,8 @@ namespace ajuUminho.Ws
         [WebMethod]
         public Dictionary<String, String> getListaRepresentantesLegais()
         {
-            d21RepresentanteLegal rl = new d21RepresentanteLegal();
-            DataTable dt = rl.getListaRepresentantesLegais();
+            d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
+            DataTable dt = rldto.getListaRepresentanteLegal();
             Dictionary<String, String> lista = new Dictionary<String, String>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {

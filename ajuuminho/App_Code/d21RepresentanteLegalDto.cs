@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Web;
+﻿using System.Data;
 
 namespace ajuUminho.App_Code
 {
@@ -52,7 +49,7 @@ namespace ajuUminho.App_Code
         public DataTable getListaRepresentanteLegal()
         {
             d21RepresentanteLegal rl = new d21RepresentanteLegal();
-            return rl.getRepresentanteLegal(id);
+            return rl.getListaRepresentanteLegal();
         }
 
     }
