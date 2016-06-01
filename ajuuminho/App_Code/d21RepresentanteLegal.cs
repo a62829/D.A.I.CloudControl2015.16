@@ -52,7 +52,7 @@ namespace ajuUminho.App_Code
         }
 
 
-        public void SetRepresentanteLegal(string nome, string morada, string codPostal, string localidade, string email,
+        public void setRepresentanteLegal(string nome, string morada, string codPostal, string localidade, string email,
             string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy, string id)
         {
             con.Open();
