@@ -64,20 +64,20 @@
 //            }*/
 //        }
 
-//        protected void listaUser()
-//        {
-//            gestaoIdentidade cde = new gestaoIdentidade();
-//            var lista = cde.getListaUsers();
-//            //ListBoxIdentidadesID.DataSource = lista;
-//            foreach (KeyValuePair<String, String> pair in lista)
-//            {
-//                ListItem Item = new ListItem();
-//                Item.Text = pair.Value.ToString();
-//                Item.Value = pair.Key.ToString();
-//                ListBoxIdentidadesID.Items.Add(Item);
-//                ListBoxIdentidadesID.DataBind();
-//            }
-//        }
+//protected void listaUser()
+//{
+//    gestaoIdentidade cde = new gestaoIdentidade();
+//    var lista = cde.getListaUsers();
+//    //ListBoxIdentidadesID.DataSource = lista;
+//    foreach (KeyValuePair<String, String> pair in lista)
+//    {
+//        ListItem Item = new ListItem();
+//        Item.Text = pair.Value.ToString();
+//        Item.Value = pair.Key.ToString();
+//        ListBoxIdentidadesID.Items.Add(Item);
+//        ListBoxIdentidadesID.DataBind();
+//    }
+//}
 
 //        protected void listaRoles()
 //        {
@@ -144,7 +144,7 @@
 //            {
 //                //pwd nao coincidem
 //            }
-        
+
 //        }
 
 //        protected void ButtonEliminarID_Click(object sender, EventArgs e)
@@ -154,7 +154,7 @@
 
 //        protected void ButtonEditarID_Click(object sender, EventArgs e)
 //        {
-            
+
 //        }
 
 //        protected void ButtonAdicionarPerfilID_Click(object sender, EventArgs e)
@@ -191,14 +191,14 @@
 //            TextBoxNomeID.Text = Convert.ToString(dtable.Rows[0]["UserName"]);
 //            TextBoxEmailID.Text = Convert.ToString(dtable.Rows[0]["Email"]);
 //            TextBoxTelefoneID.Text = Convert.ToString(dtable.Rows[0]["PhoneNumber"]);
-            
+
 
 //            //ListBoxPerfisID.Items.Clear();
 //            //string user = ListBoxIdentidadesID.SelectedItem.Value;
 //            //foreach (var u in ws1.getUserRoles(user))
 //            //{
 //            //    ListBoxPerfisAssociadosID.Items.Add(u);
-                
+
 //            //}
 //            ListBoxPerfisAssociadosID.Items.Clear();
 //            listarUserRoles();

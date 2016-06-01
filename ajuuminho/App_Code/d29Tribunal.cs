@@ -1,16 +1,30 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Data;
 using System.Data.SqlClient;
-using System.Web;
 
 namespace ajuUminho.App_Code
 {
-    public class d21RepresentanteLegal : DBcon 
+    public class d29Tribunal : Entidade
     {
+        protected string cc;
 
-        public d21RepresentanteLegal() { }
+        public string Cc
+        {
+            get
+            {
+                return cc;
+            }
+
+            set
+            {
+                cc = value;
+            }
+        }
+
+        public d29Tribunal() { }
 
         public bool guardar(string nome, string morada, string codPostal, string localidade, string email, string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
@@ -80,7 +94,7 @@ namespace ajuUminho.App_Code
         {
             d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
             SqlDataReader reader;
-            
+
             con.Open();
             cmd.Parameters.AddWithValue("@id", id);
             cmd.CommandText = "SELECT * FROM dbo.representantelegal WHERE id = @id";
@@ -98,14 +112,14 @@ namespace ajuUminho.App_Code
             rldto.Telefone = (Convert.ToString(dataTable.Rows[0]["telefone"]));
             rldto.Telemovel = (Convert.ToString(dataTable.Rows[0]["telemovel"]));
             rldto.Fax = (Convert.ToString(dataTable.Rows[0]["fax"]));
-            rldto.cc = (Convert.ToString(dataTable.Rows[0]["cc"]));
+            rldto.Cc = (Convert.ToString(dataTable.Rows[0]["cc"]));
             rldto.Iban = (Convert.ToString(dataTable.Rows[0]["iban"]));
             rldto.Nif = (Convert.ToString(dataTable.Rows[0]["nif"]));
             rldto.LastChangeBy = (Convert.ToString(dataTable.Rows[0]["lastChangeBy"]));
             return rldto;
         }
 
-        public void removeRepresentanteLegal (string id)
+        public void removeRepresentanteLegal(string id)
         {
             con.Open();
             cmd.Parameters.AddWithValue("@id", id);
@@ -122,15 +136,15 @@ namespace ajuUminho.App_Code
             cmd.CommandText = "SELECT id FROM dbo.representantelegal WHERE cc = @cc";
             cmd.CommandType = CommandType.Text;
             string id = cmd.ExecuteNonQuery().ToString();
-            
+
             con.Close();
-            
-            
+
+
             return id;
 
         }
 
-        public bool ccUnique (string cc, string id)
+        public bool ccUnique(string cc, string id)
         {
             SqlDataReader reader;
             SqlDataReader reader2;

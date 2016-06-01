@@ -53,9 +53,9 @@ namespace ajuUminho.Ws
         }
 
         [WebMethod]
-        public RepresentanteLegalDTO getRepresentanteLegal(string id)
+        public d21RepresentanteLegalDto getRepresentanteLegal(string id)
         {
-            RepresentanteLegalDTO rldto = new RepresentanteLegalDTO();
+            d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
             rldto = rldto.getRepresentanteLegal(id);
             return rldto;
         }
@@ -72,7 +72,7 @@ namespace ajuUminho.Ws
             }
             return lista;
 
-        }
+    }
 
         [WebMethod]
         public void removerRepresentanteLegal(string id)

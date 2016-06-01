@@ -3,10 +3,8 @@ using System.Data.SqlClient;
 
 namespace ajuUminho.App_Code
 {
-    public class DBcon // teste no desktop de casa do oscar xD
+    public class DBcon
     {
-        //asda
-
         public SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
         public SqlCommand cmd = new SqlCommand();
         public SqlDataAdapter sda = new SqlDataAdapter();

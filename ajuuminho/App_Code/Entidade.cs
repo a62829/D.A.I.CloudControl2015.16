@@ -4,175 +4,22 @@ using System.Data.SqlClient;
 
 namespace ajuUminho.App_Code
 {
-    public abstract class Entidade : DBcon
+    public abstract class Entidade //: DBcon
     {
-        protected string nome;
-        protected string morada;
-        protected string codPostal;
-        protected string localidade;
-        protected string email;
-        protected string telefone;
-        protected string telemovel;
-        protected string fax;
+
+        public string id { get; set; }
+        public string nome { get; set; }
+        public string morada { get; set; }
+        public string codPostal { get; set; }
+        public string localidade { get; set; }
+        public string Email { get; set; }
+        public string telefone { get; set; }
+        public string telemovel { get; set; }
+        public string fax { get; set; }
         protected string iban;
         protected string nif;
         protected string lastChangeBy;
 
-        public string Nome
-        {
-            get
-            {
-                return nome;
-            }
-
-            set
-            {
-                nome = value;
-            }
-        }
-
-        public string Morada
-        {
-            get
-            {
-                return morada;
-            }
-
-            set
-            {
-                morada = value;
-            }
-        }
-
-        public string CodPostal
-        {
-            get
-            {
-                return codPostal;
-            }
-
-            set
-            {
-                codPostal = value;
-            }
-        }
-
-        public string Localidade
-        {
-            get
-            {
-                return localidade;
-            }
-
-            set
-            {
-                localidade = value;
-            }
-        }
-
-        public string Email
-        {
-            get
-            {
-                return email;
-            }
-
-            set
-            {
-                email = value;
-            }
-        }
-
-        public string Telefone
-        {
-            get
-            {
-                return telefone;
-            }
-
-            set
-            {
-                telefone = value;
-            }
-        }
-
-        public string Fax
-        {
-            get
-            {
-                return fax;
-            }
-
-            set
-            {
-                fax = value;
-            }
-        }
-
-        /*public string Cc
-        {
-            get
-            {
-                return cc;
-            }
-
-            set
-            {
-                cc = value;
-            }
-        }*/
-
-        public string Iban
-        {
-            get
-            {
-                return iban;
-            }
-
-            set
-            {
-                iban = value;
-            }
-        }
-
-        public string Nif
-        {
-            get
-            {
-                return nif;
-            }
-
-            set
-            {
-                nif = value;
-            }
-        }
-
-        public string LastChangeBy
-        {
-            get
-            {
-                return lastChangeBy;
-            }
-
-            set
-            {
-                lastChangeBy = value;
-            }
-        }
-
-        public string Telemovel
-        {
-            get
-            {
-                return telemovel;
-            }
-
-            set
-            {
-                telemovel = value;
-            }
-        }
 
         public Entidade()
         {
