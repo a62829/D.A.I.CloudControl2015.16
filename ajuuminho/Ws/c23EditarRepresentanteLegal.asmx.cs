@@ -53,10 +53,10 @@ namespace ajuUminho.Ws
         }
 
         [WebMethod]
-        public RepresentanteLegalDTO getRepresentanteLegal(string cc)
+        public RepresentanteLegalDTO getRepresentanteLegal(string id)
         {
             RepresentanteLegalDTO rldto = new RepresentanteLegalDTO();
-            rldto = rldto.getRepresentanteLegal(cc);
+            rldto = rldto.getRepresentanteLegal(id);
             return rldto;
         }
 

@@ -8,8 +8,7 @@ using System.Web;
 namespace ajuUminho.App_Code
 {
     public class d21RepresentanteLegal : Entidade
-    {//sss
-
+    {
         protected string cc;
 
         public string Cc
@@ -55,7 +54,7 @@ namespace ajuUminho.App_Code
         public DataTable getListaRepresentantesLegais()
         {
             SqlDataReader reader;
-            cmd.CommandText = "SELECT cc, nome FROM [dbo].[representantelegal];";
+            cmd.CommandText = "SELECT id, nome FROM [dbo].[representanteLegal];";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -63,17 +62,6 @@ namespace ajuUminho.App_Code
             DataTable dataTable = new DataTable();
             dataTable.Load(reader);
             con.Close();
-            /*Dictionary<string, string> d = new Dictionary<string, string>();
-
-            foreach (DataRow dr in dataTable.Rows)
-            {
-                string key = dr["id"].ToString();
-                string value = dr["nome"].ToString();
-                if (!d.ContainsKey(key))
-                {
-                    d.Add(key, value);
-                }
-            }*/
             return dataTable;
         }
 
@@ -102,32 +90,32 @@ namespace ajuUminho.App_Code
             con.Close();
         }
 
-        public RepresentanteLegalDTO getRepresentanteLegal(string cc)
+        public RepresentanteLegalDTO getRepresentanteLegal(string id)
         {
             RepresentanteLegalDTO rldto = new RepresentanteLegalDTO();
             SqlDataReader reader;
             
             con.Open();
-            cmd.Parameters.AddWithValue("@cc", cc);
-            cmd.CommandText = "SELECT * FROM dbo.representantelegal WHERE cc = @cc";
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "SELECT * FROM dbo.representantelegal WHERE id = @id";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             reader = cmd.ExecuteReader();
             var dataTable = new DataTable();
             dataTable.Load(reader);
             con.Close();
-            rldto.Nome = Convert.ToString(dataTable.Rows[1]["nome"]);
-            rldto.Morada = (Convert.ToString(dataTable.Rows[1]["morada"]));
-            rldto.CodPostal = (Convert.ToString(dataTable.Rows[1]["codPostal"]));
-            rldto.Localidade = (Convert.ToString(dataTable.Rows[1]["localidade"]));
-            rldto.Email = (Convert.ToString(dataTable.Rows[1]["email"]));
-            rldto.Telefone = (Convert.ToString(dataTable.Rows[1]["telefone"]));
-            rldto.Telemovel = (Convert.ToString(dataTable.Rows[1]["telemovel"]));
-            rldto.Fax = (Convert.ToString(dataTable.Rows[1]["fax"]));
-            rldto.Cc = (Convert.ToString(dataTable.Rows[1]["cc"]));
-            rldto.Iban = (Convert.ToString(dataTable.Rows[1]["iban"]));
-            rldto.Nif = (Convert.ToString(dataTable.Rows[1]["nif"]));
-            rldto.LastChangeBy = (Convert.ToString(dataTable.Rows[1]["lastChangeBy"]));
+            rldto.Nome = Convert.ToString(dataTable.Rows[0]["nome"]);
+            rldto.Morada = (Convert.ToString(dataTable.Rows[0]["morada"]));
+            rldto.CodPostal = (Convert.ToString(dataTable.Rows[0]["codPostal"]));
+            rldto.Localidade = (Convert.ToString(dataTable.Rows[0]["localidade"]));
+            rldto.Email = (Convert.ToString(dataTable.Rows[0]["email"]));
+            rldto.Telefone = (Convert.ToString(dataTable.Rows[0]["telefone"]));
+            rldto.Telemovel = (Convert.ToString(dataTable.Rows[0]["telemovel"]));
+            rldto.Fax = (Convert.ToString(dataTable.Rows[0]["fax"]));
+            rldto.Cc = (Convert.ToString(dataTable.Rows[0]["cc"]));
+            rldto.Iban = (Convert.ToString(dataTable.Rows[0]["iban"]));
+            rldto.Nif = (Convert.ToString(dataTable.Rows[0]["nif"]));
+            rldto.LastChangeBy = (Convert.ToString(dataTable.Rows[0]["lastChangeBy"]));
             return rldto;
         }
 
