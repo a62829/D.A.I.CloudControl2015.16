@@ -39,7 +39,7 @@ namespace ajuUminho.App_Code
         public void setRepresentanteLegal(d21RepresentanteLegalDto rldto)
         {
             d21RepresentanteLegalDto x = new d21RepresentanteLegalDto();
-            x.setRepresentanteLegal(rldto.Nome, rldto.Morada, rldto.CodPostal, rldto.Localidade, rldto.Email, rldto.Telefone, rldto.Telemovel, rldto.Fax, rldto.cc, rldto.Iban, rldto.Nif, rldto.LastChangeBy);
+            x.setRepresentanteLegal(rldto.nome, rldto.morada, rldto.codPostal, rldto.localidade, rldto.email, rldto.telefone, rldto.telemovel, rldto.fax, rldto.cc, rldto.iban, rldto.nif, rldto.lastChangeBy);
         }
     }
 }

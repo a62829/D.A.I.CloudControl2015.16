@@ -68,16 +68,16 @@ namespace ajuUminho.controls.entidades
             c23EditarRepresentanteLegal ws = new c23EditarRepresentanteLegal();
             var obj = ListBoxEntidadesID.SelectedValue.ToString();
             var rl = ws.getRepresentanteLegal(obj);
-            TextBoxNomeID.Text = rl.Nome;
-            TextBoxMoradaID.Text = rl.Morada;
-            TextBoxCodPostalID.Text = rl.CodPostal;
-            TextBoxLocalidadeID.Text = rl.Localidade;
-            TextBoxEmailID.Text = rl.Email;
-            TextBoxTelefoneID.Text = rl.Telefone;
-            TextBoxTelemovelID.Text = rl.Telemovel;
-            TextBoxFaxID.Text = rl.Fax;
-            TextBoxCcID.Text = rl.Cc;
-            TextBoxIbanID.Text = rl.Iban;
+            TextBoxNomeID.Text = rl.nome;
+            TextBoxMoradaID.Text = rl.morada;
+            TextBoxCodPostalID.Text = rl.codPostal;
+            TextBoxLocalidadeID.Text = rl.localidade;
+            TextBoxEmailID.Text = rl.email;
+            TextBoxTelefoneID.Text = rl.telefone;
+            TextBoxTelemovelID.Text = rl.telemovel;
+            TextBoxFaxID.Text = rl.fax;
+            TextBoxCcID.Text = rl.cc;
+            TextBoxIbanID.Text = rl.iban;
         }
 
         protected void ButtonEditarID_Click(object sender, EventArgs e)

@@ -12,13 +12,13 @@ namespace ajuUminho.App_Code
         public string morada { get; set; }
         public string codPostal { get; set; }
         public string localidade { get; set; }
-        public string Email { get; set; }
+        public string email { get; set; }
         public string telefone { get; set; }
         public string telemovel { get; set; }
         public string fax { get; set; }
-        protected string iban;
-        protected string nif;
-        protected string lastChangeBy;
+        public string iban { get; set; }
+        public string nif { get; set; }
+        public string lastChangeBy { get; set; }
 
 
         public Entidade()

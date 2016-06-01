@@ -90,18 +90,18 @@ namespace ajuUminho.App_Code
             var dataTable = new DataTable();
             dataTable.Load(reader);
             con.Close();
-            rldto.Nome = Convert.ToString(dataTable.Rows[0]["nome"]);
-            rldto.Morada = (Convert.ToString(dataTable.Rows[0]["morada"]));
-            rldto.CodPostal = (Convert.ToString(dataTable.Rows[0]["codPostal"]));
-            rldto.Localidade = (Convert.ToString(dataTable.Rows[0]["localidade"]));
-            rldto.Email = (Convert.ToString(dataTable.Rows[0]["email"]));
-            rldto.Telefone = (Convert.ToString(dataTable.Rows[0]["telefone"]));
-            rldto.Telemovel = (Convert.ToString(dataTable.Rows[0]["telemovel"]));
-            rldto.Fax = (Convert.ToString(dataTable.Rows[0]["fax"]));
+            rldto.nome = Convert.ToString(dataTable.Rows[0]["nome"]);
+            rldto.morada = (Convert.ToString(dataTable.Rows[0]["morada"]));
+            rldto.codPostal = (Convert.ToString(dataTable.Rows[0]["codPostal"]));
+            rldto.localidade = (Convert.ToString(dataTable.Rows[0]["localidade"]));
+            rldto.email = (Convert.ToString(dataTable.Rows[0]["email"]));
+            rldto.telefone = (Convert.ToString(dataTable.Rows[0]["telefone"]));
+            rldto.telemovel = (Convert.ToString(dataTable.Rows[0]["telemovel"]));
+            rldto.fax = (Convert.ToString(dataTable.Rows[0]["fax"]));
             rldto.cc = (Convert.ToString(dataTable.Rows[0]["cc"]));
-            rldto.Iban = (Convert.ToString(dataTable.Rows[0]["iban"]));
-            rldto.Nif = (Convert.ToString(dataTable.Rows[0]["nif"]));
-            rldto.LastChangeBy = (Convert.ToString(dataTable.Rows[0]["lastChangeBy"]));
+            rldto.iban = (Convert.ToString(dataTable.Rows[0]["iban"]));
+            rldto.nif = (Convert.ToString(dataTable.Rows[0]["nif"]));
+            rldto.lastChangeBy = (Convert.ToString(dataTable.Rows[0]["lastChangeBy"]));
             return rldto;
         }
 
