@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ajuUminho.App_Code
 {
-    public class d33JuizDto
+    public class d33JuizDto : Entidade
     {
     }
 }

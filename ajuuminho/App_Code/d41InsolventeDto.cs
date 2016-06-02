@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ajuUminho.App_Code
 {
-    public class d41InsolventeDto
+    public class d41InsolventeDto : Entidade
     {
     }
 }

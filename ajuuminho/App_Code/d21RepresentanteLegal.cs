@@ -79,14 +79,13 @@ namespace ajuUminho.App_Code
         {
             d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
             SqlDataReader reader;
-            
             con.Open();
             cmd.Parameters.AddWithValue("@id", id);
             cmd.CommandText = "SELECT * FROM dbo.representantelegal WHERE id = @id";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             reader = cmd.ExecuteReader();
-            var dataTable = new DataTable();
+            DataTable dataTable = new DataTable();
             dataTable.Load(reader);
             con.Close();
             rldto.nome = Convert.ToString(dataTable.Rows[0]["nome"]);
@@ -104,7 +103,7 @@ namespace ajuUminho.App_Code
             return rldto;
         }
 
-        public void removeRepresentanteLegal (string id)
+        public void removerRepresentanteLegal (string id)
         {
             con.Open();
             cmd.Parameters.AddWithValue("@id", id);

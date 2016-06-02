@@ -56,13 +56,13 @@ namespace ajuUminho.Ws
         public d21RepresentanteLegalDto getRepresentanteLegal(string id)
         {
             d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
-            rldto = rldto.getRepresentanteLegal(id);
-            return rldto;
+            return rldto.getRepresentanteLegal(id);
         }
 
         [WebMethod]
         public Dictionary<String, String> getListaRepresentantesLegais()
         {
+            
             d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
             DataTable dt = rldto.getListaRepresentanteLegal();
             Dictionary<String, String> lista = new Dictionary<String, String>();
@@ -78,8 +78,8 @@ namespace ajuUminho.Ws
         public void removerRepresentanteLegal(string id)
         {
             // efetuar controlos
-            d21RepresentanteLegal rl = new d21RepresentanteLegal();
-            rl.removeRepresentanteLegal(id);
+            d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
+            rldto.removeRepresentanteLegal(id);
         }
 
     }

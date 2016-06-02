@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ajuUminho.App_Code
 {
-    public class d37CredorDto
+    public class d37CredorDto : Entidade
     {
     }
 }

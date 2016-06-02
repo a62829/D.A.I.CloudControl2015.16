@@ -52,5 +52,11 @@ namespace ajuUminho.App_Code
             return rl.getListaRepresentanteLegal();
         }
 
+        public void removeRepresentanteLegal(string id)
+        {
+            d21RepresentanteLegal rl = new d21RepresentanteLegal();
+                rl.removerRepresentanteLegal(id);
+        }
+
     }
 }
