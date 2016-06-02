@@ -58,5 +58,6 @@ namespace ajuUminho.App_Code
                 rl.removerRepresentanteLegal(id);
         }
 
+
     }
 }

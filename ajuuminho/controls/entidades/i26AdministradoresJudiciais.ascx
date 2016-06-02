@@ -3,7 +3,7 @@
       <div class="InsideViewsBox">
         <div class="InsideViewsTableBox">
                 <div class="AlignBox">
-                    <asp:ListBox ID="ListBoxEntidadesID" runat="server" CssClass="ListBoxEntidades-Item" AutoPostBack="True"></asp:ListBox>         
+                    <asp:ListBox ID="ListBoxEntidadesID" runat="server" CssClass="ListBoxEntidades-Item" AutoPostBack="True" OnSelectedIndexChanged="ListBoxEntidadesID_SelectedIndexChanged"></asp:ListBox>         
                 </div>
         </div>
 
@@ -73,8 +73,8 @@
           </div>
 
         <div id="ContentButtonsBox">
-            <asp:Button ID="ButtonCriarID" runat="server" Text="Criar"  CssClass="ContentButton"/>
-            <asp:Button ID="ButtonEditarID" runat="server" Text="Editar"  CssClass="ContentButton"/>
+            <asp:Button ID="ButtonCriarID" runat="server" Text="Criar"  CssClass="ContentButton" OnClick="ButtonCriarID_Click"/>
+            <asp:Button ID="ButtonEditarID" runat="server" Text="Editar"  CssClass="ContentButton" OnClick="ButtonEditarID_Click"/>
             <asp:Button ID="ButtonEliminarID" runat="server" Text="Eliminar"  CssClass="ContentButton"/>
         </div>
 
