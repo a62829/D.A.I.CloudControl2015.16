@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="home.aspx.cs" Inherits="ajuUminho.webforms.home" %>
-<%@ Register TagPrefix="uc" TagName="i14TerminoDeSessao" Src="~/controls/utilizadores/i14TerminoDeSessao.ascx"%>
+<%@ Register TagPrefix="uc" TagName="header" Src="~/controls/header.ascx"%>
 
 <!DOCTYPE html>
 
@@ -10,7 +10,7 @@
 </head>
 <body>
     <form id="Form" runat="server" aria-expanded="true">
-        <uc:i14TerminoDeSessao runat="server" ID="header" />
+        <uc:header runat="server" ID="header" />
         <div id="BigBox">
             <div id="ProcessesHomeBox">
                 <div class="AlignBox">

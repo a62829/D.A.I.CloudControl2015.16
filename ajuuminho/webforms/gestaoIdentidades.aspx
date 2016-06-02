@@ -1,4 +1,4 @@
-﻿<%--<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="gestaoIdentidades.aspx.cs" Inherits="ajuUminho.webforms.gestaoIdentidades" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="gestaoIdentidades.aspx.cs" Inherits="ajuUminho.webforms.gestaoIdentidades" %>
 <%@ Register TagPrefix="uc" TagName="header" Src="~/controls/header.ascx"%>
 
 <!DOCTYPE html>
@@ -101,4 +101,4 @@
             </div>
         </div>
 </body>
-</html>--%>
+</html>

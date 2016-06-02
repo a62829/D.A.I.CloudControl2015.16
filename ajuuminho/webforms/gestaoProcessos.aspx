@@ -1,4 +1,4 @@
-﻿<%--<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="gestaoProcessos.aspx.cs" Inherits="ajuUminho.webforms.gestaoProcessos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="gestaoProcessos.aspx.cs" Inherits="ajuUminho.webforms.gestaoProcessos" %>
 <%@ Register TagPrefix="uc1" TagName="header" Src="~/controls/header.ascx"%>
 <%@ Register TagPrefix="uc2" TagName="dadosGerais" Src="~/controls/dadosGerais.ascx"%>
 <%@ Register TagPrefix="uc3" TagName="contabilidade" Src="~/controls/contabilidade.ascx"%>
@@ -98,4 +98,4 @@
         </div>
     
 </body>
-</html>--%>
+</html>

@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
     <siteMapNode url="/webforms/home.aspx" title="Home" description="">
-        <siteMapNode url="/webforms/InterfaceEntidades.aspx" title="Entidades"  description="" />
-        <siteMapNode url="/webforms/InterfaceAdministracao.aspx" title="Administração"  description="" />
-        <siteMapNode url="/webforms/InterfaceProcesso.aspx" title="Processos"  description="" />
-        <siteMapNode url="/webforms/InterfaceRelatorios.aspx" title="Relatórios"  description="" />
+        <siteMapNode url="/webforms/gestaoEntidades.aspx" title="Gestão de Entidades"  description="" />
+        <siteMapNode url="/webforms/gestaoIdentidades.aspx" title="Gestão de Identidades"  description="" />
+        <siteMapNode url="" title="Gestão de Acessos"  description="" />
+        <siteMapNode url="/webforms/gestaoProcessos.aspx" title="Configurações Gerais de Processos"  description="" />
+        <siteMapNode url="" title="Gestão de Processos"  description="" />
     </siteMapNode>
 </siteMap>

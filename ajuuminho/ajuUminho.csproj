@@ -189,24 +189,18 @@
     <Compile Include="App_Code\d21RepresentanteLegal.cs" />
     <Compile Include="App_Code\DBcon.cs" />
     <Compile Include="App_Code\Entidade.cs" />
-    <Compile Include="App_Code\RepresentanteLegalDTO.cs" />
-    <Compile Include="controls\administracao\i10ConfirmarPerfil.ascx.cs">
-      <DependentUpon>i10ConfirmarPerfil.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
+    <Content Include="App_Code\RepresentanteLegalDTO.cs" />
     <Compile Include="controls\administracao\i10ConfirmarPerfil.ascx.designer.cs">
       <DependentUpon>i10ConfirmarPerfil.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\administracao\i3AdministradorUtilizadores.ascx.cs">
       <DependentUpon>i3AdministradorUtilizadores.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\administracao\i3AdministradorUtilizadores.ascx.designer.cs">
       <DependentUpon>i3AdministradorUtilizadores.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\administracao\i9AtribuirPerfil.ascx.cs">
       <DependentUpon>i9AtribuirPerfil.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\administracao\i9AtribuirPerfil.ascx.designer.cs">
       <DependentUpon>i9AtribuirPerfil.ascx</DependentUpon>
@@ -220,189 +214,156 @@
     </Compile>
     <Compile Include="controls\entidades\i26AdministradoresJudiciais.ascx.cs">
       <DependentUpon>i26AdministradoresJudiciais.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\entidades\i26AdministradoresJudiciais.ascx.designer.cs">
       <DependentUpon>i26AdministradoresJudiciais.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\entidades\i30Tribunais.ascx.cs">
       <DependentUpon>i30Tribunais.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\entidades\i30Tribunais.ascx.designer.cs">
       <DependentUpon>i30Tribunais.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\entidades\i34Juizes.ascx.cs">
       <DependentUpon>i34Juizes.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\entidades\i34Juizes.ascx.designer.cs">
       <DependentUpon>i34Juizes.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\entidades\i38Credores.ascx.cs">
       <DependentUpon>i38Credores.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\entidades\i38Credores.ascx.designer.cs">
       <DependentUpon>i38Credores.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\entidades\i42Insolventes.ascx.cs">
       <DependentUpon>i42Insolventes.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\entidades\i42Insolventes.ascx.designer.cs">
       <DependentUpon>i42Insolventes.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\entidades\i46Contabilistas.ascx.cs">
       <DependentUpon>i46Contabilistas.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\entidades\i46Contabilistas.ascx.designer.cs">
       <DependentUpon>i46Contabilistas.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\entidades\i50PrestadoresServico.ascx.cs">
       <DependentUpon>i50PrestadoresServico.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\entidades\i50PrestadoresServico.ascx.designer.cs">
       <DependentUpon>i50PrestadoresServico.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\entidades\i54OutrasEntidades.ascx.cs">
       <DependentUpon>i54OutrasEntidades.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\entidades\i54OutrasEntidades.ascx.designer.cs">
       <DependentUpon>i54OutrasEntidades.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\processo\i56AtribuicaoEntidades.ascx.cs">
       <DependentUpon>i56AtribuicaoEntidades.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\processo\i56AtribuicaoEntidades.ascx.designer.cs">
       <DependentUpon>i56AtribuicaoEntidades.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\processo\i60Eventos.ascx.cs">
       <DependentUpon>i60Eventos.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\processo\i60Eventos.ascx.designer.cs">
       <DependentUpon>i60Eventos.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\processo\i64Bens.ascx.cs">
       <DependentUpon>i64Bens.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\processo\i64Bens.ascx.designer.cs">
       <DependentUpon>i64Bens.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\processo\i68MovimentosFinanceiros.ascx.cs">
       <DependentUpon>i68MovimentosFinanceiros.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\processo\i68MovimentosFinanceiros.ascx.designer.cs">
       <DependentUpon>i68MovimentosFinanceiros.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\processo\i72Credores.ascx.cs">
       <DependentUpon>i72Credores.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\processo\i72Credores.ascx.designer.cs">
       <DependentUpon>i72Credores.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\processo\i75ServicosExternos.ascx.cs">
       <DependentUpon>i75ServicosExternos.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\processo\i75ServicosExternos.ascx.designer.cs">
       <DependentUpon>i75ServicosExternos.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\processo\i80FicheirosMultimedia.ascx.cs">
       <DependentUpon>i80FicheirosMultimedia.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\processo\i80FicheirosMultimedia.ascx.designer.cs">
       <DependentUpon>i80FicheirosMultimedia.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\processo\i83FicheirosTexto.ascx.cs">
       <DependentUpon>i83FicheirosTexto.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\processo\i83FicheirosTexto.ascx.designer.cs">
       <DependentUpon>i83FicheirosTexto.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\processo\i86Arquivo.ascx.cs">
       <DependentUpon>i86Arquivo.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\processo\i86Arquivo.ascx.designer.cs">
       <DependentUpon>i86Arquivo.ascx</DependentUpon>
     </Compile>
-    <Compile Include="controls\processo\i91CreditosReclamados.ascx.cs">
-      <DependentUpon>i91CreditosReclamados.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="controls\processo\i91CreditosReclamados.ascx.designer.cs">
-      <DependentUpon>i91CreditosReclamados.ascx</DependentUpon>
-    </Compile>
     <Compile Include="controls\relatorios\i100Custos.ascx.cs">
       <DependentUpon>i100Custos.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\relatorios\i100Custos.ascx.designer.cs">
       <DependentUpon>i100Custos.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\relatorios\i16TiposEworkflows.ascx.cs">
       <DependentUpon>i16TiposEworkflows.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\relatorios\i16TiposEworkflows.ascx.designer.cs">
       <DependentUpon>i16TiposEworkflows.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\relatorios\i19Relatorios.ascx.cs">
       <DependentUpon>i19Relatorios.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\relatorios\i19Relatorios.ascx.designer.cs">
       <DependentUpon>i19Relatorios.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\relatorios\i89Tipos.ascx.cs">
       <DependentUpon>i89Tipos.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\relatorios\i89Tipos.ascx.designer.cs">
       <DependentUpon>i89Tipos.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\relatorios\i94PesquisaCreditoReclamado.ascx.cs">
       <DependentUpon>i94PesquisaCreditoReclamado.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\relatorios\i94PesquisaCreditoReclamado.ascx.designer.cs">
       <DependentUpon>i94PesquisaCreditoReclamado.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\relatorios\i98AcoesRelatorio.ascx.cs">
       <DependentUpon>i98AcoesRelatorio.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\relatorios\i98AcoesRelatorio.ascx.designer.cs">
       <DependentUpon>i98AcoesRelatorio.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\utilizadores\i12AutenticacaoDeUtilizadores.ascx.cs">
       <DependentUpon>i12AutenticacaoDeUtilizadores.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\utilizadores\i12AutenticacaoDeUtilizadores.ascx.designer.cs">
       <DependentUpon>i12AutenticacaoDeUtilizadores.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\utilizadores\i14TerminoDeSessao.ascx.cs">
       <DependentUpon>i14TerminoDeSessao.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\utilizadores\i14TerminoDeSessao.ascx.designer.cs">
       <DependentUpon>i14TerminoDeSessao.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\utilizadores\i4AlteracaoDeDadosPessoais.ascx.cs">
       <DependentUpon>i4AlteracaoDeDadosPessoais.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="controls\utilizadores\i4AlteracaoDeDadosPessoais.ascx.designer.cs">
       <DependentUpon>i4AlteracaoDeDadosPessoais.ascx</DependentUpon>
@@ -417,18 +378,21 @@
     </Compile>
     <Compile Include="webforms\gestaoEntidades.aspx.cs">
       <DependentUpon>gestaoEntidades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="webforms\gestaoEntidades.aspx.designer.cs">
       <DependentUpon>gestaoEntidades.aspx</DependentUpon>
     </Compile>
     <Compile Include="webforms\gestaoIdentidades.aspx.cs">
       <DependentUpon>gestaoIdentidades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="webforms\gestaoIdentidades.aspx.designer.cs">
       <DependentUpon>gestaoIdentidades.aspx</DependentUpon>
     </Compile>
     <Compile Include="webforms\gestaoProcessos.aspx.cs">
       <DependentUpon>gestaoProcessos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="webforms\gestaoProcessos.aspx.designer.cs">
       <DependentUpon>gestaoProcessos.aspx</DependentUpon>
@@ -442,28 +406,24 @@
     </Compile>
     <Compile Include="webforms\InterfaceAdministracao.aspx.cs">
       <DependentUpon>InterfaceAdministracao.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="webforms\InterfaceAdministracao.aspx.designer.cs">
       <DependentUpon>InterfaceAdministracao.aspx</DependentUpon>
     </Compile>
     <Compile Include="webforms\InterfaceEntidades.aspx.cs">
       <DependentUpon>InterfaceEntidades.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="webforms\InterfaceEntidades.aspx.designer.cs">
       <DependentUpon>InterfaceEntidades.aspx</DependentUpon>
     </Compile>
     <Compile Include="webforms\InterfaceProcesso.aspx.cs">
       <DependentUpon>InterfaceProcesso.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="webforms\InterfaceProcesso.aspx.designer.cs">
       <DependentUpon>InterfaceProcesso.aspx</DependentUpon>
     </Compile>
     <Compile Include="webforms\InterfaceRelatorios.aspx.cs">
       <DependentUpon>InterfaceRelatorios.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="webforms\InterfaceRelatorios.aspx.designer.cs">
       <DependentUpon>InterfaceRelatorios.aspx</DependentUpon>

@@ -40,8 +40,7 @@ namespace ajuUminho.webforms
                 DropDownList3.DataBind();
                 DropDownList4.DataBind();
             }
-            else
-            {
+            else {
                 //MessageBox.Show("The calculations are complete");
             }
         }
@@ -85,8 +84,7 @@ namespace ajuUminho.webforms
         protected void signOut(object sender, EventArgs e)
         {
             gestaoIdentidade ws1 = new gestaoIdentidade();
-            if (ws1.signOut() == true)
-            {
+            if (ws1.signOut() == true) {
                 Response.Redirect("~/webforms/Login.aspx");
             }
             else

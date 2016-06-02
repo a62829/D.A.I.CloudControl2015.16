@@ -1,5 +1,4 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="ajuUminho.webforms.login" %>
-<%@ Register TagPrefix="uc1" TagName="i12AutenticacaoDeUtilizadores" Src="~/controls/utilizadores/i12AutenticacaoDeUtilizadores.ascx"%>
 
 <!DOCTYPE html>
 
@@ -11,8 +10,32 @@
 </head>
 
     <body>
+            <div id="IndexBox">
+                <div id="ImgBox">
+                    <div id="LoginBox">
+            	        <form id="Login" runat="server">
+    				    <h1>Iniciar Sessão</h1><br/>
+                            <div id="LoginBox-UserName">
+                                <asp:TextBox ID="TextBoxUserNameID" runat="server" CssClass="InputUserName"></asp:TextBox>
+                            </div>
+                            <div id="LoginBox-Password">
+                                <asp:TextBox ID="TextBoxPasswordID" type="password" runat="server" CssClass="InputPassword"></asp:TextBox>
+                            </div>
+                            <div id="LoginBox-Button">
+                                <asp:Button ID="ButtonAutenticarID" runat="server" Text="Autenticar" Cssclass="AutenticateButton" OnClick="SignIn"/>
+                            </div>
+				        </form>
+                    </div>
+                </div>
+	         </div>
 
-        <uc1:i12AutenticacaoDeUtilizadores runat="server" id="i12AutenticacaoDeUtilizadores" />
+                <div id="FooterBox">
+                    <div id="FooterBox1">
+                    <% 
+                        Response.WriteFile("../html/footer.html");
+                    %>
+                    </div>
+                </div>
 
     </body>
 </html>
