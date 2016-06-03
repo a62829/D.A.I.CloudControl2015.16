@@ -1,25 +1,27 @@
-﻿using ajuUminho.App_Code;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
+using System.Linq;
+using System.Web;
 using System.Web.Services;
+using ajuUminho.App_Code;
+using System.Data;
 
 namespace ajuUminho.Ws
 {
     /// <summary>
-    /// Summary description for c23EditarRepresentanteLegal
+    /// Summary description for c27EdicaoAdministradorJudicial
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
     // [System.Web.Script.Services.ScriptService]
-    public class c23EditarRepresentanteLegal : System.Web.Services.WebService
+    public class c27EdicaoAdministradorJudicial : System.Web.Services.WebService
     {
 
         [WebMethod]
-        public void editarRepresentanteLegal(string nome, string morada, string codPostal, string localidade, string email,
-            string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
+        public void editarAdministradorJudicial(string nome, string morada, string codPostal, string localidade, string email,
+                    string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
             //// efetuar controlos
             //d21RepresentanteLegal rl = new d21RepresentanteLegal();
@@ -32,11 +34,11 @@ namespace ajuUminho.Ws
         }
 
         [WebMethod]
-        public void criarRepresentanteLegal (string nome, string morada, string codPostal, string localidade, string email,
+        public void criarAdministradorJudicial(string nome, string morada, string codPostal, string localidade, string email,
             string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
-            d21RepresentanteLegal rl = new d21RepresentanteLegal();
-            rl.guardar(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
+            d25AdministradorJudicial aj = new d25AdministradorJudicial();
+            aj.guardar(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
 
         }
 
@@ -49,18 +51,18 @@ namespace ajuUminho.Ws
         //}
 
         [WebMethod]
-        public d21RepresentanteLegalDto getRepresentanteLegal(string id)
+        public d25AdministradorJudicialDto getAdministradorJudicial(string id)
         {
-            d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
-            return rldto.getRepresentanteLegal(id);
+            d25AdministradorJudicialDto ajdto = new d25AdministradorJudicialDto();
+            return ajdto.getAdministradorJudicial(id);
         }
 
         [WebMethod]
-        public Dictionary<String, String> getListaRepresentantesLegais()
+        public Dictionary<String, String> getListaAdministradorJudicial()
         {
-            
-            d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
-            DataTable dt = rldto.getListaRepresentanteLegal();
+
+            d25AdministradorJudicialDto ajdto = new d25AdministradorJudicialDto();
+            DataTable dt = ajdto.getListaAdministradorJudicial();
             Dictionary<String, String> lista = new Dictionary<String, String>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -68,6 +70,6 @@ namespace ajuUminho.Ws
             }
             return lista;
 
-    }
+        }
     }
 }

@@ -7,19 +7,18 @@ using System.Web.Services;
 namespace ajuUminho.Ws
 {
     /// <summary>
-    /// Summary description for c23EditarRepresentanteLegal
+    /// Summary description for c35EdicaoJuiz
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
     // [System.Web.Script.Services.ScriptService]
-    public class c23EditarRepresentanteLegal : System.Web.Services.WebService
+    public class c35EdicaoJuiz : System.Web.Services.WebService
     {
-
         [WebMethod]
-        public void editarRepresentanteLegal(string nome, string morada, string codPostal, string localidade, string email,
-            string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
+        public void editarJuiz(string nome, string morada, string codPostal, string localidade, string email,
+                    string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
             //// efetuar controlos
             //d21RepresentanteLegal rl = new d21RepresentanteLegal();
@@ -32,11 +31,11 @@ namespace ajuUminho.Ws
         }
 
         [WebMethod]
-        public void criarRepresentanteLegal (string nome, string morada, string codPostal, string localidade, string email,
+        public void criarJuiz(string nome, string morada, string codPostal, string localidade, string email,
             string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
-            d21RepresentanteLegal rl = new d21RepresentanteLegal();
-            rl.guardar(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
+            d33Juiz j = new d33Juiz();
+            j.guardar(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
 
         }
 
@@ -49,18 +48,18 @@ namespace ajuUminho.Ws
         //}
 
         [WebMethod]
-        public d21RepresentanteLegalDto getRepresentanteLegal(string id)
+        public d33JuizDto getJuiz(string id)
         {
-            d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
-            return rldto.getRepresentanteLegal(id);
+            d33JuizDto jdto = new d33JuizDto();
+            return jdto.getJuiz(id);
         }
 
         [WebMethod]
         public Dictionary<String, String> getListaRepresentantesLegais()
         {
-            
-            d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
-            DataTable dt = rldto.getListaRepresentanteLegal();
+
+            d21RepresentanteLegalDto jdto = new d21RepresentanteLegalDto();
+            DataTable dt = jdto.getListaRepresentanteLegal();
             Dictionary<String, String> lista = new Dictionary<String, String>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -68,6 +67,6 @@ namespace ajuUminho.Ws
             }
             return lista;
 
-    }
+        }
     }
 }
