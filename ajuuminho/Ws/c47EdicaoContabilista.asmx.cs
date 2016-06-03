@@ -7,60 +7,59 @@ using System.Data;
 namespace ajuUminho.Ws
 {
     /// <summary>
-    /// Summary description for c23EditarRepresentanteLegal
+    /// Summary description for c47EdicaoContabilista
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
     // [System.Web.Script.Services.ScriptService]
-    public class c23EditarRepresentanteLegal : System.Web.Services.WebService
+    public class c47EdicaoContabilista : System.Web.Services.WebService
     {
-
         [WebMethod]
-        public void editarRepresentanteLegal(string nome, string morada, string codPostal, string localidade, string email,
-            string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
+        public void editarContabilista(string nome, string morada, string codPostal, string localidade, string email,
+             string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
             //// efetuar controlos
-            //d21RepresentanteLegal rl = new d21RepresentanteLegal();
+            //d45Contabilista rl = new d45Contabilista();
             //var id = rl.getID(cc);
             //if (rl.ccUnique(cc, id) == true)
             //{
-            //    rl.setRepresentanteLegal(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy, id);
+            //    rl.setContabilista(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy, id);
             //}
 
         }
 
         [WebMethod]
-        public void criarRepresentanteLegal (string nome, string morada, string codPostal, string localidade, string email,
+        public void criarContabilista(string nome, string morada, string codPostal, string localidade, string email,
             string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
-            d21RepresentanteLegal rl = new d21RepresentanteLegal();
-            rl.guardar(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
+            d45Contabilista c = new d45Contabilista();
+            c.guardar(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
 
         }
 
         //[WebMethod]
         //public DataTable listarRepresentantesLegais()
         //{
-        //    d21RepresentanteLegal rl = new d21RepresentanteLegal();
-        //    DataTable dt = rl.getListaRepresentanteLegal();
+        //    d45Contabilista rl = new d45Contabilista();
+        //    DataTable dt = rl.getListaContabilista();
         //    return dt;
         //}
 
         [WebMethod]
-        public d21RepresentanteLegalDto getRepresentanteLegal(string id)
+        public d45ContabilistaDto getContabilista(string id)
         {
-            d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
-            return rldto.getRepresentanteLegal(id);
+            d45ContabilistaDto cdto = new d45ContabilistaDto();
+            return cdto.getContabilista(id);
         }
 
         [WebMethod]
         public Dictionary<String, String> getListaRepresentantesLegais()
         {
-            
-            d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
-            DataTable dt = rldto.getListaRepresentanteLegal();
+
+            d45ContabilistaDto cdto = new d45ContabilistaDto();
+            DataTable dt = cdto.getListaContabilista();
             Dictionary<String, String> lista = new Dictionary<String, String>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -68,7 +67,6 @@ namespace ajuUminho.Ws
             }
             return lista;
 
-    }
-
+        }
     }
 }
