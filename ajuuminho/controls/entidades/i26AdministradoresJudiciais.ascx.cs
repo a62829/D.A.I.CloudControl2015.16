@@ -13,11 +13,11 @@ namespace ajuUminho.controls.entidades
         {
             if (!IsPostBack)
             {
-                listaRepresentanteLegal();
+                listaAdministradorJudicial();
             }
             else
             {
-                listaRepresentanteLegal();
+                listaAdministradorJudicial();
             }
         }
 
@@ -38,9 +38,9 @@ namespace ajuUminho.controls.entidades
 
         protected void ListBoxEntidadesID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            c23EditarRepresentanteLegal erl = new c23EditarRepresentanteLegal();
+            c27EdicaoAdministradorJudicial erl = new c27EdicaoAdministradorJudicial();
             string idRl = ListBoxEntidadesID.SelectedValue.ToString();
-            d21RepresentanteLegalDto rl = erl.getRepresentanteLegal(idRl);
+            d25AdministradorJudicialDto rl = erl.getAdministradorJudicial(idRl);
             TextBoxNomeID.Text = rl.nome;
             TextBoxMoradaID.Text = rl.morada;
             TextBoxCodPostalID.Text = rl.codPostal;
@@ -54,21 +54,21 @@ namespace ajuUminho.controls.entidades
             TextBoxNifID.Text = rl.nif;
             TextBoxLastChangedID.Text = rl.lastChangeBy;
             ListBoxEntidadesID.Items.Clear();
-            listaRepresentanteLegal();
+            listaAdministradorJudicial();
         }
 
         protected void ButtonEditarID_Click(object sender, EventArgs e)
         {
-            c23EditarRepresentanteLegal WsERL = new c23EditarRepresentanteLegal();
-            WsERL.editarRepresentanteLegal(TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
+            c27EdicaoAdministradorJudicial WsERL = new c27EdicaoAdministradorJudicial();
+            WsERL.editarAdministradorJudicial(TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text);
         }
 
-        protected void listaRepresentanteLegal()
+        protected void listaAdministradorJudicial()
         {
-            c23EditarRepresentanteLegal WsERL = new c23EditarRepresentanteLegal();
-            var lista = WsERL.getListaRepresentantesLegais();
+            c27EdicaoAdministradorJudicial WsERL = new c27EdicaoAdministradorJudicial();
+            var lista = WsERL.getListaAdministradorJudicial();
             foreach (KeyValuePair<String, String> pair in lista)
             {
                 ListItem Item = new ListItem();

@@ -7,21 +7,23 @@ using System.Data;
 namespace ajuUminho.Ws
 {
     /// <summary>
-    /// Summary description for c24RemocaoRepresentanteLegal
+    /// Summary description for c40RemocaoCredor
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
     // [System.Web.Script.Services.ScriptService]
-    public class c24RemocaoRepresentanteLegal : System.Web.Services.WebService
+    public class c40RemocaoCredor : System.Web.Services.WebService
     {
         [WebMethod]
-        public void removerRepresentanteLegal(string id)
+        public void removerCredor(string id)
         {
             // efetuar controlos
-            d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
-            rldto.removerRepresentanteLegal(id);
+            d37CredorDto cdto = new d37CredorDto();
+            cdto.removerCredor(id);
         }
+
+
     }
 }
