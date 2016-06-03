@@ -7,60 +7,59 @@ using System.Data;
 namespace ajuUminho.Ws
 {
     /// <summary>
-    /// Summary description for c23EditarRepresentanteLegal
+    /// Summary description for c39EdicaoCredor
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
     // [System.Web.Script.Services.ScriptService]
-    public class c23EditarRepresentanteLegal : System.Web.Services.WebService
+    public class c39EdicaoCredor : System.Web.Services.WebService
     {
-
         [WebMethod]
-        public void editarRepresentanteLegal(string nome, string morada, string codPostal, string localidade, string email,
+        public void editarCredor(string nome, string morada, string codPostal, string localidade, string email,
             string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
             //// efetuar controlos
-            //d21RepresentanteLegal rl = new d21RepresentanteLegal();
+            //d37Credor rl = new d37Credor();
             //var id = rl.getID(cc);
             //if (rl.ccUnique(cc, id) == true)
             //{
-            //    rl.setRepresentanteLegal(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy, id);
+            //    rl.setCredor(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy, id);
             //}
 
         }
 
         [WebMethod]
-        public void criarRepresentanteLegal (string nome, string morada, string codPostal, string localidade, string email,
+        public void criarCredor(string nome, string morada, string codPostal, string localidade, string email,
             string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
-            d21RepresentanteLegal rl = new d21RepresentanteLegal();
-            rl.guardar(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
+            d37Credor c = new d37Credor();
+            c.guardar(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
 
         }
 
         //[WebMethod]
         //public DataTable listarRepresentantesLegais()
         //{
-        //    d21RepresentanteLegal rl = new d21RepresentanteLegal();
-        //    DataTable dt = rl.getListaRepresentanteLegal();
+        //    d37Credor rl = new d37Credor();
+        //    DataTable dt = rl.getListaCredor();
         //    return dt;
         //}
 
         [WebMethod]
-        public d21RepresentanteLegalDto getRepresentanteLegal(string id)
+        public d37CredorDto getCredor(string id)
         {
-            d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
-            return rldto.getRepresentanteLegal(id);
+            d37CredorDto cdto = new d37CredorDto();
+            return cdto.getCredor(id);
         }
 
         [WebMethod]
         public Dictionary<String, String> getListaRepresentantesLegais()
         {
-            
-            d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
-            DataTable dt = rldto.getListaRepresentanteLegal();
+
+            d37CredorDto cdto = new d37CredorDto();
+            DataTable dt = cdto.getListaCredor();
             Dictionary<String, String> lista = new Dictionary<String, String>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -68,7 +67,6 @@ namespace ajuUminho.Ws
             }
             return lista;
 
-    }
-
+        }
     }
 }
