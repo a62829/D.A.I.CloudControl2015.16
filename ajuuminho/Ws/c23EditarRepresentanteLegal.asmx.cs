@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Web.Services;
 using ajuUminho.App_Code;
 using System.Data;
+using System.Data.SqlClient;
+using System.Collections;
 
 namespace ajuUminho.Ws
 {
@@ -69,6 +73,14 @@ namespace ajuUminho.Ws
             return lista;
 
     }
+
+        [WebMethod]
+        public void removerRepresentanteLegal(string id)
+        {
+            // efetuar controlos
+            d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
+            rldto.removeRepresentanteLegal(id);
+        }
 
     }
 }

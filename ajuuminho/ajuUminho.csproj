@@ -496,38 +496,6 @@
       <DependentUpon>c23EditarRepresentanteLegal.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Ws\c24RemocaoRepresentanteLegal.asmx.cs">
-      <DependentUpon>c24RemocaoRepresentanteLegal.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Ws\c31EdicaoTribunal.asmx.cs">
-      <DependentUpon>c31EdicaoTribunal.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Ws\c32RemocaoTribunal.asmx.cs">
-      <DependentUpon>c32RemocaoTribunal.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Ws\c39EdicaoCredor.asmx.cs">
-      <DependentUpon>c39EdicaoCredor.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Ws\c40RemocaoCredor.asmx.cs">
-      <DependentUpon>c40RemocaoCredor.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Ws\c47EdicaoContabilista.asmx.cs">
-      <DependentUpon>c47EdicaoContabilista.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Ws\c48RemocaoContabilista.asmx.cs">
-      <DependentUpon>c48RemocaoContabilista.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Ws\c55RemocaoOutraEntidade.asmx.cs">
-      <DependentUpon>c55RemocaoOutraEntidade.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Ws\ControloDeEntidades.asmx.cs">
       <DependentUpon>ControloDeEntidades.asmx</DependentUpon>
     </Compile>
@@ -546,14 +514,6 @@
     <Content Include="webforms\InterfaceRelatorios.aspx" />
     <Content Include="webforms\login.aspx" />
     <Content Include="Ws\c23EditarRepresentanteLegal.asmx" />
-    <Content Include="Ws\c24RemocaoRepresentanteLegal.asmx" />
-    <Content Include="Ws\c31EdicaoTribunal.asmx" />
-    <Content Include="Ws\c32RemocaoTribunal.asmx" />
-    <Content Include="Ws\c39EdicaoCredor.asmx" />
-    <Content Include="Ws\c40RemocaoCredor.asmx" />
-    <Content Include="Ws\c47EdicaoContabilista.asmx" />
-    <Content Include="Ws\c48RemocaoContabilista.asmx" />
-    <Content Include="Ws\c55RemocaoOutraEntidade.asmx" />
     <Content Include="Ws\ControloDeEntidades.asmx" />
     <Content Include="Ws\gestaoIdentidade.asmx" />
     <None Include="Web.Debug.config">
