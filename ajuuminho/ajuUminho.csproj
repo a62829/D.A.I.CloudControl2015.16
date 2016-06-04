@@ -500,12 +500,28 @@
       <DependentUpon>c24RemocaoRepresentanteLegal.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Ws\c27EdicaoAdministradorJudicial.asmx.cs">
+      <DependentUpon>c27EdicaoAdministradorJudicial.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ws\c28RemocaoAdministradorJudicial.asmx.cs">
+      <DependentUpon>c28RemocaoAdministradorJudicial.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Ws\c31EdicaoTribunal.asmx.cs">
       <DependentUpon>c31EdicaoTribunal.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Ws\c32RemocaoTribunal.asmx.cs">
       <DependentUpon>c32RemocaoTribunal.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ws\c35EdicaoJuiz.asmx.cs">
+      <DependentUpon>c35EdicaoJuiz.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ws\c36RemocaoJuiz.asmx.cs">
+      <DependentUpon>c36RemocaoJuiz.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Ws\c39EdicaoCredor.asmx.cs">
@@ -516,12 +532,28 @@
       <DependentUpon>c40RemocaoCredor.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Ws\c43EdicaoInsolvente.asmx.cs">
+      <DependentUpon>c43EdicaoInsolvente.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ws\c44RemocaoInsolvente.asmx.cs">
+      <DependentUpon>c44RemocaoInsolvente.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Ws\c47EdicaoContabilista.asmx.cs">
       <DependentUpon>c47EdicaoContabilista.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Ws\c48RemocaoContabilista.asmx.cs">
       <DependentUpon>c48RemocaoContabilista.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ws\c51EdicaoPrestadorServico.asmx.cs">
+      <DependentUpon>c51EdicaoPrestadorServico.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ws\c52RemocaoPrestadorServico.asmx.cs">
+      <DependentUpon>c52RemocaoPrestadorServico.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Ws\c55RemocaoOutraEntidade.asmx.cs">
@@ -547,12 +579,20 @@
     <Content Include="webforms\login.aspx" />
     <Content Include="Ws\c23EditarRepresentanteLegal.asmx" />
     <Content Include="Ws\c24RemocaoRepresentanteLegal.asmx" />
+    <Content Include="Ws\c27EdicaoAdministradorJudicial.asmx" />
+    <Content Include="Ws\c28RemocaoAdministradorJudicial.asmx" />
     <Content Include="Ws\c31EdicaoTribunal.asmx" />
     <Content Include="Ws\c32RemocaoTribunal.asmx" />
+    <Content Include="Ws\c35EdicaoJuiz.asmx" />
+    <Content Include="Ws\c36RemocaoJuiz.asmx" />
     <Content Include="Ws\c39EdicaoCredor.asmx" />
     <Content Include="Ws\c40RemocaoCredor.asmx" />
+    <Content Include="Ws\c43EdicaoInsolvente.asmx" />
+    <Content Include="Ws\c44RemocaoInsolvente.asmx" />
     <Content Include="Ws\c47EdicaoContabilista.asmx" />
     <Content Include="Ws\c48RemocaoContabilista.asmx" />
+    <Content Include="Ws\c51EdicaoPrestadorServico.asmx" />
+    <Content Include="Ws\c52RemocaoPrestadorServico.asmx" />
     <Content Include="Ws\c55RemocaoOutraEntidade.asmx" />
     <Content Include="Ws\ControloDeEntidades.asmx" />
     <Content Include="Ws\gestaoIdentidade.asmx" />
