@@ -41,7 +41,7 @@ namespace ajuUminho.Ws
         }
 
         //[WebMethod]
-        //public DataTable listarRepresentantesLegais()
+        //public DataTable listarTribunal()
         //{
         //    d29Tribunal t = new d29Tribunal();
         //    DataTable dt = t.getListaTribunal();
@@ -56,7 +56,7 @@ namespace ajuUminho.Ws
         }
 
         [WebMethod]
-        public Dictionary<String, String> getListaRepresentantesLegais()
+        public Dictionary<String, String> getListaTribunal()
         {
 
             d29TribunalDto tdto = new d29TribunalDto();

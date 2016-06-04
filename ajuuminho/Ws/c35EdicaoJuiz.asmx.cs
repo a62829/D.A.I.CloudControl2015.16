@@ -55,11 +55,11 @@ namespace ajuUminho.Ws
         }
 
         [WebMethod]
-        public Dictionary<String, String> getListaRepresentantesLegais()
+        public Dictionary<String, String> getListaJuiz()
         {
 
-            d21RepresentanteLegalDto jdto = new d21RepresentanteLegalDto();
-            DataTable dt = jdto.getListaRepresentanteLegal();
+            d33JuizDto jdto = new d33JuizDto();
+            DataTable dt = jdto.getListaJuiz();
             Dictionary<String, String> lista = new Dictionary<String, String>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {

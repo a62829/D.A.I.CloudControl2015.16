@@ -184,6 +184,42 @@ namespace ajuUminho.controls.entidades {
         protected global::System.Web.UI.WebControls.TextBox TextBoxIbanID;
         
         /// <summary>
+        /// LabelNifID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelNifID;
+        
+        /// <summary>
+        /// TextBoxNifID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxNifID;
+        
+        /// <summary>
+        /// LabelLastChangedID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelLastChangedID;
+        
+        /// <summary>
+        /// TextBoxLastChangedID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxLastChangedID;
+        
+        /// <summary>
         /// ButtonCriarID control.
         /// </summary>
         /// <remarks>

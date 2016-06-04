@@ -55,7 +55,7 @@ namespace ajuUminho.Ws
         }
 
         [WebMethod]
-        public Dictionary<String, String> getListaRepresentantesLegais()
+        public Dictionary<String, String> getListaContabilista()
         {
 
             d45ContabilistaDto cdto = new d45ContabilistaDto();

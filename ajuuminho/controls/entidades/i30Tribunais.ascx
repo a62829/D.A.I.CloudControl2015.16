@@ -54,6 +54,16 @@
                            Iban: </asp:Label> </td>
                       <td> <asp:TextBox ID="TextBoxIbanID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox> </td>
                   </tr>
+                  <tr>
+                      <td> <asp:Label ID="LabelNifID" runat="server" Text="Label" CssClass="Labels-Item"> 
+                           NIF: </asp:Label> </td>
+                      <td> <asp:TextBox ID="TextBoxNifID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox> </td>
+                  </tr>
+                  <tr>
+                      <td> <asp:Label ID="LabelLastChangedID" runat="server" Text="Label" CssClass="Labels-Item"> 
+                           Alterado por: </asp:Label> </td>
+                      <td> <asp:TextBox ID="TextBoxLastChangedID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox> </td>
+                  </tr>
              </table>
           </div>
 
