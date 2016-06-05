@@ -68,8 +68,8 @@
           </div>
 
         <div id="ContentButtonsBox">
-            <asp:Button ID="ButtonCriarID" runat="server" Text="Criar"  CssClass="ContentButton"/>
-            <asp:Button ID="ButtonEditarID" runat="server" Text="Editar"  CssClass="ContentButton"/>
+            <asp:Button ID="ButtonCriarID" runat="server" Text="Criar"  OnClick="ButtonCriarID_Click"/>
+            <asp:Button ID="ButtonEditarID" runat="server" Text="Editar"  OnClick="ButtonEditarID_Click"/>
             <asp:Button ID="ButtonEliminarID" runat="server" Text="Eliminar"  CssClass="ContentButton"/>
         </div>
 

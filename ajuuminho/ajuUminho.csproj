@@ -177,6 +177,7 @@
     <Content Include="controls\utilizadores\i12AutenticacaoDeUtilizadores.ascx" />
     <Content Include="controls\utilizadores\i14TerminoDeSessao.ascx" />
     <Content Include="controls\utilizadores\i4AlteracaoDeDadosPessoais.ascx" />
+    <Content Include="css\style.css" />
     <Content Include="css\StyleSheet.css" />
     <Content Include="imagens\default_profile_avatar.png" />
     <Content Include="imagens\close_session.png" />
@@ -184,6 +185,7 @@
     <Content Include="imagens\InitialImage.png" />
     <Content Include="imagens\logo.png" />
     <Content Include="imagens\SelectedButton.png" />
+    <Content Include="js\organictabs.jquery.js" />
     <Content Include="packages.config" />
     <Content Include="fonts\Helvetica.otf" />
     <Compile Include="App_Code\d21RepresentanteLegal.cs" />
@@ -425,6 +427,13 @@
       <DependentUpon>i4AlteracaoDeDadosPessoais.ascx</DependentUpon>
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="webforms\gerirUtilizadoresSistema.aspx.cs">
       <DependentUpon>gerirUtilizadoresSistema.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -567,6 +576,7 @@
       <DependentUpon>gestaoIdentidade.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Content Include="WebForm2.aspx" />
     <Content Include="webforms\gerirUtilizadoresSistema.aspx" />
     <Content Include="webforms\gestaoEntidades.aspx" />
     <Content Include="webforms\gestaoIdentidades.aspx" />
