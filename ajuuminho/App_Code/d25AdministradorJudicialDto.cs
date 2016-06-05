@@ -55,7 +55,7 @@ namespace ajuUminho.App_Code
             return aj.getListaAdministradorJudicial();
         }
 
-        public void removeAdministradorJudicial(string id)
+        public void removerAdministradorJudicial(string id)
         {
             d25AdministradorJudicial aj = new d25AdministradorJudicial();
             aj.removerAdministradorJudicial(id);
