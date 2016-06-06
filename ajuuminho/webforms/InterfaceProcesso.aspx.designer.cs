@@ -40,6 +40,87 @@ namespace ajuUminho.webforms {
         protected global::ajuUminho.controls.processos.i86Arquivo i86Arquivo;
         
         /// <summary>
+        /// I60Eventos1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::ajuUminho.controls.processos.i60Eventos I60Eventos1;
+        
+        /// <summary>
+        /// I64Bens1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::ajuUminho.controls.processos.i64Bens I64Bens1;
+        
+        /// <summary>
+        /// I68MovimentosFinanceiros1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::ajuUminho.controls.processos.i68MovimentosFinanceiros I68MovimentosFinanceiros1;
+        
+        /// <summary>
+        /// I72Credores1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::ajuUminho.controls.processos.i72Credores I72Credores1;
+        
+        /// <summary>
+        /// I75ServicosExternos1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::ajuUminho.controls.processos.i75ServicosExternos I75ServicosExternos1;
+        
+        /// <summary>
+        /// I80FicheirosMultimedia1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::ajuUminho.controls.processos.i80FicheirosMultimedia I80FicheirosMultimedia1;
+        
+        /// <summary>
+        /// I83FicheirosTexto1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::ajuUminho.controls.processos.i83FicheirosTexto I83FicheirosTexto1;
+        
+        /// <summary>
+        /// I91CreditosReclamados1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::ajuUminho.controls.processos.i91CreditosReclamados I91CreditosReclamados1;
+        
+        /// <summary>
+        /// I56AtribuicaoEntidades1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::ajuUminho.controls.processos.i56AtribuicaoEntidades I56AtribuicaoEntidades1;
+        
+        /// <summary>
         /// TabEventosID control.
         /// </summary>
         /// <remarks>

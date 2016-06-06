@@ -38,13 +38,15 @@
 	
 	<div id="example-two">
 		
+        <div class="titles">
 		<ul class="nav">
 			<li class="nav-one"><a href="#featured2" class="current">Featured</a></li>
 			<li class="nav-two"><a href="#core2">Core</a></li>
 			<li class="nav-three"><a href="#jquerytuts2">jQuery</a></li>
 			<li class="nav-four last"><a href="#classics2">Classics</a></li>
 		</ul>
-		
+		</div>
+
 		<div class="list-wrap">
 		
 		<ul id="featured2">
@@ -98,7 +100,7 @@
 	<p>This is some content below the tabs. I will be moved up or down to accommodate the tabbed area above me.</p>
 	
 	</div>
-
+    
 </body>
 
 </html>
