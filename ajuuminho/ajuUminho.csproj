@@ -33,6 +33,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>SecurityRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -623,9 +624,9 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DtoLayer\BusinessLayer.csproj">
-      <Project>{959d377e-4733-4c67-8830-a210244744ea}</Project>
-      <Name>BusinessLayer</Name>
+    <ProjectReference Include="..\_BusinessLayer\_BusinessLayer.csproj">
+      <Project>{6a0955a2-d621-4c77-8cac-647e03593447}</Project>
+      <Name>_BusinessLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Web.Services;
-using BusinessLayer;
+using _BusinessLayer;
 
 namespace ajuUminho.Ws
 {
