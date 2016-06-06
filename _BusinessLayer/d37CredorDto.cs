@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using System;
 using _DataLayer;
+using System.Collections.Generic;
 
 namespace _BusinessLayer
 {
@@ -66,10 +67,30 @@ namespace _BusinessLayer
             c.guardar(cdto.nome, cdto.morada, cdto.codPostal, cdto.localidade, cdto.email, cdto.telefone, cdto.telemovel, cdto.fax, cdto.cc, cdto.iban, cdto.nif, cdto.lastChangeBy);
         }
 
-        public DataTable getListaCredor()
+        public Dictionary<String, d37CredorDto> getListaCredor()
+        {
+            d37Credor rl = new d37Credor();
+            DataTable dt = rl.getListaCredor();
+            Dictionary<String, d37CredorDto> lista = new Dictionary<String, d37CredorDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d37CredorDto rldto = new d37CredorDto(dt, i);
+                lista.Add(Convert.ToString(rldto.id), rldto);
+            }
+            return lista;
+        }
+
+        public Dictionary<String, d37CredorDto> getListaCredorNoProcesso(string id)
         {
             d37Credor c = new d37Credor();
-            return c.getListaCredor();
+            DataTable dt = c.getListaCredorNoProcesso(id);
+            Dictionary<String, d37CredorDto> lista = new Dictionary<String, d37CredorDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d37CredorDto cdto = new d37CredorDto(dt, i);
+                lista.Add(Convert.ToString(cdto.id), cdto);
+            }
+            return lista;
         }
 
         public void removerCredor(string id)

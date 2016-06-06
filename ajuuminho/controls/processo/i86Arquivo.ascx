@@ -4,13 +4,13 @@
 
             <div class="AlignBox">
                 <h3>Lista de processos</h3> <div class="hr-alignMore"> <hr /> </div>
-                <asp:ListBox ID="ListBoxProcessosID" runat="server" CssClass="ListBoxProcessos-Item"></asp:ListBox>
+                <asp:ListBox ID="ListBoxProcessosID" runat="server" CssClass="ListBoxProcessos-Item" OnSelectedIndexChanged="ListBoxProcessosID_SelectedIndexChanged"></asp:ListBox>
             </div>
                  <table class="ContentTable">
                   <tr>
                       <td> <asp:Label ID="LabelNomeInsolventeID" runat="server" Text="Label" CssClass="Labels-Item">
                            Nome do insolvente: </asp:Label> </td>
-                      <td> <asp:TextBox ID="TextBoxNomeInsolventeID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox> </td>
+                      <td> <asp:TextBox ID="TextBoxNomeInsolventeID" runat="server" CssClass="LabelsInputs-Item" ></asp:TextBox> </td>
                   </tr>
                   <tr>
                       <td> <asp:Label ID="LabelNomeProcessoID" runat="server" Text="Label" CssClass="Labels-Item"> 

@@ -5,7 +5,7 @@ using System.Data;
 
 namespace _BusinessLayer
 {
-    class d85ProcessoDto
+    public class d85ProcessoDto
     {
         public string idProcesso { get; set; }
         public string idLegal { get; set; }
@@ -26,15 +26,15 @@ namespace _BusinessLayer
 
         public d85ProcessoDto () { }
 
-        public d85ProcessoDto(DataTable dt, int i)
+        public d85ProcessoDto(DataTable processoBase, int i)
         {
-            this.idProcesso = Convert.ToString(dt.Rows[i]["id"]);
-            this.idLegal = Convert.ToString(dt.Rows[i]["idLegal"]);
-            this.idEstado = Convert.ToString(dt.Rows[i]["idEstado"]);
-            this.idTipoProcesso = Convert.ToString(dt.Rows[i]["idTipoProcesso"]);
-            this.dataInicio = Convert.ToDateTime(dt.Rows[i]["dataInicio"]);
-            this.dataEncerramento = Convert.ToDateTime(dt.Rows[i]["dataEncerramento"]);
-            this.lastChangeBy = Convert.ToString(dt.Rows[i]["lastChangeBy"]);
+            this.idProcesso = Convert.ToString(processoBase.Rows[i]["id"]);
+            this.idLegal = Convert.ToString(processoBase.Rows[i]["idLegal"]);
+            this.idEstado = Convert.ToString(processoBase.Rows[i]["idEstado"]);
+            this.idTipoProcesso = Convert.ToString(processoBase.Rows[i]["idTipoProcesso"]);
+            this.dataInicio = Convert.ToDateTime(processoBase.Rows[i]["dataInicio"]);
+            this.dataEncerramento = Convert.ToDateTime(processoBase.Rows[i]["dataEncerramento"]);
+            this.lastChangeBy = Convert.ToString(processoBase.Rows[i]["lastChangeBy"]);
         }
 
 
@@ -42,8 +42,18 @@ namespace _BusinessLayer
         {
             d85Processo p = new d85Processo();
             DataTable dt = p.getProcesso(id);
-            d85ProcessoDto rldto = new d85ProcessoDto(dt, 0);
-            return rldto;
+            d85ProcessoDto pdto = new d85ProcessoDto(dt, 0);
+            return pdto;
+        }
+
+        public d85ProcessoDto getProcessoCompleto(string id)
+        {
+            d85Processo p = new d85Processo();
+            DataTable dt = p.getProcesso(id);
+            d85ProcessoDto pdto = new d85ProcessoDto(dt, 0);
+            d37CredorDto x = new d37CredorDto();
+            pdto.listaCrDto = x.getListaCredorNoProcesso(id);
+            return pdto;
         }
 
         public void /*criarProcesso*/ guardar(d85ProcessoDto pdto)
@@ -51,15 +61,15 @@ namespace _BusinessLayer
             d85Processo rl = new d85Processo();
             rl.guardar(pdto.idLegal, pdto.idEstado, pdto.idTipoProcesso, pdto.dataInicio, pdto.dataEncerramento, pdto.lastChangeBy);
         }
-        public Dictionary<String, d21RepresentanteLegalDto> getListaRepresentanteLegal()
+        public Dictionary<String, d85ProcessoDto> getListaProcesso()
         {
-            d21RepresentanteLegal rl = new d21RepresentanteLegal();
-            DataTable dt = rl.getListaRepresentanteLegal();
-            Dictionary<String, d21RepresentanteLegalDto> lista = new Dictionary<String, d21RepresentanteLegalDto>();
+            d85Processo rl = new d85Processo();
+            DataTable dt = rl.getListaProcesso();
+            Dictionary<String, d85ProcessoDto> lista = new Dictionary<String, d85ProcessoDto>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto(dt, i);
-                lista.Add(Convert.ToString(rldto.id), rldto);
+                d85ProcessoDto rldto = new d85ProcessoDto(dt, i);
+                lista.Add(Convert.ToString(rldto.idProcesso), rldto);
             }
             return lista;
         }

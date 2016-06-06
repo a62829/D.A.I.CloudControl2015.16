@@ -70,13 +70,13 @@ namespace ajuUminho.controls.entidades
 
         protected void listaCredor()
         {
-            c39EdicaoCredor WsEC = new c39EdicaoCredor();
-            var lista = WsEC.getListaCredor();
-            foreach (KeyValuePair<String, String> pair in lista)
+            c39EdicaoCredor WsERL = new c39EdicaoCredor();
+            var lista = WsERL.getListaCredor();
+            foreach (KeyValuePair<String, d37CredorDto> pair in lista)
             {
                 ListItem Item = new ListItem();
-                Item.Text = pair.Value.ToString();
-                Item.Value = pair.Key.ToString();
+                Item.Text = pair.Value.nome.ToString();
+                Item.Value = pair.Value.id.ToString();
                 ListBoxEntidadesID.Items.Add(Item);
                 ListBoxEntidadesID.DataBind();
             }

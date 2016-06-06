@@ -89,6 +89,22 @@ namespace _DataLayer
             return dataTable;
         }
 
+        public DataTable getAjNoProcesso (string id)
+        {
+            SqlDataReader reader;
+            con.Open();
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "SELECT * FROM dbo.administradorJudicial WHERE id = @id";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            reader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
+
+        }
+
         public void removerAdministradorJudicial(string id)
         {
             con.Open();

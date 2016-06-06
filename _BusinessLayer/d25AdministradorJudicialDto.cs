@@ -53,8 +53,8 @@ namespace _BusinessLayer
         {
             d25AdministradorJudicial aj = new d25AdministradorJudicial();
             DataTable dt = aj.getAdministradorJudicial(id);
-            d25AdministradorJudicialDto rldto = new d25AdministradorJudicialDto(dt, 0);
-            return rldto;
+            d25AdministradorJudicialDto ajdto = new d25AdministradorJudicialDto(dt, 0);
+            return ajdto;
         }
 
         public void setAdministradorJudicial(d25AdministradorJudicialDto ajdto)

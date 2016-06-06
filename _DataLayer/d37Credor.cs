@@ -45,10 +45,22 @@ namespace _DataLayer
             dataTable.Load(reader);
             con.Close();
             return dataTable;
-
-
         }
 
+        public DataTable getListaCredorNoProcesso(string id)
+        {
+            SqlDataReader reader;
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "SELECT credor.id, credor.nome, credor.morada, credor.codPostal, credor.localidade, credor.email, credor.telefone, credor.telemovel, credor.fax, credor.cc, credor.iban, credor.nif, credor.lastChangeBy FROM credor Right Join credorNoProcesso ON credorNoProcesso.idCredor = credor.id WHERE credorNoProcesso.idProcesso = @id ORDER BY credor.id; ";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.Connection.Open();
+            reader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
+        }
 
         public void setCredor(string nome, string morada, string codPostal, string localidade, string email,
             string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy, string id)

@@ -55,18 +55,10 @@ namespace ajuUminho.Ws
         }
 
         [WebMethod]
-        public Dictionary<String, String> getListaCredor()
+        public Dictionary<String, d37CredorDto> getListaCredor()
         {
-
-            d37CredorDto cdto = new d37CredorDto();
-            DataTable dt = cdto.getListaCredor();
-            Dictionary<String, String> lista = new Dictionary<String, String>();
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                lista.Add(Convert.ToString(dt.Rows[i]["id"]), Convert.ToString(dt.Rows[i]["nome"]));
-            }
-            return lista;
-
+            d37CredorDto rldto = new d37CredorDto();
+            return rldto.getListaCredor();
         }
     }
 }
