@@ -34,6 +34,7 @@ namespace BusinessLayer
 
         public d25AdministradorJudicialDto(DataTable dt, int i)
         {
+            this.id = Convert.ToString(dt.Rows[i]["id"]);
             this.nome = Convert.ToString(dt.Rows[i]["nome"]);
             this.morada = Convert.ToString(dt.Rows[i]["morada"]);
             this.codPostal = Convert.ToString(dt.Rows[i]["codPostal"]);
@@ -52,8 +53,7 @@ namespace BusinessLayer
         {
             d25AdministradorJudicial aj = new d25AdministradorJudicial();
             DataTable dt = aj.getAdministradorJudicial(id);
-            int nrows = dt.Rows.Count;
-            d25AdministradorJudicialDto rldto = new d25AdministradorJudicialDto(dt, nrows);
+            d25AdministradorJudicialDto rldto = new d25AdministradorJudicialDto(dt, 0);
             return rldto;
         }
 

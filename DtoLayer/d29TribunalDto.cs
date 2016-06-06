@@ -49,8 +49,7 @@ namespace BusinessLayer
         {
             d29Tribunal t = new d29Tribunal();
             DataTable dt = t.getTribunal(id);
-            int nrows = dt.Rows.Count;
-            d29TribunalDto tdto = new d29TribunalDto(dt, nrows);
+            d29TribunalDto tdto = new d29TribunalDto(dt, 0);
             return tdto;
         }
 

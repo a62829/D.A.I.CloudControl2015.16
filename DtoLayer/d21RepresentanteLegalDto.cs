@@ -33,6 +33,7 @@ namespace BusinessLayer
 
         public d21RepresentanteLegalDto(DataTable dt, int i)
         {
+            this.id = Convert.ToString(dt.Rows[i]["id"]);
             this.nome = Convert.ToString(dt.Rows[i]["nome"]);
             this.morada = Convert.ToString(dt.Rows[i]["morada"]);
             this.codPostal = Convert.ToString(dt.Rows[i]["codPostal"]);
@@ -51,8 +52,7 @@ namespace BusinessLayer
         {
             d21RepresentanteLegal rl = new d21RepresentanteLegal();
             DataTable dt = rl.getRepresentanteLegal(id);
-            int nrows = dt.Rows.Count;
-            d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto(dt, nrows);
+            d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto(dt, 0);
             return rldto;
         }
 
@@ -69,7 +69,20 @@ namespace BusinessLayer
         public Dictionary<String, d21RepresentanteLegalDto> getListaRepresentanteLegal()
         {
             d21RepresentanteLegal rl = new d21RepresentanteLegal();
-            DataTable dt = rl.getRepresentanteLegal(id);
+            DataTable dt = rl.getListaRepresentanteLegal();
+            Dictionary<String, d21RepresentanteLegalDto> lista = new Dictionary<String, d21RepresentanteLegalDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto(dt, i);
+                lista.Add(Convert.ToString(rldto.id), rldto);
+            }
+            return lista;
+        }
+
+        public Dictionary<String, d21RepresentanteLegalDto> getListaRepresentanteLegalNoProcesso()
+        {
+            d21RepresentanteLegal rl = new d21RepresentanteLegal();
+            DataTable dt = rl.getListaRepresentanteLegalNoProcesso();
             Dictionary<String, d21RepresentanteLegalDto> lista = new Dictionary<String, d21RepresentanteLegalDto>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {

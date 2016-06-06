@@ -50,8 +50,7 @@ namespace BusinessLayer
         {
             d53OutraEntidade rl = new d53OutraEntidade();
             DataTable dt = rl.getOutraEntidade(id);
-            int nrows = dt.Rows.Count;
-            d53OutraEntidadeDto rldto = new d53OutraEntidadeDto(dt, nrows);
+            d53OutraEntidadeDto rldto = new d53OutraEntidadeDto(dt, 0);
             return rldto;
         }
 

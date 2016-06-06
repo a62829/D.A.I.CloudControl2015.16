@@ -50,8 +50,7 @@ namespace BusinessLayer
         {
             d37Credor rl = new d37Credor();
             DataTable dt = rl.getCredor(id);
-            int nrows = dt.Rows.Count;
-            d37CredorDto rldto = new d37CredorDto(dt, nrows);
+            d37CredorDto rldto = new d37CredorDto(dt, 0);
             return rldto;
         }
 

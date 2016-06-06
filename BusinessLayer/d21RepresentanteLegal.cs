@@ -48,6 +48,19 @@ namespace DataLayer
             return dataTable;
         }
 
+        public DataTable getListaRepresentanteLegalNoProcesso()
+        {
+            SqlDataReader reader;
+            cmd.CommandText = "SELECT * FROM [dbo].[representanteLegal];";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.Connection.Open();
+            reader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
+        }
 
         public void setRepresentanteLegal(string nome, string morada, string codPostal, string localidade, string email,
             string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy, string id)

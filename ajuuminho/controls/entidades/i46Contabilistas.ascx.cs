@@ -17,7 +17,6 @@ namespace ajuUminho.controls.entidades
             }
             else
             {
-                listaContabilista();
             }
         }
 
@@ -34,6 +33,8 @@ namespace ajuUminho.controls.entidades
             {
                 textbox.Text = string.Empty;
             }
+            ListBoxEntidadesID.Items.Clear();
+            listaContabilista();
         }
 
         protected void ListBoxEntidadesID_SelectedIndexChanged(object sender, EventArgs e)
@@ -53,8 +54,9 @@ namespace ajuUminho.controls.entidades
             TextBoxIbanID.Text = c.iban;
             TextBoxNifID.Text = c.nif;
             TextBoxLastChangedID.Text = c.lastChangeBy;
-            ListBoxEntidadesID.Items.Clear();
-            listaContabilista();
+            ListBoxEntidadesID.ClearSelection();
+            //ListBoxEntidadesID.Items.Clear();
+            //listaRepresentanteLegal();
         }
 
         protected void ButtonEditarID_Click(object sender, EventArgs e)

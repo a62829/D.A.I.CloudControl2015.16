@@ -50,8 +50,7 @@ namespace BusinessLayer
         {
             d49PrestadorServico rl = new d49PrestadorServico();
             DataTable dt = rl.getPrestadorServico(id);
-            int nrows = dt.Rows.Count;
-            d49PrestadorServicoDto rldto = new d49PrestadorServicoDto(dt, nrows);
+            d49PrestadorServicoDto rldto = new d49PrestadorServicoDto(dt, 0);
             return rldto;
         }
 

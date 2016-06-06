@@ -50,8 +50,7 @@ namespace BusinessLayer
         {
             d45Contabilista rl = new d45Contabilista();
             DataTable dt = rl.getContabilista(id);
-            int nrows = dt.Rows.Count;
-            d45ContabilistaDto rldto = new d45ContabilistaDto(dt, nrows);
+            d45ContabilistaDto rldto = new d45ContabilistaDto(dt, 0);
             return rldto;
         }
 

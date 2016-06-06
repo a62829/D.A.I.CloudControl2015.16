@@ -50,6 +50,7 @@
     <Compile Include="d45ContabilistaDto.cs" />
     <Compile Include="d49PrestadorServicoDto.cs" />
     <Compile Include="d53OutraEntidadeDto.cs" />
+    <Compile Include="d85ProcessoDto.cs" />
     <Compile Include="Entidade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

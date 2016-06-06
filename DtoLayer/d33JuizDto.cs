@@ -50,8 +50,7 @@ namespace BusinessLayer
         {
             d33Juiz rl = new d33Juiz();
             DataTable dt = rl.getJuiz(id);
-            int nrows = dt.Rows.Count;
-            d33JuizDto rldto = new d33JuizDto(dt, nrows);
+            d33JuizDto rldto = new d33JuizDto(dt, 0);
             return rldto;
         }
 

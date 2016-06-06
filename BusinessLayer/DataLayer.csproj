@@ -101,6 +101,7 @@
     <Compile Include="d45Contabilista.cs" />
     <Compile Include="d49PrestadorServico.cs" />
     <Compile Include="d53OutraEntidade.cs" />
+    <Compile Include="d85Processo.cs" />
     <Compile Include="DBcon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

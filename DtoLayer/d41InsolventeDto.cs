@@ -50,8 +50,7 @@ namespace BusinessLayer
         {
             d41Insolvente rl = new d41Insolvente();
             DataTable dt = rl.getInsolvente(id);
-            int nrows = dt.Rows.Count;
-            d41InsolventeDto rldto = new d41InsolventeDto(dt, nrows);
+            d41InsolventeDto rldto = new d41InsolventeDto(dt, 0);
             return rldto;
         }
 
