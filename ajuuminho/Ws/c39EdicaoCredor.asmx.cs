@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Services;
-using ajuUminho.App_Code;
+using BusinessLayer;
 using System.Data;
 
 namespace ajuUminho.Ws
@@ -32,10 +32,10 @@ namespace ajuUminho.Ws
 
         [WebMethod]
         public void criarCredor(string nome, string morada, string codPostal, string localidade, string email,
-            string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
+    string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
-            d37Credor c = new d37Credor();
-            c.guardar(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
+            d37CredorDto c = new d37CredorDto(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
+            c.guardar(c);
 
         }
 

@@ -1,4 +1,4 @@
-﻿using ajuUminho.App_Code;
+﻿using BusinessLayer;
 using ajuUminho.Ws;
 using System;
 using System.Collections.Generic;
@@ -23,12 +23,12 @@ namespace ajuUminho.controls.entidades
 
         protected void ButtonCriarID_Click(object sender, EventArgs e)
         {
-            d33Juiz j = new d33Juiz();
-            j.guardar(TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
+            c35EdicaoJuiz ws = new c35EdicaoJuiz();
+            ws.criarJuiz(TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text);
 
-            string mystring = "Juiz criado com sucesso.";
+            string mystring = "Representante Legal criado com sucesso.";
             this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
             foreach (TextBox textbox in this.Controls.OfType<TextBox>())
             {

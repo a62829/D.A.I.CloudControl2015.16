@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ajuUminho.App_Code;
+﻿using System.Collections.Generic;
+using BusinessLayer;
 
 namespace Factory
 {

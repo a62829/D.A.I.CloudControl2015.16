@@ -1,9 +1,9 @@
-﻿using ajuUminho.App_Code;
-using ajuUminho.Ws;
+﻿using ajuUminho.Ws;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI.WebControls;
+using BusinessLayer;
 
 namespace ajuUminho.controls.entidades
 {
@@ -23,8 +23,8 @@ namespace ajuUminho.controls.entidades
 
         protected void ButtonCriarID_Click(object sender, EventArgs e)
         {
-            d21RepresentanteLegal rl = new d21RepresentanteLegal();
-            rl.guardar(TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
+            c23EditarRepresentanteLegal ws = new c23EditarRepresentanteLegal();
+            ws.criarRepresentanteLegal(TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text);
 
@@ -40,7 +40,7 @@ namespace ajuUminho.controls.entidades
         {
             c23EditarRepresentanteLegal erl = new c23EditarRepresentanteLegal();
             string idRl = ListBoxEntidadesID.SelectedValue.ToString();
-            d21RepresentanteLegalDto rl = erl.getRepresentanteLegal(idRl);
+            var rl = erl.getRepresentanteLegal(idRl);
             TextBoxNomeID.Text = rl.nome;
             TextBoxMoradaID.Text = rl.morada;
             TextBoxCodPostalID.Text = rl.codPostal;
@@ -69,11 +69,11 @@ namespace ajuUminho.controls.entidades
         {
             c23EditarRepresentanteLegal WsERL = new c23EditarRepresentanteLegal();
             var lista = WsERL.getListaRepresentantesLegais();
-            foreach (KeyValuePair<String, String> pair in lista)
+            foreach (KeyValuePair<String, d21RepresentanteLegalDto> pair in lista)
             {
                 ListItem Item = new ListItem();
-                Item.Text = pair.Value.ToString();
-                Item.Value = pair.Key.ToString();
+                Item.Text = pair.Value.nome.ToString();
+                Item.Value = pair.Value.id.ToString();
                 ListBoxEntidadesID.Items.Add(Item);
                 ListBoxEntidadesID.DataBind();
             }

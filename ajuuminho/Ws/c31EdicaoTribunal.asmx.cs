@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Services;
-using ajuUminho.App_Code;
+using BusinessLayer;
 using System.Data;
 
 namespace ajuUminho.Ws
@@ -33,10 +33,10 @@ namespace ajuUminho.Ws
 
         [WebMethod]
         public void criarTribunal(string nome, string morada, string codPostal, string localidade, string email,
-            string telefone, string telemovel, string fax, string iban, string nif, string lastChangeBy)
+   string telefone, string telemovel, string fax, string iban, string nif, string lastChangeBy)
         {
-            d29Tribunal t = new d29Tribunal();
-            t.guardar(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, iban, nif, lastChangeBy);
+            d29TribunalDto rl = new d29TribunalDto(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, iban, nif, lastChangeBy);
+            rl.guardar(rl);
 
         }
 

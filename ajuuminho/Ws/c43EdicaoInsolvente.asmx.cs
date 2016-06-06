@@ -1,4 +1,4 @@
-﻿using ajuUminho.App_Code;
+﻿using BusinessLayer;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -32,10 +32,10 @@ namespace ajuUminho.Ws
 
         [WebMethod]
         public void criarInsolvente(string nome, string morada, string codPostal, string localidade, string email,
-            string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
+    string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
-            d41Insolvente i = new d41Insolvente();
-            i.guardar(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
+            d41InsolventeDto i = new d41InsolventeDto(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
+            i.guardar(i);
 
         }
 

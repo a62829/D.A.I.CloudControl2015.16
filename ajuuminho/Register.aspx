@@ -28,6 +28,7 @@
         </div>
         <div style="margin-bottom:10px">
             <asp:Label runat="server" AssociatedControlID="ConfirmPassword">Confirm password</asp:Label>
+            <asp:FileUpload ID="FileUpload1" runat="server" />
             <div>
                 <asp:TextBox runat="server" ID="ConfirmPassword" TextMode="Password" />                
             </div>

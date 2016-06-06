@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
-using ajuUminho.App_Code;
+using BusinessLayer;
 using System.Data;
 
 namespace ajuUminho.Ws
@@ -35,10 +35,10 @@ namespace ajuUminho.Ws
 
         [WebMethod]
         public void criarPrestadorServico(string nome, string morada, string codPostal, string localidade, string email,
-            string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
+    string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
-            d49PrestadorServico ps = new d49PrestadorServico();
-            ps.guardar(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
+            d49PrestadorServicoDto ps = new d49PrestadorServicoDto(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
+            ps.guardar(ps);
 
         }
 

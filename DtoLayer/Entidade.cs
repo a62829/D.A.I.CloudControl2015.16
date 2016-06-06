@@ -2,7 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 
-namespace ajuUminho.App_Code
+namespace BusinessLayer
 {
     public abstract class Entidade
     {
@@ -19,6 +19,7 @@ namespace ajuUminho.App_Code
         public string iban { get; set; }
         public string nif { get; set; }
         public string lastChangeBy { get; set; }
+        public string message { get; set; }
 
 
         public Entidade()

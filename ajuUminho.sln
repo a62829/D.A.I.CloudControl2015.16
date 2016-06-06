@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ajuUminho", "ajuUminho\ajuU
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factory", "Factory\Factory.csproj", "{21B0EBC6-C10B-4CD2-961D-74B3677E55FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "BusinessLayer\DataLayer.csproj", "{28848003-7EDA-4F0D-A298-913D768AC96C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "DtoLayer\BusinessLayer.csproj", "{959D377E-4733-4C67-8830-A210244744EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{21B0EBC6-C10B-4CD2-961D-74B3677E55FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21B0EBC6-C10B-4CD2-961D-74B3677E55FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21B0EBC6-C10B-4CD2-961D-74B3677E55FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28848003-7EDA-4F0D-A298-913D768AC96C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28848003-7EDA-4F0D-A298-913D768AC96C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28848003-7EDA-4F0D-A298-913D768AC96C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28848003-7EDA-4F0D-A298-913D768AC96C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{959D377E-4733-4C67-8830-A210244744EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{959D377E-4733-4C67-8830-A210244744EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{959D377E-4733-4C67-8830-A210244744EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{959D377E-4733-4C67-8830-A210244744EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

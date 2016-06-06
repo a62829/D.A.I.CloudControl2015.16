@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Services;
-using ajuUminho.App_Code;
+using BusinessLayer;
 using System.Data;
 
 namespace ajuUminho.Ws
@@ -34,8 +34,8 @@ namespace ajuUminho.Ws
         public void criarContabilista(string nome, string morada, string codPostal, string localidade, string email,
             string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
-            d45Contabilista c = new d45Contabilista();
-            c.guardar(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
+            d45ContabilistaDto c = new d45ContabilistaDto();
+            c.guardar(c);
 
         }
 

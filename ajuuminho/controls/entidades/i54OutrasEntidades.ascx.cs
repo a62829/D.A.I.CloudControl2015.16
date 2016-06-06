@@ -1,4 +1,4 @@
-﻿using ajuUminho.App_Code;
+﻿using BusinessLayer;
 using ajuUminho.Ws;
 using System;
 using System.Collections.Generic;

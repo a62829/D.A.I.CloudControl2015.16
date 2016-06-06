@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
-using ajuUminho.App_Code;
+using BusinessLayer;
 using System.Data;
 
 namespace ajuUminho.Ws
@@ -35,10 +35,10 @@ namespace ajuUminho.Ws
 
         [WebMethod]
         public void criarAdministradorJudicial(string nome, string morada, string codPostal, string localidade, string email,
-            string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
+    string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
-            d25AdministradorJudicial aj = new d25AdministradorJudicial();
-            aj.guardar(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
+            d25AdministradorJudicialDto rl = new d25AdministradorJudicialDto(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
+            rl.guardar(rl);
 
         }
 

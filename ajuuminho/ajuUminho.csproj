@@ -188,27 +188,7 @@
     <Content Include="js\organictabs.jquery.js" />
     <Content Include="packages.config" />
     <Content Include="fonts\Helvetica.otf" />
-    <Compile Include="App_Code\d21RepresentanteLegal.cs" />
-    <Compile Include="App_Code\d29Tribunal.cs" />
-    <Compile Include="App_Code\d29TribunalDto.cs" />
-    <Compile Include="App_Code\d33Juiz.cs" />
-    <Compile Include="App_Code\d37Credor.cs" />
-    <Compile Include="App_Code\d41Insolvente.cs" />
-    <Compile Include="App_Code\d45Contabilista.cs" />
-    <Compile Include="App_Code\d53OutraEntidade.cs" />
-    <Compile Include="App_Code\d49PrestadorServico.cs" />
-    <Compile Include="App_Code\d25AdministradorJudicial.cs" />
-    <Compile Include="App_Code\d25AdministradorJudicialDto.cs" />
-    <Compile Include="App_Code\d33JuizDto.cs" />
-    <Compile Include="App_Code\d37CredorDto.cs" />
-    <Compile Include="App_Code\d41InsolventeDto.cs" />
-    <Compile Include="App_Code\d45ContabilistaDto.cs" />
-    <Compile Include="App_Code\d49PrestadorServicoDto.cs" />
-    <Compile Include="App_Code\d53OutraEntidadeDto.cs" />
     <Compile Include="App_Code\DBcon.cs" />
-    <Compile Include="App_Code\Entidade.cs" />
-    <Compile Include="App_Code\d21RepresentanteLegalDto.cs" />
-    <Content Include="App_Code\InterfaceEntidade.cs" />
     <Compile Include="controls\administracao\i10ConfirmarPerfil.ascx.cs">
       <DependentUpon>i10ConfirmarPerfil.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -639,7 +619,12 @@
     </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DtoLayer\BusinessLayer.csproj">
+      <Project>{959d377e-4733-4c67-8830-a210244744ea}</Project>
+      <Name>BusinessLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>

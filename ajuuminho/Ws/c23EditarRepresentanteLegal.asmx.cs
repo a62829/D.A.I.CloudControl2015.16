@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web.Services;
-using ajuUminho.App_Code;
 using System.Data;
+using System.Web.Services;
+using BusinessLayer;
 
 namespace ajuUminho.Ws
 {
@@ -35,8 +35,8 @@ namespace ajuUminho.Ws
         public void criarRepresentanteLegal (string nome, string morada, string codPostal, string localidade, string email,
             string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
-            d21RepresentanteLegal rl = new d21RepresentanteLegal();
-            rl.guardar(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
+            d21RepresentanteLegalDto rl = new d21RepresentanteLegalDto(nome, morada, codPostal, localidade, email, telefone, telemovel, fax , cc , iban, nif, lastChangeBy);
+            rl.guardar(rl);
 
         }
 
@@ -56,19 +56,11 @@ namespace ajuUminho.Ws
         }
 
         [WebMethod]
-        public Dictionary<String, String> getListaRepresentantesLegais()
+        public Dictionary<String, d21RepresentanteLegalDto> getListaRepresentantesLegais()
         {
-            
             d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
-            DataTable dt = rldto.getListaRepresentanteLegal();
-            Dictionary<String, String> lista = new Dictionary<String, String>();
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                lista.Add(Convert.ToString(dt.Rows[i]["id"]), Convert.ToString(dt.Rows[i]["nome"]));
-            }
-            return lista;
-
-    }
+            return rldto.getListaRepresentanteLegal();
+        }
 
     }
 }
