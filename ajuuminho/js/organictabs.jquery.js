@@ -12,7 +12,7 @@
         
         // Navigation for current selector passed to plugin
         base.$nav = base.$el.find(".nav");
-        
+
         // Runs once when plugin called       
         base.init = function() {
         

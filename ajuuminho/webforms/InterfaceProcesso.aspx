@@ -119,7 +119,7 @@
 		</div> <!-- END List Wrap -->
         </div>          
 
-            <div id="MultiViewButtonsBox">
+<%--            <div id="MultiViewButtonsBox">
                 <asp:Button Text="Eventos" BorderStyle="None" ID="TabEventosID" CssClass="Initial" runat="server"
                     OnClick="TabEventos_Click" />
                 <asp:Button Text="Bens" BorderStyle="None" ID="TabBensID" CssClass="Initial" runat="server"
@@ -186,7 +186,7 @@
                             <uc11:i56AtribuicaoEntidades runat="server" id="atribuicaoEntidadesID" />
                         </div>
                     </asp:View>
-                 </asp:MultiView>
+                 </asp:MultiView>--%>
 
     </div>
 </div>

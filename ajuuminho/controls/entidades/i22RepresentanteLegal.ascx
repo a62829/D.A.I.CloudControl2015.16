@@ -48,7 +48,6 @@
                   <tr>
                       <td> <asp:Label ID="LabelFaxID" runat="server" Text="Label" CssClass="Labels-Item"> 
                           Fax: </asp:Label> </td>
-                      <asp:ListBox ID="ListBox1" runat="server"></asp:ListBox>
                       <td> <asp:TextBox ID="TextBoxFaxID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox> </td>
                   </tr>
                   <tr>

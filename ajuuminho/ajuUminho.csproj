@@ -177,6 +177,8 @@
     <Content Include="controls\utilizadores\i12AutenticacaoDeUtilizadores.ascx" />
     <Content Include="controls\utilizadores\i14TerminoDeSessao.ascx" />
     <Content Include="controls\utilizadores\i4AlteracaoDeDadosPessoais.ascx" />
+    <Content Include="css\styleTiny.css" />
+    <Content Include="css\styleTeste.css" />
     <Content Include="css\style.css" />
     <Content Include="css\StyleSheet.css" />
     <Content Include="imagens\default_profile_avatar.png" />
@@ -185,6 +187,7 @@
     <Content Include="imagens\InitialImage.png" />
     <Content Include="imagens\logo.png" />
     <Content Include="imagens\SelectedButton.png" />
+    <Content Include="js\jquery.organictabs.js" />
     <Content Include="js\organictabs.jquery.js" />
     <Content Include="packages.config" />
     <Content Include="fonts\Helvetica.otf" />
@@ -501,6 +504,27 @@
     <Compile Include="webforms\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebFormTeste2.aspx.cs">
+      <DependentUpon>WebFormTeste2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormTeste2.aspx.designer.cs">
+      <DependentUpon>WebFormTeste2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormTeste3.aspx.cs">
+      <DependentUpon>WebFormTeste3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormTeste3.aspx.designer.cs">
+      <DependentUpon>WebFormTeste3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormTste.aspx.cs">
+      <DependentUpon>WebFormTste.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormTste.aspx.designer.cs">
+      <DependentUpon>WebFormTste.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Ws\c23EditarRepresentanteLegal.asmx.cs">
       <DependentUpon>c23EditarRepresentanteLegal.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -587,6 +611,9 @@
     <Content Include="webforms\InterfaceProcesso.aspx" />
     <Content Include="webforms\InterfaceRelatorios.aspx" />
     <Content Include="webforms\login.aspx" />
+    <Content Include="WebFormTeste2.aspx" />
+    <Content Include="WebFormTeste3.aspx" />
+    <Content Include="WebFormTste.aspx" />
     <Content Include="Ws\c23EditarRepresentanteLegal.asmx" />
     <Content Include="Ws\c24RemocaoRepresentanteLegal.asmx" />
     <Content Include="Ws\c27EdicaoAdministradorJudicial.asmx" />
