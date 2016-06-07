@@ -51,8 +51,7 @@ namespace _BusinessLayer
             d85Processo p = new d85Processo();
             DataTable dt = p.getProcesso(id);
             d85ProcessoDto pdto = new d85ProcessoDto(dt, 0);
-            d37CredorDto x = new d37CredorDto();
-            pdto.listaCrDto = x.getListaCredorNoProcesso(id);
+            pdto.listaCrDto = pdto.getListaCredorNoProcesso(id);
             return pdto;
         }
 
@@ -70,6 +69,19 @@ namespace _BusinessLayer
             {
                 d85ProcessoDto rldto = new d85ProcessoDto(dt, i);
                 lista.Add(Convert.ToString(rldto.idProcesso), rldto);
+            }
+            return lista;
+        }
+
+        public Dictionary<String, d37CredorDto> getListaCredorNoProcesso(string id)
+        {
+            d37Credor c = new d37Credor();
+            DataTable dt = c.getListaCredorNoProcesso(id);
+            Dictionary<String, d37CredorDto> lista = new Dictionary<String, d37CredorDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d37CredorDto cdto = new d37CredorDto(dt, i);
+                lista.Add(Convert.ToString(cdto.id), cdto);
             }
             return lista;
         }

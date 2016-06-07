@@ -62,12 +62,6 @@ namespace ajuUminho.Ws
             return rldto.getListaRepresentanteLegal();
         }
 
-        [WebMethod]
-        public Dictionary<String, d85ProcessoDto> getListaProcesso()
-        {
-            d85ProcessoDto rldto = new d85ProcessoDto();
-            return rldto.getListaProcesso();
-        }
 
     }
 }

@@ -4,7 +4,7 @@
 
             <div class="AlignBox">
                 <h3>Lista de processos</h3> <div class="hr-alignMore"> <hr /> </div>
-                <asp:ListBox ID="ListBoxProcessosID" runat="server" CssClass="ListBoxProcessos-Item" OnSelectedIndexChanged="ListBoxProcessosID_SelectedIndexChanged"></asp:ListBox>
+                <asp:ListBox ID="ListBoxProcessosID" runat="server" CssClass="ListBoxProcessos-Item" OnSelectedIndexChanged="ListBoxProcessosID_SelectedIndexChanged1" ></asp:ListBox>
             </div>
                  <table class="ContentTable">
                   <tr>
