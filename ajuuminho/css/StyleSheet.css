@@ -462,7 +462,7 @@ table {
             color: White;
             cursor: pointer;
             background: #333;*/
-            display: block; padding: 4px 12px 4px 12px; color: #666; float: left; cursor: pointer; font-size: 12px; background-color: #ddd;
+            display: block; padding: 4px 12px 4px 12px; color: #666; float: left; cursor: pointer; font-size: 12px; /*background-color: #ddd;*/
 
         }
 /*----------------------------------------------*/
@@ -532,7 +532,7 @@ table {
   width: 1225px;
 }
 
-#MultiViewButtonsBox {
+#MultiViewButtonsBox, .ViewsButtonsBox {
     margin: auto;
     width: 1100px;
     height: 22px;
@@ -544,7 +544,6 @@ table {
     width: 1100px;
     padding-top: 22px;
     padding-bottom: 25px;
-    min-height: 220px;
     background:#ddd
 }
 
