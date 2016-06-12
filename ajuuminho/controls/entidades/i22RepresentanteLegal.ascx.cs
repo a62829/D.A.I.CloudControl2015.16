@@ -68,7 +68,7 @@ namespace ajuUminho.controls.entidades
             c23EditarRepresentanteLegal WsERL = new c23EditarRepresentanteLegal();
             WsERL.editarRepresentanteLegal(TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
-                TextBoxNifID.Text, TextBoxLastChangedID.Text);
+                TextBoxNifID.Text, TextBoxLastChangedID.Text, ListBoxEntidadesID.SelectedValue.ToString());
         }
 
         protected void listaRepresentanteLegal()

@@ -19,8 +19,12 @@ namespace ajuUminho.Ws
 
         [WebMethod]
         public void editarRepresentanteLegal(string nome, string morada, string codPostal, string localidade, string email,
-            string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
+            string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy, string id)
         {
+
+            d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto(id, nome, morada, codPostal, localidade, email, telefone, telemovel,
+                                                                            fax, cc, iban, nif, lastChangeBy);
+            rldto.setRepresentanteLegal(rldto);
             //// efetuar controlos
             //d21RepresentanteLegal rl = new d21RepresentanteLegal();
             //var id = rl.getID(cc);
