@@ -10,10 +10,10 @@ a:focus { outline: 0; }
 
 #example-two .list-wrap { background: #ddd !important; padding: 10px; margin: 0 0 15px 0; }
 
-#example-two ul { list-style: none; }
-#example-two ul li a { display: block; border-bottom: 1px solid #666; padding: 4px; color: #666; }
-#example-two ul li a:hover { background: #333; color: white; }
-#example-two ul li:last-child a { border: none; }
+#example-two { list-style: none; }
+#example-two /*ul li a*/ { display: block; border-bottom: 1px solid #666; padding: 4px; color: #666; font-size: 10px; }
+#example-two /*ul li a:hover*/ { background: #333; color: white; }
+#example-two /*ul li:last-child a*/ { border: none; }
 
 #example-two .nav { overflow: hidden; }
 #example-two .nav li { width: 100px; float: left; margin: 0 10px 0 0; }
