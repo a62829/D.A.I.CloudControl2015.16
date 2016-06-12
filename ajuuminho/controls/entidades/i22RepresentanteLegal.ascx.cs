@@ -9,15 +9,19 @@ namespace ajuUminho.controls.entidades
 {
     public partial class i22RepresentanteLegal : System.Web.UI.UserControl
     {
+        private Dictionary<String, d21RepresentanteLegalDto> lista = new Dictionary<string, d21RepresentanteLegalDto>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!IsPostBack)
             {
                 listaRepresentanteLegal();
             }
             else
             {
-            }          
+
+            }
         }
 
         protected void ButtonCriarID_Click(object sender, EventArgs e)
@@ -70,7 +74,7 @@ namespace ajuUminho.controls.entidades
         protected void listaRepresentanteLegal()
         {
             c23EditarRepresentanteLegal WsERL = new c23EditarRepresentanteLegal();
-            var lista = WsERL.getListaRepresentantesLegais();
+            this.lista = WsERL.getListaRepresentantesLegais();
             foreach (KeyValuePair<String, d21RepresentanteLegalDto> pair in lista)
             {
                 ListItem Item = new ListItem();
@@ -80,5 +84,6 @@ namespace ajuUminho.controls.entidades
                 ListBoxEntidadesID.DataBind();
             }
         }
+
     }
 }

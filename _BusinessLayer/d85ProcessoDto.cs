@@ -11,8 +11,8 @@ namespace _BusinessLayer
         public string idLegal { get; set; }
         public string idEstado { get; set; }
         public string idTipoProcesso { get; set; }
-        public DateTime dataInicio { get; set; }
-        public DateTime dataEncerramento { get; set; }
+        public string dataInicio { get; set; }
+        public string dataEncerramento { get; set; }
         public string lastChangeBy { get; set; }
         public Dictionary<string, d21RepresentanteLegalDto> listaRlDto { get; set; }
         public Dictionary<string, d25AdministradorJudicialDto> listaAjDto { get; set; }
@@ -32,8 +32,8 @@ namespace _BusinessLayer
             this.idLegal = Convert.ToString(processoBase.Rows[i]["idLegal"]);
             this.idEstado = Convert.ToString(processoBase.Rows[i]["idEstado"]);
             this.idTipoProcesso = Convert.ToString(processoBase.Rows[i]["idTipoProcesso"]);
-            this.dataInicio = Convert.ToDateTime(processoBase.Rows[i]["dataInicio"]);
-            this.dataEncerramento = Convert.ToDateTime(processoBase.Rows[i]["dataEncerramento"]);
+            this.dataInicio = Convert.ToString(processoBase.Rows[i]["dataInicio"]);
+            this.dataEncerramento = Convert.ToString(processoBase.Rows[i]["dataEncerramento"]);
             this.lastChangeBy = Convert.ToString(processoBase.Rows[i]["lastChangeBy"]);
         }
 
@@ -82,6 +82,19 @@ namespace _BusinessLayer
             {
                 d37CredorDto cdto = new d37CredorDto(dt, i);
                 lista.Add(Convert.ToString(cdto.id), cdto);
+            }
+            return lista;
+        }
+
+        public Dictionary<String, d21RepresentanteLegalDto> getListaRepresentanteLegalNoProcesso(string id)
+        {
+            d21RepresentanteLegal rl = new d21RepresentanteLegal();
+            DataTable dt = rl.getListaRepresentanteLegalNoProcesso(id);
+            Dictionary<String, d21RepresentanteLegalDto> lista = new Dictionary<String, d21RepresentanteLegalDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto(dt, i);
+                lista.Add(Convert.ToString(rldto.id), rldto);
             }
             return lista;
         }

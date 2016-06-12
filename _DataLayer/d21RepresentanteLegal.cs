@@ -48,10 +48,11 @@ namespace _DataLayer
             return dataTable;
         }
 
-        public DataTable getListaRepresentanteLegalNoProcesso()
+        public DataTable getListaRepresentanteLegalNoProcesso(string id)
         {
             SqlDataReader reader;
-            cmd.CommandText = "SELECT * FROM [dbo].[representanteLegal];";
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "SELECT representanteLegal.id, representanteLegal.nome, representanteLegal.morada, representanteLegal.codPostal, representanteLegal.localidade, representanteLegal.email, representanteLegal.telefone, representanteLegal.telemovel, representanteLegal.fax, representanteLegal.cc, representanteLegal.iban, representanteLegal.nif, representanteLegal.lastChangeBy FROM representanteLegal Right Join representanteLegalNoProcesso ON representanteLegalNoProcesso.idRepresentanteLegal = representanteLegal.id WHERE representanteLegalNoProcesso.idProcesso = @id ORDER BY representanteLegal.id; ";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();

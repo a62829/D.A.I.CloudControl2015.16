@@ -554,6 +554,7 @@
       <DependentUpon>c87.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Ws\cInterfaceEntidade.cs" />
     <Compile Include="Ws\ControloDeEntidades.asmx.cs">
       <DependentUpon>ControloDeEntidades.asmx</DependentUpon>
     </Compile>

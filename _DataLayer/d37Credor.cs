@@ -36,7 +36,7 @@ namespace _DataLayer
         public DataTable getListaCredor()
         {
             SqlDataReader reader;
-            cmd.CommandText = "SELECT id, nome FROM [dbo].[credor];";
+            cmd.CommandText = "SELECT * FROM [dbo].[credor];";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();

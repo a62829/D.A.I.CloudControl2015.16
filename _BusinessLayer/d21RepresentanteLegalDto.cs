@@ -61,11 +61,13 @@ namespace _BusinessLayer
             d21RepresentanteLegal rl = new d21RepresentanteLegal();
             rl.setRepresentanteLegal(rldto.nome, rldto.morada, rldto.codPostal, rldto.localidade, rldto.email, rldto.telefone, rldto.telemovel, rldto.fax, rldto.cc, rldto.iban, rldto.nif, rldto.lastChangeBy, rldto.id);
         }
+
         public void guardar(d21RepresentanteLegalDto rldto)
         {
             d21RepresentanteLegal rl = new d21RepresentanteLegal();
             rl.guardar(rldto.nome, rldto.morada, rldto.codPostal, rldto.localidade, rldto.email, rldto.telefone, rldto.telemovel, rldto.fax, rldto.cc, rldto.iban, rldto.nif, rldto.lastChangeBy);
         }
+
         public Dictionary<String, d21RepresentanteLegalDto> getListaRepresentanteLegal()
         {
             d21RepresentanteLegal rl = new d21RepresentanteLegal();
@@ -79,18 +81,6 @@ namespace _BusinessLayer
             return lista;
         }
 
-        public Dictionary<String, d21RepresentanteLegalDto> getListaRepresentanteLegalNoProcesso()
-        {
-            d21RepresentanteLegal rl = new d21RepresentanteLegal();
-            DataTable dt = rl.getListaRepresentanteLegalNoProcesso();
-            Dictionary<String, d21RepresentanteLegalDto> lista = new Dictionary<String, d21RepresentanteLegalDto>();
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto(dt, i);
-                lista.Add(Convert.ToString(rldto.id), rldto);
-            }
-            return lista;
-        }
         public void removerRepresentanteLegal(string id)
         {
             d21RepresentanteLegal rl = new d21RepresentanteLegal();
