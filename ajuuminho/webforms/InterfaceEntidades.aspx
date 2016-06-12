@@ -49,7 +49,7 @@
             	<div id="example-two">
 		
 		<ul class="nav">
-			<li class="nav-one"><a href="#RepresentanteLegal">Representante Legal</a></li>
+			<li class="nav-one" runat="server" onclick="mostrar_operacoes"><a href="#RepresentanteLegal">Representante Legal</a></li>
 			<li class="nav-two"><a href="#AdministradoresJudiciais">Administrador Judicial</a></li>
 			<li class="nav-three"><a href="#Tribunais">Tribunal</a></li>
             <li class="nav-three"><a href="#Credores">Credores</a></li>
@@ -114,7 +114,6 @@
 			    <li class="nav-two"><a href="#EditarInsolventes">Editar</a></li>
                 <li class="nav-one"><a href="#EliminarInsolventes">Eliminar</a></li>
 			    <li class="nav-two"><a href="#PesquisarInsolventes">Pesquisar??</a></li>
-                <uc7:i42Insolventes runat="server" id="I83Insolventes1" />
             </ul>
 		</div>
 

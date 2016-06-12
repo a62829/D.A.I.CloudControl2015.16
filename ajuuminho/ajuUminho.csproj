@@ -509,6 +509,13 @@
     <Compile Include="webforms\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="webforms\ProcessoTeste.aspx.cs">
+      <DependentUpon>ProcessoTeste.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\ProcessoTeste.aspx.designer.cs">
+      <DependentUpon>ProcessoTeste.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebFormTeste2.aspx.cs">
       <DependentUpon>WebFormTeste2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -616,6 +623,7 @@
     <Content Include="webforms\InterfaceProcesso.aspx" />
     <Content Include="webforms\InterfaceRelatorios.aspx" />
     <Content Include="webforms\login.aspx" />
+    <Content Include="webforms\ProcessoTeste.aspx" />
     <Content Include="WebFormTeste2.aspx" />
     <Content Include="WebFormTeste3.aspx" />
     <Content Include="WebFormTste.aspx" />

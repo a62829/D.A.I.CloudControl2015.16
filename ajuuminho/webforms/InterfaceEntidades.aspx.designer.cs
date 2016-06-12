@@ -31,15 +31,6 @@ namespace ajuUminho.webforms {
         protected global::ajuUminho.controls.utilizadores.i14TerminoDeSessao headerID;
         
         /// <summary>
-        /// I83Insolventes1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ajuUminho.controls.entidades.i42Insolventes I83Insolventes1;
-        
-        /// <summary>
         /// I22RepresentanteLegal1 control.
         /// </summary>
         /// <remarks>

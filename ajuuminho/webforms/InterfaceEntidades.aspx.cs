@@ -9,6 +9,15 @@ namespace ajuUminho.webforms
 {
     public partial class InterfaceEntidades : System.Web.UI.Page
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void mostrar_operacoes()
+        {
+            Response.Redirect("~/webforms/InterfaceEntidade.aspx");
+        }
         //protected void Page_Load(object sender, EventArgs e)
         //{
         //    if (!IsPostBack)
