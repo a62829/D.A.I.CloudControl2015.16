@@ -20,9 +20,12 @@ namespace ajuUminho.Ws
     {
 
         [WebMethod]
-        public void editarAdministradorJudicial(string nome, string morada, string codPostal, string localidade, string email,
+        public void editarAdministradorJudicial(string id, string nome, string morada, string codPostal, string localidade, string email,
                     string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
+            d25AdministradorJudicialDto ajdto = new d25AdministradorJudicialDto(id, nome, morada, codPostal, localidade, email, telefone, telemovel, fax,
+                                                                                cc, iban, nif, lastChangeBy);
+            ajdto.setAdministradorJudicial(ajdto);
             //// efetuar controlos
             //d21RepresentanteLegal rl = new d21RepresentanteLegal();
             //var id = rl.getID(cc);

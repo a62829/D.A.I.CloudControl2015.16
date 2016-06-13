@@ -64,7 +64,7 @@ namespace ajuUminho.controls.entidades
             c31EdicaoTribunal WsET = new c31EdicaoTribunal();
             WsET.editarTribunal(TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxIbanID.Text,
-                TextBoxNifID.Text, TextBoxLastChangedID.Text);
+                TextBoxNifID.Text, TextBoxLastChangedID.Text, ListBoxEntidadesID.SelectedValue.ToString());
         }
 
         protected void listaTribunal()

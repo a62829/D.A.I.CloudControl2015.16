@@ -19,8 +19,9 @@ namespace ajuUminho.Ws
 
         [WebMethod]
         public void editarTribunal(string nome, string morada, string codPostal, string localidade, string email,
-            string telefone, string telemovel, string fax, string iban, string nif, string lastChangeBy)
+            string telefone, string telemovel, string fax, string iban, string nif, string lastChangeBy, string id)
         {
+            d29TribunalDto tdto = new d29TribunalDto(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, iban, nif, lastChangeBy, id);
             //// efetuar controlos
             //d29Tribunal t = new d29Tribunal();
             //var id = t.getID();

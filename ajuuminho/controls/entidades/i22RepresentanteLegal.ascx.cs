@@ -38,6 +38,7 @@ namespace ajuUminho.controls.entidades
                 textbox.Text = string.Empty;
             }
             ListBoxEntidadesID.Items.Clear();
+            ListBoxEntidadesID.ClearSelection();
             listaRepresentanteLegal();
         }
 
@@ -58,7 +59,7 @@ namespace ajuUminho.controls.entidades
             TextBoxIbanID.Text = rl.iban;
             TextBoxNifID.Text = rl.nif;
             TextBoxLastChangedID.Text = rl.lastChangeBy;
-            ListBoxEntidadesID.ClearSelection();
+            //ListBoxEntidadesID.ClearSelection();
             //ListBoxEntidadesID.Items.Clear();
             //listaRepresentanteLegal();
         }
@@ -69,6 +70,15 @@ namespace ajuUminho.controls.entidades
             WsERL.editarRepresentanteLegal(TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text, ListBoxEntidadesID.SelectedValue.ToString());
+            string mystring = "Representante Legal editado com sucesso.";
+            this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
+            foreach (TextBox textbox in this.Controls.OfType<TextBox>())
+            {
+                textbox.Text = string.Empty;
+            }
+            ListBoxEntidadesID.Items.Clear();
+            ListBoxEntidadesID.ClearSelection();
+            listaRepresentanteLegal();
         }
 
         protected void listaRepresentanteLegal()
