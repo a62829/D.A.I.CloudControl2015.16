@@ -11,8 +11,8 @@ namespace _BusinessLayer
         public string idLegal { get; set; }
         public string idEstado { get; set; }
         public string idTipoProcesso { get; set; }
-        public string dataInicio { get; set; }
-        public string dataEncerramento { get; set; }
+        public DateTime dataInicio { get; set; }
+        public DateTime dataEncerramento { get; set; }
         public string lastChangeBy { get; set; }
         public Dictionary<string, d21RepresentanteLegalDto> listaRlDto { get; set; }
         public Dictionary<string, d25AdministradorJudicialDto> listaAjDto { get; set; }
@@ -32,9 +32,20 @@ namespace _BusinessLayer
             this.idLegal = Convert.ToString(processoBase.Rows[i]["idLegal"]);
             this.idEstado = Convert.ToString(processoBase.Rows[i]["idEstado"]);
             this.idTipoProcesso = Convert.ToString(processoBase.Rows[i]["idTipoProcesso"]);
-            this.dataInicio = Convert.ToString(processoBase.Rows[i]["dataInicio"]);
-            this.dataEncerramento = Convert.ToString(processoBase.Rows[i]["dataEncerramento"]);
+            this.dataInicio = Convert.ToDateTime(processoBase.Rows[i]["dataInicio"]);
+            this.dataEncerramento = Convert.ToDateTime(processoBase.Rows[i]["dataEncerramento"]);
             this.lastChangeBy = Convert.ToString(processoBase.Rows[i]["lastChangeBy"]);
+        }
+
+        public d85ProcessoDto(string idProcesso, string idLegal, string idEstado, string idTipoProcesso, DateTime dataInicio, DateTime dataEncerramento, string lastChangeBy)
+        {
+            this.idProcesso = idProcesso;
+            this.idLegal = idLegal;
+            this.idEstado = idEstado;
+            this.idTipoProcesso = idTipoProcesso;
+            this.dataInicio = dataInicio;
+            this.dataEncerramento = dataEncerramento;
+            this.lastChangeBy = lastChangeBy;
         }
 
 
@@ -53,6 +64,12 @@ namespace _BusinessLayer
             d85ProcessoDto pdto = new d85ProcessoDto(dt, 0);
             pdto.listaCrDto = pdto.getListaCredorNoProcesso(id);
             return pdto;
+        }
+
+        public void setProcesso(d85ProcessoDto pdto)
+        {
+            d85Processo p = new d85Processo();
+            p.setProcesso( pdto.idLegal, pdto.idEstado, pdto.idTipoProcesso, pdto.dataInicio, pdto.dataEncerramento, pdto.lastChangeBy, pdto.idProcesso);
         }
 
         public void /*criarProcesso*/ guardar(d85ProcessoDto pdto)
