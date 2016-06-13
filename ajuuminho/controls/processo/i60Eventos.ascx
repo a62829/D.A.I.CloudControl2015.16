@@ -1,33 +1,11 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="i60Eventos.ascx.cs" Inherits="ajuUminho.controls.processos.i60Eventos" %>
 
     <%-- falta calendario --%>
-
       <div class="InsideViewsBox">
         <div class="InsideViewsTableBox">
             <h3>Lista de Eventos</h3> <div class="hr-align"> <hr /> </div>
 
-            <table id="table1">
-            <tr>
-                <th>Tipo</th>
-                <th>Processo</th>
-                <th>Data</th> 
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            </table>
+            <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
 
         </div>
 

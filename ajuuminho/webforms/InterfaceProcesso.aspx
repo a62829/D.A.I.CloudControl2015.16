@@ -18,6 +18,7 @@
     <title>Aju-UMinho</title>
     <meta charset="UTF-8"/>
     <link rel="stylesheet" type="text/css" href="../css/StyleSheet.css" title="StyleSheet"/>
+
 </head>
 
 <body>
