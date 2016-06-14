@@ -13,102 +13,66 @@ namespace ajuUminho.controls.processos {
     public partial class i86Arquivo {
         
         /// <summary>
-        /// ListBoxProcessosID control.
+        /// TabSuspenderProcessoID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBoxProcessosID;
+        protected global::System.Web.UI.WebControls.Button TabSuspenderProcessoID;
         
         /// <summary>
-        /// LabelIdLegalID control.
+        /// TabArquivarProcessoID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelIdLegalID;
+        protected global::System.Web.UI.WebControls.Button TabArquivarProcessoID;
         
         /// <summary>
-        /// TextBoxIdLegalID control.
+        /// TabReativarProcessoID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxIdLegalID;
+        protected global::System.Web.UI.WebControls.Button TabReativarProcessoID;
         
         /// <summary>
-        /// LabelEstadoID control.
+        /// MainViewID2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelEstadoID;
+        protected global::System.Web.UI.WebControls.MultiView MainViewID2;
         
         /// <summary>
-        /// TextBoxEstadoID control.
+        /// ViewSuspenderProcessoID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxEstadoID;
+        protected global::System.Web.UI.WebControls.View ViewSuspenderProcessoID;
         
         /// <summary>
-        /// LabelNomeTipoProcessoID control.
+        /// ViewArquivarProcessoID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNomeTipoProcessoID;
+        protected global::System.Web.UI.WebControls.View ViewArquivarProcessoID;
         
         /// <summary>
-        /// TextBoxNomeTipoProcessoID control.
+        /// ViewReativarProcessoID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxNomeTipoProcessoID;
-        
-        /// <summary>
-        /// LabelDataInicioID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelDataInicioID;
-        
-        /// <summary>
-        /// TextBoxDataInicioID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxDataInicioID;
-        
-        /// <summary>
-        /// LabelDataEncerramentoID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelDataEncerramentoID;
-        
-        /// <summary>
-        /// TextBoxDataEncerramentoID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxDataEncerramentoID;
+        protected global::System.Web.UI.WebControls.View ViewReativarProcessoID;
     }
 }
