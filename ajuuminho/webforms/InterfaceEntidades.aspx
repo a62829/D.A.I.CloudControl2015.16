@@ -53,37 +53,7 @@
 
                 <asp:MultiView ID="MainViewID" runat="server">
                     <asp:View ID="ViewRepresentanteLegalID" runat="server">
-                        <div class="ViewsBox">
-
-                            <%-- 2ª multiview --%>
-                            <div class="ViewsButtonsBox">
-                                <asp:Button Text="Criar" BorderStyle="None" ID="TabCriarRepresentanteGeralID" CssClass="Initial" runat="server"
-                                    OnClick="TabCriarRepresentanteLegal_Click" />
-                                <asp:Button Text="Editar" BorderStyle="None" ID="TabEditarRepresentanteGeralID" CssClass="Initial" runat="server"
-                                     OnClick="TabEditarRepresentanteLegal_Click" />
-                                <asp:Button Text="Eliminar" BorderStyle="None" ID="TabEliminarRepresentanteGeralID" CssClass="Initial" runat="server"
-                                     OnClick="TabEliminarRepresentanteLegal_Click" />
-                            </div>
-
-                                <asp:MultiView ID="MainViewID1" runat="server">
-                                    <asp:View ID="ViewCriarRepresentanteLegalID" runat="server"> 
-                                        <div class ="ViewBoxCRUD">
-                                            <uc2:i22RepresentanteLegal runat="server" ID="representanteLegalID" />
-                                        </div>
-                                    </asp:View>
-                                    <asp:View ID="ViewEditarRepresentanteLegalID" runat="server"> 
-                                        <div class ="ViewBoxCRUD">
-                                            <uc2:i22RepresentanteLegal runat="server" ID="representanteLegalID1" />
-                                        </div>
-                                    </asp:View>
-                                    <asp:View ID="ViewEliminarRepresentanteGeralID" runat="server"> 
-                                        <div class ="ViewBoxCRUD">
-                                            <uc2:i22RepresentanteLegal runat="server" ID="representanteLegalID2" />
-                                        </div>
-                                    </asp:View>
-                                </asp:MultiView>
-
-                        </div>
+                        <uc2:i22RepresentanteLegal runat="server" ID="representanteLegalID" />
                     </asp:View>
                     <asp:View ID="ViewAdministradoresJudiciaisID" runat="server">
                        <div class="ViewsBox">

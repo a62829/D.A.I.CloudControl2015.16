@@ -85,5 +85,37 @@ namespace ajuUminho.controls.entidades
             }
         }
 
+        protected void TabCriarRepresentanteLegal_Click(object sender, EventArgs e)
+        {
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = true;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = false;
+            TabCriarRepresentanteGeralID.CssClass = "Clicked";
+            TabEditarRepresentanteGeralID.CssClass = "Initial";
+            TabEliminarRepresentanteGeralID.CssClass = "Initial";
+        }
+
+        protected void TabEditarRepresentanteLegal_Click(object sender, EventArgs e)
+        {
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = true;
+            ButtonEliminarID.Visible = false;
+            TabCriarRepresentanteGeralID.CssClass = "Initial";
+            TabEditarRepresentanteGeralID.CssClass = "Clicked";
+            TabEliminarRepresentanteGeralID.CssClass = "Initial";
+        }
+
+        protected void TabEliminarRepresentanteLegal_Click(object sender, EventArgs e)
+        {
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = true;
+            TabCriarRepresentanteGeralID.CssClass = "Initial";
+            TabEditarRepresentanteGeralID.CssClass = "Initial";
+            TabEliminarRepresentanteGeralID.CssClass = "Clicked";
+        }
     }
 }

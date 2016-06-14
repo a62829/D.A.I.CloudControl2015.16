@@ -130,51 +130,6 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.WebControls.View ViewRepresentanteLegalID;
         
         /// <summary>
-        /// TabCriarRepresentanteGeralID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabCriarRepresentanteGeralID;
-        
-        /// <summary>
-        /// TabEditarRepresentanteGeralID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabEditarRepresentanteGeralID;
-        
-        /// <summary>
-        /// TabEliminarRepresentanteGeralID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabEliminarRepresentanteGeralID;
-        
-        /// <summary>
-        /// MainViewID1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.MultiView MainViewID1;
-        
-        /// <summary>
-        /// ViewCriarRepresentanteLegalID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewCriarRepresentanteLegalID;
-        
-        /// <summary>
         /// representanteLegalID control.
         /// </summary>
         /// <remarks>
@@ -182,42 +137,6 @@ namespace ajuUminho.webforms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::ajuUminho.controls.entidades.i22RepresentanteLegal representanteLegalID;
-        
-        /// <summary>
-        /// ViewEditarRepresentanteLegalID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewEditarRepresentanteLegalID;
-        
-        /// <summary>
-        /// representanteLegalID1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ajuUminho.controls.entidades.i22RepresentanteLegal representanteLegalID1;
-        
-        /// <summary>
-        /// ViewEliminarRepresentanteGeralID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewEliminarRepresentanteGeralID;
-        
-        /// <summary>
-        /// representanteLegalID2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ajuUminho.controls.entidades.i22RepresentanteLegal representanteLegalID2;
         
         /// <summary>
         /// ViewAdministradoresJudiciaisID control.

@@ -152,30 +152,6 @@ namespace ajuUminho.webforms
             MainViewID.ActiveViewIndex = 8;
         }
 
-        protected void TabCriarRepresentanteLegal_Click(object sender, EventArgs e)
-        {
-            TabCriarRepresentanteGeralID.CssClass = "Clicked";
-            TabEditarRepresentanteGeralID.CssClass = "Initial";
-            TabEliminarRepresentanteGeralID.CssClass = "Initial";
-            MainViewID1.ActiveViewIndex = 0;
-        }
-
-        protected void TabEditarRepresentanteLegal_Click(object sender, EventArgs e)
-        {
-            TabCriarRepresentanteGeralID.CssClass = "Initial";
-            TabEditarRepresentanteGeralID.CssClass = "Clicked";
-            TabEliminarRepresentanteGeralID.CssClass = "Initial";
-            MainViewID1.ActiveViewIndex = 1;
-        }
-
-        protected void TabEliminarRepresentanteLegal_Click(object sender, EventArgs e)
-        {
-            TabCriarRepresentanteGeralID.CssClass = "Initial";
-            TabEditarRepresentanteGeralID.CssClass = "Initial";
-            TabEliminarRepresentanteGeralID.CssClass = "Clicked";
-            MainViewID1.ActiveViewIndex = 2;
-        }
-
         protected void TabCriarAdministradorJudicial_Click(object sender, EventArgs e)
         {
             TabCriarAdministradorJudicialID.CssClass = "Clicked";
