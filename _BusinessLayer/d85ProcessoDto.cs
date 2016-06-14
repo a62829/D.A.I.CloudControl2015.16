@@ -11,8 +11,8 @@ namespace _BusinessLayer
         public string idLegal { get; set; }
         public string idEstado { get; set; }
         public string idTipoProcesso { get; set; }
-        public DateTime dataInicio { get; set; }
-        public DateTime dataEncerramento { get; set; }
+        public string dataInicio { get; set; }
+        public string dataEncerramento { get; set; }
         public string lastChangeBy { get; set; }
         public Dictionary<string, d21RepresentanteLegalDto> listaRlDto { get; set; }
         public Dictionary<string, d25AdministradorJudicialDto> listaAjDto { get; set; }
@@ -32,12 +32,23 @@ namespace _BusinessLayer
             this.idLegal = Convert.ToString(processoBase.Rows[i]["idLegal"]);
             this.idEstado = Convert.ToString(processoBase.Rows[i]["idEstado"]);
             this.idTipoProcesso = Convert.ToString(processoBase.Rows[i]["idTipoProcesso"]);
-            this.dataInicio = Convert.ToDateTime(processoBase.Rows[i]["dataInicio"]);
-            this.dataEncerramento = Convert.ToDateTime(processoBase.Rows[i]["dataEncerramento"]);
+            this.dataInicio = Convert.ToString(processoBase.Rows[i]["dataInicio"]);
+            this.dataEncerramento = Convert.ToString(processoBase.Rows[i]["dataEncerramento"]);
             this.lastChangeBy = Convert.ToString(processoBase.Rows[i]["lastChangeBy"]);
         }
 
-        public d85ProcessoDto(string idProcesso, string idLegal, string idEstado, string idTipoProcesso, DateTime dataInicio, DateTime dataEncerramento, string lastChangeBy)
+        public d85ProcessoDto(DataTable processoBase)
+        {
+            this.idProcesso = Convert.ToString(processoBase.Rows[0]["id"]);
+            this.idLegal = Convert.ToString(processoBase.Rows[0]["idLegal"]);
+            this.idEstado = Convert.ToString(processoBase.Rows[0]["estado.nome"]);
+            this.idTipoProcesso = Convert.ToString(processoBase.Rows[0]["tipoProcesso.nome"]);
+            this.dataInicio = Convert.ToString(processoBase.Rows[0]["dataInicio"]);
+            this.dataEncerramento = Convert.ToString(processoBase.Rows[0]["dataEncerramento"]);
+            this.lastChangeBy = Convert.ToString(processoBase.Rows[0]["lastChangeBy"]);
+        }
+
+        public d85ProcessoDto(string idProcesso, string idLegal, string idEstado, string idTipoProcesso, string dataInicio, string dataEncerramento, string lastChangeBy)
         {
             this.idProcesso = idProcesso;
             this.idLegal = idLegal;
@@ -53,7 +64,7 @@ namespace _BusinessLayer
         {
             d85Processo p = new d85Processo();
             DataTable dt = p.getProcesso(id);
-            d85ProcessoDto pdto = new d85ProcessoDto(dt, 0);
+            d85ProcessoDto pdto = new d85ProcessoDto(dt);
             return pdto;
         }
 

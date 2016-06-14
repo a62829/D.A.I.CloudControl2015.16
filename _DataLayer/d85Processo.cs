@@ -11,7 +11,7 @@ namespace _DataLayer
 
         }
 
-        public bool /*criarProcesso*/ guardar(string idLegal, string idEstado, string idTipoProcesso, DateTime dataInicio, DateTime dataEncerramento, string lastChangeBy)
+        public bool /*criarProcesso*/ guardar(string idLegal, string idEstado, string idTipoProcesso, string dataInicio, string dataEncerramento, string lastChangeBy)
         {
             con.Open();
             cmd.Parameters.AddWithValue("@idLegal", idLegal);
@@ -49,7 +49,7 @@ namespace _DataLayer
             SqlDataReader reader;
             con.Open();
             cmd.Parameters.AddWithValue("@id", idProcesso);
-            cmd.CommandText = "SELECT * FROM dbo.processo WHERE id = @id";
+            cmd.CommandText = "SELECT processo.id, processo.idLegal, estado.nome, tipoProcesso.nome, processo.dataInicio, processo.dataEncerramento, processo.lastChangeBy FROM processo Right Join estado ON estado.id = processo.idEstado Right Join tipoProcesso ON tipoProcesso.id = processo.idTipoProcesso WHERE processo.id = @id ORDER BY processo.id; ";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             reader = cmd.ExecuteReader();
@@ -70,7 +70,7 @@ namespace _DataLayer
             con.Close();
         }
 
-        public void setProcesso (string idLegal, string idEstado, string idTipoProcesso, DateTime dataInicio, DateTime dataEncerramento, string lastChangeBy, string id)
+        public void setProcesso (string idLegal, string idEstado, string idTipoProcesso, string dataInicio, string dataEncerramento, string lastChangeBy, string id)
         {
             con.Open();
             cmd.Parameters.AddWithValue("@id", id);

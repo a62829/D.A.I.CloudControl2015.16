@@ -22,76 +22,22 @@ namespace ajuUminho.controls.processos {
         protected global::System.Web.UI.WebControls.ListBox ListBoxProcessosID;
         
         /// <summary>
-        /// LabelNomeInsolventeID control.
+        /// LabelIdLegalID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNomeInsolventeID;
+        protected global::System.Web.UI.WebControls.Label LabelIdLegalID;
         
         /// <summary>
-        /// TextBoxNomeInsolventeID control.
+        /// TextBoxIdLegalID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxNomeInsolventeID;
-        
-        /// <summary>
-        /// LabelNomeProcessoID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNomeProcessoID;
-        
-        /// <summary>
-        /// TextBoxNomeProcessoID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxNomeProcessoID;
-        
-        /// <summary>
-        /// LabelNomeTipoProcessoID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNomeTipoProcessoID;
-        
-        /// <summary>
-        /// TextBoxNomeTipoProcessoID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxNomeTipoProcessoID;
-        
-        /// <summary>
-        /// LabelWorkflowID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelWorkflowID;
-        
-        /// <summary>
-        /// TextBoxWorkflowID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxWorkflowID;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxIdLegalID;
         
         /// <summary>
         /// LabelEstadoID control.
@@ -112,22 +58,22 @@ namespace ajuUminho.controls.processos {
         protected global::System.Web.UI.WebControls.TextBox TextBoxEstadoID;
         
         /// <summary>
-        /// LabelIdLegalID control.
+        /// LabelNomeTipoProcessoID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelIdLegalID;
+        protected global::System.Web.UI.WebControls.Label LabelNomeTipoProcessoID;
         
         /// <summary>
-        /// TextBoxIdLegalID control.
+        /// TextBoxNomeTipoProcessoID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxIdLegalID;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxNomeTipoProcessoID;
         
         /// <summary>
         /// LabelDataInicioID control.
@@ -146,5 +92,23 @@ namespace ajuUminho.controls.processos {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxDataInicioID;
+        
+        /// <summary>
+        /// LabelDataEncerramentoID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelDataEncerramentoID;
+        
+        /// <summary>
+        /// TextBoxDataEncerramentoID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxDataEncerramentoID;
     }
 }

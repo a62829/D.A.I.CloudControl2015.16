@@ -35,26 +35,17 @@ namespace ajuUminho.controls.processos
             }
         }
 
-        protected void ListBoxProcessosID_SelectedIndexChanged1(object sender, EventArgs e)
+        protected void ListBoxProcessosID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            c23EditarRepresentanteLegal erl = new c23EditarRepresentanteLegal();
-            //string idRl = ListBoxEntidadesID.SelectedValue.ToString();
-            //var rl = erl.getRepresentanteLegal(idRl);
-            //TextBoxNomeID.Text = rl.nome;
-            //TextBoxMoradaID.Text = rl.morada;
-            //TextBoxCodPostalID.Text = rl.codPostal;
-            //TextBoxLocalidadeID.Text = rl.localidade;
-            //TextBoxEmailID.Text = rl.email;
-            //TextBoxTelefoneID.Text = rl.telefone;
-            //TextBoxTelemovelID.Text = rl.telemovel;
-            //TextBoxFaxID.Text = rl.fax;
-            //TextBoxCcID.Text = rl.cc;
-            //TextBoxIbanID.Text = rl.iban;
-            //TextBoxNifID.Text = rl.nif;
-            //TextBoxLastChangedID.Text = rl.lastChangeBy;
-            //ListBoxEntidadesID.ClearSelection();
-            //ListBoxEntidadesID.Items.Clear();
-            //listaRepresentanteLegal();
+            c87 erl = new c87();
+            string idRl = ListBoxProcessosID.SelectedValue.ToString();
+            var rl = erl.getProcesso(idRl);
+            TextBoxIdLegalID.Text = rl.idLegal;
+            TextBoxNomeTipoProcessoID.Text = rl.idTipoProcesso;
+            TextBoxEstadoID.Text = rl.idEstado;
+            TextBoxDataInicioID.Text = rl.dataInicio;
+            TextBoxDataEncerramentoID.Text = rl.dataEncerramento;
+            listaProcesso();
         }
     }
 }

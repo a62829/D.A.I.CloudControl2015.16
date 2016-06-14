@@ -24,10 +24,10 @@ namespace ajuUminho.Ws
         }
 
         [WebMethod]
-        public void setProcesso(string nome, string morada)
+        public void setProcesso(string idLegal, string idEstado, string idTipoProcesso, string dataInicio, string dataEncerramento, string lastChangeBy, string idProcesso)
         {
 
-            d85ProcessoDto pdto = new d85ProcessoDto(id, nome, morada);
+            d85ProcessoDto pdto = new d85ProcessoDto(idProcesso, idLegal, idEstado, idTipoProcesso, dataInicio, dataEncerramento, lastChangeBy);
             pdto.setProcesso(pdto);
             //// efetuar controlos
             //d21RepresentanteLegal rl = new d21RepresentanteLegal();
@@ -39,14 +39,14 @@ namespace ajuUminho.Ws
 
         }
 
-        [WebMethod]
-        public void criarRepresentanteLegal(string nome, string morada, string codPostal, string localidade, string email,
-            string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
-        {
-            d21RepresentanteLegalDto rl = new d21RepresentanteLegalDto(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
-            rl.guardar(rl);
+        //[WebMethod]
+        //public void criarRepresentanteLegal(string nome, string morada, string codPostal, string localidade, string email,
+        //    string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
+        //{
+        //    d21RepresentanteLegalDto rl = new d21RepresentanteLegalDto(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
+        //    rl.guardar(rl);
 
-        }
+        //}
 
         //[WebMethod]
         //public DataTable listarRepresentantesLegais()
@@ -57,17 +57,17 @@ namespace ajuUminho.Ws
         //}
 
         [WebMethod]
-        public d21RepresentanteLegalDto getRepresentanteLegal(string id)
+        public d85ProcessoDto getProcesso(string id)
         {
-            d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
-            return rldto.getRepresentanteLegal(id);
+            d85ProcessoDto pdto = new d85ProcessoDto();
+            return pdto.getProcesso(id);
         }
 
-        [WebMethod]
-        public Dictionary<String, d21RepresentanteLegalDto> getListaRepresentantesLegais()
-        {
-            d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
-            return rldto.getListaRepresentanteLegal();
-        }
+        //[WebMethod]
+        //public Dictionary<String, d21RepresentanteLegalDto> getListaRepresentantesLegais()
+        //{
+        //    d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
+        //    return rldto.getListaRepresentanteLegal();
+        //}
     }
 }
