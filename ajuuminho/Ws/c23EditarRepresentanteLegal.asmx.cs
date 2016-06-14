@@ -21,15 +21,8 @@ namespace ajuUminho.Ws
         public void editarRepresentanteLegal(string id, string nome, string morada, string codPostal, string localidade, string email,
             string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
-            d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto(id, nome, morada, codPostal, localidade, email, telefone, telemovel,                                                             fax, cc, iban, nif, lastChangeBy);
+            d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto(id, nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
             rldto.setRepresentanteLegal(rldto);
-            //// efetuar controlos
-            //d21RepresentanteLegal rl = new d21RepresentanteLegal();
-            //var id = rl.getID(cc);
-            //if (rl.ccUnique(cc, id) == true)
-            //{
-            //    rl.setRepresentanteLegal(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy, id);
-            //}
         }
 
         [WebMethod]
@@ -39,14 +32,6 @@ namespace ajuUminho.Ws
             d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto(nome, morada, codPostal, localidade, email, telefone, telemovel, fax , cc , iban, nif, lastChangeBy);
             rldto.guardar(rldto);
         }
-
-        //[WebMethod]
-        //public DataTable listarRepresentantesLegais()
-        //{
-        //    d21RepresentanteLegal rl = new d21RepresentanteLegal();
-        //    DataTable dt = rl.getListaRepresentanteLegal();
-        //    return dt;
-        //}
 
         [WebMethod]
         public d21RepresentanteLegalDto getRepresentanteLegal(string id)

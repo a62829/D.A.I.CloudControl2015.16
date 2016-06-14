@@ -22,14 +22,6 @@ namespace ajuUminho.Ws
         {
             d33JuizDto jdto = new d33JuizDto(id, nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
             jdto.setJuiz(jdto);
-            //// efetuar controlos
-            //d21RepresentanteLegal rl = new d21RepresentanteLegal();
-            //var id = rl.getID(cc);
-            //if (rl.ccUnique(cc, id) == true)
-            //{
-            //    rl.setRepresentanteLegal(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy, id);
-            //}
-
         }
 
         [WebMethod]
@@ -38,16 +30,7 @@ namespace ajuUminho.Ws
         {
             d33JuizDto j = new d33JuizDto(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
             j.guardar(j);
-
         }
-
-        //[WebMethod]
-        //public DataTable listarRepresentantesLegais()
-        //{
-        //    d21RepresentanteLegal rl = new d21RepresentanteLegal();
-        //    DataTable dt = rl.getListaRepresentanteLegal();
-        //    return dt;
-        //}
 
         [WebMethod]
         public d33JuizDto getJuiz(string id)

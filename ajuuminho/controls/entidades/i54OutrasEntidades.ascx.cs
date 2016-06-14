@@ -80,8 +80,8 @@ namespace ajuUminho.controls.entidades
             foreach (KeyValuePair<String, d53OutraEntidadeDto> pair in lista)
             {
                 ListItem Item = new ListItem();
-                Item.Text = pair.Value.ToString();
-                Item.Value = pair.Key.ToString();
+                Item.Text = pair.Value.nome.ToString();
+                Item.Value = pair.Value.id.ToString();
                 ListBoxEntidadesID.Items.Add(Item);
                 ListBoxEntidadesID.DataBind();
             }
