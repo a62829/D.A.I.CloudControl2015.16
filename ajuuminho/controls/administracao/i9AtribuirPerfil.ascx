@@ -42,6 +42,5 @@
             <asp:Button ID="ButtonEditarID" runat="server" Text="Editar" CssClass="ContentButton"/>
             <asp:Button ID="ButtonEliminarID" runat="server" Text="Eliminar" CssClass="ContentButton" />
             <asp:Button ID="ButtonGravarID" runat="server" Text="Gravar" CssClass="ContentButton" />
-            <asp:Button ID="ButtonAlterarPasswordID" runat="server" Text="Alterar Password" CssClass="ContentButton" OnClick="ButtonAlterarPasswordID_Click" />
         </div>
 
