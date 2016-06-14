@@ -179,10 +179,6 @@
     <Content Include="controls\utilizadores\i12AutenticacaoDeUtilizadores.ascx" />
     <Content Include="controls\utilizadores\i14TerminoDeSessao.ascx" />
     <Content Include="controls\utilizadores\i4AlteracaoDeDadosPessoais.ascx" />
-    <Content Include="css\styleFancy.css" />
-    <Content Include="css\styleTiny.css" />
-    <Content Include="css\styleTeste.css" />
-    <Content Include="css\style.css" />
     <Content Include="css\StyleSheet.css" />
     <Content Include="imagens\default_profile_avatar.png" />
     <Content Include="imagens\close_session.png" />

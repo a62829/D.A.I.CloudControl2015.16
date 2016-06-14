@@ -484,7 +484,7 @@ table {
             color: White;
             cursor: pointer;
             background: #333;*/
-            display: block; padding: 4px 12px 4px 12px; color: #666; float: left; cursor: pointer; font-size: 12px; /*background-color: #ddd;*/
+            display: block; padding: 4px 12px 4px 12px; color: #666; float: left; cursor: pointer; font-size: 12px; /*background-color: #ddd;*/ text-decoration: underline; 
 
         }
 /*----------------------------------------------*/
@@ -510,17 +510,17 @@ table {
     margin-top: 10px;
 }
 
-#ListEdentidades {
+/*#ListEdentidades {
     float: left;
     width: 50%;
-}
+}*/
 
-#AtributosBox {
+/*#AtributosBox {
     margin: auto;
     width: 50%;
     min-height: 280px;
     float: left;
-}
+}*/
 
 #IdentidadesBox {
   float: left;
@@ -724,6 +724,14 @@ table {
     width: 50%;
     text-align: center;
     min-height: 200px;
+}
+
+.InsideViewsDetailsBox2 {
+    margin: auto;
+    width: 40%;
+    text-align: center;
+    min-height: 200px;
+    padding-right: 95px;
 }
 
 .InsideViewsDetailsBox {

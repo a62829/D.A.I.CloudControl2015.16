@@ -4,6 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using ajuUminho.Ws;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin.Security;
+using System.Windows;
 
 namespace ajuUminho.controls.administracao
 {
@@ -12,6 +17,55 @@ namespace ajuUminho.controls.administracao
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void ButtonAdicionarPerfilID_Click(object sender, EventArgs e)
+        {
+            string roleName = TextBoxAdicionarPerfilID.Text;
+            gestaoIdentidade ws1 = new gestaoIdentidade();
+            ws1.insertRole(roleName);
+            ListBoxPerfisID.DataBind();
+        }
+
+        protected void ButtonMoreID_Click(object sender, EventArgs e)
+        {
+            string user = ListBoxIdentidadesID.SelectedValue;
+            string role = ListBoxPerfisID.SelectedItem.Text;
+            gestaoIdentidade ws1 = new gestaoIdentidade();
+            ws1.setRoleToUser(user, role);
+            ListBoxPerfisAssociadosID.DataBind();
+        }
+
+        protected void ButtonLessID_Click(object sender, EventArgs e)
+        {
+            string user = ListBoxIdentidadesID.SelectedValue;
+            string role = ListBoxPerfisAssociadosID.SelectedItem.Text;
+            gestaoIdentidade ws1 = new gestaoIdentidade();
+            ws1.removeRoleToUser(user, role);
+            ListBoxPerfisAssociadosID.DataBind();
+        }
+
+        protected void ListBoxIdentidadesID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           /* gestaoIdentidade ws1 = new gestaoIdentidade();
+            var obj = ListBoxIdentidadesID.SelectedItem.Text;
+            var dtable = ws1.getUserDetail(obj);
+            TextBoxNomeID.Text = Convert.ToString(dtable.Rows[0]["UserName"]);
+            TextBoxEmailID.Text = Convert.ToString(dtable.Rows[0]["Email"]);
+            TextBoxTelefoneID.Text = Convert.ToString(dtable.Rows[0]["PhoneNumber"]);
+            ws1.getListaUsers();
+
+            //ListBoxPerfisID.Items.Clear();
+            //string user = ListBoxIdentidadesID.SelectedItem.Value;
+            //foreach (var u in ws1.getUserRoles(user))
+            //{
+            //    ListBoxPerfisAssociadosID.Items.Add(u);
+
+            //}
+            ListBoxPerfisAssociadosID.Items.Clear();
+            listarUserRoles();
+            //ListBoxIdentidadesID.Items.Clear();
+            listaUser();*/
         }
     }
 }

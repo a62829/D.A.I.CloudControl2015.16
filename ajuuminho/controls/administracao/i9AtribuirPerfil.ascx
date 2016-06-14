@@ -3,7 +3,7 @@
         <div id="IdentidadesBox">
             <div class="titleh4"> <h4>Utilizadores</h4> </div>
             <div id="ListBoxIdentidades">
-                       <asp:ListBox ID="ListBoxIdentidadesID" runat="server" CssClass="ListBoxIdentidades-Item" AutoPostBack="True"></asp:ListBox>
+                       <asp:ListBox ID="ListBoxIdentidadesID" runat="server" CssClass="ListBoxIdentidades-Item" AutoPostBack="True" OnSelectedIndexChanged="ListBoxIdentidadesID_SelectedIndexChanged"></asp:ListBox>
             </div>
         </div>
 
@@ -18,8 +18,8 @@
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
                     </div>
                 <div id="PerfisButtonsBox">
-                    <asp:Button ID="ButtonMoreID" runat="server" Text=">" CssClass="MoreButton" />
-                    <asp:Button ID="ButtonLessID" runat="server" Text="<" CssClass="LessButton" />
+                    <asp:Button ID="ButtonMoreID" runat="server" Text=">" CssClass="MoreButton" OnClick="ButtonMoreID_Click" />
+                    <asp:Button ID="ButtonLessID" runat="server" Text="<" CssClass="LessButton" OnClick="ButtonLessID_Click" />
                 </div>
                     <div id="PerfisListBox4">
                         <div class="titleh5"> <h5>Perfis Associados ao Utilizador</h5> </div>
@@ -33,7 +33,7 @@
                     <div id="AdicionarPerfilBox">
                     <div class="titleh5"> <h5>Adicionar novo perfil ao sistema</h5> </div>
                     <asp:TextBox ID="TextBoxAdicionarPerfilID" runat="server"></asp:TextBox>
-                    <asp:Button ID="ButtonAdicionarPerfilID" runat="server" Text="+" Width="25px" CssClass="AdicionarPerfilButton" />
+                    <asp:Button ID="ButtonAdicionarPerfilID" runat="server" Text="+" Width="25px" CssClass="AdicionarPerfilButton" OnClick="ButtonAdicionarPerfilID_Click" />
                     </div>
                    </div>
             </div>
@@ -42,6 +42,6 @@
             <asp:Button ID="ButtonEditarID" runat="server" Text="Editar" CssClass="ContentButton"/>
             <asp:Button ID="ButtonEliminarID" runat="server" Text="Eliminar" CssClass="ContentButton" />
             <asp:Button ID="ButtonGravarID" runat="server" Text="Gravar" CssClass="ContentButton" />
-            <asp:Button ID="ButtonAlterarPasswordID" runat="server" Text="Alterar Password" CssClass="ContentButton" />
+            <asp:Button ID="ButtonAlterarPasswordID" runat="server" Text="Alterar Password" CssClass="ContentButton" OnClick="ButtonAlterarPasswordID_Click" />
         </div>
 
