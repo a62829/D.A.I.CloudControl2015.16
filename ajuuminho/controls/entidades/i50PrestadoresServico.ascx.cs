@@ -80,5 +80,67 @@ namespace ajuUminho.controls.entidades
                 ListBoxEntidadesID.DataBind();
             }
         }
+
+        protected void ButtonEliminarID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ButtonPesquisarID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void TabCriarPrestadorServico_Click(object sender, EventArgs e)
+        {
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = true;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = false;
+            ButtonPesquisarID.Visible = false;
+            TabCriarPrestadorServicoID.CssClass = "Clicked";
+            TabEditarPrestadorServicoID.CssClass = "Initial";
+            TabEliminarPrestadorServicoID.CssClass = "Initial";
+            TabPesquisarPrestadorServicoID.CssClass = "Initial";
+        }
+
+        protected void TabEditarPrestadorServico_Click(object sender, EventArgs e)
+        {
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = true;
+            ButtonEliminarID.Visible = false;
+            ButtonPesquisarID.Visible = false;
+            TabCriarPrestadorServicoID.CssClass = "Initial";
+            TabEditarPrestadorServicoID.CssClass = "Clicked";
+            TabEliminarPrestadorServicoID.CssClass = "Initial";
+            TabPesquisarPrestadorServicoID.CssClass = "Initial";
+        }
+
+        protected void TabEliminarPrestadorServico_Click(object sender, EventArgs e)
+        {
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = true;
+            ButtonPesquisarID.Visible = false;
+            TabCriarPrestadorServicoID.CssClass = "Initial";
+            TabEditarPrestadorServicoID.CssClass = "Initial";
+            TabEliminarPrestadorServicoID.CssClass = "Clicked";
+            TabPesquisarPrestadorServicoID.CssClass = "Initial";
+        }
+
+        protected void TabPesquisarPrestadorServico_Click(object sender, EventArgs e)
+        {
+            ViewBoxVisible.Visible = false;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = false;
+            ButtonPesquisarID.Visible = false;
+            TabCriarPrestadorServicoID.CssClass = "Initial";
+            TabEditarPrestadorServicoID.CssClass = "Initial";
+            TabEliminarPrestadorServicoID.CssClass = "Initial";
+            TabPesquisarPrestadorServicoID.CssClass = "Clicked";
+        }
     }
 }

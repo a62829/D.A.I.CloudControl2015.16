@@ -81,5 +81,67 @@ namespace ajuUminho.controls.entidades
                 ListBoxEntidadesID.DataBind();
             }
         }
+
+        protected void ButtonEliminarID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ButtonPesquisarID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void TabCriarAdministradorJudicial_Click(object sender, EventArgs e)
+        {
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = true;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = false;
+            ButtonPesquisarID.Visible = false;
+            TabCriarAdministradorJudicialID.CssClass = "Clicked";
+            TabEditarAdministradorJudicialID.CssClass = "Initial";
+            TabEliminarAdministradorJudicialID.CssClass = "Initial";
+            TabPesquisarAdministradorJudicialID.CssClass = "Initial";
+        }
+
+        protected void TabEditarAdministradorJudicial_Click(object sender, EventArgs e)
+        {
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = true;
+            ButtonEliminarID.Visible = false;
+            ButtonPesquisarID.Visible = false;
+            TabCriarAdministradorJudicialID.CssClass = "Initial";
+            TabEditarAdministradorJudicialID.CssClass = "Clicked";
+            TabEliminarAdministradorJudicialID.CssClass = "Initial";
+            TabPesquisarAdministradorJudicialID.CssClass = "Initial";
+        }
+
+        protected void TabEliminarAdministradorJudicial_Click(object sender, EventArgs e)
+        {
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = true;
+            ButtonPesquisarID.Visible = false;
+            TabCriarAdministradorJudicialID.CssClass = "Initial";
+            TabEditarAdministradorJudicialID.CssClass = "Initial";
+            TabEliminarAdministradorJudicialID.CssClass = "Clicked";
+            TabPesquisarAdministradorJudicialID.CssClass = "Initial";
+        }
+
+        protected void TabPesquisarAdministradorJudicial_Click(object sender, EventArgs e)
+        {
+            ViewBoxVisible.Visible = false;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = false;
+            ButtonPesquisarID.Visible = false;
+            TabCriarAdministradorJudicialID.CssClass = "Initial";
+            TabEditarAdministradorJudicialID.CssClass = "Initial";
+            TabEliminarAdministradorJudicialID.CssClass = "Initial";
+            TabPesquisarAdministradorJudicialID.CssClass = "Clicked";
+        }
     }
 }
