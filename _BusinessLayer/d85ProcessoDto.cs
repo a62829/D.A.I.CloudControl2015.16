@@ -41,8 +41,8 @@ namespace _BusinessLayer
         {
             this.idProcesso = Convert.ToString(processoBase.Rows[0]["id"]);
             this.idLegal = Convert.ToString(processoBase.Rows[0]["idLegal"]);
-            this.idEstado = Convert.ToString(processoBase.Rows[0]["estado.nome"]);
-            this.idTipoProcesso = Convert.ToString(processoBase.Rows[0]["tipoProcesso.nome"]);
+            this.idEstado = Convert.ToString(processoBase.Rows[0]["nome2"]);
+            this.idTipoProcesso = Convert.ToString(processoBase.Rows[0]["nome"]);
             this.dataInicio = Convert.ToString(processoBase.Rows[0]["dataInicio"]);
             this.dataEncerramento = Convert.ToString(processoBase.Rows[0]["dataEncerramento"]);
             this.lastChangeBy = Convert.ToString(processoBase.Rows[0]["lastChangeBy"]);

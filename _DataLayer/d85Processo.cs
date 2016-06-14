@@ -49,7 +49,7 @@ namespace _DataLayer
             SqlDataReader reader;
             con.Open();
             cmd.Parameters.AddWithValue("@id", idProcesso);
-            cmd.CommandText = "SELECT processo.id, processo.idLegal, estado.nome, tipoProcesso.nome, processo.dataInicio, processo.dataEncerramento, processo.lastChangeBy FROM processo Right Join estado ON estado.id = processo.idEstado Right Join tipoProcesso ON tipoProcesso.id = processo.idTipoProcesso WHERE processo.id = @id ORDER BY processo.id; ";
+            cmd.CommandText = "SELECT processo.id, processo.idLegal, estado.nome AS nome2, tipoProcesso.nome, processo.dataInicio, processo.dataEncerramento, processo.lastChangeBy FROM processo Right Join estado ON estado.id = processo.idEstado Right Join tipoProcesso ON tipoProcesso.id = processo.idTipoProcesso WHERE processo.id = @id ORDER BY processo.id; ";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             reader = cmd.ExecuteReader();
