@@ -17,7 +17,7 @@
         <div class="InsideViewsBox">
             <div class="InsideViewsTableBox" runat="server" id="ListBoxVisibility">
                 <div class="AlignBox">
-                    <asp:ListBox ID="ListBoxEntidadesID" runat="server" CssClass="ListBoxEntidades-Item" AutoPostBack="True"></asp:ListBox>
+                    <asp:ListBox ID="ListBoxEntidadesID" runat="server" CssClass="ListBoxEntidades-Item" AutoPostBack="True" OnSelectedIndexChanged="ListBoxEntidadesID_SelectedIndexChanged"></asp:ListBox>
                 </div>
             </div>
 
