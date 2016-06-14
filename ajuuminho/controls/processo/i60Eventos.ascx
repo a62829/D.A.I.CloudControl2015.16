@@ -4,7 +4,7 @@
 
 
         <div class="InsideViewsTableBox">
-            <div class="titleh4"> <h4>Lista de Eventos</h4> </div>
+            <div class="titleh4big">  <h4>Lista de Eventos</h4> </div>
 
             <table id="table1">
             <tr>
@@ -32,7 +32,7 @@
         </div>
 
         <div class="InsideViewsDetailsBox">
-            <div class="titleh4"> <h4>Detalhes do Evento</h4> </div>
+            <div class="titleh4big"> <h4>Detalhes do Evento</h4> </div>
               <table class="ContentTable">
                   <tr>
                       <td> <asp:Label ID="LabelProcessoAssociadoID" runat="server" Text="Label" CssClass="Labels-Item">

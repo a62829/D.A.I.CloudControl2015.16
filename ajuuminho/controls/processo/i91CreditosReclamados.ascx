@@ -2,7 +2,7 @@
 
       <div class="InsideViewsBox">
         <div class="InsideViewsTableBox">
-            <div class="titleh3"> <h3>Lista de Elementos Financeiros</h3> </div>
+            <div class="titleh4big"> <h4>Lista de Elementos Financeiros</h4> </div>
 
             <table id="table1">
             <tr>
@@ -26,7 +26,7 @@
         </div>
 
         <div class="InsideViewsDetailsBox">
-            <h3>Detalhes</h3> <div class="hr-align"> <hr /> </div>
+            <div class="titleh4big"> <h3>Detalhes</h3> </div>
               <table class="ContentTable">
                   <tr>
                       <td> <asp:Label ID="LabelElementoFinanceiroID" runat="server" Text="Label" CssClass="Labels-Item">

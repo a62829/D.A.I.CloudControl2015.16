@@ -2,7 +2,7 @@
 
       <div class="ViewsBox">
           <div class="InsideViewsTableBox">
-              <div class="titleh4"> <h4>Dados base</h4> </div>
+              <div class="titleh4big"> <h4>Dados base</h4> </div>
           <table class="ContentTable">
                   <tr>
                       <td> <asp:Label ID="LabelIdLegalID" runat="server" Text="Label"  CssClass="Labels-Item">
@@ -23,7 +23,7 @@
             </div>
 
           <div class="InsideViewsDetailsBox">
-              <div class="titleh4"> <h4>Selecione um insolvente</h4> </div>
+              <div class="titleh4big"> <h4>Selecione um insolvente</h4> </div>
                 <div class="AlignBox">
                     <asp:ListBox ID="ListBoxInsolventesID" runat="server" CssClass="ListBoxEntidades-Item" AutoPostBack="True"></asp:ListBox>
                 </div>
