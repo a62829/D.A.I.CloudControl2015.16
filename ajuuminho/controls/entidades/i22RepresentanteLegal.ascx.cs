@@ -85,5 +85,70 @@ namespace ajuUminho.controls.entidades
             }
         }
 
+        protected void ButtonPesquisarID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void TabCriarRepresentanteLegal_Click(object sender, EventArgs e)
+        {
+            ListBoxVisibility.Visible = false;
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = true;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = false;
+            ButtonPesquisarID.Visible = false;
+            TabCriarRepresentanteLegalID.CssClass = "Clicked";
+            TabEditarRepresentanteLegalID.CssClass = "Initial";
+            TabEliminarRepresentanteLegalID.CssClass = "Initial";
+            TabPesquisarRepresentanteLegalID.CssClass = "Initial";
+        }
+
+        protected void TabEditarRepresentanteLegal_Click(object sender, EventArgs e)
+        {
+            ListBoxVisibility.Visible = true;
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = true;
+            ButtonEliminarID.Visible = false;
+            ButtonPesquisarID.Visible = false;
+            TabCriarRepresentanteLegalID.CssClass = "Initial";
+            TabEditarRepresentanteLegalID.CssClass = "Clicked";
+            TabEliminarRepresentanteLegalID.CssClass = "Initial";
+            TabPesquisarRepresentanteLegalID.CssClass = "Initial";
+        }
+
+        protected void TabEliminarRepresentanteLegal_Click(object sender, EventArgs e)
+        {
+            ListBoxVisibility.Visible = true;
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = true;
+            ButtonPesquisarID.Visible = false;
+            TabCriarRepresentanteLegalID.CssClass = "Initial";
+            TabEditarRepresentanteLegalID.CssClass = "Initial";
+            TabEliminarRepresentanteLegalID.CssClass = "Clicked";
+            TabPesquisarRepresentanteLegalID.CssClass = "Initial";
+        }
+
+        protected void TabPesquisarRepresentanteLegal_Click(object sender, EventArgs e)
+        {
+            ListBoxVisibility.Visible = false;
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
+            ViewBoxVisible.Visible = false;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = false;
+            ButtonPesquisarID.Visible = false;
+            TabCriarRepresentanteLegalID.CssClass = "Initial";
+            TabEditarRepresentanteLegalID.CssClass = "Initial";
+            TabEliminarRepresentanteLegalID.CssClass = "Initial";
+            TabPesquisarRepresentanteLegalID.CssClass = "Clicked";
+        }
+
     }
 }

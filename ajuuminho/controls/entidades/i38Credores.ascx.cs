@@ -57,7 +57,7 @@ namespace ajuUminho.controls.entidades
             TextBoxLastChangedID.Text = c.lastChangeBy;
             ListBoxEntidadesID.ClearSelection();
             //ListBoxEntidadesID.Items.Clear();
-            //listaRepresentanteLegal();
+            //listaCredor();
         }
 
         protected void ButtonEditarID_Click(object sender, EventArgs e)
@@ -80,6 +80,75 @@ namespace ajuUminho.controls.entidades
                 ListBoxEntidadesID.Items.Add(Item);
                 ListBoxEntidadesID.DataBind();
             }
+        }
+
+        protected void ButtonEliminarID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void TabCriarCredor_Click(object sender, EventArgs e)
+        {
+            ListBoxVisibility.Visible = false;
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = true;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = false;
+            ButtonPesquisarID.Visible = false;
+            TabCriarCredorID.CssClass = "Clicked";
+            TabEditarCredorID.CssClass = "Initial";
+            TabEliminarCredorID.CssClass = "Initial";
+        }
+
+        protected void TabEditarCredor_Click(object sender, EventArgs e)
+        {
+            ListBoxVisibility.Visible = true;
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = true;
+            ButtonEliminarID.Visible = false;
+            ButtonPesquisarID.Visible = false;
+            TabCriarCredorID.CssClass = "Initial";
+            TabEditarCredorID.CssClass = "Clicked";
+            TabEliminarCredorID.CssClass = "Initial";
+            TabPesquisarCredorID.CssClass = "Initial";
+        }
+
+        protected void TabEliminarCredor_Click(object sender, EventArgs e)
+        {
+            ListBoxVisibility.Visible = true;
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = true;
+            ButtonPesquisarID.Visible = false;
+            TabCriarCredorID.CssClass = "Initial";
+            TabEditarCredorID.CssClass = "Initial";
+            TabEliminarCredorID.CssClass = "Clicked";
+            TabPesquisarCredorID.CssClass = "Initial";
+        }
+
+        protected void TabPesquisarCredor_Click(object sender, EventArgs e)
+        {
+            ListBoxVisibility.Visible = false;
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
+            ViewBoxVisible.Visible = false;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = false;
+            ButtonPesquisarID.Visible = false;
+            TabCriarCredorID.CssClass = "Initial";
+            TabEditarCredorID.CssClass = "Initial";
+            TabEliminarCredorID.CssClass = "Initial";
+            TabPesquisarCredorID.CssClass = "Clicked";
+        }
+
+        protected void ButtonPesquisarID_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

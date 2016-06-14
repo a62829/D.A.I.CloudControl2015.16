@@ -33,9 +33,7 @@
 
                 <asp:MultiView ID="MainViewID" runat="server">
                     <asp:View ID="ViewAdministradorUtilizadoresID" runat="server">
-                        <div class="ViewsBox">
                             <uc2:i3AdministradorUtilizadores runat="server" ID="administradorUtilizadoresID" />
-                        </div>
                     </asp:View>
                     <asp:View ID="ViewAtribuirPerfilID" runat="server">
                        <div class="ViewsBox">

@@ -80,5 +80,75 @@ namespace ajuUminho.controls.entidades
                 ListBoxEntidadesID.DataBind();
             }
         }
+
+        protected void TabCriarInsolvente_Click(object sender, EventArgs e)
+        {
+            ListBoxVisibility.Visible = false;
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = true;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = false;
+            ButtonPesquisarID.Visible = false;
+            TabCriarInsolventeID.CssClass = "Clicked";
+            TabEditarInsolventeID.CssClass = "Initial";
+            TabEliminarInsolventeID.CssClass = "Initial";
+            TabPesquisarInsolventeID.CssClass = "Initial";
+        }
+
+        protected void TabEditarInsolvente_Click(object sender, EventArgs e)
+        {
+            ListBoxVisibility.Visible = true;
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = true;
+            ButtonEliminarID.Visible = false;
+            ButtonPesquisarID.Visible = false;
+            TabCriarInsolventeID.CssClass = "Initial";
+            TabEditarInsolventeID.CssClass = "Clicked";
+            TabEliminarInsolventeID.CssClass = "Initial";
+            TabPesquisarInsolventeID.CssClass = "Initial";
+        }
+
+        protected void TabEliminarInsolvente_Click(object sender, EventArgs e)
+        {
+            ListBoxVisibility.Visible = true;
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = true;
+            ButtonPesquisarID.Visible = false;
+            TabCriarInsolventeID.CssClass = "Initial";
+            TabEditarInsolventeID.CssClass = "Initial";
+            TabEliminarInsolventeID.CssClass = "Clicked";
+            TabPesquisarInsolventeID.CssClass = "Initial";
+        }
+
+        protected void ButtonPesquisarID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ButtonEliminarID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void TabPesquisarInsolvente_Click(object sender, EventArgs e)
+        {
+            ListBoxVisibility.Visible = false;
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
+            ViewBoxVisible.Visible = false;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = false;
+            ButtonPesquisarID.Visible = false;
+            TabCriarInsolventeID.CssClass = "Initial";
+            TabEditarInsolventeID.CssClass = "Initial";
+            TabEliminarInsolventeID.CssClass = "Initial";
+            TabPesquisarInsolventeID.CssClass = "Clicked";
+        }
     }
 }

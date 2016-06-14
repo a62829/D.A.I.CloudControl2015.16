@@ -130,51 +130,6 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.WebControls.View ViewRepresentanteLegalID;
         
         /// <summary>
-        /// TabCriarRepresentanteGeralID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabCriarRepresentanteGeralID;
-        
-        /// <summary>
-        /// TabEditarRepresentanteGeralID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabEditarRepresentanteGeralID;
-        
-        /// <summary>
-        /// TabEliminarRepresentanteGeralID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabEliminarRepresentanteGeralID;
-        
-        /// <summary>
-        /// MainViewID1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.MultiView MainViewID1;
-        
-        /// <summary>
-        /// ViewCriarRepresentanteLegalID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewCriarRepresentanteLegalID;
-        
-        /// <summary>
         /// representanteLegalID control.
         /// </summary>
         /// <remarks>
@@ -182,42 +137,6 @@ namespace ajuUminho.webforms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::ajuUminho.controls.entidades.i22RepresentanteLegal representanteLegalID;
-        
-        /// <summary>
-        /// ViewEditarRepresentanteLegalID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewEditarRepresentanteLegalID;
-        
-        /// <summary>
-        /// representanteLegalID1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ajuUminho.controls.entidades.i22RepresentanteLegal representanteLegalID1;
-        
-        /// <summary>
-        /// ViewEliminarRepresentanteGeralID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewEliminarRepresentanteGeralID;
-        
-        /// <summary>
-        /// representanteLegalID2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ajuUminho.controls.entidades.i22RepresentanteLegal representanteLegalID2;
         
         /// <summary>
         /// ViewAdministradoresJudiciaisID control.
@@ -229,51 +148,6 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.WebControls.View ViewAdministradoresJudiciaisID;
         
         /// <summary>
-        /// TabCriarAdministradorJudicialID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabCriarAdministradorJudicialID;
-        
-        /// <summary>
-        /// TabEditarAdministradorJudicialID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabEditarAdministradorJudicialID;
-        
-        /// <summary>
-        /// TabEliminarAdministradorJudicialID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabEliminarAdministradorJudicialID;
-        
-        /// <summary>
-        /// MainViewID2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.MultiView MainViewID2;
-        
-        /// <summary>
-        /// ViewCriarAdministradorJudicialID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewCriarAdministradorJudicialID;
-        
-        /// <summary>
         /// administradoresJudiciaisID control.
         /// </summary>
         /// <remarks>
@@ -281,42 +155,6 @@ namespace ajuUminho.webforms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::ajuUminho.controls.entidades.i26AdministradoresJudiciais administradoresJudiciaisID;
-        
-        /// <summary>
-        /// ViewEditarAdministradorJudicialID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewEditarAdministradorJudicialID;
-        
-        /// <summary>
-        /// administradoresJudiciaisID1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ajuUminho.controls.entidades.i26AdministradoresJudiciais administradoresJudiciaisID1;
-        
-        /// <summary>
-        /// ViewEliminarAdministradorJudicialID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewEliminarAdministradorJudicialID;
-        
-        /// <summary>
-        /// administradoresJudiciaisID2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ajuUminho.controls.entidades.i26AdministradoresJudiciais administradoresJudiciaisID2;
         
         /// <summary>
         /// ViewTribunaisID control.
@@ -328,51 +166,6 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.WebControls.View ViewTribunaisID;
         
         /// <summary>
-        /// TabCriarTribunalID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabCriarTribunalID;
-        
-        /// <summary>
-        /// TabEditarTribunalID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabEditarTribunalID;
-        
-        /// <summary>
-        /// TabEliminarTribunalID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabEliminarTribunalID;
-        
-        /// <summary>
-        /// MainViewID3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.MultiView MainViewID3;
-        
-        /// <summary>
-        /// ViewCriarTribunalID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewCriarTribunalID;
-        
-        /// <summary>
         /// tribunaisID control.
         /// </summary>
         /// <remarks>
@@ -380,42 +173,6 @@ namespace ajuUminho.webforms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::ajuUminho.controls.entidades.i30Tribunais tribunaisID;
-        
-        /// <summary>
-        /// ViewEditarTribunalID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewEditarTribunalID;
-        
-        /// <summary>
-        /// tribunaisID1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ajuUminho.controls.entidades.i30Tribunais tribunaisID1;
-        
-        /// <summary>
-        /// ViewEliminarTribunalID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewEliminarTribunalID;
-        
-        /// <summary>
-        /// tribunaisID2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ajuUminho.controls.entidades.i30Tribunais tribunaisID2;
         
         /// <summary>
         /// ViewJuizesID control.
@@ -427,51 +184,6 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.WebControls.View ViewJuizesID;
         
         /// <summary>
-        /// TabCriarJuizID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabCriarJuizID;
-        
-        /// <summary>
-        /// TabEditarJuizID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabEditarJuizID;
-        
-        /// <summary>
-        /// TabEliminarJuizID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabEliminarJuizID;
-        
-        /// <summary>
-        /// MainViewID4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.MultiView MainViewID4;
-        
-        /// <summary>
-        /// ViewCriarJuizID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewCriarJuizID;
-        
-        /// <summary>
         /// juizesID control.
         /// </summary>
         /// <remarks>
@@ -479,42 +191,6 @@ namespace ajuUminho.webforms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::ajuUminho.controls.entidades.i34Juizes juizesID;
-        
-        /// <summary>
-        /// ViewEditarJuizID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewEditarJuizID;
-        
-        /// <summary>
-        /// juizesID1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ajuUminho.controls.entidades.i34Juizes juizesID1;
-        
-        /// <summary>
-        /// ViewEliminarJuizID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewEliminarJuizID;
-        
-        /// <summary>
-        /// juizesID2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ajuUminho.controls.entidades.i34Juizes juizesID2;
         
         /// <summary>
         /// ViewCredoresID control.
@@ -526,51 +202,6 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.WebControls.View ViewCredoresID;
         
         /// <summary>
-        /// TabCriarCredorID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabCriarCredorID;
-        
-        /// <summary>
-        /// TabEditarCredorID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabEditarCredorID;
-        
-        /// <summary>
-        /// TabEliminarCredorID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabEliminarCredorID;
-        
-        /// <summary>
-        /// MainViewID5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.MultiView MainViewID5;
-        
-        /// <summary>
-        /// ViewCriarCredorID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewCriarCredorID;
-        
-        /// <summary>
         /// credoresID control.
         /// </summary>
         /// <remarks>
@@ -578,42 +209,6 @@ namespace ajuUminho.webforms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::ajuUminho.controls.entidades.i38Credores credoresID;
-        
-        /// <summary>
-        /// ViewEditarCredorID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewEditarCredorID;
-        
-        /// <summary>
-        /// credoresID1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ajuUminho.controls.entidades.i38Credores credoresID1;
-        
-        /// <summary>
-        /// ViewEliminarCredorID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewEliminarCredorID;
-        
-        /// <summary>
-        /// credoresID2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ajuUminho.controls.entidades.i38Credores credoresID2;
         
         /// <summary>
         /// ViewInsolventesID control.
@@ -625,51 +220,6 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.WebControls.View ViewInsolventesID;
         
         /// <summary>
-        /// TabCriarInsolventeID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabCriarInsolventeID;
-        
-        /// <summary>
-        /// TabEditarInsolventeID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabEditarInsolventeID;
-        
-        /// <summary>
-        /// TabEliminarInsolventeID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabEliminarInsolventeID;
-        
-        /// <summary>
-        /// MainViewID6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.MultiView MainViewID6;
-        
-        /// <summary>
-        /// ViewCriarInsolventeID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewCriarInsolventeID;
-        
-        /// <summary>
         /// insolventesID control.
         /// </summary>
         /// <remarks>
@@ -677,42 +227,6 @@ namespace ajuUminho.webforms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::ajuUminho.controls.entidades.i42Insolventes insolventesID;
-        
-        /// <summary>
-        /// ViewEditarInsolventeID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewEditarInsolventeID;
-        
-        /// <summary>
-        /// insolventesID1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ajuUminho.controls.entidades.i42Insolventes insolventesID1;
-        
-        /// <summary>
-        /// ViewEliminarInsolventeID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewEliminarInsolventeID;
-        
-        /// <summary>
-        /// insolventesID2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ajuUminho.controls.entidades.i42Insolventes insolventesID2;
         
         /// <summary>
         /// ViewContabilistasID control.
@@ -724,51 +238,6 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.WebControls.View ViewContabilistasID;
         
         /// <summary>
-        /// TabCriarContabilistaID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabCriarContabilistaID;
-        
-        /// <summary>
-        /// TabEditarContabilistaID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabEditarContabilistaID;
-        
-        /// <summary>
-        /// TabEliminarContabilistaID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabEliminarContabilistaID;
-        
-        /// <summary>
-        /// MainViewID7 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.MultiView MainViewID7;
-        
-        /// <summary>
-        /// ViewCriarContabilistaID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewCriarContabilistaID;
-        
-        /// <summary>
         /// contabilistasID control.
         /// </summary>
         /// <remarks>
@@ -776,42 +245,6 @@ namespace ajuUminho.webforms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::ajuUminho.controls.entidades.i46Contabilistas contabilistasID;
-        
-        /// <summary>
-        /// ViewEditarContabilistaID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewEditarContabilistaID;
-        
-        /// <summary>
-        /// contabilistasID1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ajuUminho.controls.entidades.i46Contabilistas contabilistasID1;
-        
-        /// <summary>
-        /// ViewEliminarContabilistaID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewEliminarContabilistaID;
-        
-        /// <summary>
-        /// contabilistasID2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ajuUminho.controls.entidades.i46Contabilistas contabilistasID2;
         
         /// <summary>
         /// ViewPrestadoresServicoID control.
@@ -823,51 +256,6 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.WebControls.View ViewPrestadoresServicoID;
         
         /// <summary>
-        /// TabCriarPrestadorServicoID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabCriarPrestadorServicoID;
-        
-        /// <summary>
-        /// TabEditarPrestadorServicoID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabEditarPrestadorServicoID;
-        
-        /// <summary>
-        /// TabEliminarPrestadorServicoID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabEliminarPrestadorServicoID;
-        
-        /// <summary>
-        /// MainViewID8 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.MultiView MainViewID8;
-        
-        /// <summary>
-        /// ViewCriarPrestadorServicoID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewCriarPrestadorServicoID;
-        
-        /// <summary>
         /// prestadoresServicoID control.
         /// </summary>
         /// <remarks>
@@ -875,42 +263,6 @@ namespace ajuUminho.webforms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::ajuUminho.controls.entidades.i50PrestadoresServico prestadoresServicoID;
-        
-        /// <summary>
-        /// ViewEditarPrestadorServicoID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewEditarPrestadorServicoID;
-        
-        /// <summary>
-        /// prestadoresServicoID1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ajuUminho.controls.entidades.i50PrestadoresServico prestadoresServicoID1;
-        
-        /// <summary>
-        /// ViewEliminarPrestadorServicoID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewEliminarPrestadorServicoID;
-        
-        /// <summary>
-        /// prestadoresServicoID2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ajuUminho.controls.entidades.i50PrestadoresServico prestadoresServicoID2;
         
         /// <summary>
         /// ViewOutrasEntidadesID control.
@@ -922,51 +274,6 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.WebControls.View ViewOutrasEntidadesID;
         
         /// <summary>
-        /// TabCriarOutraEntidadeID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabCriarOutraEntidadeID;
-        
-        /// <summary>
-        /// TabEditarOutraEntidadeID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabEditarOutraEntidadeID;
-        
-        /// <summary>
-        /// TabEliminarOutraEntidadeID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabEliminarOutraEntidadeID;
-        
-        /// <summary>
-        /// MainViewID9 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.MultiView MainViewID9;
-        
-        /// <summary>
-        /// ViewCriarOutraEntidadeID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewCriarOutraEntidadeID;
-        
-        /// <summary>
         /// outrasEntidadesID control.
         /// </summary>
         /// <remarks>
@@ -974,41 +281,5 @@ namespace ajuUminho.webforms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::ajuUminho.controls.entidades.i54OutrasEntidades outrasEntidadesID;
-        
-        /// <summary>
-        /// ViewEditarOutraEntidadeID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewEditarOutraEntidadeID;
-        
-        /// <summary>
-        /// outrasEntidadesID1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ajuUminho.controls.entidades.i54OutrasEntidades outrasEntidadesID1;
-        
-        /// <summary>
-        /// ViewEliminarOutraEntidadeID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewEliminarOutraEntidadeID;
-        
-        /// <summary>
-        /// outrasEntidadesID2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ajuUminho.controls.entidades.i54OutrasEntidades outrasEntidadesID2;
     }
 }

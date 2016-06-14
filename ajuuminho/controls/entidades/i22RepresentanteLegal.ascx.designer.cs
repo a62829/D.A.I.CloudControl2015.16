@@ -13,6 +13,60 @@ namespace ajuUminho.controls.entidades {
     public partial class i22RepresentanteLegal {
         
         /// <summary>
+        /// TabCriarRepresentanteLegalID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button TabCriarRepresentanteLegalID;
+        
+        /// <summary>
+        /// TabEditarRepresentanteLegalID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button TabEditarRepresentanteLegalID;
+        
+        /// <summary>
+        /// TabEliminarRepresentanteLegalID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button TabEliminarRepresentanteLegalID;
+        
+        /// <summary>
+        /// TabPesquisarRepresentanteLegalID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button TabPesquisarRepresentanteLegalID;
+        
+        /// <summary>
+        /// ViewBoxVisible control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ViewBoxVisible;
+        
+        /// <summary>
+        /// ListBoxVisibility control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ListBoxVisibility;
+        
+        /// <summary>
         /// ListBoxEntidadesID control.
         /// </summary>
         /// <remarks>
@@ -22,13 +76,13 @@ namespace ajuUminho.controls.entidades {
         protected global::System.Web.UI.WebControls.ListBox ListBoxEntidadesID;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// ContentDetailsBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ContentDetailsBox;
         
         /// <summary>
         /// LabelNomeID control.
@@ -272,5 +326,14 @@ namespace ajuUminho.controls.entidades {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ButtonEliminarID;
+        
+        /// <summary>
+        /// ButtonPesquisarID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonPesquisarID;
     }
 }

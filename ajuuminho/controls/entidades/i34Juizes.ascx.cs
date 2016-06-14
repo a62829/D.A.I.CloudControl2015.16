@@ -81,5 +81,70 @@ namespace ajuUminho.controls.entidades
                 ListBoxEntidadesID.DataBind();
             }
         }
+
+        protected void ButtonPesquisarID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void TabCriarJuiz_Click(object sender, EventArgs e)
+        {
+            ListBoxVisibility.Visible = false;
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = true;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = false;
+            ButtonPesquisarID.Visible = false;
+            TabCriarJuizID.CssClass = "Clicked";
+            TabEditarJuizID.CssClass = "Initial";
+            TabEliminarJuizID.CssClass = "Initial";
+            TabPesquisarJuizID.CssClass = "Initial";
+        }
+
+        protected void TabEditarJuiz_Click(object sender, EventArgs e)
+        {
+            ListBoxVisibility.Visible = true;
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = true;
+            ButtonEliminarID.Visible = false;
+            ButtonPesquisarID.Visible = false;
+            TabCriarJuizID.CssClass = "Initial";
+            TabEditarJuizID.CssClass = "Clicked";
+            TabEliminarJuizID.CssClass = "Initial";
+            TabPesquisarJuizID.CssClass = "Initial";
+        }
+
+        protected void TabEliminarJuiz_Click(object sender, EventArgs e)
+        {
+            ListBoxVisibility.Visible = true;
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = true;
+            ButtonPesquisarID.Visible = false;
+            TabCriarJuizID.CssClass = "Initial";
+            TabEditarJuizID.CssClass = "Initial";
+            TabEliminarJuizID.CssClass = "Clicked";
+            TabPesquisarJuizID.CssClass = "Initial";
+        }
+
+        protected void TabPesquisarJuiz_Click(object sender, EventArgs e)
+        {
+            ListBoxVisibility.Visible = false;
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
+            ViewBoxVisible.Visible = false;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = false;
+            ButtonPesquisarID.Visible = false;
+            TabCriarJuizID.CssClass = "Initial";
+            TabEditarJuizID.CssClass = "Initial";
+            TabEliminarJuizID.CssClass = "Initial";
+            TabPesquisarJuizID.CssClass = "Clicked";
+        }
     }
 }
