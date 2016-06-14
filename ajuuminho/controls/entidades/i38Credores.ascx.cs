@@ -137,5 +137,10 @@ namespace ajuUminho.controls.entidades
             TabEliminarCredorID.CssClass = "Initial";
             TabPesquisarCredorID.CssClass = "Clicked";
         }
+
+        protected void ButtonPesquisarID_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -122,6 +122,16 @@ namespace ajuUminho.controls.entidades
 
         protected void ButtonPesquisarID_Click(object sender, EventArgs e)
         {
+
+        }
+
+        protected void ButtonEliminarID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void TabPesquisarInsolvente_Click(object sender, EventArgs e)
+        {
             ViewBoxVisible.Visible = false;
             ButtonCriarID.Visible = false;
             ButtonEditarID.Visible = false;
@@ -132,6 +142,5 @@ namespace ajuUminho.controls.entidades
             TabEliminarInsolventeID.CssClass = "Initial";
             TabPesquisarInsolventeID.CssClass = "Clicked";
         }
-
     }
 }

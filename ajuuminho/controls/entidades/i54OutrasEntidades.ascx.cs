@@ -79,6 +79,16 @@ namespace ajuUminho.controls.entidades
             //    }
         }
 
+        protected void ButtonCriarID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ButtonEditarID_Click(object sender, EventArgs e)
+        {
+
+        }
+
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
         {
 
@@ -139,5 +149,6 @@ namespace ajuUminho.controls.entidades
             TabEliminarOutraEntidadeID.CssClass = "Initial";
             TabPesquisarOutraEntidadeID.CssClass = "Clicked";
         }
+
     }
 }
