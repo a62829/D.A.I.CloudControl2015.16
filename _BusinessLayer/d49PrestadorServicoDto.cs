@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using System;
 using _DataLayer;
+using System.Collections.Generic;
 
 namespace _BusinessLayer
 {
@@ -30,8 +31,27 @@ namespace _BusinessLayer
             this.lastChangeBy = lastChangeBy;
         }
 
+        public d49PrestadorServicoDto(string id, string nome, string morada, string codPostal, string localidade, string email,
+            string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
+        {
+            this.id = id;
+            this.nome = nome;
+            this.morada = morada;
+            this.codPostal = codPostal;
+            this.localidade = localidade;
+            this.email = email;
+            this.telefone = telefone;
+            this.telemovel = telemovel;
+            this.fax = fax;
+            this.cc = cc;
+            this.iban = iban;
+            this.nif = nif;
+            this.lastChangeBy = lastChangeBy;
+        }
+
         public d49PrestadorServicoDto(DataTable dt, int i)
         {
+            this.id = Convert.ToString(dt.Rows[i]["id"]);
             this.nome = Convert.ToString(dt.Rows[i]["nome"]);
             this.morada = Convert.ToString(dt.Rows[i]["morada"]);
             this.codPostal = Convert.ToString(dt.Rows[i]["codPostal"]);
@@ -66,10 +86,17 @@ namespace _BusinessLayer
             ps.guardar(psdto.nome, psdto.morada, psdto.codPostal, psdto.localidade, psdto.email, psdto.telefone, psdto.telemovel, psdto.fax, psdto.cc, psdto.iban, psdto.nif, psdto.lastChangeBy);
         }
 
-        public DataTable getListaPrestadorServico()
+        public Dictionary<String, d49PrestadorServicoDto> getListaPrestadorServico()
         {
             d49PrestadorServico ps = new d49PrestadorServico();
-            return ps.getListaPrestadorServico();
+            DataTable dt = ps.getListaPrestadorServico();
+            Dictionary<String, d49PrestadorServicoDto> lista = new Dictionary<String, d49PrestadorServicoDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d49PrestadorServicoDto psdto = new d49PrestadorServicoDto(dt, i);
+                lista.Add(Convert.ToString(psdto.id), psdto);
+            }
+            return lista;
         }
 
         public void removerPrestadorServico(string id)

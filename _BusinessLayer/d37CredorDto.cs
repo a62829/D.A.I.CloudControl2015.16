@@ -31,6 +31,24 @@ namespace _BusinessLayer
             this.lastChangeBy = lastChangeBy;
         }
 
+        public d37CredorDto(string id, string nome, string morada, string codPostal, string localidade, string email,
+    string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
+        {
+            this.id = id;
+            this.nome = nome;
+            this.morada = morada;
+            this.codPostal = codPostal;
+            this.localidade = localidade;
+            this.email = email;
+            this.telefone = telefone;
+            this.telemovel = telemovel;
+            this.fax = fax;
+            this.cc = cc;
+            this.iban = iban;
+            this.nif = nif;
+            this.lastChangeBy = lastChangeBy;
+        }
+
         public d37CredorDto(DataTable dt, int i)
         {
             this.id = Convert.ToString(dt.Rows[i]["id"]);
@@ -50,10 +68,10 @@ namespace _BusinessLayer
 
         public d37CredorDto getCredor(string id)
         {
-            d37Credor rl = new d37Credor();
-            DataTable dt = rl.getCredor(id);
-            d37CredorDto rldto = new d37CredorDto(dt, 0);
-            return rldto;
+            d37Credor c = new d37Credor();
+            DataTable dt = c.getCredor(id);
+            d37CredorDto cdto = new d37CredorDto(dt, 0);
+            return cdto;
         }
 
         public void setCredor(d37CredorDto cdto)

@@ -31,12 +31,10 @@ namespace _DataLayer
             return true;
         }
 
-
-
         public DataTable getListaAdministradorJudicial()
         {
             SqlDataReader reader;
-            cmd.CommandText = "SELECT id, nome FROM [dbo].[administradorJudicial];";
+            cmd.CommandText = "SELECT * FROM [dbo].[administradorJudicial];";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -45,13 +43,26 @@ namespace _DataLayer
             dataTable.Load(reader);
             con.Close();
             return dataTable;
-
-
         }
 
+        public DataTable getListaAdministradorJudicialNoProcesso(string id)
+        {
+            SqlDataReader reader;
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "SELECT administradorJudicial.id, administradorJudicial.nome, administradorJudicial.morada, administradorJudicial.codPostal, administradorJudicial.localidade, administradorJudicial.email, administradorJudicial.telefone, administradorJudicial.telemovel, administradorJudicial.fax, administradorJudicial.cc, administradorJudicial.iban, administradorJudicial.nif, administradorJudicial.lastChangeBy FROM administradorJudicial Right Join administradorJudicialNoProcesso ON administradorJudicialNoProcesso.idAdministradorJudicial = administradorJudicial.id WHERE administradorJudicialNoProcesso.idProcesso = @id ORDER BY administradorJudicial.id; ";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.Connection.Open();
+            reader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
+        }
 
-        public void setAdministradorJudicial(string nome, string morada, string codPostal, string localidade, string email,
-            string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy, string id)
+        public void setAdministradorJudicial(string nome, string morada, string codPostal, string localidade, 
+            string email, string telefone, string telemovel, string fax, string cc, string iban, string nif, 
+            string lastChangeBy, string id)
         {
             con.Open();
             cmd.Parameters.AddWithValue("@nome", nome);
@@ -87,22 +98,6 @@ namespace _DataLayer
             dataTable.Load(reader);
             con.Close();
             return dataTable;
-        }
-
-        public DataTable getAjNoProcesso (string id)
-        {
-            SqlDataReader reader;
-            con.Open();
-            cmd.Parameters.AddWithValue("@id", id);
-            cmd.CommandText = "SELECT * FROM dbo.administradorJudicial WHERE id = @id";
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = con;
-            reader = cmd.ExecuteReader();
-            DataTable dataTable = new DataTable();
-            dataTable.Load(reader);
-            con.Close();
-            return dataTable;
-
         }
 
         public void removerAdministradorJudicial(string id)

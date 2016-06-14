@@ -31,12 +31,10 @@ namespace _DataLayer
             return true;
         }
 
-
-
         public DataTable getListaPrestadorServico()
         {
             SqlDataReader reader;
-            cmd.CommandText = "SELECT id, nome FROM [dbo].[prestadorServico];";
+            cmd.CommandText = "SELECT * FROM [dbo].[prestadorServico];";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -45,10 +43,22 @@ namespace _DataLayer
             dataTable.Load(reader);
             con.Close();
             return dataTable;
-
-
         }
 
+        public DataTable getListaPrestadorServicoNoProcesso(string id)
+        {
+            SqlDataReader reader;
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "SELECT prestadorServico.id, prestadorServico.nome, prestadorServico.morada, prestadorServico.codPostal, prestadorServico.localidade, prestadorServico.email, prestadorServico.telefone, prestadorServico.telemovel, prestadorServico.fax, prestadorServico.cc, prestadorServico.iban, prestadorServico.nif, prestadorServico.lastChangeBy FROM prestadorServico Right Join prestadorServicoNoProcesso ON prestadorServicoNoProcesso.idprestadorServico = prestadorServico.id WHERE prestadorServicoNoProcesso.idProcesso = @id ORDER BY prestadorServico.id; ";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.Connection.Open();
+            reader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
+        }
 
         public void setPrestadorServico(string nome, string morada, string codPostal, string localidade, string email,
             string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy, string id)

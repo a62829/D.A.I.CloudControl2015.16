@@ -17,9 +17,11 @@ namespace ajuUminho.Ws
     public class c35EdicaoJuiz : System.Web.Services.WebService
     {
         [WebMethod]
-        public void editarJuiz(string nome, string morada, string codPostal, string localidade, string email,
+        public void editarJuiz(string id, string nome, string morada, string codPostal, string localidade, string email,
                     string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
+            d33JuizDto jdto = new d33JuizDto(id, nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
+            jdto.setJuiz(jdto);
             //// efetuar controlos
             //d21RepresentanteLegal rl = new d21RepresentanteLegal();
             //var id = rl.getID(cc);
@@ -55,18 +57,10 @@ namespace ajuUminho.Ws
         }
 
         [WebMethod]
-        public Dictionary<String, String> getListaJuiz()
+        public Dictionary<String, d33JuizDto> getListaJuiz()
         {
-
             d33JuizDto jdto = new d33JuizDto();
-            DataTable dt = jdto.getListaJuiz();
-            Dictionary<String, String> lista = new Dictionary<String, String>();
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                lista.Add(Convert.ToString(dt.Rows[i]["id"]), Convert.ToString(dt.Rows[i]["nome"]));
-            }
-            return lista;
-
+            return jdto.getListaJuiz();
         }
     }
 }

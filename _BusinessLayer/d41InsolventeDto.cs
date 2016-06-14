@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using System;
 using _DataLayer;
+using System.Collections.Generic;
 
 namespace _BusinessLayer
 {
@@ -30,8 +31,27 @@ namespace _BusinessLayer
             this.lastChangeBy = lastChangeBy;
         }
 
+        public d41InsolventeDto(string id, string nome, string morada, string codPostal, string localidade, string email,
+    string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
+        {
+            this.id = id;
+            this.nome = nome;
+            this.morada = morada;
+            this.codPostal = codPostal;
+            this.localidade = localidade;
+            this.email = email;
+            this.telefone = telefone;
+            this.telemovel = telemovel;
+            this.fax = fax;
+            this.cc = cc;
+            this.iban = iban;
+            this.nif = nif;
+            this.lastChangeBy = lastChangeBy;
+        }
+
         public d41InsolventeDto(DataTable dt, int i)
         {
+            this.id = Convert.ToString(dt.Rows[i]["id"]);
             this.nome = Convert.ToString(dt.Rows[i]["nome"]);
             this.morada = Convert.ToString(dt.Rows[i]["morada"]);
             this.codPostal = Convert.ToString(dt.Rows[i]["codPostal"]);
@@ -48,10 +68,10 @@ namespace _BusinessLayer
 
         public d41InsolventeDto getInsolvente(string id)
         {
-            d41Insolvente rl = new d41Insolvente();
-            DataTable dt = rl.getInsolvente(id);
-            d41InsolventeDto rldto = new d41InsolventeDto(dt, 0);
-            return rldto;
+            d41Insolvente i = new d41Insolvente();
+            DataTable dt = i.getInsolvente(id);
+            d41InsolventeDto idto = new d41InsolventeDto(dt, 0);
+            return idto;
         }
 
         public void setInsolvente(d41InsolventeDto idto)
@@ -66,10 +86,17 @@ namespace _BusinessLayer
             i.guardar(idto.nome, idto.morada, idto.codPostal, idto.localidade, idto.email, idto.telefone, idto.telemovel, idto.fax, idto.cc, idto.iban, idto.nif, idto.lastChangeBy);
         }
 
-        public DataTable getListaInsolvente()
+        public Dictionary<String, d41InsolventeDto> getListaInsolvente()
         {
-            d41Insolvente i = new d41Insolvente();
-            return i.getListaInsolvente();
+            d41Insolvente ins = new d41Insolvente();
+            DataTable dt = ins.getListaInsolvente();
+            Dictionary<String, d41InsolventeDto> lista = new Dictionary<String, d41InsolventeDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d41InsolventeDto idto = new d41InsolventeDto(dt, i);
+                lista.Add(Convert.ToString(idto.id), idto);
+            }
+            return lista;
         }
 
         public void removerInsolvente(string id)

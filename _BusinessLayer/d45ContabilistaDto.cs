@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using System;
 using _DataLayer;
+using System.Collections.Generic;
 
 namespace _BusinessLayer
 {
@@ -30,8 +31,27 @@ namespace _BusinessLayer
             this.lastChangeBy = lastChangeBy;
         }
 
+        public d45ContabilistaDto(string id, string nome, string morada, string codPostal, string localidade, string email,
+            string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
+        {
+            this.id = id;
+            this.nome = nome;
+            this.morada = morada;
+            this.codPostal = codPostal;
+            this.localidade = localidade;
+            this.email = email;
+            this.telefone = telefone;
+            this.telemovel = telemovel;
+            this.fax = fax;
+            this.cc = cc;
+            this.iban = iban;
+            this.nif = nif;
+            this.lastChangeBy = lastChangeBy;
+        }
+
         public d45ContabilistaDto(DataTable dt, int i)
         {
+            this.id = Convert.ToString(dt.Rows[i]["id"]);
             this.nome = Convert.ToString(dt.Rows[i]["nome"]);
             this.morada = Convert.ToString(dt.Rows[i]["morada"]);
             this.codPostal = Convert.ToString(dt.Rows[i]["codPostal"]);
@@ -48,10 +68,10 @@ namespace _BusinessLayer
 
         public d45ContabilistaDto getContabilista(string id)
         {
-            d45Contabilista rl = new d45Contabilista();
-            DataTable dt = rl.getContabilista(id);
-            d45ContabilistaDto rldto = new d45ContabilistaDto(dt, 0);
-            return rldto;
+            d45Contabilista c = new d45Contabilista();
+            DataTable dt = c.getContabilista(id);
+            d45ContabilistaDto cdto = new d45ContabilistaDto(dt, 0);
+            return cdto;
         }
 
         public void setContabilista(d45ContabilistaDto ctdo)
@@ -66,10 +86,17 @@ namespace _BusinessLayer
             c.guardar(cdto.nome, cdto.morada, cdto.codPostal, cdto.localidade, cdto.email, cdto.telefone, cdto.telemovel, cdto.fax, cdto.cc, cdto.iban, cdto.nif, cdto.lastChangeBy);
         }
 
-        public DataTable getListaContabilista()
+        public Dictionary<String, d45ContabilistaDto> getListaContabilista()
         {
             d45Contabilista c = new d45Contabilista();
-            return c.getListaContabilista();
+            DataTable dt = c.getListaContabilista();
+            Dictionary<String, d45ContabilistaDto> lista = new Dictionary<String, d45ContabilistaDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d45ContabilistaDto cdto = new d45ContabilistaDto(dt, i);
+                lista.Add(Convert.ToString(cdto.id), cdto);
+            }
+            return lista;
         }
 
         public void removerContabilista(string id)

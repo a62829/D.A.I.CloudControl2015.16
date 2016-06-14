@@ -17,9 +17,11 @@ namespace ajuUminho.Ws
     public class c47EdicaoContabilista : System.Web.Services.WebService
     {
         [WebMethod]
-        public void editarContabilista(string nome, string morada, string codPostal, string localidade, string email,
+        public void editarContabilista(string id, string nome, string morada, string codPostal, string localidade, string email,
              string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
+            d45ContabilistaDto cdto = new d45ContabilistaDto(id, nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
+            cdto.setContabilista(cdto);
             //// efetuar controlos
             //d45Contabilista rl = new d45Contabilista();
             //var id = rl.getID(cc);
@@ -55,18 +57,10 @@ namespace ajuUminho.Ws
         }
 
         [WebMethod]
-        public Dictionary<String, String> getListaContabilista()
+        public Dictionary<String, d45ContabilistaDto> getListaContabilista()
         {
-
             d45ContabilistaDto cdto = new d45ContabilistaDto();
-            DataTable dt = cdto.getListaContabilista();
-            Dictionary<String, String> lista = new Dictionary<String, String>();
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                lista.Add(Convert.ToString(dt.Rows[i]["id"]), Convert.ToString(dt.Rows[i]["nome"]));
-            }
-            return lista;
-
+            return cdto.getListaContabilista();
         }
     }
 }

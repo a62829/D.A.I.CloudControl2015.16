@@ -36,7 +36,7 @@ namespace _DataLayer
         public DataTable getListaInsolvente()
         {
             SqlDataReader reader;
-            cmd.CommandText = "SELECT id, nome FROM [dbo].[insolvente];";
+            cmd.CommandText = "SELECT * FROM [dbo].[insolvente];";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -45,10 +45,22 @@ namespace _DataLayer
             dataTable.Load(reader);
             con.Close();
             return dataTable;
-
-
         }
 
+        public DataTable getListaInsolventeNoProcesso(string id)
+        {
+            SqlDataReader reader;
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "SELECT insolvente.id, insolvente.nome, insolvente.morada, insolvente.codPostal, insolvente.localidade, insolvente.email, insolvente.telefone, insolvente.telemovel, insolvente.fax, insolvente.cc, insolvente.iban, insolvente.nif, insolvente.lastChangeBy FROM insolvente Right Join insolventeNoProcesso ON insolventeNoProcesso.idinsolvente = insolvente.id WHERE insolventeNoProcesso.idProcesso = @id ORDER BY insolvente.id; ";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.Connection.Open();
+            reader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
+        }
 
         public void setInsolvente(string nome, string morada, string codPostal, string localidade, string email,
             string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy, string id)

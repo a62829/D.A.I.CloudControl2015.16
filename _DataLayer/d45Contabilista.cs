@@ -31,12 +31,10 @@ namespace _DataLayer
             return true;
         }
 
-
-
         public DataTable getListaContabilista()
         {
             SqlDataReader reader;
-            cmd.CommandText = "SELECT id, nome FROM [dbo].[contabilista];";
+            cmd.CommandText = "SELECT * FROM [dbo].[contabilista];";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -45,10 +43,22 @@ namespace _DataLayer
             dataTable.Load(reader);
             con.Close();
             return dataTable;
-
-
         }
 
+        public DataTable getListaContabilistaNoProcesso(string id)
+        {
+            SqlDataReader reader;
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "SELECT contabilista.id, contabilista.nome, contabilista.morada, contabilista.codPostal, contabilista.localidade, contabilista.email, contabilista.telefone, contabilista.telemovel, contabilista.fax, contabilista.cc, contabilista.iban, contabilista.nif, contabilista.lastChangeBy FROM contabilista Right Join contabilistaNoProcesso ON contabilistaNoProcesso.idcontabilista = contabilista.id WHERE contabilistaNoProcesso.idProcesso = @id ORDER BY contabilista.id; ";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.Connection.Open();
+            reader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
+        }
 
         public void setContabilista(string nome, string morada, string codPostal, string localidade, string email,
             string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy, string id)

@@ -36,7 +36,7 @@ namespace _DataLayer
         public DataTable getListaJuiz()
         {
             SqlDataReader reader;
-            cmd.CommandText = "SELECT id, nome FROM [dbo].[juiz];";
+            cmd.CommandText = "SELECT * FROM [dbo].[juiz];";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -47,6 +47,21 @@ namespace _DataLayer
             return dataTable;
 
 
+        }
+
+        public DataTable getListaJuizNoProcesso(string id)
+        {
+            SqlDataReader reader;
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "SELECT juiz.id, juiz.nome, juiz.morada, juiz.codPostal, juiz.localidade, juiz.email, juiz.telefone, juiz.telemovel, juiz.fax, juiz.cc, juiz.iban, juiz.nif, juiz.lastChangeBy FROM juiz Right Join juizNoProcesso ON juizNoProcesso.idjuiz = juiz.id WHERE juizNoProcesso.idProcesso = @id ORDER BY juiz.id; ";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.Connection.Open();
+            reader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
         }
 
 

@@ -20,9 +20,11 @@ namespace ajuUminho.Ws
     {
 
         [WebMethod]
-        public void editarAdministradorJudicial(string nome, string morada, string codPostal, string localidade, string email,
+        public void editarAdministradorJudicial(string id, string nome, string morada, string codPostal, string localidade, string email,
                     string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
+            d25AdministradorJudicialDto ajdto = new d25AdministradorJudicialDto(id, nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
+            ajdto.setAdministradorJudicial(ajdto);
             //// efetuar controlos
             //d21RepresentanteLegal rl = new d21RepresentanteLegal();
             //var id = rl.getID(cc);
@@ -30,16 +32,14 @@ namespace ajuUminho.Ws
             //{
             //    rl.setRepresentanteLegal(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy, id);
             //}
-
         }
 
         [WebMethod]
         public void criarAdministradorJudicial(string nome, string morada, string codPostal, string localidade, string email,
     string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
-            d25AdministradorJudicialDto rl = new d25AdministradorJudicialDto(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
-            rl.guardar(rl);
-
+            d25AdministradorJudicialDto ajdto = new d25AdministradorJudicialDto(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
+            ajdto.guardar(ajdto);
         }
 
         //[WebMethod]
@@ -58,18 +58,10 @@ namespace ajuUminho.Ws
         }
 
         [WebMethod]
-        public Dictionary<String, String> getListaAdministradorJudicial()
+        public Dictionary<String, d25AdministradorJudicialDto> getListaAdministradorJudicial()
         {
-
             d25AdministradorJudicialDto ajdto = new d25AdministradorJudicialDto();
-            DataTable dt = ajdto.getListaAdministradorJudicial();
-            Dictionary<String, String> lista = new Dictionary<String, String>();
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                lista.Add(Convert.ToString(dt.Rows[i]["id"]), Convert.ToString(dt.Rows[i]["nome"]));
-            }
-            return lista;
-
+            return ajdto.getListaAdministradorJudicial();
         }
     }
 }

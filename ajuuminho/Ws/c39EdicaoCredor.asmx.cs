@@ -17,9 +17,11 @@ namespace ajuUminho.Ws
     public class c39EdicaoCredor : System.Web.Services.WebService
     {
         [WebMethod]
-        public void editarCredor(string nome, string morada, string codPostal, string localidade, string email,
+        public void editarCredor(string id, string nome, string morada, string codPostal, string localidade, string email,
             string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
+            d37CredorDto rldto = new d37CredorDto(id, nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
+            rldto.setCredor(rldto);
             //// efetuar controlos
             //d37Credor rl = new d37Credor();
             //var id = rl.getID(cc);
@@ -57,8 +59,8 @@ namespace ajuUminho.Ws
         [WebMethod]
         public Dictionary<String, d37CredorDto> getListaCredor()
         {
-            d37CredorDto rldto = new d37CredorDto();
-            return rldto.getListaCredor();
+            d37CredorDto cdto = new d37CredorDto();
+            return cdto.getListaCredor();
         }
     }
 }

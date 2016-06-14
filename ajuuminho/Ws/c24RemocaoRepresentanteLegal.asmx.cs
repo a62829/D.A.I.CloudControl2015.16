@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using _BusinessLayer;
 using System.Web.Services;
-using _BusinessLayer;
-using System.Data;
 
 namespace ajuUminho.Ws
 {

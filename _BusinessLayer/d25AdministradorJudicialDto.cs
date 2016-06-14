@@ -87,10 +87,17 @@ namespace _BusinessLayer
             aj.guardar(ajdto.nome, ajdto.morada, ajdto.codPostal, ajdto.localidade, ajdto.email, ajdto.telefone, ajdto.telemovel, ajdto.fax, ajdto.cc, ajdto.iban, ajdto.nif, ajdto.lastChangeBy);
         }
 
-        public DataTable getListaAdministradorJudicial()
+        public Dictionary<String, d25AdministradorJudicialDto> getListaAdministradorJudicial()
         {
             d25AdministradorJudicial aj = new d25AdministradorJudicial();
-            return aj.getListaAdministradorJudicial();
+            DataTable dt = aj.getListaAdministradorJudicial();
+            Dictionary<String, d25AdministradorJudicialDto> lista = new Dictionary<String, d25AdministradorJudicialDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d25AdministradorJudicialDto ajdto = new d25AdministradorJudicialDto(dt, i);
+                lista.Add(Convert.ToString(ajdto.id), ajdto);
+            }
+            return lista;
         }
 
         public void removerAdministradorJudicial(string id)

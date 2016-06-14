@@ -18,12 +18,10 @@ namespace ajuUminho.Ws
     {
 
         [WebMethod]
-        public void editarRepresentanteLegal(string nome, string morada, string codPostal, string localidade, string email,
-            string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy, string id)
+        public void editarRepresentanteLegal(string id, string nome, string morada, string codPostal, string localidade, string email,
+            string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
-
-            d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto(id, nome, morada, codPostal, localidade, email, telefone, telemovel,
-                                                                            fax, cc, iban, nif, lastChangeBy);
+            d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto(id, nome, morada, codPostal, localidade, email, telefone, telemovel,                                                             fax, cc, iban, nif, lastChangeBy);
             rldto.setRepresentanteLegal(rldto);
             //// efetuar controlos
             //d21RepresentanteLegal rl = new d21RepresentanteLegal();
@@ -32,16 +30,14 @@ namespace ajuUminho.Ws
             //{
             //    rl.setRepresentanteLegal(nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy, id);
             //}
-
         }
 
         [WebMethod]
         public void criarRepresentanteLegal (string nome, string morada, string codPostal, string localidade, string email,
             string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
-            d21RepresentanteLegalDto rl = new d21RepresentanteLegalDto(nome, morada, codPostal, localidade, email, telefone, telemovel, fax , cc , iban, nif, lastChangeBy);
-            rl.guardar(rl);
-
+            d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto(nome, morada, codPostal, localidade, email, telefone, telemovel, fax , cc , iban, nif, lastChangeBy);
+            rldto.guardar(rldto);
         }
 
         //[WebMethod]
@@ -60,12 +56,10 @@ namespace ajuUminho.Ws
         }
 
         [WebMethod]
-        public Dictionary<String, d21RepresentanteLegalDto> getListaRepresentantesLegais()
+        public Dictionary<String, d21RepresentanteLegalDto> getListaRepresentanteLegal()
         {
             d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
             return rldto.getListaRepresentanteLegal();
         }
-
-
     }
 }

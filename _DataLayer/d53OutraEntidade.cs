@@ -36,7 +36,7 @@ namespace _DataLayer
         public DataTable getListaOutraEntidade()
         {
             SqlDataReader reader;
-            cmd.CommandText = "SELECT id, nome FROM [dbo].[outraEntidade];";
+            cmd.CommandText = "SELECT * FROM [dbo].[outraEntidade];";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -45,10 +45,22 @@ namespace _DataLayer
             dataTable.Load(reader);
             con.Close();
             return dataTable;
-
-
         }
 
+        public DataTable getListaOutraEntidadeNoProcesso(string id)
+        {
+            SqlDataReader reader;
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "SELECT outraEntidade.id, outraEntidade.nome, outraEntidade.morada, outraEntidade.codPostal, outraEntidade.localidade, outraEntidade.email, outraEntidade.telefone, outraEntidade.telemovel, outraEntidade.fax, outraEntidade.cc, outraEntidade.iban, outraEntidade.nif, outraEntidade.lastChangeBy FROM outraEntidade Right Join outraEntidadeNoProcesso ON outraEntidadeNoProcesso.idoutraEntidade = outraEntidade.id WHERE outraEntidadeNoProcesso.idProcesso = @id ORDER BY outraEntidade.id; ";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.Connection.Open();
+            reader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
+        }
 
         public void setOutraEntidade(string nome, string morada, string codPostal, string localidade, string email,
             string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy, string id)

@@ -17,9 +17,11 @@ namespace ajuUminho.Ws
     public class c43EdicaoInsolvente : System.Web.Services.WebService
     {
         [WebMethod]
-        public void editarInsolvente(string nome, string morada, string codPostal, string localidade, string email,
+        public void editarInsolvente(string id, string nome, string morada, string codPostal, string localidade, string email,
                             string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
+            d41InsolventeDto idto = new d41InsolventeDto(id, nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
+            idto.setInsolvente(idto);
             //// efetuar controlos
             //d21RepresentanteLegal rl = new d21RepresentanteLegal();
             //var id = rl.getID(cc);
@@ -55,18 +57,10 @@ namespace ajuUminho.Ws
         }
 
         [WebMethod]
-        public Dictionary<String, String> getListaInsolvente()
+        public Dictionary<String, d41InsolventeDto> getListaInsolvente()
         {
-
-            d41InsolventeDto idto = new d41InsolventeDto();
-            DataTable dt = idto.getListaInsolvente();
-            Dictionary<String, String> lista = new Dictionary<String, String>();
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                lista.Add(Convert.ToString(dt.Rows[i]["id"]), Convert.ToString(dt.Rows[i]["nome"]));
-            }
-            return lista;
-
+            d41InsolventeDto cdto = new d41InsolventeDto();
+            return cdto.getListaInsolvente();
         }
     }
 }

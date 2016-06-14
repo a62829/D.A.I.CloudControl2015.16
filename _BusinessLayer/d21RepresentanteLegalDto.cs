@@ -102,7 +102,7 @@ namespace _BusinessLayer
         public void removerRepresentanteLegal(string id)
         {
             d21RepresentanteLegal rl = new d21RepresentanteLegal();
-                rl.removerRepresentanteLegal(id);
+            rl.removerRepresentanteLegal(id);
         }
     }
 }

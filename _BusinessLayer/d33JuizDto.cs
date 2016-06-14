@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using _DataLayer;
 using System;
+using System.Collections.Generic;
 
 namespace _BusinessLayer
 {
@@ -30,8 +31,27 @@ namespace _BusinessLayer
             this.lastChangeBy = lastChangeBy;
         }
 
+        public d33JuizDto(string id, string nome, string morada, string codPostal, string localidade, string email,
+    string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
+        {
+            this.id = id;
+            this.nome = nome;
+            this.morada = morada;
+            this.codPostal = codPostal;
+            this.localidade = localidade;
+            this.email = email;
+            this.telefone = telefone;
+            this.telemovel = telemovel;
+            this.fax = fax;
+            this.cc = cc;
+            this.iban = iban;
+            this.nif = nif;
+            this.lastChangeBy = lastChangeBy;
+        }
+
         public d33JuizDto(DataTable dt, int i)
         {
+            this.id = Convert.ToString(dt.Rows[i]["id"]);
             this.nome = Convert.ToString(dt.Rows[i]["nome"]);
             this.morada = Convert.ToString(dt.Rows[i]["morada"]);
             this.codPostal = Convert.ToString(dt.Rows[i]["codPostal"]);
@@ -66,10 +86,17 @@ namespace _BusinessLayer
             j.guardar(jdto.nome, jdto.morada, jdto.codPostal, jdto.localidade, jdto.email, jdto.telefone, jdto.telemovel, jdto.fax, jdto.cc, jdto.iban, jdto.nif, jdto.lastChangeBy);
         }
 
-        public DataTable getListaJuiz()
+        public Dictionary<String, d33JuizDto> getListaJuiz()
         {
             d33Juiz j = new d33Juiz();
-            return j.getListaJuiz();
+            DataTable dt = j.getListaJuiz();
+            Dictionary<String, d33JuizDto> lista = new Dictionary<String, d33JuizDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d33JuizDto jdto = new d33JuizDto(dt, i);
+                lista.Add(Convert.ToString(jdto.id), jdto);
+            }
+            return lista;
         }
 
         public void removerJuiz(string id)

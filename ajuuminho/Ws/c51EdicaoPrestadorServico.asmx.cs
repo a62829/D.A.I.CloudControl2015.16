@@ -20,9 +20,11 @@ namespace ajuUminho.Ws
     {
 
         [WebMethod]
-        public void editarPrestadorServico(string nome, string morada, string codPostal, string localidade, string email,
+        public void editarPrestadorServico(string id, string nome, string morada, string codPostal, string localidade, string email,
                                    string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
+            d49PrestadorServicoDto psdto = new d49PrestadorServicoDto(id, nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
+            psdto.setPrestadorServico(psdto);
             //// efetuar controlos
             //d21RepresentanteLegal rl = new d21RepresentanteLegal();
             //var id = rl.getID(cc);
@@ -58,18 +60,10 @@ namespace ajuUminho.Ws
         }
 
         [WebMethod]
-        public Dictionary<String, String> getListaPrestadorServico()
+        public Dictionary<String, d49PrestadorServicoDto> getListaPrestadorServico()
         {
-
-            d49PrestadorServicoDto pstdo = new d49PrestadorServicoDto();
-            DataTable dt = pstdo.getListaPrestadorServico();
-            Dictionary<String, String> lista = new Dictionary<String, String>();
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                lista.Add(Convert.ToString(dt.Rows[i]["id"]), Convert.ToString(dt.Rows[i]["nome"]));
-            }
-            return lista;
-
+            d49PrestadorServicoDto psdto = new d49PrestadorServicoDto();
+            return psdto.getListaPrestadorServico();
         }
     }
 }

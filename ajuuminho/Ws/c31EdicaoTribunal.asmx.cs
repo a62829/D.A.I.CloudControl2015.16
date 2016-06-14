@@ -1,8 +1,8 @@
-﻿using System;
+﻿using _BusinessLayer;
+using System;
 using System.Collections.Generic;
-using System.Web.Services;
-using _BusinessLayer;
 using System.Data;
+using System.Web.Services;
 
 namespace ajuUminho.Ws
 {
@@ -18,9 +18,11 @@ namespace ajuUminho.Ws
     {
 
         [WebMethod]
-        public void editarTribunal(string nome, string morada, string codPostal, string localidade, string email,
+        public void editarTribunal(string id, string nome, string morada, string codPostal, string localidade, string email,
             string telefone, string telemovel, string fax, string iban, string nif, string lastChangeBy)
         {
+            d29TribunalDto rldto = new d29TribunalDto(id, nome, morada, codPostal, localidade, email, telefone, telemovel, fax, iban, nif, lastChangeBy);
+            rldto.setTribunal(rldto);
             //// efetuar controlos
             //d29Tribunal t = new d29Tribunal();
             //var id = t.getID();
@@ -56,27 +58,10 @@ namespace ajuUminho.Ws
         }
 
         [WebMethod]
-        public Dictionary<String, String> getListaTribunal()
+        public Dictionary<String, d29TribunalDto> getListaTribunal()
         {
-
             d29TribunalDto tdto = new d29TribunalDto();
-            DataTable dt = tdto.getListaTribunal();
-            Dictionary<String, String> lista = new Dictionary<String, String>();
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                lista.Add(Convert.ToString(dt.Rows[i]["id"]), Convert.ToString(dt.Rows[i]["nome"]));
-            }
-            return lista;
-
+            return tdto.getListaTribunal();
         }
-
-        [WebMethod]
-        public void removerTribunal(string id)
-        {
-            // efetuar controlos
-            d29TribunalDto tdto = new d29TribunalDto();
-            tdto.removerTribunal(id);
-        }
-
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using System;
 using _DataLayer;
+using System.Collections.Generic;
 
 namespace _BusinessLayer
 {
@@ -30,8 +31,27 @@ namespace _BusinessLayer
             this.lastChangeBy = lastChangeBy;
         }
 
+        public d53OutraEntidadeDto(string id, string nome, string morada, string codPostal, string localidade, string email,
+            string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
+        {
+            this.id = id;
+            this.nome = nome;
+            this.morada = morada;
+            this.codPostal = codPostal;
+            this.localidade = localidade;
+            this.email = email;
+            this.telefone = telefone;
+            this.telemovel = telemovel;
+            this.fax = fax;
+            this.cc = cc;
+            this.iban = iban;
+            this.nif = nif;
+            this.lastChangeBy = lastChangeBy;
+        }
+
         public d53OutraEntidadeDto(DataTable dt, int i)
         {
+            this.id = Convert.ToString(dt.Rows[i]["id"]);
             this.nome = Convert.ToString(dt.Rows[i]["nome"]);
             this.morada = Convert.ToString(dt.Rows[i]["morada"]);
             this.codPostal = Convert.ToString(dt.Rows[i]["codPostal"]);
@@ -48,10 +68,10 @@ namespace _BusinessLayer
 
         public d53OutraEntidadeDto getOutraEntidade(string id)
         {
-            d53OutraEntidade rl = new d53OutraEntidade();
-            DataTable dt = rl.getOutraEntidade(id);
-            d53OutraEntidadeDto rldto = new d53OutraEntidadeDto(dt, 0);
-            return rldto;
+            d53OutraEntidade oe = new d53OutraEntidade();
+            DataTable dt = oe.getOutraEntidade(id);
+            d53OutraEntidadeDto oedto = new d53OutraEntidadeDto(dt, 0);
+            return oedto;
         }
 
         public void setOutraEntidade(d53OutraEntidadeDto oedto)
@@ -66,10 +86,17 @@ namespace _BusinessLayer
             oe.guardar(oedto.nome, oedto.morada, oedto.codPostal, oedto.localidade, oedto.email, oedto.telefone, oedto.telemovel, oedto.fax, oedto.cc, oedto.iban, oedto.nif, oedto.lastChangeBy);
         }
 
-        public DataTable getListaOutraEntidade()
+        public Dictionary<String, d53OutraEntidadeDto> getListaOutraEntidade()
         {
             d53OutraEntidade oe = new d53OutraEntidade();
-            return oe.getListaOutraEntidade();
+            DataTable dt = oe.getListaOutraEntidade();
+            Dictionary<String, d53OutraEntidadeDto> lista = new Dictionary<String, d53OutraEntidadeDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d53OutraEntidadeDto oedto = new d53OutraEntidadeDto(dt, i);
+                lista.Add(Convert.ToString(oedto.id), oedto);
+            }
+            return lista;
         }
 
         public void removerOutraEntidade(string id)

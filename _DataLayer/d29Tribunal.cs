@@ -36,7 +36,7 @@ namespace _DataLayer
         public DataTable getListaTribunal()
         {
             SqlDataReader reader;
-            cmd.CommandText = "SELECT id, nome FROM [dbo].[tribunal];";
+            cmd.CommandText = "SELECT * FROM [dbo].[tribunal];";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -45,13 +45,26 @@ namespace _DataLayer
             dataTable.Load(reader);
             con.Close();
             return dataTable;
-
-
         }
 
+        public DataTable getListaTribunalNoProcesso(string id)
+        {
+            SqlDataReader reader;
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "SELECT tribunal.id, tribunal.nome, tribunal.morada, tribunal.codPostal, tribunal.localidade, tribunal.email, tribunal.telefone, tribunal.telemovel, tribunal.fax, tribunal.iban, tribunal.nif, tribunal.lastChangeBy FROM tribunal Right Join tribunalNoProcesso ON tribunalNoProcesso.idtribunal = tribunal.id WHERE tribunalNoProcesso.idProcesso = @id ORDER BY tribunal.id; ";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.Connection.Open();
+            reader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
+        }
 
-        public void setTribunal(string nome, string morada, string codPostal, string localidade, string email,
-            string telefone, string telemovel, string fax, string iban, string nif, string lastChangeBy, string id)
+        public void setTribunal(string nome, string morada, string codPostal, string localidade, 
+            string email, string telefone, string telemovel, string fax, string iban, string nif, 
+            string lastChangeBy, string id)
         {
             con.Open();
             cmd.Parameters.AddWithValue("@nome", nome);
