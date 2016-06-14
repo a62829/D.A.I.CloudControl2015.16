@@ -85,6 +85,11 @@ namespace ajuUminho.controls.entidades
             }
         }
 
+        protected void ButtonPesquisarID_Click(object sender, EventArgs e)
+        {
+
+        }
+
         protected void TabCriarRepresentanteLegal_Click(object sender, EventArgs e)
         {
             ViewBoxVisible.Visible = true;
@@ -95,6 +100,7 @@ namespace ajuUminho.controls.entidades
             TabCriarRepresentanteLegalID.CssClass = "Clicked";
             TabEditarRepresentanteLegalID.CssClass = "Initial";
             TabEliminarRepresentanteLegalID.CssClass = "Initial";
+            TabPesquisarRepresentanteLegalID.CssClass = "Initial";
         }
 
         protected void TabEditarRepresentanteLegal_Click(object sender, EventArgs e)
@@ -136,9 +142,5 @@ namespace ajuUminho.controls.entidades
             TabPesquisarRepresentanteLegalID.CssClass = "Clicked";
         }
 
-        protected void ButtonPesquisarID_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
