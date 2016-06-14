@@ -14,7 +14,7 @@
         <div id="BigBox">
             <div id="ProcessesHomeBox">
                 <div class="AlignBox">
-                    <h3>Processos</h3> <div class="hr-align"> <hr /> </div>
+                     <div class="titleHhome"> <h3>Processos</h3> </div>
                     <asp:ListBox ID="ProcessesListID" runat="server" Cssclass="Processes-Item">
                         <asp:ListItem>Processo de Sireve</asp:ListItem>
                         <asp:ListItem>Processo de Revitalização</asp:ListItem>
@@ -25,13 +25,13 @@
             </div>
 
             <div id="CalendarHomeBox">
-                    <h3>Calendário</h3> <div class="hr-align"> <hr /> </div>
-                    <asp:Calendar ID="CalendarID" runat="server" Cssclass="Calendar-Item"></asp:Calendar>
+                     <div class="titleHhome"> <h3>Calendário</h3> </div>
+                     <asp:Calendar ID="CalendarID" runat="server" Cssclass="Calendar-Item"></asp:Calendar>
             </div>
 
             <div id="EventsHomeBox">
                 <div class="AlignBox">
-                    <h3>Eventos</h3> <div class="hr-align"> <hr /> </div>
+                     <div class="titleHhome"> <h3>Eventos</h3> </div>
                     <asp:ListBox ID="EventsListID" runat="server" Cssclass="Events-Item">
                         <asp:ListItem>Assembleia de credores</asp:ListItem>
                         <asp:ListItem>Audiência 1</asp:ListItem>
@@ -43,7 +43,7 @@
 
             <div id="OnlineUsersHomeBox">
                 <div class="AlignBox">
-                    <h3>Utilizadores Online</h3> <div class="hr-align"> <hr /> </div>
+                     <div class="titleHhome"> <h3>Utilizadores Online</h3> </div>
                     <asp:ListBox ID="OnlineUsersListID" runat="server" Cssclass="OnlineUsers-Item">
                         <asp:ListItem>Zé</asp:ListItem>
                         <asp:ListItem>Tiago</asp:ListItem>
@@ -55,7 +55,7 @@
 
             <div id="DayDetailHomeBox">
                 <div class="AlignBox">
-                    <h3>Detalhes do dia</h3> <div class="hr-align"> <hr /> </div>
+                     <div class="titleHhome"> <h3>Detalhes do dia</h3> </div>
                     <asp:Table ID="DayDetailTableID" runat="server" Cssclass="DayDetail-Item">
                         <asp:TableRow>
                             <asp:TableCell>Dia 2 - Reunião com advogada</asp:TableCell>
@@ -67,7 +67,7 @@
 
             <div id="LastAccessesHomeBox">
                 <div class="AlignBox">
-                    <h3>Últimos Acessos</h3> <div class="hr-align"> <hr /> </div>
+                     <div class="titleHhome"> <h3>Últimos Acessos</h3> </div>
                     <asp:Table ID="LastAccessesTableID" runat="server" Cssclass="LastAccesses-Item">
                         <asp:TableRow>
                             <asp:TableCell>Dia 12 ás 17:00h</asp:TableCell>

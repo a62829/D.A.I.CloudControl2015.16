@@ -23,10 +23,9 @@
 <body>
     <form id="Form" runat="server">
         <uc1:i14TerminoDeSessao runat="server" ID="headerID" />
-    
     <div id="BigBox">
             <div class="AlignBox">
-                <h3>Gestão de entidades</h3> <div class="hr-alignMore"> <hr /> </div>
+                 <div class="titleh3"> <h3>Gestão de entidades</h3> </div>
             </div>
 
         <div id="MultiViewBox">

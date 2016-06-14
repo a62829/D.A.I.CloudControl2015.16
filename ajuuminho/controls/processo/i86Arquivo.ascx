@@ -1,9 +1,64 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="i86Arquivo.ascx.cs" Inherits="ajuUminho.controls.processos.i86Arquivo" %>
 
-        <div id="ProcessosBox">
+
+                         
+                        <div class="ViewsBox">
+
+                            <%-- 2ª multiview --%>
+                            <div class="ViewsButtonsBox">
+                                <asp:Button Text="Suspender processo" BorderStyle="None" ID="TabSuspenderProcessoID" CssClass="Initial" runat="server"
+                                    OnClick="TabSuspenderProcesso_Click" />
+                                <asp:Button Text="Arquivar processo" BorderStyle="None" ID="TabArquivarProcessoID" CssClass="Initial" runat="server"
+                                     OnClick="TabArquivarProcesso_Click" style="height: 22px" />
+                                <asp:Button Text="Reativar processo" BorderStyle="None" ID="TabReativarProcessoID" CssClass="Initial" runat="server"
+                                     OnClick="TabReativarProcesso_Click" />
+                            </div>
+
+                                <asp:MultiView ID="MainViewID2" runat="server">
+                                    <asp:View ID="ViewSuspenderProcessoID" runat="server"> 
+                                        <div class ="ViewBoxCRUD">
+                                            
+
+                                            Suspender
+
+
+                                        </div>
+                                    </asp:View>
+                                    <asp:View ID="ViewArquivarProcessoID" runat="server"> 
+                                        <div class ="ViewBoxCRUD">
+                                            
+
+                                            Arquivar
+
+
+                                        </div>
+                                    </asp:View>
+                                    <asp:View ID="ViewReativarProcessoID" runat="server"> 
+                                        <div class ="ViewBoxCRUD">
+                                            
+
+
+                                            Reativar
+
+                                        </div>
+                                    </asp:View>
+                                </asp:MultiView>
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+        <%--<div id="ProcessosBox">
 
             <div class="AlignBox">
-                <h3>Lista de processos</h3> <div class="hr-alignMore"> <hr /> </div>
+                 <div class="titleh3"> <h3>Lista de processos</h3> </div>
                 <asp:ListBox ID="ListBoxProcessosID" runat="server" CssClass="ListBoxProcessos-Item"></asp:ListBox>
             </div>
                  <table class="ContentTable">
@@ -44,4 +99,4 @@
                   </tr>
                 </table>
             
-        </div>
+        </div>--%>

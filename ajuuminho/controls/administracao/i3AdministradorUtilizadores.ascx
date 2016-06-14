@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="i3AdministradorUtilizadores.ascx.cs" Inherits="ajuUminho.controls.administracao.i3AdministradorUtilizadores" %>
 
 <div id="EntidadesBox">
-            <h4>Utilizadores</h4> <div class="hr-alignLess"> <hr /> </div>
+            <div class="titleh4"> <h4>Utilizadores</h4> </div>
             <div id="ListEdentidades">
                 <div class="AlignBox">
                     <asp:ListBox ID="ListBoxEntidadesID" runat="server" CssClass="ListBoxEntidades-Item" AutoPostBack="True"></asp:ListBox>

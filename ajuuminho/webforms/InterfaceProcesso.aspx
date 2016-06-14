@@ -1,4 +1,4 @@
-﻿§<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InterfaceProcesso.aspx.cs" Inherits="ajuUminho.webforms.InterfaceProcesso" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InterfaceProcesso.aspx.cs" Inherits="ajuUminho.webforms.InterfaceProcesso" %>
 <%@ Register TagPrefix="uc1" TagName="i14TerminoDeSessao" Src="~/controls/utilizadores/i14TerminoDeSessao.ascx"%>
 <%@ Register TagPrefix="uc2" TagName="i60Eventos" Src="~/controls/processo/i60Eventos.ascx"%>
 <%@ Register TagPrefix="uc3" TagName="i64Bens" Src="~/controls/processo/i64Bens.ascx"%>
@@ -10,6 +10,8 @@
 <%@ Register TagPrefix="uc9" TagName="i91CreditosReclamados" Src="~/controls/processo/i91CreditosReclamados.ascx"%>
 <%@ Register TagPrefix="uc10" TagName="i86Arquivo" Src="~/controls/processo/i86Arquivo.ascx"%>
 <%@ Register TagPrefix="uc11" TagName="i56AtribuicaoEntidades" Src="~/controls/processo/i56AtribuicaoEntidades.ascx"%>
+<%@ Register TagPrefix="uc12" TagName="i89Tipos" Src="~/controls/processo/i89Tipos.ascx"%>
+<%@ Register TagPrefix="uc13" TagName="i101CriarProcesso" Src="~/controls/processo/i101CriarProcesso.ascx"%>
 
 <!DOCTYPE html>
 
@@ -18,108 +20,120 @@
     <title>Aju-UMinho</title>
     <meta charset="UTF-8"/>
     <link rel="stylesheet" type="text/css" href="../css/StyleSheet.css" title="StyleSheet"/>
-	<link rel="stylesheet" href="../css/style.css"/>
-	<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
-	<script src="../js/organictabs.jquery.js"></script>
-	<script>
-		$(function() {
-		
-			// Calling the plugin
-			$("#example-two").organicTabs({
-				"speed": 300, //+ speed = + lento
-				"param": "tab"
-			});
-			
-		});
-	</script>
 </head>
 
 <body>
     <form id="Form" runat="server">
         <uc1:i14TerminoDeSessao runat="server" ID="headerID" />
+    
     <div id="BigBox">
         
-        <uc10:i86Arquivo runat="server" id="i86Arquivo" />
+        <div id="MultiViewBox">
+
+            <div id="MultiViewButtonsBox">
+                <asp:Button Text="Criar processo" BorderStyle="None" ID="TabCriarProcessoID" CssClass="Initial" runat="server"
+                    OnClick="TabCriarProcesso_Click" />
+                <asp:Button Text="Atribuir entidades" BorderStyle="None" ID="TabAtribuirEntidadesID" CssClass="Initial" runat="server"
+                    OnClick="TabAtribuirEntidades_Click" />
+                <asp:Button Text="Editar processo" BorderStyle="None" ID="TabEditarProcessoID" CssClass="Initial" runat="server"
+                    OnClick="TabEditarProcesso_Click" />
+                <asp:Button Text="Listar processo" BorderStyle="None" ID="TabListarProcessoID" CssClass="Initial" runat="server"
+                    OnClick="TabListarProcesso_Click" />
+                <asp:Button Text="Parar processo" BorderStyle="None" ID="TabPararProcessoID" CssClass="Initial" runat="server"
+                    OnClick="TabPararProcesso_Click" />
+                <asp:Button Text="Categorizar processo" BorderStyle="None" ID="TabCategorizarProcessoID" CssClass="Initial" runat="server"
+                    OnClick="TabCategorizarProcesso_Click" />
+            </div>
+
+            <asp:MultiView ID="MainViewID" runat="server">
+                    <asp:View ID="ViewCriarProcessoID" runat="server">
+                        <uc13:i101CriarProcesso runat="server" id="i101CriarProcessoID" />
+                    </asp:View>
+                    <asp:View ID="ViewAtribuirEntidadesID" runat="server">
+                        <uc11:i56AtribuicaoEntidades runat="server" id="atribuicaoEntidadesID" />
+                    </asp:View>
+                    <asp:View ID="ViewEditarProcessoID" runat="server">
+
+                         <div class="ViewsBox">
+
+                            <%-- 2ª multiview --%>
+                            <div class="ViewsButtonsBox">
+                                <asp:Button Text="Atribuir evento" BorderStyle="None" ID="TabAtribuirEventosID" CssClass="Initial" runat="server"
+                                    OnClick="TabAtribuirEventos_Click" />
+                                <asp:Button Text="Bens" BorderStyle="None" ID="TabBensID" CssClass="Initial" runat="server"
+                                     OnClick="TabBens_Click" />
+                                <asp:Button Text="Movimentos financeiros" BorderStyle="None" ID="TabMovimentosFinanceirosID" CssClass="Initial" runat="server"
+                                     OnClick="TabMovimentosFinanceiros_Click" />
+                                <asp:Button Text="Editar credores" BorderStyle="None" ID="TabEditarCredoresID" CssClass="Initial" runat="server"
+                                     OnClick="TabCredores_Click" />
+                                <asp:Button Text="Serviços externos" BorderStyle="None" ID="TabServicosExternosID" CssClass="Initial" runat="server"
+                                     OnClick="TabServicosExternos_Click" />
+                                <asp:Button Text="Ficheiros multimédia" BorderStyle="None" ID="TabFicheirosMultimediaID" CssClass="Initial" runat="server"
+                                     OnClick="TabFicheirosMultimedia_Click" />
+                                <asp:Button Text="Ficheiros texto" BorderStyle="None" ID="TabFicheirosTextoID" CssClass="Initial" runat="server"
+                                     OnClick="TabFicheirosTexto_Click" />
+                            </div>
+
+                                <asp:MultiView ID="MainViewID1" runat="server">
+                                    <asp:View ID="ViewAtribuirEventosID" runat="server"> 
+                                        <div class ="ViewBoxCRUD">
+                                            <uc2:i60Eventos runat="server" ID="eventosID" />
+                                        </div>
+                                    </asp:View>
+                                    <asp:View ID="ViewBensID" runat="server"> 
+                                        <div class ="ViewBoxCRUD">
+                                            <uc3:i64Bens runat="server" id="bensID" />
+                                        </div>
+                                    </asp:View>
+                                    <asp:View ID="ViewMovimentosFinanceirosID" runat="server"> 
+                                        <div class ="ViewBoxCRUD">
+                                            <uc4:i68MovimentosFinanceiros runat="server" id="movimentosFinanceirosID" />
+                                        </div>
+                                    </asp:View>
+                                    <asp:View ID="ViewCredoresID" runat="server"> 
+                                        <div class ="ViewBoxCRUD">
+                                            <uc5:i72Credores runat="server" id="credoresID" />
+                                        </div>
+                                    </asp:View>
+                                    <asp:View ID="ViewServicosExternosID" runat="server"> 
+                                        <div class ="ViewBoxCRUD">
+                                            <uc6:i75ServicosExternos runat="server" id="servicosExternosID" />
+                                        </div>
+                                    </asp:View>
+                                    <asp:View ID="ViewFicheirosMultimediaID" runat="server"> 
+                                        <div class ="ViewBoxCRUD">
+                                            <uc7:i80FicheirosMultimedia runat="server" id="ficheirosMultimediaID" />
+                                        </div>
+                                    </asp:View>
+                                    <asp:View ID="ViewFicheirosTextoID" runat="server"> 
+                                        <div class ="ViewBoxCRUD">
+                                            <uc8:i83FicheirosTexto runat="server" id="ficheirosTextoID" />
+                                        </div>
+                                    </asp:View>
+                                </asp:MultiView>
+
+                        </div>
+
+                    </asp:View>
+                    <asp:View ID="ViewListarProcessoID" runat="server">
+                        <uc10:i86Arquivo runat="server" id="i86ArquivoID" />
+                    </asp:View>
+                    <asp:View ID="ViewPararProcessoID" runat="server">
+                        <uc10:i86Arquivo runat="server" id="i86ArquivoID1" />
+                    </asp:View>
+                    <asp:View ID="ViewCategorizarProcessoID" runat="server">
+                        <uc12:i89Tipos runat="server" id="I89TiposID" />
+                    </asp:View>
+            </asp:MultiView>
+
+            
+
+
+<%--        <uc10:i86Arquivo runat="server" id="i86Arquivo" />
 
         <div id="MultiViewBox">
 
-
-            <div id="page-wrap">
-            	<div id="example-two">
-		
-		<ul class="nav">
-			<li class="nav-one"><a href="#Eventos" class="current">Eventos</a></li>
-			<li class="nav-two"><a href="#Bens">Bens</a></li>
-			<li class="nav-three"><a href="#MovimentosFinanceiros">Movimentos Financeiros</a></li>
-            <li class="nav-three"><a href="#Credores">Credores</a></li>
-			<li class="nav-three"><a href="#ServicosExternos">Serviços Externos</a></li>
-			<li class="nav-four"><a href="#FicheirosMultimédia">Ficheiros Multimédia</a></li>
-            <li class="nav-five"><a href="#FicheirosTexto">Ficheiros Texto</a></li>
-            <li class="nav-six"><a href="#CreditosReclamados">Créditos Reclamados</a></li>
-            <li class="nav-seven last"><a href="#AtribuicaoEntidades">Atribuição Entidades</a></li>
-		</ul>
-		
-		<div class="list-wrap">
-		
-		<ul id="Eventos">
-			<li>
-                <uc2:i60Eventos runat="server" ID="I60Eventos1" />
-			</li>
-		</ul>
-		
-		<ul id="Bens" class="hide">
-			<li>
-                <uc3:i64Bens runat="server" id="I64Bens1" />
-			</li>
-		</ul>
-		
-		<ul id="MovimentosFinanceiros" class="hide">
-			<li>
-                <uc4:i68MovimentosFinanceiros runat="server" id="I68MovimentosFinanceiros1" />
-			</li>
-		</ul>
-		
-        <ul id="Credores" class="hide">
-			<li>
-               <uc5:i72Credores runat="server" id="I72Credores1" /> 
-			</li>
-		</ul>
-
-        <ul id="ServicosExternos" class="hide">
-			<li>
-                <uc6:i75ServicosExternos runat="server" id="I75ServicosExternos1" />
-			</li>
-		</ul>
-
-		<ul id="FicheirosMultimédia" class="hide">
-			<li>
-                <uc7:i80FicheirosMultimedia runat="server" id="I80FicheirosMultimedia1" />
-			</li>
-		</ul>
-
-        <ul id="FicheirosTexto" class="hide">
-			<li>
-                <uc8:i83FicheirosTexto runat="server" id="I83FicheirosTexto1" />
-			</li>
-		</ul>
-
-        <ul id="CreditosReclamados" class="hide">
-			<li>
-                <uc9:i91CreditosReclamados runat="server" id="I91CreditosReclamados1" />
-			</li>
-		</ul>
-
-        <ul id="AtribuicaoEntidades" class="hide">
-			<li>
-                <uc11:i56AtribuicaoEntidades runat="server" id="I56AtribuicaoEntidades1" />
-			</li>
-		</ul>
-
-		</div>
-		</div> <!-- END List Wrap -->
-        </div>          
-
-<%--            <div id="MultiViewButtonsBox">
+            <div id="MultiViewButtonsBox">
                 <asp:Button Text="Eventos" BorderStyle="None" ID="TabEventosID" CssClass="Initial" runat="server"
                     OnClick="TabEventos_Click" />
                 <asp:Button Text="Bens" BorderStyle="None" ID="TabBensID" CssClass="Initial" runat="server"

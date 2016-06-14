@@ -158,6 +158,7 @@
     <Content Include="controls\entidades\i46Contabilistas.ascx" />
     <Content Include="controls\entidades\i50PrestadoresServico.ascx" />
     <Content Include="controls\entidades\i54OutrasEntidades.ascx" />
+    <Content Include="controls\processo\i101CriarProcesso.ascx" />
     <Content Include="controls\processo\i56AtribuicaoEntidades.ascx" />
     <Content Include="controls\processo\i60Eventos.ascx" />
     <Content Include="controls\processo\i64Bens.ascx" />
@@ -167,11 +168,11 @@
     <Content Include="controls\processo\i80FicheirosMultimedia.ascx" />
     <Content Include="controls\processo\i83FicheirosTexto.ascx" />
     <Content Include="controls\processo\i86Arquivo.ascx" />
+    <Content Include="controls\processo\i89Tipos.ascx" />
     <Content Include="controls\processo\i91CreditosReclamados.ascx" />
     <Content Include="controls\relatorios\i100Custos.ascx" />
     <Content Include="controls\relatorios\i16TiposEworkflows.ascx" />
     <Content Include="controls\relatorios\i19Relatorios.ascx" />
-    <Content Include="controls\relatorios\i89Tipos.ascx" />
     <Content Include="controls\relatorios\i94PesquisaCreditoReclamado.ascx" />
     <Content Include="controls\relatorios\i98AcoesRelatorio.ascx" />
     <Content Include="controls\utilizadores\i12AutenticacaoDeUtilizadores.ascx" />
@@ -301,6 +302,13 @@
     <Compile Include="controls\entidades\i54OutrasEntidades.ascx.designer.cs">
       <DependentUpon>i54OutrasEntidades.ascx</DependentUpon>
     </Compile>
+    <Compile Include="controls\processo\i101CriarProcesso.ascx.cs">
+      <DependentUpon>i101CriarProcesso.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\processo\i101CriarProcesso.ascx.designer.cs">
+      <DependentUpon>i101CriarProcesso.ascx</DependentUpon>
+    </Compile>
     <Compile Include="controls\processo\i56AtribuicaoEntidades.ascx.cs">
       <DependentUpon>i56AtribuicaoEntidades.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -364,6 +372,13 @@
     <Compile Include="controls\processo\i86Arquivo.ascx.designer.cs">
       <DependentUpon>i86Arquivo.ascx</DependentUpon>
     </Compile>
+    <Compile Include="controls\processo\i89Tipos.ascx.cs">
+      <DependentUpon>i89Tipos.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\processo\i89Tipos.ascx.designer.cs">
+      <DependentUpon>i89Tipos.ascx</DependentUpon>
+    </Compile>
     <Compile Include="controls\processo\i91CreditosReclamados.ascx.cs">
       <DependentUpon>i91CreditosReclamados.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -391,13 +406,6 @@
     </Compile>
     <Compile Include="controls\relatorios\i19Relatorios.ascx.designer.cs">
       <DependentUpon>i19Relatorios.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="controls\relatorios\i89Tipos.ascx.cs">
-      <DependentUpon>i89Tipos.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="controls\relatorios\i89Tipos.ascx.designer.cs">
-      <DependentUpon>i89Tipos.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\relatorios\i94PesquisaCreditoReclamado.ascx.cs">
       <DependentUpon>i94PesquisaCreditoReclamado.ascx</DependentUpon>

@@ -13,138 +13,66 @@ namespace ajuUminho.controls.processos {
     public partial class i86Arquivo {
         
         /// <summary>
-        /// ListBoxProcessosID control.
+        /// TabSuspenderProcessoID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBoxProcessosID;
+        protected global::System.Web.UI.WebControls.Button TabSuspenderProcessoID;
         
         /// <summary>
-        /// LabelNomeInsolventeID control.
+        /// TabArquivarProcessoID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNomeInsolventeID;
+        protected global::System.Web.UI.WebControls.Button TabArquivarProcessoID;
         
         /// <summary>
-        /// TextBoxNomeInsolventeID control.
+        /// TabReativarProcessoID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxNomeInsolventeID;
+        protected global::System.Web.UI.WebControls.Button TabReativarProcessoID;
         
         /// <summary>
-        /// LabelNomeProcessoID control.
+        /// MainViewID2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNomeProcessoID;
+        protected global::System.Web.UI.WebControls.MultiView MainViewID2;
         
         /// <summary>
-        /// TextBoxNomeProcessoID control.
+        /// ViewSuspenderProcessoID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxNomeProcessoID;
+        protected global::System.Web.UI.WebControls.View ViewSuspenderProcessoID;
         
         /// <summary>
-        /// LabelNomeTipoProcessoID control.
+        /// ViewArquivarProcessoID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNomeTipoProcessoID;
+        protected global::System.Web.UI.WebControls.View ViewArquivarProcessoID;
         
         /// <summary>
-        /// TextBoxNomeTipoProcessoID control.
+        /// ViewReativarProcessoID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxNomeTipoProcessoID;
-        
-        /// <summary>
-        /// LabelWorkflowID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelWorkflowID;
-        
-        /// <summary>
-        /// TextBoxWorkflowID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxWorkflowID;
-        
-        /// <summary>
-        /// LabelEstadoID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelEstadoID;
-        
-        /// <summary>
-        /// TextBoxEstadoID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxEstadoID;
-        
-        /// <summary>
-        /// LabelIdLegalID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelIdLegalID;
-        
-        /// <summary>
-        /// TextBoxIdLegalID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxIdLegalID;
-        
-        /// <summary>
-        /// LabelDataInicioID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelDataInicioID;
-        
-        /// <summary>
-        /// TextBoxDataInicioID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxDataInicioID;
+        protected global::System.Web.UI.WebControls.View ViewReativarProcessoID;
     }
 }

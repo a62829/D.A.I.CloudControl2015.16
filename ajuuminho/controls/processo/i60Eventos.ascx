@@ -2,9 +2,9 @@
 
     <%-- falta calendario --%>
 
-      <div class="InsideViewsBox">
+
         <div class="InsideViewsTableBox">
-            <h3>Lista de Eventos</h3> <div class="hr-align"> <hr /> </div>
+            <div class="titleh4"> <h4>Lista de Eventos</h4> </div>
 
             <table id="table1">
             <tr>
@@ -32,7 +32,7 @@
         </div>
 
         <div class="InsideViewsDetailsBox">
-            <h3>Detalhes do Evento</h3> <div class="hr-align"> <hr /> </div>
+            <div class="titleh4"> <h4>Detalhes do Evento</h4> </div>
               <table class="ContentTable">
                   <tr>
                       <td> <asp:Label ID="LabelProcessoAssociadoID" runat="server" Text="Label" CssClass="Labels-Item">
@@ -62,4 +62,4 @@
             <asp:Button ID="Button1" runat="server" Text="Criar Evento" CssClass="ContentButton"/>
             <asp:Button ID="ButtonGuardarID" runat="server" Text="Guardar Alterações" CssClass="ContentButton"/>
         </div>
-      </div>
+
