@@ -39,21 +39,21 @@ namespace ajuUminho.controls.entidades
 
         protected void ListBoxEntidadesID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            c43EdicaoInsolvente ei = new c43EdicaoInsolvente();
+            c43EdicaoInsolvente wsi = new c43EdicaoInsolvente();
             string idi = ListBoxEntidadesID.SelectedValue.ToString();
-            d41InsolventeDto i = ei.getInsolvente(idi);
-            TextBoxNomeID.Text = i.nome;
-            TextBoxMoradaID.Text = i.morada;
-            TextBoxCodPostalID.Text = i.codPostal;
-            TextBoxLocalidadeID.Text = i.localidade;
-            TextBoxEmailID.Text = i.email;
-            TextBoxTelefoneID.Text = i.telefone;
-            TextBoxTelemovelID.Text = i.telemovel;
-            TextBoxFaxID.Text = i.fax;
-            TextBoxCcID.Text = i.cc;
-            TextBoxIbanID.Text = i.iban;
-            TextBoxNifID.Text = i.nif;
-            TextBoxLastChangedID.Text = i.lastChangeBy;
+            d41InsolventeDto idto = wsi.getInsolvente(idi);
+            TextBoxNomeID.Text = idto.nome;
+            TextBoxMoradaID.Text = idto.morada;
+            TextBoxCodPostalID.Text = idto.codPostal;
+            TextBoxLocalidadeID.Text = idto.localidade;
+            TextBoxEmailID.Text = idto.email;
+            TextBoxTelefoneID.Text = idto.telefone;
+            TextBoxTelemovelID.Text = idto.telemovel;
+            TextBoxFaxID.Text = idto.fax;
+            TextBoxCcID.Text = idto.cc;
+            TextBoxIbanID.Text = idto.iban;
+            TextBoxNifID.Text = idto.nif;
+            TextBoxLastChangedID.Text = idto.lastChangeBy;
             ListBoxEntidadesID.ClearSelection();
             //ListBoxEntidadesID.Items.Clear();
             //listaRepresentanteLegal();
@@ -62,7 +62,7 @@ namespace ajuUminho.controls.entidades
         protected void ButtonEditarID_Click(object sender, EventArgs e)
         {
             c43EdicaoInsolvente WsEI = new c43EdicaoInsolvente();
-            WsEI.editarInsolvente(TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
+            WsEI.editarInsolvente(ListBoxEntidadesID.SelectedValue.ToString(), TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text);
         }
@@ -71,7 +71,7 @@ namespace ajuUminho.controls.entidades
         {
             c43EdicaoInsolvente WsEI = new c43EdicaoInsolvente();
             var lista = WsEI.getListaInsolvente();
-            foreach (KeyValuePair<String, String> pair in lista)
+            foreach (KeyValuePair<String, d41InsolventeDto> pair in lista)
             {
                 ListItem Item = new ListItem();
                 Item.Text = pair.Value.ToString();

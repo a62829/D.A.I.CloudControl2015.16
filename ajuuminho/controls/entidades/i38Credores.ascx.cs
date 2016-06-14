@@ -40,21 +40,21 @@ namespace ajuUminho.controls.entidades
 
         protected void ListBoxEntidadesID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            c39EdicaoCredor ec = new c39EdicaoCredor();
+            c39EdicaoCredor wsc = new c39EdicaoCredor();
             string idc = ListBoxEntidadesID.SelectedValue.ToString();
-            d37CredorDto c = ec.getCredor(idc);
-            TextBoxNomeID.Text = c.nome;
-            TextBoxMoradaID.Text = c.morada;
-            TextBoxCodPostalID.Text = c.codPostal;
-            TextBoxLocalidadeID.Text = c.localidade;
-            TextBoxEmailID.Text = c.email;
-            TextBoxTelefoneID.Text = c.telefone;
-            TextBoxTelemovelID.Text = c.telemovel;
-            TextBoxFaxID.Text = c.fax;
-            TextBoxCcID.Text = c.cc;
-            TextBoxIbanID.Text = c.iban;
-            TextBoxNifID.Text = c.nif;
-            TextBoxLastChangedID.Text = c.lastChangeBy;
+            d37CredorDto cdto = wsc.getCredor(idc);
+            TextBoxNomeID.Text = cdto.nome;
+            TextBoxMoradaID.Text = cdto.morada;
+            TextBoxCodPostalID.Text = cdto.codPostal;
+            TextBoxLocalidadeID.Text = cdto.localidade;
+            TextBoxEmailID.Text = cdto.email;
+            TextBoxTelefoneID.Text = cdto.telefone;
+            TextBoxTelemovelID.Text = cdto.telemovel;
+            TextBoxFaxID.Text = cdto.fax;
+            TextBoxCcID.Text = cdto.cc;
+            TextBoxIbanID.Text = cdto.iban;
+            TextBoxNifID.Text = cdto.nif;
+            TextBoxLastChangedID.Text = cdto.lastChangeBy;
             ListBoxEntidadesID.ClearSelection();
             //ListBoxEntidadesID.Items.Clear();
             //listaCredor();
@@ -63,7 +63,7 @@ namespace ajuUminho.controls.entidades
         protected void ButtonEditarID_Click(object sender, EventArgs e)
         {
             c39EdicaoCredor WsEC = new c39EdicaoCredor();
-            WsEC.editarCredor(TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
+            WsEC.editarCredor(ListBoxEntidadesID.SelectedValue.ToString(), TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text);
         }

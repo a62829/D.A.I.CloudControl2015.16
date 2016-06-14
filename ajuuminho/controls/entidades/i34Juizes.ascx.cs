@@ -40,21 +40,21 @@ namespace ajuUminho.controls.entidades
 
         protected void ListBoxEntidadesID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            c35EdicaoJuiz ej = new c35EdicaoJuiz();
+            c35EdicaoJuiz wsj = new c35EdicaoJuiz();
             string idj = ListBoxEntidadesID.SelectedValue.ToString();
-            d33JuizDto j = ej.getJuiz(idj);
-            TextBoxNomeID.Text = j.nome;
-            TextBoxMoradaID.Text = j.morada;
-            TextBoxCodPostalID.Text = j.codPostal;
-            TextBoxLocalidadeID.Text = j.localidade;
-            TextBoxEmailID.Text = j.email;
-            TextBoxTelefoneID.Text = j.telefone;
-            TextBoxTelemovelID.Text = j.telemovel;
-            TextBoxFaxID.Text = j.fax;
-            TextBoxCcID.Text = j.cc;
-            TextBoxIbanID.Text = j.iban;
-            TextBoxNifID.Text = j.nif;
-            TextBoxLastChangedID.Text = j.lastChangeBy;
+            d33JuizDto jdto = wsj.getJuiz(idj);
+            TextBoxNomeID.Text = jdto.nome;
+            TextBoxMoradaID.Text = jdto.morada;
+            TextBoxCodPostalID.Text = jdto.codPostal;
+            TextBoxLocalidadeID.Text = jdto.localidade;
+            TextBoxEmailID.Text = jdto.email;
+            TextBoxTelefoneID.Text = jdto.telefone;
+            TextBoxTelemovelID.Text = jdto.telemovel;
+            TextBoxFaxID.Text = jdto.fax;
+            TextBoxCcID.Text = jdto.cc;
+            TextBoxIbanID.Text = jdto.iban;
+            TextBoxNifID.Text = jdto.nif;
+            TextBoxLastChangedID.Text = jdto.lastChangeBy;
             ListBoxEntidadesID.ClearSelection();
             //ListBoxEntidadesID.Items.Clear();
             //listaRepresentanteLegal();
@@ -63,7 +63,7 @@ namespace ajuUminho.controls.entidades
         protected void ButtonEditarID_Click(object sender, EventArgs e)
         {
             c35EdicaoJuiz WsEJ = new c35EdicaoJuiz();
-            WsEJ.editarJuiz(TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
+            WsEJ.editarJuiz(ListBoxEntidadesID.SelectedValue.ToString(), TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text);
         }
@@ -72,7 +72,7 @@ namespace ajuUminho.controls.entidades
         {
             c35EdicaoJuiz WsEJ = new c35EdicaoJuiz();
             var lista = WsEJ.getListaJuiz();
-            foreach (KeyValuePair<String, String> pair in lista)
+            foreach (KeyValuePair<String, d33JuizDto> pair in lista)
             {
                 ListItem Item = new ListItem();
                 Item.Text = pair.Value.ToString();

@@ -9,6 +9,8 @@ namespace ajuUminho.controls.entidades
 {
     public partial class i30Tribunais : System.Web.UI.UserControl
     {
+        private Dictionary<String, d29TribunalDto> lista = new Dictionary<string, d29TribunalDto>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -62,7 +64,7 @@ namespace ajuUminho.controls.entidades
         protected void ButtonEditarID_Click(object sender, EventArgs e)
         {
             c31EdicaoTribunal WsET = new c31EdicaoTribunal();
-            WsET.editarTribunal(TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
+            WsET.editarTribunal(ListBoxEntidadesID.SelectedValue.ToString(), TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text);
         }
@@ -70,8 +72,8 @@ namespace ajuUminho.controls.entidades
         protected void listaTribunal()
         {
             c31EdicaoTribunal WsET = new c31EdicaoTribunal();
-            var lista = WsET.getListaTribunal();
-            foreach (KeyValuePair<String, String> pair in lista)
+            this.lista = WsET.getListaTribunal();
+            foreach (KeyValuePair<String, d29TribunalDto> pair in lista)
             {
                 ListItem Item = new ListItem();
                 Item.Text = pair.Value.ToString();

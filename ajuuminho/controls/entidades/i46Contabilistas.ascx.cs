@@ -39,21 +39,21 @@ namespace ajuUminho.controls.entidades
 
         protected void ListBoxEntidadesID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            c47EdicaoContabilista ec = new c47EdicaoContabilista();
-            string idc = ListBoxEntidadesID.SelectedValue.ToString();
-            d45ContabilistaDto c = ec.getContabilista(idc);
-            TextBoxNomeID.Text = c.nome;
-            TextBoxMoradaID.Text = c.morada;
-            TextBoxCodPostalID.Text = c.codPostal;
-            TextBoxLocalidadeID.Text = c.localidade;
-            TextBoxEmailID.Text = c.email;
-            TextBoxTelefoneID.Text = c.telefone;
-            TextBoxTelemovelID.Text = c.telemovel;
-            TextBoxFaxID.Text = c.fax;
-            TextBoxCcID.Text = c.cc;
-            TextBoxIbanID.Text = c.iban;
-            TextBoxNifID.Text = c.nif;
-            TextBoxLastChangedID.Text = c.lastChangeBy;
+            c47EdicaoContabilista wsc = new c47EdicaoContabilista();
+            string cid = ListBoxEntidadesID.SelectedValue.ToString();
+            d45ContabilistaDto cdto = wsc.getContabilista(cid);
+            TextBoxNomeID.Text = cdto.nome;
+            TextBoxMoradaID.Text = cdto.morada;
+            TextBoxCodPostalID.Text = cdto.codPostal;
+            TextBoxLocalidadeID.Text = cdto.localidade;
+            TextBoxEmailID.Text = cdto.email;
+            TextBoxTelefoneID.Text = cdto.telefone;
+            TextBoxTelemovelID.Text = cdto.telemovel;
+            TextBoxFaxID.Text = cdto.fax;
+            TextBoxCcID.Text = cdto.cc;
+            TextBoxIbanID.Text = cdto.iban;
+            TextBoxNifID.Text = cdto.nif;
+            TextBoxLastChangedID.Text = cdto.lastChangeBy;
             ListBoxEntidadesID.ClearSelection();
             //ListBoxEntidadesID.Items.Clear();
             //listaContabilista();
@@ -62,7 +62,7 @@ namespace ajuUminho.controls.entidades
         protected void ButtonEditarID_Click(object sender, EventArgs e)
         {
             c47EdicaoContabilista WsEC = new c47EdicaoContabilista();
-            WsEC.editarContabilista(TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
+            WsEC.editarContabilista(ListBoxEntidadesID.SelectedValue.ToString(), TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text);
         }
@@ -71,7 +71,7 @@ namespace ajuUminho.controls.entidades
         {
             c47EdicaoContabilista WsEC = new c47EdicaoContabilista();
             var lista = WsEC.getListaContabilista();
-            foreach (KeyValuePair<String, String> pair in lista)
+            foreach (KeyValuePair<String, d45ContabilistaDto> pair in lista)
             {
                 ListItem Item = new ListItem();
                 Item.Text = pair.Value.ToString();

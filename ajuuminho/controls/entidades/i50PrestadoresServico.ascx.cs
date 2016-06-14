@@ -39,21 +39,21 @@ namespace ajuUminho.controls.entidades
 
         protected void ListBoxEntidadesID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            c51EdicaoPrestadorServico eps = new c51EdicaoPrestadorServico();
-            string idps = ListBoxEntidadesID.SelectedValue.ToString();
-            d49PrestadorServicoDto ps = eps.getPrestadorServico(idps);
-            TextBoxNomeID.Text = ps.nome;
-            TextBoxMoradaID.Text = ps.morada;
-            TextBoxCodPostalID.Text = ps.codPostal;
-            TextBoxLocalidadeID.Text = ps.localidade;
-            TextBoxEmailID.Text = ps.email;
-            TextBoxTelefoneID.Text = ps.telefone;
-            TextBoxTelemovelID.Text = ps.telemovel;
-            TextBoxFaxID.Text = ps.fax;
-            TextBoxCcID.Text = ps.cc;
-            TextBoxIbanID.Text = ps.iban;
-            TextBoxNifID.Text = ps.nif;
-            TextBoxLastChangedID.Text = ps.lastChangeBy;
+            c51EdicaoPrestadorServico wsps = new c51EdicaoPrestadorServico();
+            string psid = ListBoxEntidadesID.SelectedValue.ToString();
+            d49PrestadorServicoDto psdto = wsps.getPrestadorServico(psid);
+            TextBoxNomeID.Text = psdto.nome;
+            TextBoxMoradaID.Text = psdto.morada;
+            TextBoxCodPostalID.Text = psdto.codPostal;
+            TextBoxLocalidadeID.Text = psdto.localidade;
+            TextBoxEmailID.Text = psdto.email;
+            TextBoxTelefoneID.Text = psdto.telefone;
+            TextBoxTelemovelID.Text = psdto.telemovel;
+            TextBoxFaxID.Text = psdto.fax;
+            TextBoxCcID.Text = psdto.cc;
+            TextBoxIbanID.Text = psdto.iban;
+            TextBoxNifID.Text = psdto.nif;
+            TextBoxLastChangedID.Text = psdto.lastChangeBy;
             ListBoxEntidadesID.ClearSelection();
             //ListBoxEntidadesID.Items.Clear();
             //listaRepresentanteLegal();
@@ -62,7 +62,7 @@ namespace ajuUminho.controls.entidades
         protected void ButtonEditarID_Click(object sender, EventArgs e)
         {
             c51EdicaoPrestadorServico WsEPS = new c51EdicaoPrestadorServico();
-            WsEPS.editarPrestadorServico(TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
+            WsEPS.editarPrestadorServico(ListBoxEntidadesID.SelectedValue.ToString(), TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text);
         }
@@ -71,7 +71,7 @@ namespace ajuUminho.controls.entidades
         {
             c51EdicaoPrestadorServico WsEPS = new c51EdicaoPrestadorServico();
             var lista = WsEPS.getListaPrestadorServico();
-            foreach (KeyValuePair<String, String> pair in lista)
+            foreach (KeyValuePair<String, d49PrestadorServicoDto> pair in lista)
             {
                 ListItem Item = new ListItem();
                 Item.Text = pair.Value.ToString();

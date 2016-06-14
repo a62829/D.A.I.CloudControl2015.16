@@ -45,7 +45,7 @@ namespace ajuUminho.controls.entidades
         {
             c23EditarRepresentanteLegal erl = new c23EditarRepresentanteLegal();
             string idRl = ListBoxEntidadesID.SelectedValue.ToString();
-            var rl = erl.getRepresentanteLegal(idRl);
+            d21RepresentanteLegalDto rl = erl.getRepresentanteLegal(idRl);
             TextBoxNomeID.Text = rl.nome;
             TextBoxMoradaID.Text = rl.morada;
             TextBoxCodPostalID.Text = rl.codPostal;
@@ -66,15 +66,15 @@ namespace ajuUminho.controls.entidades
         protected void ButtonEditarID_Click(object sender, EventArgs e)
         {
             c23EditarRepresentanteLegal WsERL = new c23EditarRepresentanteLegal();
-            WsERL.editarRepresentanteLegal(TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
+            WsERL.editarRepresentanteLegal(ListBoxEntidadesID.SelectedValue.ToString(), TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
-                TextBoxNifID.Text, TextBoxLastChangedID.Text, ListBoxEntidadesID.SelectedValue.ToString());
+                TextBoxNifID.Text, TextBoxLastChangedID.Text);
         }
 
         protected void listaRepresentanteLegal()
         {
             c23EditarRepresentanteLegal WsERL = new c23EditarRepresentanteLegal();
-            this.lista = WsERL.getListaRepresentantesLegais();
+            this.lista = WsERL.getListaRepresentanteLegal();
             foreach (KeyValuePair<String, d21RepresentanteLegalDto> pair in lista)
             {
                 ListItem Item = new ListItem();

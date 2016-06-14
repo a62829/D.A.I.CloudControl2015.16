@@ -9,6 +9,8 @@ namespace ajuUminho.controls.entidades
 {
     public partial class i26AdministradoresJudiciais : System.Web.UI.UserControl
     {
+        private Dictionary<String, d25AdministradorJudicialDto> lista = new Dictionary<string, d25AdministradorJudicialDto>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -40,9 +42,9 @@ namespace ajuUminho.controls.entidades
 
         protected void ListBoxEntidadesID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            c27EdicaoAdministradorJudicial eaj = new c27EdicaoAdministradorJudicial();
-            string idaj = ListBoxEntidadesID.SelectedValue.ToString();
-            d25AdministradorJudicialDto aj = eaj.getAdministradorJudicial(idaj);
+            c27EdicaoAdministradorJudicial wsaj = new c27EdicaoAdministradorJudicial();
+            string ajRl = ListBoxEntidadesID.SelectedValue.ToString();
+            var aj = wsaj.getAdministradorJudicial(ajRl);
             TextBoxNomeID.Text = aj.nome;
             TextBoxMoradaID.Text = aj.morada;
             TextBoxCodPostalID.Text = aj.codPostal;
@@ -62,8 +64,8 @@ namespace ajuUminho.controls.entidades
 
         protected void ButtonEditarID_Click(object sender, EventArgs e)
         {
-            c27EdicaoAdministradorJudicial WsEAJ = new c27EdicaoAdministradorJudicial();
-            WsEAJ.editarAdministradorJudicial(TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
+            c27EdicaoAdministradorJudicial WsERL = new c27EdicaoAdministradorJudicial();
+            WsERL.editarAdministradorJudicial(ListBoxEntidadesID.SelectedValue.ToString(), TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text);
         }
@@ -71,8 +73,8 @@ namespace ajuUminho.controls.entidades
         protected void listaAdministradorJudicial()
         {
             c27EdicaoAdministradorJudicial WsEAJ = new c27EdicaoAdministradorJudicial();
-            var lista = WsEAJ.getListaAdministradorJudicial();
-            foreach (KeyValuePair<String, String> pair in lista)
+            this.lista = WsEAJ.getListaAdministradorJudicial();
+            foreach (KeyValuePair<String, d25AdministradorJudicialDto> pair in lista)
             {
                 ListItem Item = new ListItem();
                 Item.Text = pair.Value.ToString();
