@@ -75,5 +75,5 @@
         </div>
 
         <div id="ContentButtonsBox">
-            <asp:Button ID="ButtonSalvarID" runat="server" Text="Salvar"  CssClass="ContentButton"/>
+            <asp:Button ID="ButtonSalvarID" runat="server" Text="Salvar"  CssClass="ContentButton" OnClick="ButtonSalvarID_Click"/>
         </div>
