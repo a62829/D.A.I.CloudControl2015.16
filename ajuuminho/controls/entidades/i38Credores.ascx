@@ -14,15 +14,14 @@
     </div>
 
     <div class="ViewBoxCRUD" runat="server" id="ViewBoxVisible" visible="false">
-
         <div class="InsideViewsBox">
-            <div class="InsideViewsTableBox">
+            <div class="InsideViewsTableBox" runat="server" id="ListBoxVisibility">
                 <div class="AlignBox">
                     <asp:ListBox ID="ListBoxEntidadesID" runat="server" CssClass="ListBoxEntidades-Item" AutoPostBack="True"></asp:ListBox>
                 </div>
             </div>
 
-            <div class="InsideViewsDetailsBox">
+            <div class="InsideViewsDetailsBox" runat="server" id="ContentDetailsBox">
                 <table class="ContentTable">
                     <tr>
                         <td>

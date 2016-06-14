@@ -83,6 +83,8 @@ namespace ajuUminho.controls.entidades
 
         protected void TabCriarInsolvente_Click(object sender, EventArgs e)
         {
+            ListBoxVisibility.Visible = false;
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
             ViewBoxVisible.Visible = true;
             ButtonCriarID.Visible = true;
             ButtonEditarID.Visible = false;
@@ -96,6 +98,8 @@ namespace ajuUminho.controls.entidades
 
         protected void TabEditarInsolvente_Click(object sender, EventArgs e)
         {
+            ListBoxVisibility.Visible = true;
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
             ViewBoxVisible.Visible = true;
             ButtonCriarID.Visible = false;
             ButtonEditarID.Visible = true;
@@ -109,6 +113,8 @@ namespace ajuUminho.controls.entidades
 
         protected void TabEliminarInsolvente_Click(object sender, EventArgs e)
         {
+            ListBoxVisibility.Visible = true;
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
             ViewBoxVisible.Visible = true;
             ButtonCriarID.Visible = false;
             ButtonEditarID.Visible = false;
@@ -132,6 +138,8 @@ namespace ajuUminho.controls.entidades
 
         protected void TabPesquisarInsolvente_Click(object sender, EventArgs e)
         {
+            ListBoxVisibility.Visible = false;
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
             ViewBoxVisible.Visible = false;
             ButtonCriarID.Visible = false;
             ButtonEditarID.Visible = false;
