@@ -91,9 +91,10 @@ namespace ajuUminho.controls.entidades
             ButtonCriarID.Visible = true;
             ButtonEditarID.Visible = false;
             ButtonEliminarID.Visible = false;
-            TabCriarRepresentanteGeralID.CssClass = "Clicked";
-            TabEditarRepresentanteGeralID.CssClass = "Initial";
-            TabEliminarRepresentanteGeralID.CssClass = "Initial";
+            ButtonPesquisarID.Visible = false;
+            TabCriarRepresentanteLegalID.CssClass = "Clicked";
+            TabEditarRepresentanteLegalID.CssClass = "Initial";
+            TabEliminarRepresentanteLegalID.CssClass = "Initial";
         }
 
         protected void TabEditarRepresentanteLegal_Click(object sender, EventArgs e)
@@ -102,9 +103,11 @@ namespace ajuUminho.controls.entidades
             ButtonCriarID.Visible = false;
             ButtonEditarID.Visible = true;
             ButtonEliminarID.Visible = false;
-            TabCriarRepresentanteGeralID.CssClass = "Initial";
-            TabEditarRepresentanteGeralID.CssClass = "Clicked";
-            TabEliminarRepresentanteGeralID.CssClass = "Initial";
+            ButtonPesquisarID.Visible = false;
+            TabCriarRepresentanteLegalID.CssClass = "Initial";
+            TabEditarRepresentanteLegalID.CssClass = "Clicked";
+            TabEliminarRepresentanteLegalID.CssClass = "Initial";
+            TabPesquisarRepresentanteLegalID.CssClass = "Initial";
         }
 
         protected void TabEliminarRepresentanteLegal_Click(object sender, EventArgs e)
@@ -113,9 +116,29 @@ namespace ajuUminho.controls.entidades
             ButtonCriarID.Visible = false;
             ButtonEditarID.Visible = false;
             ButtonEliminarID.Visible = true;
-            TabCriarRepresentanteGeralID.CssClass = "Initial";
-            TabEditarRepresentanteGeralID.CssClass = "Initial";
-            TabEliminarRepresentanteGeralID.CssClass = "Clicked";
+            ButtonPesquisarID.Visible = false;
+            TabCriarRepresentanteLegalID.CssClass = "Initial";
+            TabEditarRepresentanteLegalID.CssClass = "Initial";
+            TabEliminarRepresentanteLegalID.CssClass = "Clicked";
+            TabPesquisarRepresentanteLegalID.CssClass = "Initial";
+        }
+
+        protected void TabPesquisarRepresentanteLegal_Click(object sender, EventArgs e)
+        {
+            ViewBoxVisible.Visible = false;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = false;
+            ButtonPesquisarID.Visible = false;
+            TabCriarRepresentanteLegalID.CssClass = "Initial";
+            TabEditarRepresentanteLegalID.CssClass = "Initial";
+            TabEliminarRepresentanteLegalID.CssClass = "Initial";
+            TabPesquisarRepresentanteLegalID.CssClass = "Clicked";
+        }
+
+        protected void ButtonPesquisarID_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

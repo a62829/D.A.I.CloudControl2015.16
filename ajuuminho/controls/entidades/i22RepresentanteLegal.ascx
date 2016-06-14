@@ -3,14 +3,15 @@
 
 <div class="ViewsBox">
 
-    <%-- 2ª multiview --%>
     <div class="ViewsButtonsBox">
-        <asp:Button Text="Criar" BorderStyle="None" ID="TabCriarRepresentanteGeralID" CssClass="Initial" runat="server"
+        <asp:Button Text="Criar" BorderStyle="None" ID="TabCriarRepresentanteLegalID" CssClass="Initial" runat="server"
             OnClick="TabCriarRepresentanteLegal_Click" />
-        <asp:Button Text="Editar" BorderStyle="None" ID="TabEditarRepresentanteGeralID" CssClass="Initial" runat="server"
+        <asp:Button Text="Editar" BorderStyle="None" ID="TabEditarRepresentanteLegalID" CssClass="Initial" runat="server"
             OnClick="TabEditarRepresentanteLegal_Click" />
-        <asp:Button Text="Eliminar" BorderStyle="None" ID="TabEliminarRepresentanteGeralID" CssClass="Initial" runat="server"
+        <asp:Button Text="Eliminar" BorderStyle="None" ID="TabEliminarRepresentanteLegalID" CssClass="Initial" runat="server"
             OnClick="TabEliminarRepresentanteLegal_Click" />
+        <asp:Button Text="Pesquisar" BorderStyle="None" ID="TabPesquisarRepresentanteLegalID" CssClass="Initial" runat="server"
+            OnClick="TabPesquisarRepresentanteLegal_Click" />
     </div>
 
     <div class="ViewBoxCRUD" runat="server" id="ViewBoxVisible" visible="false">
@@ -138,6 +139,7 @@
                 <asp:Button ID="ButtonCriarID" runat="server" Text="Criar" CssClass="ContentButton" OnClick="ButtonCriarID_Click" Visible="false" />
                 <asp:Button ID="ButtonEditarID" runat="server" Text="Editar" CssClass="ContentButton" OnClick="ButtonEditarID_Click" Visible="false" />
                 <asp:Button ID="ButtonEliminarID" runat="server" Text="Eliminar" CssClass="ContentButton" Visible="false" />
+                 <asp:Button ID="ButtonPesquisarID" runat="server" Text="Pesquiar" CssClass="ContentButton" Visible="false" OnClick="ButtonPesquisarID_Click" />
             </div>
 
         </div>

@@ -78,5 +78,66 @@ namespace ajuUminho.controls.entidades
             //        ListBoxEntidadesID.DataBind();
             //    }
         }
+
+        protected void ButtonEliminarID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ButtonPesquisarID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void TabCriarOutraEntidade_Click(object sender, EventArgs e)
+        {
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = true;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = false;
+            ButtonPesquisarID.Visible = false;
+            TabCriarOutraEntidadeID.CssClass = "Clicked";
+            TabEditarOutraEntidadeID.CssClass = "Initial";
+            TabEliminarOutraEntidadeID.CssClass = "Initial";
+        }
+
+        protected void TabEditarOutraEntidade_Click(object sender, EventArgs e)
+        {
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = true;
+            ButtonEliminarID.Visible = false;
+            ButtonPesquisarID.Visible = false;
+            TabCriarOutraEntidadeID.CssClass = "Initial";
+            TabEditarOutraEntidadeID.CssClass = "Clicked";
+            TabEliminarOutraEntidadeID.CssClass = "Initial";
+            TabPesquisarOutraEntidadeID.CssClass = "Initial";
+        }
+
+        protected void TabEliminarOutraEntidade_Click(object sender, EventArgs e)
+        {
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = true;
+            ButtonPesquisarID.Visible = false;
+            TabCriarOutraEntidadeID.CssClass = "Initial";
+            TabEditarOutraEntidadeID.CssClass = "Initial";
+            TabEliminarOutraEntidadeID.CssClass = "Clicked";
+            TabPesquisarOutraEntidadeID.CssClass = "Initial";
+        }
+
+        protected void TabPesquisarOutraEntidade_Click(object sender, EventArgs e)
+        {
+            ViewBoxVisible.Visible = false;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = false;
+            ButtonPesquisarID.Visible = false;
+            TabCriarOutraEntidadeID.CssClass = "Initial";
+            TabEditarOutraEntidadeID.CssClass = "Initial";
+            TabEliminarOutraEntidadeID.CssClass = "Initial";
+            TabPesquisarOutraEntidadeID.CssClass = "Clicked";
+        }
     }
 }

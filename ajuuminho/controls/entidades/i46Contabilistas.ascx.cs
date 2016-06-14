@@ -56,7 +56,7 @@ namespace ajuUminho.controls.entidades
             TextBoxLastChangedID.Text = c.lastChangeBy;
             ListBoxEntidadesID.ClearSelection();
             //ListBoxEntidadesID.Items.Clear();
-            //listaRepresentanteLegal();
+            //listaContabilista();
         }
 
         protected void ButtonEditarID_Click(object sender, EventArgs e)
@@ -79,6 +79,67 @@ namespace ajuUminho.controls.entidades
                 ListBoxEntidadesID.Items.Add(Item);
                 ListBoxEntidadesID.DataBind();
             }
+        }
+
+        protected void ButtonEliminarID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ButtonPesquisarID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void TabCriarContabilista_Click(object sender, EventArgs e)
+        {
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = true;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = false;
+            ButtonPesquisarID.Visible = false;
+            TabCriarContabilistaID.CssClass = "Clicked";
+            TabEditarContabilistaID.CssClass = "Initial";
+            TabEliminarContabilistaID.CssClass = "Initial";
+        }
+
+        protected void TabEditarContabilista_Click(object sender, EventArgs e)
+        {
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = true;
+            ButtonEliminarID.Visible = false;
+            ButtonPesquisarID.Visible = false;
+            TabCriarContabilistaID.CssClass = "Initial";
+            TabEditarContabilistaID.CssClass = "Clicked";
+            TabEliminarContabilistaID.CssClass = "Initial";
+            TabPesquisarContabilistaID.CssClass = "Initial";
+        }
+
+        protected void TabEliminarContabilista_Click(object sender, EventArgs e)
+        {
+            ViewBoxVisible.Visible = true;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = true;
+            ButtonPesquisarID.Visible = false;
+            TabCriarContabilistaID.CssClass = "Initial";
+            TabEditarContabilistaID.CssClass = "Initial";
+            TabEliminarContabilistaID.CssClass = "Clicked";
+            TabPesquisarContabilistaID.CssClass = "Initial";
+        }
+
+        protected void TabPesquisarContabilista_Click(object sender, EventArgs e)
+        {
+            ViewBoxVisible.Visible = false;
+            ButtonCriarID.Visible = false;
+            ButtonEditarID.Visible = false;
+            ButtonEliminarID.Visible = false;
+            ButtonPesquisarID.Visible = false;
+            TabCriarContabilistaID.CssClass = "Initial";
+            TabEditarContabilistaID.CssClass = "Initial";
+            TabEliminarContabilistaID.CssClass = "Initial";
+            TabPesquisarContabilistaID.CssClass = "Clicked";
         }
     }
 }
