@@ -2,7 +2,7 @@
 
       <div class="InsideViewsBox">
         <div class="InsideViewsTableBox">
-            <h3>Lista de Elementos Financeiros</h3> <div class="hr-align"> <hr /> </div>
+            <div class="titleh3"> <h3>Lista de Elementos Financeiros</h3> </div>
 
             <table id="table1">
             <tr>

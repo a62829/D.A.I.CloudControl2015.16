@@ -16,9 +16,8 @@
     <form id="Form" runat="server">
         <uc1:i14TerminoDeSessao runat="server" ID="header" />
     <div id="BigBox">
-
             <div class="AlignBox">
-                <h3>Gestão de utilizadores e perfis</h3> <div class="hr-alignMore"> <hr /> </div>
+                <div class="titleh3"> <h3>Gestão de utilizadores e perfis</h3> </div>
             </div>
 
         <div id="MultiViewBox">
