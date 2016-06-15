@@ -5,6 +5,7 @@ using System.Data;
 
 namespace _BusinessLayer
 {
+    [Serializable]
     public class d85ProcessoDto
     {
         public string idProcesso { get; set; }

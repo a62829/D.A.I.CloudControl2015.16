@@ -1,9 +1,9 @@
-﻿using ajuUminho.Ws;
+﻿using _BusinessLayer;
+using ajuUminho.Ws;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI.WebControls;
-using _BusinessLayer;
 
 namespace ajuUminho.controls.entidades
 {
@@ -17,6 +17,7 @@ namespace ajuUminho.controls.entidades
             if (!IsPostBack)
             {
                 listaRepresentanteLegal();
+
             }
             else
             {
@@ -79,7 +80,7 @@ namespace ajuUminho.controls.entidades
             {
                 ListItem Item = new ListItem();
                 Item.Text = pair.Value.nome.ToString();
-                Item.Value = pair.Value.id.ToString();
+                Item.Value = pair.Value.ToString();
                 ListBoxEntidadesID.Items.Add(Item);
                 ListBoxEntidadesID.DataBind();
             }

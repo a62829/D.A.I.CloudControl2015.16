@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 namespace _BusinessLayer
 {
+    [Serializable]
     public class d21RepresentanteLegalDto : Entidade
     {
         public string cc { get; set; }

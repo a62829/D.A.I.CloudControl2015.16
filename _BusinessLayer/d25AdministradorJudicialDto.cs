@@ -6,6 +6,7 @@ using _DataLayer;
 
 namespace _BusinessLayer
 {
+    [Serializable]
     public class d25AdministradorJudicialDto : Entidade
     {
         public string cc { get; set; }
