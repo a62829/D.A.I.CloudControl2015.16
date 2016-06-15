@@ -118,7 +118,7 @@ namespace _DataLayer
         {
             SqlDataReader reader;
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.CommandText = "SELECT representanteLegal.id, representanteLegal.nome, representanteLegal.lastChangeBy FROM representanteLegal WHERE NOT EXISTS (SELECT * FROM representanteLegalNoProcesso WHERE idRepresentanteLegal = representanteLegal.id AND idProcesso = '1')";
+            cmd.CommandText = "SELECT representanteLegal.id, representanteLegal.nome, representanteLegal.lastChangeBy FROM representanteLegal WHERE NOT EXISTS (SELECT * FROM representanteLegalNoProcesso WHERE idRepresentanteLegal = representanteLegal.id AND idProcesso = @id)";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();

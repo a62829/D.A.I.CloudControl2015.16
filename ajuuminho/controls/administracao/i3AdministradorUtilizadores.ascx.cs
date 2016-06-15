@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ajuUminho.Ws;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -55,7 +56,17 @@ namespace ajuUminho.controls.administracao
 
         protected void ButtonCriarID_Click(object sender, EventArgs e)
         {
-
+            gestaoIdentidade ws1 = new gestaoIdentidade();
+            if (TextBoxPasswordID.Text == TextBoxConfirmarPasswordID.Text)
+            {
+                ws1.criarUtilizador(TextBoxNomeID.Text, TextBoxPasswordID.Text, TextBoxEmailID.Text, TextBoxTelefoneID.Text);
+                string mystring = "Utilizador criado com sucesso";
+                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
+            }
+            else {
+                string mystring = "Confirmação da Password incorrecta";
+                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
+            }
         }
 
         protected void ButtonEditarID_Click(object sender, EventArgs e)

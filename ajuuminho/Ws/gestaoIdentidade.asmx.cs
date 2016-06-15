@@ -181,6 +181,20 @@ namespace ajuUminho.Ws
 
         }
 
+        [WebMethod]
+        public Dictionary<String, String> getListaRolesUserDontHave(string idUser)
+        {
+            gestaoAcessos ga = new gestaoAcessos();
+            DataTable dt = ga.getRolesUserDontHave(idUser);
+            Dictionary<String, String> lista = new Dictionary<String, String>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                lista.Add(Convert.ToString(dt.Rows[i]["Id"]), Convert.ToString(dt.Rows[i]["Name"]));
+            }
+            return lista;
+
+        }
+
 
 
     }
