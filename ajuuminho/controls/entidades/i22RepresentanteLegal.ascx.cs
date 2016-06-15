@@ -17,7 +17,6 @@ namespace ajuUminho.controls.entidades
             if (!IsPostBack)
             {
                 listaRepresentanteLegal();
-
             }
             else
             {
