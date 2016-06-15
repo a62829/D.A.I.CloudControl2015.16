@@ -105,5 +105,31 @@ namespace _BusinessLayer
             d45Contabilista c = new d45Contabilista();
             c.removerContabilista(id);
         }
+
+        public Dictionary<String, d45ContabilistaDto> getListaContabilistaNoProcesso(string id)
+        {
+            d45Contabilista c = new d45Contabilista();
+            DataTable dt = c.getListaContabilistaNoProcesso(id);
+            Dictionary<String, d45ContabilistaDto> lista = new Dictionary<String, d45ContabilistaDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d45ContabilistaDto cdto = new d45ContabilistaDto(dt, i);
+                lista.Add(Convert.ToString(cdto.id), cdto);
+            }
+            return lista;
+        }
+
+        public Dictionary<String, d45ContabilistaDto> getListaContabilistaForaDoProcesso(string id)
+        {
+            d45Contabilista c = new d45Contabilista();
+            DataTable dt = c.getListaContabilistaForaDoProcesso(id);
+            Dictionary<String, d45ContabilistaDto> lista = new Dictionary<String, d45ContabilistaDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d45ContabilistaDto cdto = new d45ContabilistaDto(dt, i);
+                lista.Add(Convert.ToString(cdto.id), cdto);
+            }
+            return lista;
+        }
     }
 }

@@ -105,5 +105,31 @@ namespace _BusinessLayer
             d33Juiz j = new d33Juiz();
             j.removerJuiz(id);
         }
+
+        public Dictionary<String, d33JuizDto> getListaJuizNoProcesso(string id)
+        {
+            d33Juiz j = new d33Juiz();
+            DataTable dt = j.getListaJuizNoProcesso(id);
+            Dictionary<String, d33JuizDto> lista = new Dictionary<String, d33JuizDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d33JuizDto jdto = new d33JuizDto(dt, i);
+                lista.Add(Convert.ToString(jdto.id), jdto);
+            }
+            return lista;
+        }
+
+        public Dictionary<String, d33JuizDto> getListaJuizForaDoProcesso(string id)
+        {
+            d33Juiz j = new d33Juiz();
+            DataTable dt = j.getListaJuizForaDoProcesso(id);
+            Dictionary<String, d33JuizDto> lista = new Dictionary<String, d33JuizDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d33JuizDto jdto = new d33JuizDto(dt, i);
+                lista.Add(Convert.ToString(jdto.id), jdto);
+            }
+            return lista;
+        }
     }
 }

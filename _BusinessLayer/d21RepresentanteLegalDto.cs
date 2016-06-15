@@ -105,5 +105,31 @@ namespace _BusinessLayer
             d21RepresentanteLegal rl = new d21RepresentanteLegal();
             rl.removerRepresentanteLegal(id);
         }
+
+        public Dictionary<String, d21RepresentanteLegalDto> getListaRepresentanteLegalNoProcesso(string id)
+        {
+            d21RepresentanteLegal rl = new d21RepresentanteLegal();
+            DataTable dt = rl.getListaRepresentanteLegalNoProcesso(id);
+            Dictionary<String, d21RepresentanteLegalDto> lista = new Dictionary<String, d21RepresentanteLegalDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto(dt, i);
+                lista.Add(Convert.ToString(rldto.id), rldto);
+            }
+            return lista;
+        }
+
+        public Dictionary<String, d21RepresentanteLegalDto> getListaRepresentanteLegalForaDoProcesso(string id)
+        {
+            d21RepresentanteLegal rl = new d21RepresentanteLegal();
+            DataTable dt = rl.getListaRepresentanteLegalForaDoProcesso(id);
+            Dictionary<String, d21RepresentanteLegalDto> lista = new Dictionary<String, d21RepresentanteLegalDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto(dt, i);
+                lista.Add(Convert.ToString(rldto.id), rldto);
+            }
+            return lista;
+        }
     }
 }

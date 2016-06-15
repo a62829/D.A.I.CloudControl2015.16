@@ -105,5 +105,31 @@ namespace _BusinessLayer
             d53OutraEntidade oe = new d53OutraEntidade();
             oe.removerOutraEntidade(id);
         }
+
+        public Dictionary<String, d53OutraEntidadeDto> getListaOutraEntidadeNoProcesso(string id)
+        {
+            d53OutraEntidade oe = new d53OutraEntidade();
+            DataTable dt = oe.getListaOutraEntidadeNoProcesso(id);
+            Dictionary<String, d53OutraEntidadeDto> lista = new Dictionary<String, d53OutraEntidadeDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d53OutraEntidadeDto oedto = new d53OutraEntidadeDto(dt, i);
+                lista.Add(Convert.ToString(oedto.id), oedto);
+            }
+            return lista;
+        }
+
+        public Dictionary<String, d53OutraEntidadeDto> getListaOutraEntidadeForaDoProcesso(string id)
+        {
+            d53OutraEntidade oe = new d53OutraEntidade();
+            DataTable dt = oe.getListaOutraEntidadeForaDoProcesso(id);
+            Dictionary<String, d53OutraEntidadeDto> lista = new Dictionary<String, d53OutraEntidadeDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d53OutraEntidadeDto oedto = new d53OutraEntidadeDto(dt, i);
+                lista.Add(Convert.ToString(oedto.id), oedto);
+            }
+            return lista;
+        }
     }
 }

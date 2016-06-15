@@ -108,5 +108,20 @@ namespace _DataLayer
             cmd.ExecuteNonQuery();
             con.Close();
         }
+
+        public DataTable getListaContabilistaForaDoProcesso(string id)
+        {
+            SqlDataReader reader;
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "SELECT contabilista.id, contabilista.nome, contabilista.lastChangeBy FROM contabilista WHERE NOT EXISTS (SELECT * FROM contabilistaNoProcesso WHERE idContabilista = contabilista.id AND idProcesso = '1')";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.Connection.Open();
+            reader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
+        }
     }
 }

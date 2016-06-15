@@ -106,5 +106,31 @@ namespace _BusinessLayer
             d25AdministradorJudicial aj = new d25AdministradorJudicial();
             aj.removerAdministradorJudicial(id);
         }
+
+        public Dictionary<String, d25AdministradorJudicialDto> getListaAdministradorJudicialNoProcesso(string id)
+        {
+            d25AdministradorJudicial aj = new d25AdministradorJudicial();
+            DataTable dt = aj.getListaAdministradorJudicialNoProcesso(id);
+            Dictionary<String, d25AdministradorJudicialDto> lista = new Dictionary<String, d25AdministradorJudicialDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d25AdministradorJudicialDto ajdto = new d25AdministradorJudicialDto(dt, i);
+                lista.Add(Convert.ToString(ajdto.id), ajdto);
+            }
+            return lista;
+        }
+
+        public Dictionary<String, d25AdministradorJudicialDto> getListaAdministradorJudicialForaDoProcesso(string id)
+        {
+            d25AdministradorJudicial aj = new d25AdministradorJudicial();
+            DataTable dt = aj.getListaAdministradorJudicialForaDoProcesso(id);
+            Dictionary<String, d25AdministradorJudicialDto> lista = new Dictionary<String, d25AdministradorJudicialDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d25AdministradorJudicialDto ajdto = new d25AdministradorJudicialDto(dt, i);
+                lista.Add(Convert.ToString(ajdto.id), ajdto);
+            }
+            return lista;
+        }
     }
 }
