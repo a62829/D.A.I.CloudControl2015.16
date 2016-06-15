@@ -86,7 +86,8 @@ namespace ajuUminho.controls.entidades
 
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
         {
-
+            c28RemocaoAdministradorJudicial WsERL = new c28RemocaoAdministradorJudicial();
+            WsERL.removerAdministradorJudicial(ListBoxEntidadesID.SelectedValue.ToString());
         }
 
         protected void ButtonPesquisarID_Click(object sender, EventArgs e)

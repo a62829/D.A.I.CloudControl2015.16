@@ -121,8 +121,8 @@ namespace _BusinessLayer
 
         public Dictionary<String, d41InsolventeDto> getListaInsolventeForaDoProcesso(string id)
         {
-            d41Insolvente i = new d41Insolvente();
-            DataTable dt = i.getListaInsolventeForaDoProcesso(id);
+            d41Insolvente ins = new d41Insolvente();
+            DataTable dt = ins.getListaInsolventeForaDoProcesso(id);
             Dictionary<String, d41InsolventeDto> lista = new Dictionary<String, d41InsolventeDto>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
