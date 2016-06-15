@@ -83,7 +83,8 @@ namespace ajuUminho.controls.entidades
 
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
         {
-
+            c48RemocaoContabilista WsERL = new c48RemocaoContabilista();
+            WsERL.removerContabilista(ListBoxEntidadesID.SelectedValue.ToString());
         }
 
         protected void ButtonPesquisarID_Click(object sender, EventArgs e)

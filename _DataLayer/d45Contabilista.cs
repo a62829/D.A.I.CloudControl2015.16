@@ -101,12 +101,28 @@ namespace _DataLayer
 
         public void removerContabilista(string id)
         {
-            con.Open();
             cmd.Parameters.AddWithValue("@id", id);
             cmd.CommandText = "DELETE FROM dbo.contabilista WHERE id = @id";
             cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.Connection.Open();
             cmd.ExecuteNonQuery();
             con.Close();
+        }
+
+        public DataTable getListaContabilistaForaDoProcesso(string id)
+        {
+            SqlDataReader reader;
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "SELECT contabilista.id, contabilista.nome, contabilista.lastChangeBy FROM contabilista WHERE NOT EXISTS (SELECT * FROM contabilistaNoProcesso WHERE idContabilista = contabilista.id AND idProcesso = @id)";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.Connection.Open();
+            reader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
         }
     }
 }

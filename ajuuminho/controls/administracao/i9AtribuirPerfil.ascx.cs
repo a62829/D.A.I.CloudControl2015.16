@@ -16,6 +16,16 @@ namespace ajuUminho.controls.administracao
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                listaUser();
+                listaRoles();
+            } else
+            {
+
+            }
+            
+
 
         }
 
@@ -25,6 +35,7 @@ namespace ajuUminho.controls.administracao
             gestaoIdentidade ws1 = new gestaoIdentidade();
             ws1.insertRole(roleName);
             ListBoxPerfisID.DataBind();
+            listaRoles();
         }
 
         protected void ButtonMoreID_Click(object sender, EventArgs e)
@@ -34,6 +45,9 @@ namespace ajuUminho.controls.administracao
             gestaoIdentidade ws1 = new gestaoIdentidade();
             ws1.setRoleToUser(user, role);
             ListBoxPerfisAssociadosID.DataBind();
+            ListBoxPerfisID.DataBind();
+            listaRolesUserDontHave();
+            listaUserRoles();
         }
 
         protected void ButtonLessID_Click(object sender, EventArgs e)
@@ -43,29 +57,73 @@ namespace ajuUminho.controls.administracao
             gestaoIdentidade ws1 = new gestaoIdentidade();
             ws1.removeRoleToUser(user, role);
             ListBoxPerfisAssociadosID.DataBind();
+            ListBoxPerfisID.DataBind();
+            listaRolesUserDontHave();
+            listaUserRoles();
         }
 
         protected void ListBoxIdentidadesID_SelectedIndexChanged(object sender, EventArgs e)
         {
-           /* gestaoIdentidade ws1 = new gestaoIdentidade();
-            var obj = ListBoxIdentidadesID.SelectedItem.Text;
-            var dtable = ws1.getUserDetail(obj);
-            TextBoxNomeID.Text = Convert.ToString(dtable.Rows[0]["UserName"]);
-            TextBoxEmailID.Text = Convert.ToString(dtable.Rows[0]["Email"]);
-            TextBoxTelefoneID.Text = Convert.ToString(dtable.Rows[0]["PhoneNumber"]);
-            ws1.getListaUsers();
+            listaUserRoles();
+            listaRolesUserDontHave();
+        }
+        protected void listaUser()
+        {
+            ListBoxIdentidadesID.Items.Clear();
+            gestaoIdentidade cde = new gestaoIdentidade();
+            var lista = cde.getListaUsers();
+            //ListBoxIdentidadesID.DataSource = lista;
+            foreach (KeyValuePair<String, String> pair in lista)
+            {
+                ListItem Item = new ListItem();
+                Item.Text = pair.Value.ToString();
+                Item.Value = pair.Key.ToString();
+                ListBoxIdentidadesID.Items.Add(Item);
+                ListBoxIdentidadesID.DataBind();
+            }
+        }
 
-            //ListBoxPerfisID.Items.Clear();
-            //string user = ListBoxIdentidadesID.SelectedItem.Value;
-            //foreach (var u in ws1.getUserRoles(user))
-            //{
-            //    ListBoxPerfisAssociadosID.Items.Add(u);
+        protected void listaRoles()
+        {
+            ListBoxPerfisID.Items.Clear();
+            gestaoIdentidade cde = new gestaoIdentidade();
+            var lista = cde.getListaRoles();
+            //ListBoxIdentidadesID.DataSource = lista;
+            foreach (KeyValuePair<String, String> pair in lista)
+            {
+                ListItem Item = new ListItem();
+                Item.Text = pair.Value.ToString();
+                Item.Value = pair.Key.ToString();
+                ListBoxPerfisID.Items.Add(Item);
+                ListBoxPerfisID.DataBind();
+            }
+        }
 
-            //}
+        protected void listaRolesUserDontHave()
+        {
+            ListBoxPerfisID.Items.Clear();
+            gestaoIdentidade cde = new gestaoIdentidade();
+            var lista = cde.getListaRolesUserDontHave(ListBoxIdentidadesID.SelectedValue.ToString());
+            foreach (KeyValuePair<String, String> pair in lista)
+            {
+                ListItem Item = new ListItem();
+                Item.Text = pair.Value.ToString();
+                Item.Value = pair.Key.ToString();
+                ListBoxPerfisID.Items.Add(Item);
+                ListBoxPerfisID.DataBind();
+            }
+        }
+
+        protected void listaUserRoles()
+        {
             ListBoxPerfisAssociadosID.Items.Clear();
-            listarUserRoles();
-            //ListBoxIdentidadesID.Items.Clear();
-            listaUser();*/
+            gestaoIdentidade ws1 = new gestaoIdentidade();
+            string user = ListBoxIdentidadesID.SelectedItem.Value;
+            foreach (var u in ws1.getUserRoles(user))
+            {
+                ListBoxPerfisAssociadosID.Items.Add(u);
+
+            }
         }
     }
 }

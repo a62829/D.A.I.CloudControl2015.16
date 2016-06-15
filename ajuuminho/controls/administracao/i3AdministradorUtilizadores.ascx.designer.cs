@@ -76,15 +76,6 @@ namespace ajuUminho.controls.administracao {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl ContentDetailsBox;
         
         /// <summary>
-        /// LabelNomeID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNomeID;
-        
-        /// <summary>
         /// TextBoxNomeID control.
         /// </summary>
         /// <remarks>
@@ -94,58 +85,22 @@ namespace ajuUminho.controls.administracao {
         protected global::System.Web.UI.WebControls.TextBox TextBoxNomeID;
         
         /// <summary>
-        /// LabelMoradaID control.
+        /// TextBoxPasswordID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelMoradaID;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxPasswordID;
         
         /// <summary>
-        /// TextBoxMoradaID control.
+        /// TextBoxConfirmarPasswordID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxMoradaID;
-        
-        /// <summary>
-        /// LabelCodPostalID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelCodPostalID;
-        
-        /// <summary>
-        /// TextBoxCodPostalID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxCodPostalID;
-        
-        /// <summary>
-        /// LabelLocalidadeID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelLocalidadeID;
-        
-        /// <summary>
-        /// TextBoxLocalidadeID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxLocalidadeID;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxConfirmarPasswordID;
         
         /// <summary>
         /// LabelEmailID control.
@@ -182,114 +137,6 @@ namespace ajuUminho.controls.administracao {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxTelefoneID;
-        
-        /// <summary>
-        /// LabelTelemovelID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelTelemovelID;
-        
-        /// <summary>
-        /// TextBoxTelemovelID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxTelemovelID;
-        
-        /// <summary>
-        /// LabelFaxID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelFaxID;
-        
-        /// <summary>
-        /// TextBoxFaxID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxFaxID;
-        
-        /// <summary>
-        /// LabelCcID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelCcID;
-        
-        /// <summary>
-        /// TextBoxCcID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxCcID;
-        
-        /// <summary>
-        /// LabelIbanID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelIbanID;
-        
-        /// <summary>
-        /// TextBoxIbanID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxIbanID;
-        
-        /// <summary>
-        /// LabelNifID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNifID;
-        
-        /// <summary>
-        /// TextBoxNifID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxNifID;
-        
-        /// <summary>
-        /// LabelLastChangedID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelLastChangedID;
-        
-        /// <summary>
-        /// TextBoxLastChangedID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxLastChangedID;
         
         /// <summary>
         /// ButtonCriarID control.

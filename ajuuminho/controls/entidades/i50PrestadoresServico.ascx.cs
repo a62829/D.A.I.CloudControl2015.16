@@ -83,7 +83,8 @@ namespace ajuUminho.controls.entidades
 
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
         {
-
+            c52RemocaoPrestadorServico WsERL = new c52RemocaoPrestadorServico();
+            WsERL.removerPrestadorServico(ListBoxEntidadesID.SelectedValue.ToString());
         }
 
         protected void ButtonPesquisarID_Click(object sender, EventArgs e)

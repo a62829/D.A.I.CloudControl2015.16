@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 namespace _BusinessLayer
 {
+    [Serializable]
     public class d41InsolventeDto : Entidade
     {
         public string cc { get; set; }
@@ -103,6 +104,32 @@ namespace _BusinessLayer
         {
             d41Insolvente i = new d41Insolvente();
             i.removerInsolvente(id);
+        }
+
+        public Dictionary<String, d41InsolventeDto> getListaInsolventeNoProcesso(string id)
+        {
+            d41Insolvente ins = new d41Insolvente();
+            DataTable dt = ins.getListaInsolventeNoProcesso(id);
+            Dictionary<String, d41InsolventeDto> lista = new Dictionary<String, d41InsolventeDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d41InsolventeDto idto = new d41InsolventeDto(dt, i);
+                lista.Add(Convert.ToString(idto.id), idto);
+            }
+            return lista;
+        }
+
+        public Dictionary<String, d41InsolventeDto> getListaInsolventeForaDoProcesso(string id)
+        {
+            d41Insolvente ins = new d41Insolvente();
+            DataTable dt = ins.getListaInsolventeForaDoProcesso(id);
+            Dictionary<String, d41InsolventeDto> lista = new Dictionary<String, d41InsolventeDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d41InsolventeDto idto = new d41InsolventeDto(dt, i);
+                lista.Add(Convert.ToString(idto.id), idto);
+            }
+            return lista;
         }
     }
 }

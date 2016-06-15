@@ -1,9 +1,9 @@
-﻿using ajuUminho.Ws;
+﻿using _BusinessLayer;
+using ajuUminho.Ws;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI.WebControls;
-using _BusinessLayer;
 
 namespace ajuUminho.controls.entidades
 {
@@ -58,7 +58,7 @@ namespace ajuUminho.controls.entidades
             TextBoxIbanID.Text = rl.iban;
             TextBoxNifID.Text = rl.nif;
             TextBoxLastChangedID.Text = rl.lastChangeBy;
-            ListBoxEntidadesID.ClearSelection();
+            //ListBoxEntidadesID.ClearSelection();
             //ListBoxEntidadesID.Items.Clear();
             //listaRepresentanteLegal();
         }
@@ -69,6 +69,10 @@ namespace ajuUminho.controls.entidades
             WsERL.editarRepresentanteLegal(ListBoxEntidadesID.SelectedValue.ToString(), TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text);
+
+            ListBoxEntidadesID.Items.Clear();
+            listaRepresentanteLegal();
+            ListBoxEntidadesID.DataBind();
         }
 
         protected void listaRepresentanteLegal()
@@ -85,9 +89,23 @@ namespace ajuUminho.controls.entidades
             }
         }
 
+        protected void textBoxClear()
+        {
+            foreach (TextBox textbox in this.Controls.OfType<TextBox>())
+            {
+                textbox.Text = string.Empty;
+            }
+        }
+
         protected void ButtonPesquisarID_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void ButtonEliminarID_Click(object sender, EventArgs e)
+        {
+            c24RemocaoRepresentanteLegal WsERL = new c24RemocaoRepresentanteLegal();
+            WsERL.removerRepresentanteLegal(ListBoxEntidadesID.SelectedValue.ToString());
         }
 
         protected void TabCriarRepresentanteLegal_Click(object sender, EventArgs e)
@@ -103,6 +121,7 @@ namespace ajuUminho.controls.entidades
             TabEditarRepresentanteLegalID.CssClass = "Initial";
             TabEliminarRepresentanteLegalID.CssClass = "Initial";
             TabPesquisarRepresentanteLegalID.CssClass = "Initial";
+            textBoxClear();
         }
 
         protected void TabEditarRepresentanteLegal_Click(object sender, EventArgs e)
@@ -118,6 +137,7 @@ namespace ajuUminho.controls.entidades
             TabEditarRepresentanteLegalID.CssClass = "Clicked";
             TabEliminarRepresentanteLegalID.CssClass = "Initial";
             TabPesquisarRepresentanteLegalID.CssClass = "Initial";
+            textBoxClear();
         }
 
         protected void TabEliminarRepresentanteLegal_Click(object sender, EventArgs e)
@@ -133,6 +153,7 @@ namespace ajuUminho.controls.entidades
             TabEditarRepresentanteLegalID.CssClass = "Initial";
             TabEliminarRepresentanteLegalID.CssClass = "Clicked";
             TabPesquisarRepresentanteLegalID.CssClass = "Initial";
+            textBoxClear();
         }
 
         protected void TabPesquisarRepresentanteLegal_Click(object sender, EventArgs e)
@@ -148,7 +169,7 @@ namespace ajuUminho.controls.entidades
             TabEditarRepresentanteLegalID.CssClass = "Initial";
             TabEliminarRepresentanteLegalID.CssClass = "Initial";
             TabPesquisarRepresentanteLegalID.CssClass = "Clicked";
+            textBoxClear();
         }
-
     }
 }

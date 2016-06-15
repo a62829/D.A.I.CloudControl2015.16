@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 namespace _BusinessLayer
 {
+    [Serializable]
     public class d29TribunalDto : Entidade
     {
         public string cc { get; set; }
@@ -100,6 +101,32 @@ namespace _BusinessLayer
         {
             d29Tribunal t = new d29Tribunal();
             t.removerTribunal(id);
+        }
+
+        public Dictionary<String, d29TribunalDto> getListaTribunalNoProcesso(string id)
+        {
+            d29Tribunal t = new d29Tribunal();
+            DataTable dt = t.getListaTribunalNoProcesso(id);
+            Dictionary<String, d29TribunalDto> lista = new Dictionary<String, d29TribunalDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d29TribunalDto tdto = new d29TribunalDto(dt, i);
+                lista.Add(Convert.ToString(tdto.id), tdto);
+            }
+            return lista;
+        }
+
+        public Dictionary<String, d29TribunalDto> getListaTribunalForaDoProcesso(string id)
+        {
+            d29Tribunal t = new d29Tribunal();
+            DataTable dt = t.getListaTribunalForaDoProcesso(id);
+            Dictionary<String, d29TribunalDto> lista = new Dictionary<String, d29TribunalDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d29TribunalDto tdto = new d29TribunalDto(dt, i);
+                lista.Add(Convert.ToString(tdto.id), tdto);
+            }
+            return lista;
         }
     }
 }

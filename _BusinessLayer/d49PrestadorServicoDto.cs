@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 namespace _BusinessLayer
 {
+    [Serializable]
     public class d49PrestadorServicoDto : Entidade
     {
         public string cc { get; set; }
@@ -103,6 +104,32 @@ namespace _BusinessLayer
         {
             d49PrestadorServico ps = new d49PrestadorServico();
             ps.removerPrestadorServico(id);
+        }
+
+        public Dictionary<String, d49PrestadorServicoDto> getListaPrestadorServicoNoProcesso(string id)
+        {
+            d49PrestadorServico ps = new d49PrestadorServico();
+            DataTable dt = ps.getListaPrestadorServicoNoProcesso(id);
+            Dictionary<String, d49PrestadorServicoDto> lista = new Dictionary<String, d49PrestadorServicoDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d49PrestadorServicoDto psdto = new d49PrestadorServicoDto(dt, i);
+                lista.Add(Convert.ToString(psdto.id), psdto);
+            }
+            return lista;
+        }
+
+        public Dictionary<String, d49PrestadorServicoDto> getListaPrestadorServicoForaDoProcesso(string id)
+        {
+            d49PrestadorServico ps = new d49PrestadorServico();
+            DataTable dt = ps.getListaPrestadorServicoForaDoProcesso(id);
+            Dictionary<String, d49PrestadorServicoDto> lista = new Dictionary<String, d49PrestadorServicoDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d49PrestadorServicoDto psdto = new d49PrestadorServicoDto(dt, i);
+                lista.Add(Convert.ToString(psdto.id), psdto);
+            }
+            return lista;
         }
     }
 }

@@ -105,12 +105,28 @@ namespace _DataLayer
 
         public void removerRepresentanteLegal (string id)
         {
-            con.Open();
             cmd.Parameters.AddWithValue("@id", id);
             cmd.CommandText = "DELETE FROM dbo.representantelegal WHERE id = @id";
             cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.Connection.Open();
             cmd.ExecuteNonQuery();
             con.Close();
+        }
+
+        public DataTable getListaRepresentanteLegalForaDoProcesso(string id)
+        {
+            SqlDataReader reader;
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "SELECT representanteLegal.id, representanteLegal.nome, representanteLegal.lastChangeBy FROM representanteLegal WHERE NOT EXISTS (SELECT * FROM representanteLegalNoProcesso WHERE idRepresentanteLegal = representanteLegal.id AND idProcesso = @id)";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.Connection.Open();
+            reader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
         }
     }
 }
