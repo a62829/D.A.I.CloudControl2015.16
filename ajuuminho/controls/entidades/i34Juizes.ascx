@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="i34Juizes.ascx.cs" Inherits="ajuUminho.controls.entidades.i34Juizes" %>
 
-<div class="ViewsBox">
+<div class="ViewsBoxNoPadding" runat="server" id="ViewsBoxNoPadding">
 
     <%-- 2ª multiview --%>
     <div class="ViewsButtonsBox">

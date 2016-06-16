@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="i26AdministradoresJudiciais.ascx.cs" Inherits="ajuUminho.controls.entidades.i26AdministradoresJudiciais" %>
 
-<div class="ViewsBox">
+<div class="ViewsBoxNoPadding" runat="server" id="ViewsBoxNoPadding">
 
     <div class="ViewsButtonsBox">
         <asp:Button Text="Criar" BorderStyle="None" ID="TabCriarAdministradorJudicialID" CssClass="Initial" runat="server"

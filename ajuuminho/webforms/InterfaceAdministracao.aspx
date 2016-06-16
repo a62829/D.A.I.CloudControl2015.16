@@ -1,5 +1,4 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InterfaceAdministracao.aspx.cs" Inherits="ajuUminho.webforms.InterfaceAdministracao" %>
-
 <%@ Register TagPrefix="uc1" TagName="i14TerminoDeSessao" Src="~/controls/utilizadores/i14TerminoDeSessao.ascx" %>
 <%@ Register TagPrefix="uc2" TagName="i3AdministradorUtilizadores" Src="~/controls/administracao/i3AdministradorUtilizadores.ascx" %>
 <%@ Register TagPrefix="uc3" TagName="i9AtribuirPerfil" Src="~/controls/administracao/i9AtribuirPerfil.ascx" %>
@@ -36,7 +35,7 @@
 
                 <asp:MultiView ID="MainViewID" runat="server">
                     <asp:View ID="ViewAdministradorUtilizadoresID" runat="server">
-                        <div class="ViewsBox" runat="server" id="ViewBoxVisibleID" visible="false">
+                        <div class="ViewsBoxNoPadding" runat="server" id="ViewsBoxNoPaddingID" visible="false">
                             <uc2:i3AdministradorUtilizadores runat="server" ID="administradorUtilizadoresID" />
                         </div>
                     </asp:View>

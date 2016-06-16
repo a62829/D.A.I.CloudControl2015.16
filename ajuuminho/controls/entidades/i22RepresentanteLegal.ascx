@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="i22RepresentanteLegal.ascx.cs" Inherits="ajuUminho.controls.entidades.i22RepresentanteLegal" %>
 
 
-<div class="ViewsBox">
+<div class="ViewsBoxNoPadding" runat="server" id="ViewsBoxNoPadding">
 
     <div class="ViewsButtonsBox">
         <asp:Button Text="Criar" BorderStyle="None" ID="TabCriarRepresentanteLegalID" CssClass="Initial" runat="server"

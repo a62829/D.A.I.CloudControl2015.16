@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="i50PrestadoresServico.ascx.cs" Inherits="ajuUminho.controls.entidades.i50PrestadoresServico" %>
 
-<div class="ViewsBox">
+<div class="ViewsBoxNoPadding" runat="server" id="ViewsBoxNoPadding">
 
     <%-- 2ª multiview --%>
     <div class="ViewsButtonsBox">

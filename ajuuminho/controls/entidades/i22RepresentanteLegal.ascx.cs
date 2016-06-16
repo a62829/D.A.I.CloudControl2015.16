@@ -110,6 +110,7 @@ namespace ajuUminho.controls.entidades
 
         protected void TabCriarRepresentanteLegal_Click(object sender, EventArgs e)
         {
+            ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = false;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
             ViewBoxVisible.Visible = true;
@@ -126,6 +127,7 @@ namespace ajuUminho.controls.entidades
 
         protected void TabEditarRepresentanteLegal_Click(object sender, EventArgs e)
         {
+            ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
             ViewBoxVisible.Visible = true;
@@ -142,6 +144,7 @@ namespace ajuUminho.controls.entidades
 
         protected void TabEliminarRepresentanteLegal_Click(object sender, EventArgs e)
         {
+            ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
             ViewBoxVisible.Visible = true;
@@ -158,6 +161,7 @@ namespace ajuUminho.controls.entidades
 
         protected void TabPesquisarRepresentanteLegal_Click(object sender, EventArgs e)
         {
+            ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = false;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
             ViewBoxVisible.Visible = false;

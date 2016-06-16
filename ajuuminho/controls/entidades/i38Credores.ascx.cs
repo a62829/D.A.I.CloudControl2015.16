@@ -90,6 +90,7 @@ namespace ajuUminho.controls.entidades
 
         protected void TabCriarCredor_Click(object sender, EventArgs e)
         {
+            ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = false;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
             ViewBoxVisible.Visible = true;
@@ -104,6 +105,7 @@ namespace ajuUminho.controls.entidades
 
         protected void TabEditarCredor_Click(object sender, EventArgs e)
         {
+            ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
             ViewBoxVisible.Visible = true;
@@ -119,6 +121,7 @@ namespace ajuUminho.controls.entidades
 
         protected void TabEliminarCredor_Click(object sender, EventArgs e)
         {
+            ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
             ViewBoxVisible.Visible = true;
@@ -134,6 +137,7 @@ namespace ajuUminho.controls.entidades
 
         protected void TabPesquisarCredor_Click(object sender, EventArgs e)
         {
+            ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = false;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
             ViewBoxVisible.Visible = false;
