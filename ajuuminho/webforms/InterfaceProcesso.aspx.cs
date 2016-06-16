@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ajuUminho.controls.processo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,10 +16,8 @@ namespace ajuUminho.webforms
             {
                 //TabEventosID.CssClass = "Clicked";
                 //MainViewID.ActiveViewIndex = 0;
-
                 //TabCriarProcessoID.CssClass = "Clicked";
                 //MainViewID.ActiveViewIndex = 0;
-
             }
         }
 

@@ -11,7 +11,18 @@ namespace ajuUminho.controls.processo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
 
+            } else {
+                if (!IsPostBack)
+                {
+                    string idProcesso = Application["idProcesso"].ToString();
+                }
+                else {
+
+                }
+            }
         }
 
     }

@@ -1,9 +1,12 @@
-﻿using System;
+﻿using _BusinessLayer;
+using ajuUminho.Ws;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Web.UI.WebControls;
+using System.Web.UI;
 
 namespace ajuUminho.controls.processo
 {
@@ -11,7 +14,15 @@ namespace ajuUminho.controls.processo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["idProcesso"] = null;
+                if (!IsPostBack)
+                {
+                    listaProcesso();
 
+
+                }else{
+
+                }
         }
 
         protected void TabDadosBase_Click(object sender, EventArgs e)
@@ -163,5 +174,36 @@ namespace ajuUminho.controls.processo
             TabFicheirosTextoID.CssClass = "Clicked";
             MainViewID1.ActiveViewIndex = 9;
         }
+
+        protected void ListBoxProcessosID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var y = listaProcessoCompleto(ListBoxProcessosID.SelectedValue.ToString());
+            Session["idProcesso"] = y.idProcesso.ToString();
+
+        }
+
+        protected void listaProcesso()
+        {
+            ListBoxProcessosID.Items.Clear();
+            c87 WsERL = new c87();
+            var lista = WsERL.getListaProcesso();
+            foreach (KeyValuePair<String, d85ProcessoDto> pair in lista)
+            {
+                ListItem Item = new ListItem();
+                Item.Text = pair.Value.idLegal.ToString();
+                Item.Value = pair.Value.idProcesso.ToString();
+                ListBoxProcessosID.Items.Add(Item);
+                ListBoxProcessosID.DataBind();
+            }
+        }
+
+        protected d85ProcessoDto listaProcessoCompleto(string idProcesso)
+        {
+            c87 wsp = new c87();
+            d85ProcessoDto pdto = wsp.getProcessoCompleto(idProcesso);
+            return pdto;
+        }
+
+
     }
 }

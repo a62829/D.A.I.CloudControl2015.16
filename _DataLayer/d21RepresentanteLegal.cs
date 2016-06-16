@@ -52,7 +52,7 @@ namespace _DataLayer
         {
             SqlDataReader reader;
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.CommandText = "SELECT representanteLegal.id, representanteLegal.nome, representanteLegal.morada, representanteLegal.codPostal, representanteLegal.localidade, representanteLegal.email, representanteLegal.telefone, representanteLegal.telemovel, representanteLegal.fax, representanteLegal.cc, representanteLegal.iban, representanteLegal.nif, representanteLegal.lastChangeBy FROM representanteLegal Right Join representanteLegalNoProcesso ON representanteLegalNoProcesso.idRepresentanteLegal = representanteLegal.id WHERE representanteLegalNoProcesso.idProcesso = @id ORDER BY representanteLegal.id; ";
+            cmd.CommandText = "SELECT representanteLegal.id, representanteLegal.nome, representanteLegal.morada, representanteLegal.codPostal, representanteLegal.localidade, representanteLegal.email, representanteLegal.telefone, representanteLegal.telemovel, representanteLegal.fax, representanteLegal.cc, representanteLegal.iban, representanteLegal.nif, representanteLegal.lastChangeBy , processo.id FROM representanteLegal Right Join insolventeNoProcesso ON representanteLegal.id = insolventeNoProcesso.idRepresentanteLegal Right Join processo ON  processo.id = insolventeNoProcesso.idProcesso WHERE processo.id = @id ORDER BY representanteLegal.id; ";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();

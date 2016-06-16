@@ -32,6 +32,13 @@ namespace ajuUminho.Ws
         }
 
         [WebMethod]
+        public void criarProcesso(string idLegal, string idEstado, string idTipoProcesso, string lastChangeBy, string idInsolvente)
+        {
+            d85ProcessoDto pdto = new d85ProcessoDto(idLegal, idEstado, idTipoProcesso, DateTime.Now.ToString(), lastChangeBy);
+            pdto.guardar(pdto, idInsolvente);
+        }
+
+        [WebMethod]
         public d85ProcessoDto getProcesso(string id)
         {
             d85ProcessoDto pdto = new d85ProcessoDto();
@@ -43,6 +50,20 @@ namespace ajuUminho.Ws
         {
             d85ProcessoDto pdto = new d85ProcessoDto();
             return pdto.getProcessoCompleto(id);
+        }
+
+        [WebMethod]
+        public Dictionary<String, String> getListaEstado()
+        {
+            d85ProcessoDto pdto = new d85ProcessoDto();
+            return pdto.getListaEstado();
+        }
+
+        [WebMethod]
+        public Dictionary<String, String> getListaTipoProcesso()
+        {
+            d85ProcessoDto pdto = new d85ProcessoDto();
+            return pdto.getListaTipoProcesso();
         }
     }
 }

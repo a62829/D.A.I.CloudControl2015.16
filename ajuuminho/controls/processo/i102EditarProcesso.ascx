@@ -19,7 +19,7 @@
         <div class="titleh3">
             <h3>Lista de processos</h3>
         </div>
-        <asp:ListBox ID="ListBoxProcessosID" runat="server" CssClass="ListBoxProcessos-Item"></asp:ListBox>
+        <asp:ListBox ID="ListBoxProcessosID" runat="server" CssClass="ListBoxProcessos-Item" AutoPostBack="True" OnSelectedIndexChanged="ListBoxProcessosID_SelectedIndexChanged"></asp:ListBox>
     </div>
   </div>
 
