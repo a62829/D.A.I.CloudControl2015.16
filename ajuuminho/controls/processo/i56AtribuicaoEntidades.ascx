@@ -1,5 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="i56AtribuicaoEntidades.ascx.cs" Inherits="ajuUminho.controls.processos.i56AtribuicaoEntidades" %>
-
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="i56AtribuicaoEntidades.ascx.cs" Inherits="ajuUminho.controls.processos.i56AtribuicaoEntidades"  %>
     <div class="EntidadesProcessoBox">
         <div class="titleh4">
             <h4>Entidades</h4>
@@ -50,4 +49,5 @@
 
     <div id="ContentButtonsBox">
         <asp:Button ID="ButtonGravarID" runat="server" Text="Gravar" CssClass="ContentButton" />
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     </div>

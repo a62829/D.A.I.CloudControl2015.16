@@ -18,7 +18,7 @@
         <div id="HeaderButtonsBox">
             <asp:Button ID="ButtonEntidadesID" runat="server" Text="Entidades" CssClass="HeaderButtonsBox-Item" OnClick="ButtonEntidades_Click" />
             <asp:Button ID="ButtonAdministracaoID" runat="server" Text="Administração" CssClass="HeaderButtonsBox-Item" OnClick="ButtonAdministracao_Click" />
-            <asp:Button ID="ButtonProcessosID" runat="server" Text="Processos" CssClass="HeaderButtonsBox-Item" OnClick="ButtonProcessos_Click" />
+            <asp:Button ID="ButtonProcessosID" runat="server" Text="Processos" CssClass="HeaderButtonsBox-Item" OnClick="ButtonProcessos_Click" CausesValidation="False" />
             <asp:Button ID="ButtonRelatoriosID" runat="server" Text="Relatórios" CssClass="HeaderButtonsBox-Item" />
         </div>
 

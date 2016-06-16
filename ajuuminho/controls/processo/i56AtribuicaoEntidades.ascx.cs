@@ -14,20 +14,20 @@ namespace ajuUminho.controls.processos
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsCrossPagePostBack)
-            {
+
                 if (!IsPostBack)
                 {
-                    string idProcesso = Application["idProcesso"].ToString();
-                }
-                else {
-                    string idProcesso = Application["idProcesso"].ToString();
-                }
-            }
-            else
-            {
+                    if (Session["idProcesso"] != null)
+                    {
+                    string idProcesso = Session["idProcesso"].ToString();
+                    }
+                    else {
+                    Label1.Text = Session["idProcesso"].ToString();
+                    }
+                }else{
 
-            }
+                }
+
         }
 
         protected void ButtonMoreID_Click(object sender, EventArgs e)

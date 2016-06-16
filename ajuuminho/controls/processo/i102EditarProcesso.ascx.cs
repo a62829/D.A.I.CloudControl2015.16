@@ -14,12 +14,15 @@ namespace ajuUminho.controls.processo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsCrossPagePostBack)
-            {
-                listaProcesso();
-            }else{
+            Session["idProcesso"] = null;
+                if (!IsPostBack)
+                {
+                    listaProcesso();
 
-            }
+
+                }else{
+
+                }
         }
 
         protected void TabDadosBase_Click(object sender, EventArgs e)
@@ -175,7 +178,7 @@ namespace ajuUminho.controls.processo
         protected void ListBoxProcessosID_SelectedIndexChanged(object sender, EventArgs e)
         {
             var y = listaProcessoCompleto(ListBoxProcessosID.SelectedValue.ToString());
-            Application["idProcesso"] = y.idProcesso.ToString();
+            Session["idProcesso"] = y.idProcesso.ToString();
 
         }
 

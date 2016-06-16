@@ -16,10 +16,8 @@ namespace ajuUminho.webforms
             {
                 //TabEventosID.CssClass = "Clicked";
                 //MainViewID.ActiveViewIndex = 0;
-
                 //TabCriarProcessoID.CssClass = "Clicked";
                 //MainViewID.ActiveViewIndex = 0;
-
             }
         }
 
