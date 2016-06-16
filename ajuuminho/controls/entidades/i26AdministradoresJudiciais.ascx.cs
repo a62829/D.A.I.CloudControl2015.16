@@ -97,6 +97,7 @@ namespace ajuUminho.controls.entidades
 
         protected void TabCriarAdministradorJudicial_Click(object sender, EventArgs e)
         {
+            ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = false;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
             ViewBoxVisible.Visible = true;
@@ -112,6 +113,7 @@ namespace ajuUminho.controls.entidades
 
         protected void TabEditarAdministradorJudicial_Click(object sender, EventArgs e)
         {
+            ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
             ViewBoxVisible.Visible = true;
@@ -127,6 +129,7 @@ namespace ajuUminho.controls.entidades
 
         protected void TabEliminarAdministradorJudicial_Click(object sender, EventArgs e)
         {
+            ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
             ViewBoxVisible.Visible = true;
@@ -142,6 +145,7 @@ namespace ajuUminho.controls.entidades
 
         protected void TabPesquisarAdministradorJudicial_Click(object sender, EventArgs e)
         {
+            ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = false;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
             ViewBoxVisible.Visible = false;

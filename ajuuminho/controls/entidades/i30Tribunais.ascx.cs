@@ -91,6 +91,7 @@ namespace ajuUminho.controls.entidades
 
         protected void TabCriarTribunal_Click(object sender, EventArgs e)
         {
+            ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = false;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
             ViewBoxVisible.Visible = true;
@@ -105,6 +106,7 @@ namespace ajuUminho.controls.entidades
 
         protected void TabEditarTribunal_Click(object sender, EventArgs e)
         {
+            ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
             ViewBoxVisible.Visible = true;
@@ -120,6 +122,7 @@ namespace ajuUminho.controls.entidades
 
         protected void TabEliminarTribunal_Click(object sender, EventArgs e)
         {
+            ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
             ViewBoxVisible.Visible = true;
@@ -135,6 +138,7 @@ namespace ajuUminho.controls.entidades
 
         protected void TabPesquisarTribunal_Click(object sender, EventArgs e)
         {
+            ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = false;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
             ViewBoxVisible.Visible = false;
