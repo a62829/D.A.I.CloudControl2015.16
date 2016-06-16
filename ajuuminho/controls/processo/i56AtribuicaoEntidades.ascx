@@ -5,7 +5,17 @@
             <h4>Entidades</h4>
         </div>
         <div class="DropDpwnEntidadesProcesso">
-            <asp:DropDownList ID="DropDownListEntidadesID" CssClass="DropDpwnEntidadesProcesso-Item" runat="server"></asp:DropDownList>
+            <asp:DropDownList ID="DropDownListEntidadesID" CssClass="DropDpwnEntidadesProcesso-Item" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownListEntidadesID_SelectedIndexChanged">
+                <asp:ListItem>Representante Legal</asp:ListItem>
+                <asp:ListItem>Administrador Judicial</asp:ListItem>
+                <asp:ListItem>Tribunal</asp:ListItem>
+                <asp:ListItem>Juiz</asp:ListItem>
+                <asp:ListItem>Credor</asp:ListItem>
+                <asp:ListItem>Insolvente</asp:ListItem>
+                <asp:ListItem>Contabilista</asp:ListItem>
+                <asp:ListItem>Prestador de Serviços</asp:ListItem>
+                <asp:ListItem>Outras Entidades</asp:ListItem>
+            </asp:DropDownList>
         </div>
     </div>
 
@@ -19,7 +29,7 @@
                     <h5>Entidades no Sistema</h5>
                 </div>
                 <div class="EntidadesListBox-Item">
-                    <asp:ListBox ID="ListBoxEntidadesID" runat="server" CssClass="EntidadesList-Item" DataSourceID="SqlDataSource1" AutoPostBack="True"></asp:ListBox>
+                    <asp:ListBox ID="ListBoxEntidadesID" runat="server" CssClass="EntidadesList-Item" DataSourceID="SqlDataSource1" AutoPostBack="True" OnSelectedIndexChanged="ListBoxEntidadesID_SelectedIndexChanged"></asp:ListBox>
                 </div>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
             </div>
@@ -32,7 +42,7 @@
                     <h5>Entidades associadas ao processo</h5>
                 </div>
                 <div class="EntidadesListBox-Item">
-                    <asp:ListBox ID="ListBoxEntidadesAssociadosID" runat="server" CssClass="EntidadesList-Item" AutoPostBack="True"></asp:ListBox>
+                    <asp:ListBox ID="ListBoxEntidadesAssociadosID" runat="server" CssClass="EntidadesList-Item" AutoPostBack="True" OnSelectedIndexChanged="ListBoxEntidadesAssociadosID_SelectedIndexChanged"></asp:ListBox>
                 </div>
             </div>
         </div>

@@ -1,17 +1,25 @@
-﻿using System;
+﻿using _BusinessLayer;
+using ajuUminho.Ws;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Web.UI.WebControls;
 
 namespace ajuUminho.controls.processo
 {
     public partial class i102EditarProcesso : System.Web.UI.UserControl
     {
+        d85ProcessoDto lista;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                listaProcesso();
+            }else{
 
+            }
         }
 
         protected void TabDadosBase_Click(object sender, EventArgs e)
@@ -162,6 +170,52 @@ namespace ajuUminho.controls.processo
             TabFicheirosMultimediaID.CssClass = "Initial";
             TabFicheirosTextoID.CssClass = "Clicked";
             MainViewID1.ActiveViewIndex = 9;
+        }
+
+        protected void ListBoxProcessosID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var y = listaProcessoCompleto(ListBoxProcessosID.SelectedValue.ToString());
+            serializeProcessoDto(y);
+
+        }
+
+        protected void listaProcesso()
+        {
+            ListBoxProcessosID.Items.Clear();
+            c87 WsERL = new c87();
+            var lista = WsERL.getListaProcesso();
+            foreach (KeyValuePair<String, d85ProcessoDto> pair in lista)
+            {
+                ListItem Item = new ListItem();
+                Item.Text = pair.Value.idLegal.ToString();
+                Item.Value = pair.Value.idProcesso.ToString();
+                ListBoxProcessosID.Items.Add(Item);
+                ListBoxProcessosID.DataBind();
+            }
+        }
+
+        protected d85ProcessoDto listaProcessoCompleto(string idProcesso)
+        {
+            c87 wsp = new c87();
+            d85ProcessoDto pdto = wsp.getProcessoCompleto(idProcesso);
+            return pdto;
+        }
+
+        protected void serializeProcessoDto(d85ProcessoDto pdto)
+        {
+            string path = @"C:\Users\Tiago Silva\Desktop\AjuUminho Final\ajuuminho\bin\ProcessoDto.txt";
+
+            // Delete the file if it exists.
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream(path,
+                                     FileMode.Create,
+                                     FileAccess.Write, FileShare.None);
+            formatter.Serialize(stream, pdto);
+            stream.Close();
         }
     }
 }

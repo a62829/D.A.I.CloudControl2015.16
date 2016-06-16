@@ -11,16 +11,17 @@ namespace _DataLayer
 
         }
 
-        public bool /*criarProcesso*/ guardar(string idLegal, string idEstado, string idTipoProcesso, string dataInicio, string dataEncerramento, string lastChangeBy)
+        public bool /*criarProcesso*/ guardar(string idLegal, string idEstado, string idTipoProcesso, string dataInicio, string lastChangeBy, string idInsolvente)
         {
             con.Open();
             cmd.Parameters.AddWithValue("@idLegal", idLegal);
             cmd.Parameters.AddWithValue("@idEstado", idEstado);
             cmd.Parameters.AddWithValue("@idTipoProcesso", idTipoProcesso);
-            cmd.Parameters.AddWithValue("@dataInicio", dataInicio);
-            cmd.Parameters.AddWithValue("@dataEncerramento", null);
+            cmd.Parameters.AddWithValue("@dataInicio", Convert.ToDateTime(dataInicio));
+            cmd.Parameters.AddWithValue("@arquivado", '0');
             cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
-            cmd.CommandText = "INSERT INTO dbo.processo VALUES (@idLegal, @idEstado, @idTipoProcesso, @dataInicio, @dataEncerramento, @lastChangeBy);";
+            cmd.Parameters.AddWithValue("@idInsolvente", idInsolvente);
+            cmd.CommandText = "declare @id AS int; INSERT INTO dbo.processo VALUES (@idLegal, @idEstado, @idTipoProcesso, @dataInicio, NULL, @arquivado, @lastChangeBy); SET @ID = SCOPE_IDENTITY() INSERT INTO dbo.insolventeNoProcesso VALUES (@ID, @idInsolvente, NULL, NULL, @lastChangeBy); ";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.ExecuteNonQuery();
@@ -59,6 +60,21 @@ namespace _DataLayer
             return dataTable;
         }
 
+        public DataTable getProcessoBase(string idProcesso)
+        {
+            SqlDataReader reader;
+            con.Open();
+            cmd.Parameters.AddWithValue("@id", idProcesso);
+            cmd.CommandText = "SELECT * FROM dbo.processo WHERE processo.id = @id ORDER BY processo.id; ";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            reader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
+        }
+
         public void encerrarProcesso(string idProcesso)
         {
             con.Open();
@@ -85,6 +101,34 @@ namespace _DataLayer
             cmd.Connection = con;
             cmd.ExecuteNonQuery();
             con.Close();
+        }
+
+        public DataTable getListaEstados()
+        {
+            SqlDataReader reader;
+            con.Open();
+            cmd.CommandText = "SELECT id,nome FROM [dbo].[estado];";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            reader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
+        }
+
+        public DataTable getListaTiposProcesso ()
+        {
+            SqlDataReader reader;
+            con.Open();
+            cmd.CommandText = "SELECT id,nome FROM [dbo].[tipoProcesso];";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            reader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
         }
     }
 }

@@ -60,6 +60,15 @@ namespace _BusinessLayer
             this.lastChangeBy = lastChangeBy;
         }
 
+        public d85ProcessoDto(string idLegal, string idEstado, string idTipoProcesso, string dataInicio, string lastChangeBy)
+        {
+            this.idLegal = idLegal;
+            this.idEstado = idEstado;
+            this.idTipoProcesso = idTipoProcesso;
+            this.dataInicio = dataInicio;
+            this.lastChangeBy = lastChangeBy;
+        }
+
 
         public d85ProcessoDto getProcesso(string id)
         {
@@ -72,8 +81,8 @@ namespace _BusinessLayer
         public d85ProcessoDto getProcessoCompleto(string id)
         {
             d85Processo p = new d85Processo();
-            DataTable dt = p.getProcesso(id);
-            d85ProcessoDto pdto = new d85ProcessoDto(dt, 0);
+            var x = p.getProcesso(id);
+            d85ProcessoDto pdto = new d85ProcessoDto(x);
             d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
             pdto.listaRlDtoNoProcesso = rldto.getListaRepresentanteLegalNoProcesso(id);
             d25AdministradorJudicialDto ajdto = new d25AdministradorJudicialDto();
@@ -101,22 +110,48 @@ namespace _BusinessLayer
             p.setProcesso( pdto.idLegal, pdto.idEstado, pdto.idTipoProcesso, pdto.dataInicio, pdto.dataEncerramento, pdto.lastChangeBy, pdto.idProcesso);
         }
 
-        public void /*criarProcesso*/ guardar(d85ProcessoDto pdto)
+        public void /*criarProcesso*/ guardar(d85ProcessoDto pdto, string idInsolvente)
         {
             d85Processo rl = new d85Processo();
-            rl.guardar(pdto.idLegal, pdto.idEstado, pdto.idTipoProcesso, pdto.dataInicio, pdto.dataEncerramento, pdto.lastChangeBy);
+            rl.guardar(pdto.idLegal, pdto.idEstado, pdto.idTipoProcesso, pdto.dataInicio, pdto.lastChangeBy, idInsolvente);
         }
         public Dictionary<String, d85ProcessoDto> getListaProcesso()
         {
-            d85Processo rl = new d85Processo();
-            DataTable dt = rl.getListaProcesso();
+            d85Processo p = new d85Processo();
+            DataTable dt = p.getListaProcesso();
             Dictionary<String, d85ProcessoDto> lista = new Dictionary<String, d85ProcessoDto>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                d85ProcessoDto rldto = new d85ProcessoDto(dt, i);
-                lista.Add(Convert.ToString(rldto.idProcesso), rldto);
+                d85ProcessoDto pdto = new d85ProcessoDto(dt, i);
+                lista.Add(Convert.ToString(pdto.idProcesso), pdto);
             }
             return lista;
         }
+
+        public Dictionary<String, String> getListaEstado()
+        {
+            d85Processo rl = new d85Processo();
+            DataTable dt = rl.getListaEstados();
+            Dictionary<String, String> lista = new Dictionary<String, String>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                lista.Add(Convert.ToString(dt.Rows[i]["id"]), Convert.ToString(dt.Rows[i]["nome"]));
+            }
+            return lista;
+        }
+
+        public Dictionary<String, String> getListaTipoProcesso()
+        {
+            d85Processo rl = new d85Processo();
+            DataTable dt = rl.getListaTiposProcesso();
+            Dictionary<String, String> lista = new Dictionary<String, String>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                lista.Add(Convert.ToString(dt.Rows[i]["id"]), Convert.ToString(dt.Rows[i]["nome"]));
+            }
+            return lista;
+        }
+
+
     }
 }
