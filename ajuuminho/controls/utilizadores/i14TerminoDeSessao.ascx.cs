@@ -31,12 +31,7 @@ namespace ajuUminho.controls.utilizadores
             }
         }
 
-        //protected void ButtonAlterarDadosPessoais_Click(object sender, EventArgs e)
-        //{
-        //    Response.Redirect("~/controls/utilizadores/i4AlteracaoDeDadosPessoais.ascx");
-        //}
-
-        protected void ButtonEntidades_Click(object sender, EventArgs e)
+    protected void ButtonEntidades_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/webforms/InterfaceEntidades.aspx");
         }

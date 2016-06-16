@@ -19,8 +19,6 @@ namespace ajuUminho.webforms
 
         protected void TabAdministradorUtilizadores_Click(object sender, EventArgs e)
         {
-            ViewsBoxNoPaddingID.Attributes.Add("class", "ViewsBox");
-            ViewsBoxNoPaddingID.Visible = true;
             TabAdministradorUtilizadoresID.CssClass = "Clicked";
             TabAtribuirPerfilID.CssClass = "Initial";
             TabConfirmarPerfilID.CssClass = "Initial";

@@ -14,7 +14,7 @@
 body
 { 
   margin: auto;
-  background: #F5F5F5;
+  background: #eee;
   overflow-y: scroll;
 }
 
@@ -309,8 +309,8 @@ table {
     cursor:pointer;
     width: 30px;
     height: 30px;
-        border: 1px solid lightgray;
-        border-radius:3px;
+    border: 1px solid lightgray;
+    border-radius:3px;
 }
 
 #StatusBox2:hover, #StatusButton:hover  {

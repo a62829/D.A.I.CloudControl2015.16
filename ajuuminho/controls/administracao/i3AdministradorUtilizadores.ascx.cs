@@ -17,6 +17,7 @@ namespace ajuUminho.controls.administracao
 
         protected void TabCriarUtilizador_Click(object sender, EventArgs e)
         {
+            ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             TrPasswordID.Visible = true;
             TrConfirmarPasswordID.Visible = true;
             ListBoxVisibility.Visible = false;

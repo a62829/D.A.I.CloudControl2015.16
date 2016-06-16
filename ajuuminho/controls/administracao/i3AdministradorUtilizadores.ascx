@@ -1,5 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="i3AdministradorUtilizadores.ascx.cs" Inherits="ajuUminho.controls.administracao.i3AdministradorUtilizadores" %>
 
+<div class="ViewsBoxNoPadding" runat="server" id="ViewsBoxNoPadding">
+
     <div class="ViewsButtonsBox">
         <asp:Button Text="Criar" BorderStyle="None" ID="TabCriarUtilizadorID" CssClass="Initial" runat="server"
             OnClick="TabCriarUtilizador_Click" />
@@ -80,3 +82,4 @@
             </div>
         </div>
     </div>
+</div>

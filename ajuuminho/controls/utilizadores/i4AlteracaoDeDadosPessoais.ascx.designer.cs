@@ -13,33 +13,6 @@ namespace ajuUminho.controls.utilizadores {
     public partial class i4AlteracaoDeDadosPessoais {
         
         /// <summary>
-        /// Form control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm Form;
-        
-        /// <summary>
-        /// headerID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ajuUminho.controls.utilizadores.i14TerminoDeSessao headerID;
-        
-        /// <summary>
-        /// ContentDetailsBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ContentDetailsBox;
-        
-        /// <summary>
         /// LabelUsernameID control.
         /// </summary>
         /// <remarks>

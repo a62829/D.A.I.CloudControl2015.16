@@ -24,20 +24,16 @@
 
         <div id="StatusBox">
 
-            <div id="StatusBox2">
+            <div id="StatusBox2" onclick="window.location.href = 'InterfaceUtilizadores.aspx';">
                 <div id="StatusIcon">
                     <img src="../imagens/default_profile_avatar.png" alt="Alternate Text" class="StatusIconItem" />
                 </div>
                 <div id="StatusText">
                     <span>Bem vindo, <asp:Label ID="User" runat="server" Text="User"></asp:Label></span>
                 </div>
-<%--                <div id="StatusButton">--%>
-                    <asp:Button ID="ButtonAlterarDadosPessoaisID" runat="server" Text="Button"/>
-                <%--</div>--%>
             </div>
             <div id="StatusBox3">
                 <div id="StatusButton">
-                    <%-- <img ID="ButtonSair" src="../imagens/close_session.png" alt="Sair" OnClick="signOut"/>--%>
                     <asp:Button ID="ButtonSair" runat="server" OnClick="signOut" CssClass="ButtonSairItem" />
                 </div>
             </div>

@@ -35,9 +35,7 @@
 
                 <asp:MultiView ID="MainViewID" runat="server">
                     <asp:View ID="ViewAdministradorUtilizadoresID" runat="server">
-                        <div class="ViewsBoxNoPadding" runat="server" id="ViewsBoxNoPaddingID" visible="false">
                             <uc2:i3AdministradorUtilizadores runat="server" ID="administradorUtilizadoresID" />
-                        </div>
                     </asp:View>
                     <asp:View ID="ViewAtribuirPerfilID" runat="server">
                         <div class="ViewsBox" runat="server" id="ViewBoxVisibleID1" visible="false" style="height:290px">

@@ -5,5 +5,6 @@
         <siteMapNode url="/webforms/InterfaceAdministracao.aspx" title="Administração"  description="" />
         <siteMapNode url="/webforms/InterfaceProcesso.aspx" title="Processos"  description="" />
         <siteMapNode url="/webforms/InterfaceRelatorios.aspx" title="Relatórios"  description="" />
+        <siteMapNode url="/webforms/InterfaceUtilizadores.aspx" title="Utilizadores"  description="" />
     </siteMapNode>
 </siteMap>

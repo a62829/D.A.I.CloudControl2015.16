@@ -13,6 +13,15 @@ namespace ajuUminho.controls.administracao {
     public partial class i3AdministradorUtilizadores {
         
         /// <summary>
+        /// ViewsBoxNoPadding control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ViewsBoxNoPadding;
+        
+        /// <summary>
         /// TabCriarUtilizadorID control.
         /// </summary>
         /// <remarks>
