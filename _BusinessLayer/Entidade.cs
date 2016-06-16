@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 
 namespace _BusinessLayer
 {
+    [Serializable]
     public abstract class Entidade
     {
 

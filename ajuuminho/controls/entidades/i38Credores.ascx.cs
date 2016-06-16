@@ -84,7 +84,8 @@ namespace ajuUminho.controls.entidades
 
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
         {
-
+            c40RemocaoCredor WsERL = new c40RemocaoCredor();
+            WsERL.removerCredor(ListBoxEntidadesID.SelectedValue.ToString());
         }
 
         protected void TabCriarCredor_Click(object sender, EventArgs e)

@@ -102,12 +102,28 @@ namespace _DataLayer
 
         public void removerAdministradorJudicial(string id)
         {
-            con.Open();
             cmd.Parameters.AddWithValue("@id", id);
             cmd.CommandText = "DELETE FROM dbo.administradorJudicial WHERE id = @id";
             cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.Connection.Open();
             cmd.ExecuteNonQuery();
             con.Close();
+        }
+
+        public DataTable getListaAdministradorJudicialForaDoProcesso(string id)
+        {
+            SqlDataReader reader;
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "SELECT administradorJudicial.id, administradorJudicial.nome, administradorJudicial.lastChangeBy FROM administradorJudicial WHERE NOT EXISTS (SELECT * FROM administradorJudicialNoProcesso WHERE idAdministradorJudicial = administradorJudicial.id AND idProcesso = '1')";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.Connection.Open();
+            reader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
         }
     }
 }

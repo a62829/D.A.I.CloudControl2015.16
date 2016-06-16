@@ -88,6 +88,22 @@ namespace ajuUminho.App_Code
             return dataTable;
         }
 
+        public System.Data.DataTable getRolesUserDontHave(string idUser)
+        {
+            //Listar os Perfis de um Utilizador
+            SqlDataReader reader;
+            cmd.Parameters.AddWithValue("@id", idUser);
+            cmd.CommandText = "SELECT AspNetRoles.Id, AspNetRoles.Name FROM AspNetRoles WHERE NOT EXISTS (SELECT* FROM AspNetUserRoles WHERE RoleId = AspNetRoles.Id AND UserId = @id)";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            con.Open();
+            reader = cmd.ExecuteReader();
+            var dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
+        }
+
         public System.Data.DataTable getUsers()
         {
             //Listar os Perfis de um Utilizador

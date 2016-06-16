@@ -31,38 +31,24 @@
                 <table class="ContentTable">
                     <tr>
                         <td>
-                            <asp:Label ID="LabelNomeID" runat="server" Text="Label" CssClass="Labels-Item">
-                          Nome: </asp:Label>
-                        </td>
+                            UserName:</td>
                         <td>
                             <asp:TextBox ID="TextBoxNomeID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:Label ID="LabelMoradaID" runat="server" Text="Label" CssClass="Labels-Item">
-                           Morada: </asp:Label>
-                        </td>
+                            Password:</td>
                         <td>
-                            <asp:TextBox ID="TextBoxMoradaID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxPasswordID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:Label ID="LabelCodPostalID" runat="server" Text="Label" CssClass="Labels-Item"> 
-                           Cód-Postal: </asp:Label>
+                            ConfirmarPassword:
                         </td>
                         <td>
-                            <asp:TextBox ID="TextBoxCodPostalID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Label ID="LabelLocalidadeID" runat="server" Text="Label" CssClass="Labels-Item"> 
-                          Localidade: </asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="TextBoxLocalidadeID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxConfirmarPasswordID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -81,60 +67,6 @@
                         </td>
                         <td>
                             <asp:TextBox ID="TextBoxTelefoneID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Label ID="LabelTelemovelID" runat="server" Text="Label" CssClass="Labels-Item"> 
-                          Telemóvel: </asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="TextBoxTelemovelID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Label ID="LabelFaxID" runat="server" Text="Label" CssClass="Labels-Item"> 
-                          Fax: </asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="TextBoxFaxID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Label ID="LabelCcID" runat="server" Text="Label" CssClass="Labels-Item"> 
-                          Cartão de cidadão: </asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="TextBoxCcID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Label ID="LabelIbanID" runat="server" Text="Label" CssClass="Labels-Item"> 
-                           Iban: </asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="TextBoxIbanID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Label ID="LabelNifID" runat="server" Text="Label" CssClass="Labels-Item"> 
-                           NIF: </asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="TextBoxNifID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Label ID="LabelLastChangedID" runat="server" Text="Label" CssClass="Labels-Item"> 
-                           Alterado por: </asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="TextBoxLastChangedID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
                         </td>
                     </tr>
                 </table>

@@ -21,14 +21,6 @@ namespace ajuUminho.controls.entidades
             }
         }
 
-        //protected void ButtonEditarID_Click(object sender, EventArgs e)
-        //{
-        //    c56EdicaoOutraEntidade WsEOE = new c56EdicaoOutraEntidade();
-        //    WsEOE.editarOutraEntidade(TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
-        //        TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
-        //        TextBoxNifID.Text, TextBoxLastChangedID.Text);
-        //}
-
         protected void ButtonCriarID_Click(object sender, EventArgs e)
         {
             c55RemocaoOutraEntidade oe = new c55RemocaoOutraEntidade();
@@ -89,7 +81,8 @@ namespace ajuUminho.controls.entidades
 
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
         {
-
+            c55RemocaoOutraEntidade WsERL = new c55RemocaoOutraEntidade();
+            WsERL.removerOutraEntidade(ListBoxEntidadesID.SelectedValue.ToString());
         }
 
         protected void ButtonPesquisarID_Click(object sender, EventArgs e)

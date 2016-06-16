@@ -5,6 +5,7 @@ using System.Data;
 
 namespace _BusinessLayer
 {
+    [Serializable]
     public class d85ProcessoDto
     {
         public string idProcesso { get; set; }
@@ -14,15 +15,15 @@ namespace _BusinessLayer
         public string dataInicio { get; set; }
         public string dataEncerramento { get; set; }
         public string lastChangeBy { get; set; }
-        public Dictionary<string, d21RepresentanteLegalDto> listaRlDto { get; set; }
-        public Dictionary<string, d25AdministradorJudicialDto> listaAjDto { get; set; }
-        public Dictionary<string, d29TribunalDto> listaTDto { get; set; }
-        public Dictionary<string, d33JuizDto> listaJDto { get; set; }
-        public Dictionary<string, d37CredorDto> listaCrDto { get; set; }
-        public Dictionary<string, d41InsolventeDto> listaIDto { get; set; }
-        public Dictionary<string, d45ContabilistaDto> listaCDto { get; set; }
-        public Dictionary<string, d49PrestadorServicoDto> listaPsDto { get; set; }
-        public Dictionary<string, d53OutraEntidadeDto> listaOeDto { get; set; }
+        public Dictionary<string, d21RepresentanteLegalDto> listaRlDtoNoProcesso { get; set; }
+        public Dictionary<string, d25AdministradorJudicialDto> listaAjDtoNoProcesso { get; set; }
+        public Dictionary<string, d29TribunalDto> listaTDtoNoProcesso { get; set; }
+        public Dictionary<string, d33JuizDto> listaJDtoNoProcesso { get; set; }
+        public Dictionary<string, d37CredorDto> listaCrDtoNoProcesso { get; set; }
+        public Dictionary<string, d41InsolventeDto> listaIDtoNoProcesso { get; set; }
+        public Dictionary<string, d45ContabilistaDto> listaCDtoNoProcesso { get; set; }
+        public Dictionary<string, d49PrestadorServicoDto> listaPsDtoNoProcesso { get; set; }
+        public Dictionary<string, d53OutraEntidadeDto> listaOeDtoNoProcesso { get; set; }
 
         public d85ProcessoDto () { }
 
@@ -73,7 +74,24 @@ namespace _BusinessLayer
             d85Processo p = new d85Processo();
             DataTable dt = p.getProcesso(id);
             d85ProcessoDto pdto = new d85ProcessoDto(dt, 0);
-            pdto.listaCrDto = pdto.getListaCredorNoProcesso(id);
+            d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
+            pdto.listaRlDtoNoProcesso = rldto.getListaRepresentanteLegalNoProcesso(id);
+            d25AdministradorJudicialDto ajdto = new d25AdministradorJudicialDto();
+            pdto.listaAjDtoNoProcesso = ajdto.getListaAdministradorJudicialNoProcesso(id);
+            d29TribunalDto tdto = new d29TribunalDto();
+            pdto.listaTDtoNoProcesso = tdto.getListaTribunalNoProcesso(id);
+            d33JuizDto jdto = new d33JuizDto();
+            pdto.listaJDtoNoProcesso = jdto.getListaJuizNoProcesso(id);
+            d37CredorDto crdto = new d37CredorDto();
+            pdto.listaCrDtoNoProcesso = crdto.getListaCredorNoProcesso(id);
+            d41InsolventeDto idto = new d41InsolventeDto();
+            pdto.listaIDtoNoProcesso = idto.getListaInsolventeNoProcesso(id);
+            d45ContabilistaDto cdto = new d45ContabilistaDto();
+            pdto.listaCDtoNoProcesso = cdto.getListaContabilistaNoProcesso(id);
+            d49PrestadorServicoDto psdto = new d49PrestadorServicoDto();
+            pdto.listaPsDtoNoProcesso = psdto.getListaPrestadorServicoNoProcesso(id);
+            d53OutraEntidadeDto oedto = new d53OutraEntidadeDto();
+            pdto.listaOeDtoNoProcesso = oedto.getListaOutraEntidadeNoProcesso(id);
             return pdto;
         }
 
@@ -100,33 +118,5 @@ namespace _BusinessLayer
             }
             return lista;
         }
-
-        public Dictionary<String, d37CredorDto> getListaCredorNoProcesso(string id)
-        {
-            d37Credor c = new d37Credor();
-            DataTable dt = c.getListaCredorNoProcesso(id);
-            Dictionary<String, d37CredorDto> lista = new Dictionary<String, d37CredorDto>();
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                d37CredorDto cdto = new d37CredorDto(dt, i);
-                lista.Add(Convert.ToString(cdto.id), cdto);
-            }
-            return lista;
-        }
-
-        public Dictionary<String, d21RepresentanteLegalDto> getListaRepresentanteLegalNoProcesso(string id)
-        {
-            d21RepresentanteLegal rl = new d21RepresentanteLegal();
-            DataTable dt = rl.getListaRepresentanteLegalNoProcesso(id);
-            Dictionary<String, d21RepresentanteLegalDto> lista = new Dictionary<String, d21RepresentanteLegalDto>();
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto(dt, i);
-                lista.Add(Convert.ToString(rldto.id), rldto);
-            }
-            return lista;
-        }
-
-
     }
 }

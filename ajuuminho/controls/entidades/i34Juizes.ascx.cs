@@ -87,6 +87,12 @@ namespace ajuUminho.controls.entidades
 
         }
 
+        protected void ButtonEliminarID_Click(object sender, EventArgs e)
+        {
+            c36RemocaoJuiz WsERL = new c36RemocaoJuiz();
+            WsERL.removerJuiz(ListBoxEntidadesID.SelectedValue.ToString());
+        }
+
         protected void TabCriarJuiz_Click(object sender, EventArgs e)
         {
             ListBoxVisibility.Visible = false;

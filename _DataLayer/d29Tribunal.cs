@@ -103,12 +103,28 @@ namespace _DataLayer
 
         public void removerTribunal(string id)
         {
-            con.Open();
             cmd.Parameters.AddWithValue("@id", id);
             cmd.CommandText = "DELETE FROM dbo.tribunal WHERE id = @id";
             cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.Connection.Open();
             cmd.ExecuteNonQuery();
             con.Close();
+        }
+
+        public DataTable getListaTribunalForaDoProcesso(string id)
+        {
+            SqlDataReader reader;
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "SELECT tribunal.id, tribunal.nome, tribunal.lastChangeBy FROM tribunal WHERE NOT EXISTS (SELECT * FROM tribunalNoProcesso WHERE idTribunal = tribunal.id AND idProcesso = @id)";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.Connection.Open();
+            reader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
         }
 
     }

@@ -133,7 +133,8 @@ namespace ajuUminho.controls.entidades
 
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
         {
-
+            c44RemocaoInsolvente WsERL = new c44RemocaoInsolvente();
+            WsERL.removerInsolvente(ListBoxEntidadesID.SelectedValue.ToString());
         }
 
         protected void TabPesquisarInsolvente_Click(object sender, EventArgs e)

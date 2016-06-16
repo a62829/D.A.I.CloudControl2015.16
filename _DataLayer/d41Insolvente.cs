@@ -79,7 +79,7 @@ namespace _DataLayer
             cmd.Parameters.AddWithValue("@nif", nif);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
-            cmd.CommandText = "UPDATE dbo.insolvente SET nome = @nome, morada = @morada, codPostal = @codPostal, localidade = @localidade, email = @email, telefone = @telefone, telemovel = @telemovel, fax = @fax, cc = @cc, iban = @iban, nif = @nif WHERE id = @id );";
+            cmd.CommandText = "UPDATE dbo.insolvente SET nome = @nome, morada = @morada, codPostal = @codPostal, localidade = @localidade, email = @email, telefone = @telefone, telemovel = @telemovel, fax = @fax, cc = @cc, iban = @iban, nif = @nif WHERE id = @id;";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.ExecuteNonQuery();
@@ -103,12 +103,28 @@ namespace _DataLayer
 
         public void removerInsolvente(string id)
         {
-            con.Open();
             cmd.Parameters.AddWithValue("@id", id);
             cmd.CommandText = "DELETE FROM dbo.insolvente WHERE id = @id";
             cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.Connection.Open();
             cmd.ExecuteNonQuery();
             con.Close();
+        }
+
+        public DataTable getListaInsolventeForaDoProcesso(string id)
+        {
+            SqlDataReader reader;
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "SELECT insolvente.id, insolvente.nome, insolvente.lastChangeBy FROM insolvente WHERE NOT EXISTS (SELECT * FROM insolventeNoProcesso WHERE idInsolvente = insolvente.id AND idProcesso = @id)";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.Connection.Open();
+            reader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
         }
     }
 }
