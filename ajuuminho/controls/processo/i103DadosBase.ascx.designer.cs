@@ -7,90 +7,72 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ajuUminho.webforms {
+namespace ajuUminho.controls.processo {
     
     
-    public partial class InterfaceProcesso {
+    public partial class i103DadosBase {
         
         /// <summary>
-        /// Form control.
+        /// LabelIdLegalID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm Form;
+        protected global::System.Web.UI.WebControls.Label LabelIdLegalID;
         
         /// <summary>
-        /// headerID control.
+        /// TextBoxIdLegalID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::ajuUminho.controls.utilizadores.i14TerminoDeSessao headerID;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxIdLegalID;
         
         /// <summary>
-        /// TabCriarProcessoID control.
+        /// LabelIdEstadoID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabCriarProcessoID;
+        protected global::System.Web.UI.WebControls.Label LabelIdEstadoID;
         
         /// <summary>
-        /// TabEditarProcessoID control.
+        /// DropDownListIdEstadoID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TabEditarProcessoID;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListIdEstadoID;
         
         /// <summary>
-        /// MainViewID control.
+        /// LabelIdTipoProcessoID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.MultiView MainViewID;
+        protected global::System.Web.UI.WebControls.Label LabelIdTipoProcessoID;
         
         /// <summary>
-        /// ViewCriarProcessoID control.
+        /// DropDownListIdTipoProcessoID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewCriarProcessoID;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListIdTipoProcessoID;
         
         /// <summary>
-        /// i101CriarProcessoID control.
+        /// ButtonEditarID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::ajuUminho.controls.processo.i101CriarProcesso i101CriarProcessoID;
-        
-        /// <summary>
-        /// ViewEditarProcessoID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View ViewEditarProcessoID;
-        
-        /// <summary>
-        /// i102EditarProcessoID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ajuUminho.controls.processo.i102EditarProcesso i102EditarProcessoID;
+        protected global::System.Web.UI.WebControls.Button ButtonEditarID;
     }
 }

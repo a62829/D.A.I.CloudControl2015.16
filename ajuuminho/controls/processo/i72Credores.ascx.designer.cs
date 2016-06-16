@@ -13,84 +13,66 @@ namespace ajuUminho.controls.processos {
     public partial class i72Credores {
         
         /// <summary>
-        /// LabelProcessoID control.
+        /// DropDownListCredoresID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelProcessoID;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListCredoresID;
         
         /// <summary>
-        /// TextBoxProcessoID control.
+        /// ListBoxCredoresID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxProcessoID;
+        protected global::System.Web.UI.WebControls.ListBox ListBoxCredoresID;
         
         /// <summary>
-        /// LabelTipoEventoID control.
+        /// SqlDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelTipoEventoID;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
         
         /// <summary>
-        /// TextBoxTipoEventoID control.
+        /// ButtonMoreID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxTipoEventoID;
+        protected global::System.Web.UI.WebControls.Button ButtonMoreID;
         
         /// <summary>
-        /// LabelDataID control.
+        /// ButtonLessID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelDataID;
+        protected global::System.Web.UI.WebControls.Button ButtonLessID;
         
         /// <summary>
-        /// TextBoxDataID control.
+        /// ListBoxCredoresAssociadosID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxDataID;
+        protected global::System.Web.UI.WebControls.ListBox ListBoxCredoresAssociadosID;
         
         /// <summary>
-        /// ButtonEditarID control.
+        /// ButtonGravarID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonEditarID;
-        
-        /// <summary>
-        /// ButtonEliminarID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonEliminarID;
-        
-        /// <summary>
-        /// ButtonGuardarID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonGuardarID;
+        protected global::System.Web.UI.WebControls.Button ButtonGravarID;
     }
 }

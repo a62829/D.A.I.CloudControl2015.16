@@ -13,5 +13,20 @@ namespace ajuUminho.controls.processos
         {
 
         }
+
+        protected void ButtonMoreID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ButtonLessID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ButtonGravarID_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

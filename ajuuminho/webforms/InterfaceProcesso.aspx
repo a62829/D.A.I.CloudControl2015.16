@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InterfaceProcesso.aspx.cs" Inherits="ajuUminho.webforms.InterfaceProcesso" %>
-<%@ Register TagPrefix="uc1" TagName="i14TerminoDeSessao" Src="~/controls/utilizadores/i14TerminoDeSessao.ascx"%>
-<%@ Register TagPrefix="uc2" TagName="i60Eventos" Src="~/controls/processo/i60Eventos.ascx"%>
+
+<%@ Register TagPrefix="uc1" TagName="i14TerminoDeSessao" Src="~/controls/utilizadores/i14TerminoDeSessao.ascx" %>
+<%--<%@ Register TagPrefix="uc2" TagName="i60Eventos" Src="~/controls/processo/i60Eventos.ascx"%>
 <%@ Register TagPrefix="uc3" TagName="i64Bens" Src="~/controls/processo/i64Bens.ascx"%>
 <%@ Register TagPrefix="uc4" TagName="i68MovimentosFinanceiros" Src="~/controls/processo/i68MovimentosFinanceiros.ascx"%>
 <%@ Register TagPrefix="uc5" TagName="i72Credores" Src="~/controls/processo/i72Credores.ascx"%>
@@ -10,55 +11,57 @@
 <%@ Register TagPrefix="uc9" TagName="i91CreditosReclamados" Src="~/controls/processo/i91CreditosReclamados.ascx"%>
 <%@ Register TagPrefix="uc10" TagName="i86Arquivo" Src="~/controls/processo/i86Arquivo.ascx"%>
 <%@ Register TagPrefix="uc11" TagName="i56AtribuicaoEntidades" Src="~/controls/processo/i56AtribuicaoEntidades.ascx"%>
-<%@ Register TagPrefix="uc12" TagName="i89Tipos" Src="~/controls/processo/i89Tipos.ascx"%>
-<%@ Register TagPrefix="uc13" TagName="i101CriarProcesso" Src="~/controls/processo/i101CriarProcesso.ascx"%>
+<%@ Register TagPrefix="uc12" TagName="i89Tipos" Src="~/controls/processo/i89Tipos.ascx"%>--%>
+<%@ Register TagPrefix="uc14" TagName="i102EditarProcesso" Src="~/controls/processo/i102EditarProcesso.ascx" %>
+<%@ Register TagPrefix="uc13" TagName="i101CriarProcesso" Src="~/controls/processo/i101CriarProcesso.ascx" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Aju-UMinho</title>
-    <meta charset="UTF-8"/>
-    <link rel="stylesheet" type="text/css" href="../css/StyleSheet.css" title="StyleSheet"/>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="../css/StyleSheet.css" title="StyleSheet" />
 
 </head>
 
 <body>
     <form id="Form" runat="server">
         <uc1:i14TerminoDeSessao runat="server" ID="headerID" />
-    
-    <div id="BigBox">
-        
-        <div id="MultiViewBox">
 
-            <div id="MultiViewButtonsBox">
-                <asp:Button Text="Criar processo" BorderStyle="None" ID="TabCriarProcessoID" CssClass="Initial" runat="server"
-                    OnClick="TabCriarProcesso_Click" />
-                <asp:Button Text="Atribuir entidades" BorderStyle="None" ID="TabAtribuirEntidadesID" CssClass="Initial" runat="server"
-                    OnClick="TabAtribuirEntidades_Click" />
-                <asp:Button Text="Editar processo" BorderStyle="None" ID="TabEditarProcessoID" CssClass="Initial" runat="server"
-                    OnClick="TabEditarProcesso_Click" />
-                <asp:Button Text="Listar processo" BorderStyle="None" ID="TabListarProcessoID" CssClass="Initial" runat="server"
-                    OnClick="TabListarProcesso_Click" />
-                <asp:Button Text="Parar processo" BorderStyle="None" ID="TabPararProcessoID" CssClass="Initial" runat="server"
-                    OnClick="TabPararProcesso_Click" />
-                <asp:Button Text="Categorizar processo" BorderStyle="None" ID="TabCategorizarProcessoID" CssClass="Initial" runat="server"
-                    OnClick="TabCategorizarProcesso_Click" />
+        <div id="BigBox">
+
+            <div class="AlignBox">
+                <div class="titleh3">
+                    <h3>Gestão de processos</h3>
+                </div>
             </div>
 
-            <asp:MultiView ID="MainViewID" runat="server">
+            <div id="MultiViewBox">
+
+                <div id="MultiViewButtonsBox">
+                    <asp:Button Text="Criar processo" BorderStyle="None" ID="TabCriarProcessoID" CssClass="Initial" runat="server"
+                        OnClick="TabCriarProcesso_Click" />
+                    <asp:Button Text="Editar processo" BorderStyle="None" ID="TabEditarProcessoID" CssClass="Initial" runat="server"
+                        OnClick="TabEditarProcesso_Click" />
+                </div>
+
+                <asp:MultiView ID="MainViewID" runat="server">
                     <asp:View ID="ViewCriarProcessoID" runat="server">
-                        <uc13:i101CriarProcesso runat="server" id="i101CriarProcessoID" />
+                        <uc13:i101CriarProcesso runat="server" ID="i101CriarProcessoID" />
                     </asp:View>
-                    <asp:View ID="ViewAtribuirEntidadesID" runat="server">
+
+                    <%--                <asp:View ID="ViewAtribuirEntidadesID" runat="server">
                         <uc11:i56AtribuicaoEntidades runat="server" id="atribuicaoEntidadesID" />
-                    </asp:View>
+                    </asp:View>--%>
                     <asp:View ID="ViewEditarProcessoID" runat="server">
+                        <uc14:i102EditarProcesso runat="server" ID="i102EditarProcessoID" />
+                        <%--                        <div class="ViewsBox">--%>
 
-                         <div class="ViewsBox">
-
-                            <%-- 2ª multiview --%>
-                            <div class="ViewsButtonsBox">
+                        <%-- 2ª multiview --%>
+                        <%--                            <div class="ViewsButtonsBox">
+                                <asp:Button Text="Dados Base" BorderStyle="None" ID="TabDadosBaseID" CssClass="Initial" runat="server"
+                                    OnClick="TabDadosBase_Click" />
                                 <asp:Button Text="Atribuir evento" BorderStyle="None" ID="TabAtribuirEventosID" CssClass="Initial" runat="server"
                                     OnClick="TabAtribuirEventos_Click" />
                                 <asp:Button Text="Bens" BorderStyle="None" ID="TabBensID" CssClass="Initial" runat="server"
@@ -73,9 +76,9 @@
                                      OnClick="TabFicheirosMultimedia_Click" />
                                 <asp:Button Text="Ficheiros texto" BorderStyle="None" ID="TabFicheirosTextoID" CssClass="Initial" runat="server"
                                      OnClick="TabFicheirosTexto_Click" />
-                            </div>
+                            </div>--%>
 
-                                <asp:MultiView ID="MainViewID1" runat="server">
+                        <%--                                <asp:MultiView ID="MainViewID1" runat="server">
                                     <asp:View ID="ViewAtribuirEventosID" runat="server"> 
                                         <div class ="ViewBoxCRUD">
                                             <uc2:i60Eventos runat="server" ID="eventosID" />
@@ -113,10 +116,9 @@
                                     </asp:View>
                                 </asp:MultiView>
 
-                        </div>
-
+                        </div>--%>
                     </asp:View>
-                    <asp:View ID="ViewListarProcessoID" runat="server">
+                    <%--                <asp:View ID="ViewListarProcessoID" runat="server">
                         <uc10:i86Arquivo runat="server" id="i86ArquivoID" />
                     </asp:View>
                     <asp:View ID="ViewPararProcessoID" runat="server">
@@ -124,13 +126,13 @@
                     </asp:View>
                     <asp:View ID="ViewCategorizarProcessoID" runat="server">
                         <uc12:i89Tipos runat="server" id="I89TiposID" />
-                    </asp:View>
-            </asp:MultiView>
-
-            
+                    </asp:View>--%>
+                </asp:MultiView>
 
 
-<%--        <uc10:i86Arquivo runat="server" id="i86Arquivo" />
+
+
+                <%--        <uc10:i86Arquivo runat="server" id="i86Arquivo" />
 
         <div id="MultiViewBox">
 
@@ -202,17 +204,16 @@
                         </div>
                     </asp:View>
                  </asp:MultiView>--%>
-
-    </div>
-</div>
-    </form>
-        <div id="FooterBox">
-            <div id="FooterBox2">
-                <% 
-                    Response.WriteFile("../html/footer.html");
-                %>
             </div>
         </div>
-    
+    </form>
+    <div id="FooterBox">
+        <div id="FooterBox2">
+            <% 
+                Response.WriteFile("../html/footer.html");
+            %>
+        </div>
+    </div>
+
 </body>
 </html>

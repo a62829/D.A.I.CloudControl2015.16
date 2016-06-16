@@ -1,58 +1,43 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="i72Credores.ascx.cs" Inherits="ajuUminho.controls.processos.i72Credores" %>
 
-      <div class="InsideViewsBox">
-        <div class="InsideViewsTableBox">
-            <div class="titleh4big"> <h4>Lista de Credores</h4> </div>
-
-            <table id="table1">
-            <tr>
-                <th>Nome</th>
-                <th>...</th>
-                <th>...</th> 
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            </table>
-
+    <div class="EntidadesProcessoBox">
+        <div class="titleh4">
+            <h4>Credores</h4>
         </div>
-
-        <div class="InsideViewsDetailsBox">
-            <div class="titleh4big"> <h4>Detalhes do Credor</h4> </div>
-              <table class="ContentTable">
-                  <tr>
-                      <td> <asp:Label ID="LabelProcessoID" runat="server" Text="Label" CssClass="Labels-Item">
-                           Nome: </asp:Label> </td>
-                      <td> <asp:TextBox ID="TextBoxProcessoID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox> </td>
-                  </tr>
-                  <tr>
-                      <td> <asp:Label ID="LabelTipoEventoID" runat="server" Text="Label" CssClass="Labels-Item"> 
-                           ...: </asp:Label> </td>
-                      <td> <asp:TextBox ID="TextBoxTipoEventoID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox> </td>
-                  </tr>
-                  <tr>
-                      <td> <asp:Label ID="LabelDataID" runat="server" Text="Label" CssClass="Labels-Item">
-                           ...: </asp:Label> </td>
-                      <td> <asp:TextBox ID="TextBoxDataID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox> </td>
-                  </tr>
-            </table>
-          </div>
-
-        <div id="ContentButtonsBox">
-            <asp:Button ID="ButtonEditarID" runat="server" Text="Editar" CssClass="ContentButton"/>
-            <asp:Button ID="ButtonEliminarID" runat="server" Text="Eliminar" CssClass="ContentButton"/>
-            <asp:Button ID="ButtonGuardarID" runat="server" Text="Guardar" CssClass="ContentButton"/>
+        <div class="DropDpwnEntidadesProcesso">
+            <asp:DropDownList ID="DropDownListCredoresID" CssClass="DropDpwnEntidadesProcesso-Item" runat="server"></asp:DropDownList>
         </div>
-      </div>
+    </div>
+
+    <div class="AtribuirEntidadesBox">
+        <div class="titleh4big">
+            <h4>Atribuir ao processo</h4>
+        </div>
+        <div class="AtribuirEntidadesListBox1">
+            <div class="AtribuirEntidadesListBox2">
+                <div class="titleh5">
+                    <h5>Credores no Sistema</h5>
+                </div>
+                <div class="EntidadesListBox-Item">
+                    <asp:ListBox ID="ListBoxCredoresID" runat="server" CssClass="EntidadesList-Item" DataSourceID="SqlDataSource1" AutoPostBack="True"></asp:ListBox>
+                </div>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+            </div>
+            <div id="PerfisButtonsBox">
+                <asp:Button ID="ButtonMoreID" runat="server" Text=">" CssClass="MoreButton" OnClick="ButtonMoreID_Click" />
+                <asp:Button ID="ButtonLessID" runat="server" Text="<" CssClass="LessButton" OnClick="ButtonLessID_Click" />
+            </div>
+            <div class="AtribuirEntidadesListBox3">
+                <div class="titleh5">
+                    <h5>Credores associados ao processo</h5>
+                </div>
+                <div class="EntidadesListBox-Item">
+                    <asp:ListBox ID="ListBoxCredoresAssociadosID" runat="server" CssClass="EntidadesList-Item" AutoPostBack="True"></asp:ListBox>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ContentButtonsBox">
+        <asp:Button ID="ButtonGravarID" runat="server" Text="Gravar" CssClass="ContentButton" OnClick="ButtonGravarID_Click" />
+    </div>

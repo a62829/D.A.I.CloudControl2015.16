@@ -6,10 +6,10 @@
             	        <form id="Login" runat="server">
     				    <h1>Iniciar Sessão</h1><br/>
                             <div id="LoginBox-UserName">
-                                <asp:TextBox ID="TextBoxUserNameID" runat="server" CssClass="InputUserName"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxUserNameID" runat="server" placeholder="Username" CssClass="InputUserName"></asp:TextBox>
                             </div>
                             <div id="LoginBox-Password">
-                                <asp:TextBox ID="TextBoxPasswordID" type="password" runat="server" CssClass="InputPassword"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxPasswordID" type="password" placeholder="Password" runat="server" CssClass="InputPassword"></asp:TextBox>
                             </div>
                             <div id="LoginBox-Button">
                                 <asp:Button ID="ButtonAutenticarID" runat="server" Text="Autenticar" Cssclass="AutenticateButton" OnClick="SignIn"/>
@@ -18,6 +18,7 @@
                     </div>
                 </div>
 	         </div>
+
 
                 <div id="FooterBox">
                     <div id="FooterBox1">

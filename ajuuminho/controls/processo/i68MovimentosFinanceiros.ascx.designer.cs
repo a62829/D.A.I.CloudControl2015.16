@@ -13,40 +13,139 @@ namespace ajuUminho.controls.processos {
     public partial class i68MovimentosFinanceiros {
         
         /// <summary>
-        /// LabelElementoFinanceiroID control.
+        /// TabCriarID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelElementoFinanceiroID;
+        protected global::System.Web.UI.WebControls.Button TabCriarID;
         
         /// <summary>
-        /// TextBoxElementoFinanceiroID control.
+        /// TabEditarID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxElementoFinanceiroID;
+        protected global::System.Web.UI.WebControls.Button TabEditarID;
         
         /// <summary>
-        /// LabelTipoCreditoReclamadoID control.
+        /// TabEliminarID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelTipoCreditoReclamadoID;
+        protected global::System.Web.UI.WebControls.Button TabEliminarID;
         
         /// <summary>
-        /// TextBoxTipoCreditoReclamadoID control.
+        /// TabPesquisarID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxTipoCreditoReclamadoID;
+        protected global::System.Web.UI.WebControls.Button TabPesquisarID;
+        
+        /// <summary>
+        /// ContentListBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ContentListBox;
+        
+        /// <summary>
+        /// ListBoxParaTabsProcessosID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox ListBoxParaTabsProcessosID;
+        
+        /// <summary>
+        /// ContentDetailsBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ContentDetailsBox;
+        
+        /// <summary>
+        /// DetailsTitleBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DetailsTitleBox;
+        
+        /// <summary>
+        /// LabelDescricaoID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelDescricaoID;
+        
+        /// <summary>
+        /// TextBoxDescricaoID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxDescricaoID;
+        
+        /// <summary>
+        /// LabelDataID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelDataID;
+        
+        /// <summary>
+        /// TextBoxDataID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxDataID;
+        
+        /// <summary>
+        /// LabelValorID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelValorID;
+        
+        /// <summary>
+        /// TextBoxValorID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxValorID;
+        
+        /// <summary>
+        /// ButtonCriarID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonCriarID;
         
         /// <summary>
         /// ButtonEditarID control.
@@ -67,12 +166,12 @@ namespace ajuUminho.controls.processos {
         protected global::System.Web.UI.WebControls.Button ButtonEliminarID;
         
         /// <summary>
-        /// ButtonGuardarID control.
+        /// ButtonPesquisarID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonGuardarID;
+        protected global::System.Web.UI.WebControls.Button ButtonPesquisarID;
     }
 }

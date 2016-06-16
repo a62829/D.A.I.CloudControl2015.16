@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="i83FicheirosTexto.ascx.cs" Inherits="ajuUminho.controls.processos.i83FicheirosTexto" %>
 
-      <div class="InsideViewsBox">
+<div class="InsideViewsBox">
         <div class="InsideViewsTableBox">
             <div class="titleh4big"> <h4>Lista de Ficheiros</h4> </div>
 
@@ -65,4 +65,4 @@
             <asp:Button ID="ButtonEliminarID" runat="server" Text="Eliminar" CssClass="ContentButton"/>
             <asp:Button ID="ButtonGuardarID" runat="server" Text="Guardar" CssClass="ContentButton"/>
         </div>
-      </div>
+    </div>

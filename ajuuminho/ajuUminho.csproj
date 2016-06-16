@@ -160,6 +160,8 @@
     <Content Include="controls\entidades\i50PrestadoresServico.ascx" />
     <Content Include="controls\entidades\i54OutrasEntidades.ascx" />
     <Content Include="controls\processo\i101CriarProcesso.ascx" />
+    <Content Include="controls\processo\i102EditarProcesso.ascx" />
+    <Content Include="controls\processo\i103DadosBase.ascx" />
     <Content Include="controls\processo\i56AtribuicaoEntidades.ascx" />
     <Content Include="controls\processo\i60Eventos.ascx" />
     <Content Include="controls\processo\i64Bens.ascx" />
@@ -182,6 +184,8 @@
     <Content Include="css\StyleSheet.css" />
     <Content Include="imagens\default_profile_avatar.png" />
     <Content Include="imagens\close_session.png" />
+    <Content Include="imagens\DeleteButton.png" />
+    <Content Include="imagens\DownloadButton.png" />
     <Content Include="imagens\homeSiteMap.png" />
     <Content Include="imagens\logo.png" />
     <Content Include="packages.config" />
@@ -277,6 +281,20 @@
     </Compile>
     <Compile Include="controls\processo\i101CriarProcesso.ascx.designer.cs">
       <DependentUpon>i101CriarProcesso.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\processo\i102EditarProcesso.ascx.cs">
+      <DependentUpon>i102EditarProcesso.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\processo\i102EditarProcesso.ascx.designer.cs">
+      <DependentUpon>i102EditarProcesso.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\processo\i103DadosBase.ascx.cs">
+      <DependentUpon>i103DadosBase.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\processo\i103DadosBase.ascx.designer.cs">
+      <DependentUpon>i103DadosBase.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\processo\i56AtribuicaoEntidades.ascx.cs">
       <DependentUpon>i56AtribuicaoEntidades.ascx</DependentUpon>
