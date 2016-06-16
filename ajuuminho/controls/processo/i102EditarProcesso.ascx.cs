@@ -6,15 +6,15 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Web.UI.WebControls;
+using System.Web.UI;
 
 namespace ajuUminho.controls.processo
 {
     public partial class i102EditarProcesso : System.Web.UI.UserControl
     {
-        d85ProcessoDto lista;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (!Page.IsCrossPagePostBack)
             {
                 listaProcesso();
             }else{
@@ -175,7 +175,7 @@ namespace ajuUminho.controls.processo
         protected void ListBoxProcessosID_SelectedIndexChanged(object sender, EventArgs e)
         {
             var y = listaProcessoCompleto(ListBoxProcessosID.SelectedValue.ToString());
-            serializeProcessoDto(y);
+            Application["idProcesso"] = y.idProcesso.ToString();
 
         }
 
@@ -201,21 +201,6 @@ namespace ajuUminho.controls.processo
             return pdto;
         }
 
-        protected void serializeProcessoDto(d85ProcessoDto pdto)
-        {
-            string path = @"C:\Users\Tiago Silva\Desktop\AjuUminho Final\ajuuminho\bin\ProcessoDto.txt";
 
-            // Delete the file if it exists.
-            if (File.Exists(path))
-            {
-                File.Delete(path);
-            }
-            IFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream(path,
-                                     FileMode.Create,
-                                     FileAccess.Write, FileShare.None);
-            formatter.Serialize(stream, pdto);
-            stream.Close();
-        }
     }
 }

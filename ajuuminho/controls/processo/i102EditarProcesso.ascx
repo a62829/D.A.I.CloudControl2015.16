@@ -90,7 +90,7 @@
         </asp:View>
         <asp:View ID="ViewFicheirosMultimediaID" runat="server">
             <div class="ViewBoxCRUD">
-                <uc7:i80FicheirosMultimedia runat="server" ID="ficheirosMultimediaID" />
+                <uc7:i80FicheirosMultimedia runat="server" ID="ficheirosMultimediaID" controlpageload="false"  />
             </div>
         </asp:View>
         <asp:View ID="ViewFicheirosTextoID" runat="server">

@@ -11,10 +11,23 @@ namespace ajuUminho.controls.processos
 {
     public partial class i56AtribuicaoEntidades : System.Web.UI.UserControl
     {
-        d85ProcessoDto lista;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsCrossPagePostBack)
+            {
+                if (!IsPostBack)
+                {
+                    string idProcesso = Application["idProcesso"].ToString();
+                }
+                else {
+                    string idProcesso = Application["idProcesso"].ToString();
+                }
+            }
+            else
+            {
 
+            }
         }
 
         protected void ButtonMoreID_Click(object sender, EventArgs e)
@@ -43,39 +56,36 @@ namespace ajuUminho.controls.processos
 
         }
 
-        //protected d85ProcessoDto deserializeobj()
-        //{
-        //    string path = @"C:\Users\Tiago Silva\Desktop\AjuUminho Final\ajuuminho\bin\ProcessoDto.txt";
-        //    IFormatter formatter = new BinaryFormatter();
-        //    Stream stream = new FileStream(path,
-        //                              FileMode.Open,
-        //                              FileAccess.Read,
-        //                              FileShare.Read);
-        //    this.lista = (d85ProcessoDto)formatter.Deserialize(stream);
-        //    stream.Close();
-        //    return lista;
-        //}
 
-        //protected d85ProcessoDto listaProcessoDto()
-        //{
-        //    this.lista = deserializeobj();
-        //    return lista;
-        //}
+
+        protected void listaProcessoDto()
+        {
+        }
 
         protected void DropDownListEntidadesID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //    var x = listaProcessoDto();
-            //    if (DropDownListEntidadesID.Text == "Insolvente")
+            //if (DropDownListEntidadesID.Text == "Insolvente")
+            //{
+            //    foreach (KeyValuePair<String, d41InsolventeDto> pair in x.listaIDtoNoProcesso)
             //    {
-            //        foreach (KeyValuePair<String, d41InsolventeDto> pair in x.listaIDtoNoProcesso)
-            //        {
-            //            ListItem Item = new ListItem();
-            //            Item.Text = pair.Value.ToString();
-            //            Item.Value = pair.Key.ToString();
-            //            ListBoxEntidadesAssociadosID.Items.Add(Item);
-            //            ListBoxEntidadesAssociadosID.DataBind();
-            //        }
+            //        ListItem Item = new ListItem();
+            //        Item.Text = pair.Value.nome.ToString();
+            //        Item.Value = pair.Value.id.ToString();
+            //        ListBoxEntidadesAssociadosID.Items.Add(Item);
+            //        ListBoxEntidadesAssociadosID.DataBind();
             //    }
+            //    d41InsolventeDto idto = new d41InsolventeDto();
+            //    var y = idto.getListaInsolventeForaDoProcesso(x.idProcesso);
+            //    foreach (KeyValuePair<String, d41InsolventeDto> pair in y)
+            //    {
+            //        ListItem Item = new ListItem();
+            //        Item.Text = pair.Value.nome.ToString();
+            //        Item.Value = pair.Value.id.ToString();
+            //        ListBoxEntidadesAssociadosID.Items.Add(Item);
+            //        ListBoxEntidadesAssociadosID.DataBind();
+            //    }
+
+            //}
         }
     }
 }

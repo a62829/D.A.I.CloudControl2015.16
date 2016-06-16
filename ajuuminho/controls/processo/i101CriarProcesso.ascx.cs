@@ -13,13 +13,23 @@ namespace ajuUminho.controls.processo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) {
-                listaEstados();
-                listaTipoProcesso();
-                listaInsolvente();
 
-            } else {
+            if (!Page.IsCrossPagePostBack)
+            {
 
+            }
+            else
+            {
+                if (!IsPostBack)
+                {
+                    listaEstados();
+                    listaTipoProcesso();
+                    listaInsolvente();
+
+                }
+                else {
+
+                }
             }
         }
 
