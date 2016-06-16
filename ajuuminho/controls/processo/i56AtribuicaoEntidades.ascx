@@ -23,9 +23,9 @@
                 </div>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
             </div>
-            <div id="PerfisButtonsBox">
-                <asp:Button ID="ButtonMoreID" runat="server" Text=">" CssClass="MoreButton" OnClick="ButtonMoreID_Click" />
-                <asp:Button ID="ButtonLessID" runat="server" Text="<" CssClass="LessButton" OnClick="ButtonLessID_Click" />
+            <div id="AtrbuirEntidadesButtonsBox">
+                <asp:Button ID="ButtonMoreID" runat="server" Text=">" CssClass="PerfilUserButton" OnClick="ButtonMoreID_Click" />
+                <asp:Button ID="ButtonLessID" runat="server" Text="<" CssClass="PerfilUserButton" OnClick="ButtonLessID_Click" />
             </div>
             <div class="AtribuirEntidadesListBox3">
                 <div class="titleh5">

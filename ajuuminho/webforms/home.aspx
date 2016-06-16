@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="home.aspx.cs" Inherits="ajuUminho.webforms.home" %>
 <%@ Register TagPrefix="uc" TagName="i14TerminoDeSessao" Src="~/controls/utilizadores/i14TerminoDeSessao.ascx"%>
+<%@ Register TagPrefix="uc1" TagName="i4AlteracaoDeDadosPessoais" Src="~/controls/utilizadores/i4AlteracaoDeDadosPessoais.ascx" %>
 
 <!DOCTYPE html>
 
@@ -10,8 +11,9 @@
 </head>
 <body>
     <form id="Form" runat="server" aria-expanded="true">
-        <uc:i14TerminoDeSessao runat="server" ID="header" />
+        <uc:i14TerminoDeSessao runat="server" ID="headerID" />
         <div id="BigBox">
+
             <div id="ProcessesHomeBox">
                 <div class="AlignBox">
                      <div class="titleHhome"> <h3>Processos</h3> </div>

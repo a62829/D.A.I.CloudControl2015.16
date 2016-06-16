@@ -13,120 +13,147 @@ namespace ajuUminho.controls.processos {
     public partial class i83FicheirosTexto {
         
         /// <summary>
-        /// LabelFicheiro control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelFicheiro;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// TextBoxFicheiro control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxFicheiro;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// LabelNomeFicheiroID control.
+        /// LabelUploadedFromID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNomeFicheiroID;
+        protected global::System.Web.UI.WebControls.Label LabelUploadedFromID;
         
         /// <summary>
-        /// TextBoxProcessoID control.
+        /// Label3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxProcessoID;
+        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// LabelTipoFicheiroID control.
+        /// Label4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelTipoFicheiroID;
+        protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// TextBoxTipoEventoID control.
+        /// ButtonDownloadID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxTipoEventoID;
+        protected global::System.Web.UI.WebControls.Button ButtonDownloadID;
         
         /// <summary>
-        /// LabelAnotacoesID control.
+        /// ButtonDeleteID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelAnotacoesID;
+        protected global::System.Web.UI.WebControls.Button ButtonDeleteID;
         
         /// <summary>
-        /// TextBoxAnotacoesID control.
+        /// ButtonDownloadID1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxAnotacoesID;
+        protected global::System.Web.UI.WebControls.Button ButtonDownloadID1;
         
         /// <summary>
-        /// LabelDataID control.
+        /// ButtonDeleteID1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelDataID;
+        protected global::System.Web.UI.WebControls.Button ButtonDeleteID1;
         
         /// <summary>
-        /// TextBoxDataID control.
+        /// ButtonDownloadID2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxDataID;
+        protected global::System.Web.UI.WebControls.Button ButtonDownloadID2;
         
         /// <summary>
-        /// ButtonEditarID control.
+        /// ButtonDeleteID2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonEditarID;
+        protected global::System.Web.UI.WebControls.Button ButtonDeleteID2;
         
         /// <summary>
-        /// ButtonEliminarID control.
+        /// ButtonDownloadID3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonEliminarID;
+        protected global::System.Web.UI.WebControls.Button ButtonDownloadID3;
         
         /// <summary>
-        /// ButtonGuardarID control.
+        /// ButtonDeleteID3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonGuardarID;
+        protected global::System.Web.UI.WebControls.Button ButtonDeleteID3;
+        
+        /// <summary>
+        /// ButtonDownloadID4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonDownloadID4;
+        
+        /// <summary>
+        /// ButtonDeleteID4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonDeleteID4;
+        
+        /// <summary>
+        /// FileUploadTextoID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload FileUploadTextoID;
     }
 }

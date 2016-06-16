@@ -31,35 +31,58 @@ namespace ajuUminho.controls.administracao
 
         protected void ButtonAdicionarPerfilID_Click(object sender, EventArgs e)
         {
-            string roleName = TextBoxAdicionarPerfilID.Text;
-            gestaoIdentidade ws1 = new gestaoIdentidade();
-            ws1.insertRole(roleName);
-            ListBoxPerfisID.DataBind();
-            listaRoles();
+            if (ListBoxIdentidadesID.SelectedIndex == -1)
+            {
+                string mystring = "Primeiro selecione um utilizador e depois selecione um perfil de sistema.";
+                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
+            }
+            else
+            {
+                string roleName = TextBoxAdicionarPerfilID.Text;
+                gestaoIdentidade ws1 = new gestaoIdentidade();
+                ws1.insertRole(roleName);
+                ListBoxPerfisID.DataBind();
+                listaRoles();
+            }
         }
 
         protected void ButtonMoreID_Click(object sender, EventArgs e)
         {
-            string user = ListBoxIdentidadesID.SelectedValue;
-            string role = ListBoxPerfisID.SelectedItem.Text;
-            gestaoIdentidade ws1 = new gestaoIdentidade();
-            ws1.setRoleToUser(user, role);
-            ListBoxPerfisAssociadosID.DataBind();
-            ListBoxPerfisID.DataBind();
-            listaRolesUserDontHave();
-            listaUserRoles();
+            if (ListBoxIdentidadesID.SelectedIndex == -1)
+            {
+                string mystring = "Primeiro selecione um utilizador e depois selecione um perfil de sistema.";
+                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
+            }
+            else {
+                string user = ListBoxIdentidadesID.SelectedValue;
+                string role = ListBoxPerfisID.SelectedItem.Text;
+                gestaoIdentidade ws1 = new gestaoIdentidade();
+                ws1.setRoleToUser(user, role);
+                ListBoxPerfisAssociadosID.DataBind();
+                ListBoxPerfisID.DataBind();
+                listaRolesUserDontHave();
+                listaUserRoles();
+            }
         }
 
         protected void ButtonLessID_Click(object sender, EventArgs e)
         {
-            string user = ListBoxIdentidadesID.SelectedValue;
-            string role = ListBoxPerfisAssociadosID.SelectedItem.Text;
-            gestaoIdentidade ws1 = new gestaoIdentidade();
-            ws1.removeRoleToUser(user, role);
-            ListBoxPerfisAssociadosID.DataBind();
-            ListBoxPerfisID.DataBind();
-            listaRolesUserDontHave();
-            listaUserRoles();
+            if (ListBoxIdentidadesID.SelectedIndex == -1)
+            {
+                    string mystring = "Primeiro selecione um utilizador e depois selecione um perfil de sistema.";
+                    this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
+                }
+            else
+            {
+                string user = ListBoxIdentidadesID.SelectedValue;
+                string role = ListBoxPerfisAssociadosID.SelectedItem.Text;
+                gestaoIdentidade ws1 = new gestaoIdentidade();
+                ws1.removeRoleToUser(user, role);
+                ListBoxPerfisAssociadosID.DataBind();
+                ListBoxPerfisID.DataBind();
+                listaRolesUserDontHave();
+                listaUserRoles();
+            }
         }
 
         protected void ListBoxIdentidadesID_SelectedIndexChanged(object sender, EventArgs e)

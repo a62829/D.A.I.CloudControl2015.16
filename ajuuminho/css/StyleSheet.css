@@ -407,6 +407,19 @@ table {
     text-align: center;
 }
 
+.AlignBoxEliminarPerfil {
+    font-size: 12px;
+    color: #660000;
+    text-transform: uppercase;
+    padding: 2px;
+    width: 65%;
+    margin: auto;
+    margin-top: 10px;
+    padding-bottom: 8px;
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+}
+
 .Processes-Item {
     width:70%;
     height:100%;
@@ -632,7 +645,7 @@ table {
 #PerfisListBox1 {
     margin: auto;
     width: 100%;
-    min-height: 150px;
+    min-height: 200px;
 }
 
 #PerfisListBox2 {
@@ -659,33 +672,43 @@ table {
 
 #PerfisButtonsBox {
     float: left;
-    width: 20px;
-    margin-left: 8px;
+    width: 25px;
+    height: 80px;
+    margin-left: 18px;
     margin-right: 8px;
-    margin-top: 45px;
+    padding-top: 45px;
 }
 
-.MoreButton, .LessButton, .AdicionarPerfilButton {
+.PerfilUserButton, .PerfilAddSistemaButton, .PerfilRemoveSistemaButton {
     width: 25px;
     height: 25px;
     margin-top: 5px;
-    border: 1px solid #696969;
-    font-weight:800;
-    color: #d7d7d7;
-    background-color: #660000;
+    border: 1px solid #660000;
+    color: #660000;
+    font-weight: 600;
+    border-radius: 3px;
     cursor: pointer;
-    padding-bottom:5px;
-    border-radius: 5px;
 }
 
-.AdicionarPerfilButton {
-    margin-left: 5px;
-    width: 20px;
-    height: 20px;
-    margin-top: 0px;
-    font-weight:800;
-    padding-bottom:21px;
-    border-radius: 4px;
+.PerfilAddSistemaButton {
+    text-transform: uppercase;
+    font-size: 15px;
+    width: 19px;
+    height: 19px;
+    font-weight:600;
+    border-radius: 2px;
+}
+
+.PerfilRemoveSistemaButton {
+    margin-right: 5px;
+    padding-bottom:20px;
+    padding-left:5px;
+    padding-right:13px;
+    font-size: 15px;
+    width: 10px;
+    height: 10px;
+    font-weight:600;
+    border-radius: 2px;
 }
 
 #AdicionarPerfilBox {
@@ -733,19 +756,23 @@ table {
 
 #table1 {
   display: inline-block;
-  text-align: center;
+  text-align: center; font-size: 12px;
 }
 
 #table1 tr th, #table1 tr td { 
   background: #3B3B3B;
   color: #FFF;
-  padding: 7px 4px;
+  padding: 2px 4px;
   border: 1px solid #CCC;
 }
 
 #table1 tr td { 
-  background: #FFF;
+  background: #aaa;
   color: #47433F;
+}
+
+#table1 .lastRow {
+    background: transparent;
 }
 
 .InsideViewsBox {
@@ -759,14 +786,16 @@ table {
     width: 50%;
     text-align: center;
     min-height: 200px;
+
 }
 
 .InsideViewsDetailsBox2 {
     margin: auto;
-    width: 40%;
+    width: 42%;
     text-align: center;
     min-height: 100px;
     padding-right: 95px;
+
 }
 
 .InsideViewsDetailsBox {
@@ -800,6 +829,16 @@ table {
     width:56%;
     min-height: 150px;
 }
+
+#AtrbuirEntidadesButtonsBox {
+    float: left;
+    width: 25px;
+    height: 80px;
+    margin-left: 22px;
+    margin-right: 0px;
+    padding-top: 45px;
+}
+
 
 .AtribuirEntidadesListBox1 {
     margin: auto;
@@ -841,23 +880,34 @@ table {
 }
 
 .DownloadButton {
+    padding-bottom: 3px;
     background-image:url(../imagens/DownloadButton.png);
     border: none;
     background-repeat: no-repeat;
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     cursor:pointer;
     background-color:transparent;
-    margin: 1px;
 }
 
 .DeleteButton {
+    padding-bottom: 3px;
     background-image:url(../imagens/DeleteButton.png);
     border: none;
     background-repeat: no-repeat;
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     cursor:pointer;
     background-color:transparent;
-    margin: 1px;
+}
+
+.AceptButton {
+    padding-bottom: 3px;
+    background-image:url(../imagens/AceptButton.png);
+    border: none;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    cursor:pointer;
+    background-color:transparent;
 }

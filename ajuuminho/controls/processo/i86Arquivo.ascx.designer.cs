@@ -40,6 +40,15 @@ namespace ajuUminho.controls.processos {
         protected global::System.Web.UI.WebControls.Button TabReativarProcessoID;
         
         /// <summary>
+        /// HideContenteDive control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl HideContenteDive;
+        
+        /// <summary>
         /// ContentListBox control.
         /// </summary>
         /// <remarks>

@@ -22,13 +22,13 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.HtmlControls.HtmlForm Form;
         
         /// <summary>
-        /// header control.
+        /// headerID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::ajuUminho.controls.utilizadores.i14TerminoDeSessao header;
+        protected global::ajuUminho.controls.utilizadores.i14TerminoDeSessao headerID;
         
         /// <summary>
         /// ProcessesListID control.

@@ -76,13 +76,40 @@ namespace ajuUminho.controls.administracao {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl ContentDetailsBox;
         
         /// <summary>
-        /// TextBoxNomeID control.
+        /// LabelUsernameID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxNomeID;
+        protected global::System.Web.UI.WebControls.Label LabelUsernameID;
+        
+        /// <summary>
+        /// TextBoxUsernameID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxUsernameID;
+        
+        /// <summary>
+        /// TrPasswordID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow TrPasswordID;
+        
+        /// <summary>
+        /// LabelPasswordID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelPasswordID;
         
         /// <summary>
         /// TextBoxPasswordID control.
@@ -92,6 +119,24 @@ namespace ajuUminho.controls.administracao {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxPasswordID;
+        
+        /// <summary>
+        /// TrConfirmarPasswordID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow TrConfirmarPasswordID;
+        
+        /// <summary>
+        /// LabelConfirmarPasswordID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelConfirmarPasswordID;
         
         /// <summary>
         /// TextBoxConfirmarPasswordID control.

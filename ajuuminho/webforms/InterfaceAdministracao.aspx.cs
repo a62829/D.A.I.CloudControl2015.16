@@ -13,13 +13,13 @@ namespace ajuUminho.webforms
         {
             if (!IsPostBack)
             {
-                TabAdministradorUtilizadoresID.CssClass = "Clicked";
-                MainViewID.ActiveViewIndex = 0;
+
             }
         }
 
         protected void TabAdministradorUtilizadores_Click(object sender, EventArgs e)
         {
+            ViewBoxVisibleID.Visible = true;
             TabAdministradorUtilizadoresID.CssClass = "Clicked";
             TabAtribuirPerfilID.CssClass = "Initial";
             TabConfirmarPerfilID.CssClass = "Initial";
@@ -28,6 +28,7 @@ namespace ajuUminho.webforms
 
         protected void TabAtribuirPerfil_Click(object sender, EventArgs e)
         {
+            ViewBoxVisibleID1.Visible = true;
             TabAdministradorUtilizadoresID.CssClass = "Initial";
             TabAtribuirPerfilID.CssClass = "Clicked";
             TabConfirmarPerfilID.CssClass = "Initial";
@@ -36,6 +37,7 @@ namespace ajuUminho.webforms
 
         protected void TabConfirmarPerfil_Click(object sender, EventArgs e)
         {
+            ViewBoxVisibleID2.Visible = true;
             TabAdministradorUtilizadoresID.CssClass = "Initial";
             TabAtribuirPerfilID.CssClass = "Initial";
             TabConfirmarPerfilID.CssClass = "Clicked";

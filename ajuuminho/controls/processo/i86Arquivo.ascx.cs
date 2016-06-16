@@ -16,6 +16,7 @@ namespace ajuUminho.controls.processos
 
         protected void TabSuspenderProcesso_Click(object sender, EventArgs e)
         {
+            HideContenteDive.Visible = true;
             ContentListBox.Visible = false;
             ContentDetailsBox.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
@@ -31,6 +32,7 @@ namespace ajuUminho.controls.processos
 
         protected void TabArquivarProcesso_Click(object sender, EventArgs e)
         {
+            HideContenteDive.Visible = true;
             ContentListBox.Visible = false;
             ContentDetailsBox.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
@@ -46,6 +48,7 @@ namespace ajuUminho.controls.processos
 
         protected void TabReativarProcesso_Click(object sender, EventArgs e)
         {
+            HideContenteDive.Visible = true;
             ContentListBox.Visible = true;
             ContentDetailsBox.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");

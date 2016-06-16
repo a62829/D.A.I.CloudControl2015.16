@@ -10,7 +10,7 @@
         OnClick="TabReativarProcesso_Click" />
 </div>
 
-<div class="ViewsBox3">
+<div class="ViewsBox3" runat="server" id="HideContenteDive" visible="false">
 
 <div class="InsideViewsTableBox" runat="server" id="ContentListBox" visible="false">
     <div class="titleh4big">

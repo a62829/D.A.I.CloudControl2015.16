@@ -182,10 +182,13 @@
     <Content Include="controls\utilizadores\i14TerminoDeSessao.ascx" />
     <Content Include="controls\utilizadores\i4AlteracaoDeDadosPessoais.ascx" />
     <Content Include="css\StyleSheet.css" />
+    <Content Include="imagens\AceptButton.png" />
     <Content Include="imagens\default_profile_avatar.png" />
     <Content Include="imagens\close_session.png" />
     <Content Include="imagens\DeleteButton.png" />
+    <Content Include="imagens\DeleteButtonOriginal.png" />
     <Content Include="imagens\DownloadButton.png" />
+    <Content Include="imagens\DownloadButtonOriginal.png" />
     <Content Include="imagens\homeSiteMap.png" />
     <Content Include="imagens\logo.png" />
     <Content Include="packages.config" />
@@ -445,6 +448,7 @@
     </Compile>
     <Compile Include="webforms\gestaoIdentidades.aspx.cs">
       <DependentUpon>gestaoIdentidades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="webforms\gestaoIdentidades.aspx.designer.cs">
       <DependentUpon>gestaoIdentidades.aspx</DependentUpon>

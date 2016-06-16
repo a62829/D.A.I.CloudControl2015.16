@@ -22,13 +22,13 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.HtmlControls.HtmlForm Form;
         
         /// <summary>
-        /// header control.
+        /// headerID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::ajuUminho.controls.utilizadores.i14TerminoDeSessao header;
+        protected global::ajuUminho.controls.utilizadores.i14TerminoDeSessao headerID;
         
         /// <summary>
         /// TabAdministradorUtilizadoresID control.
@@ -76,6 +76,15 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.WebControls.View ViewAdministradorUtilizadoresID;
         
         /// <summary>
+        /// ViewBoxVisibleID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ViewBoxVisibleID;
+        
+        /// <summary>
         /// administradorUtilizadoresID control.
         /// </summary>
         /// <remarks>
@@ -94,6 +103,15 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.WebControls.View ViewAtribuirPerfilID;
         
         /// <summary>
+        /// ViewBoxVisibleID1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ViewBoxVisibleID1;
+        
+        /// <summary>
         /// atribuirPerfilID control.
         /// </summary>
         /// <remarks>
@@ -110,6 +128,15 @@ namespace ajuUminho.webforms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.View ViewConfirmarPerfilID;
+        
+        /// <summary>
+        /// ViewBoxVisibleID2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ViewBoxVisibleID2;
         
         /// <summary>
         /// confirmarPerfilID control.

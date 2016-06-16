@@ -1,7 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="i3AdministradorUtilizadores.ascx.cs" Inherits="ajuUminho.controls.administracao.i3AdministradorUtilizadores" %>
 
-<div class="ViewsBox">
-
     <div class="ViewsButtonsBox">
         <asp:Button Text="Criar" BorderStyle="None" ID="TabCriarUtilizadorID" CssClass="Initial" runat="server"
             OnClick="TabCriarUtilizador_Click" />
@@ -31,30 +29,33 @@
                 <table class="ContentTable">
                     <tr>
                         <td>
-                            UserName:</td>
+                            <asp:Label ID="LabelUsernameID" runat="server" Text="Label" CssClass="Labels-Item"> 
+                            Nome de utilizador:  </asp:Label> </td>
                         <td>
-                            <asp:TextBox ID="TextBoxNomeID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxUsernameID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
                         </td>
                     </tr>
-                    <tr>
+                    <tr ID="TrPasswordID" runat="server" >
                         <td>
-                            Password:</td>
+                            <asp:Label ID="LabelPasswordID" runat="server" Text="Label" CssClass="Labels-Item"> 
+                            Palavra-passe: </asp:Label> </td>
                         <td>
-                            <asp:TextBox ID="TextBoxPasswordID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxPasswordID" type="password" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
                         </td>
                     </tr>
-                    <tr>
+                    <tr  ID="TrConfirmarPasswordID" runat="server">
                         <td>
-                            ConfirmarPassword:
+                            <asp:Label ID="LabelConfirmarPasswordID" runat="server" Text="Label" CssClass="Labels-Item"> 
+                            Confirmar palavra-passe:  </asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="TextBoxConfirmarPasswordID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxConfirmarPasswordID" type="password" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <asp:Label ID="LabelEmailID" runat="server" Text="Label" CssClass="Labels-Item"> 
-                           Email: </asp:Label>
+                           Correio eletrónico: </asp:Label>
                         </td>
                         <td>
                             <asp:TextBox ID="TextBoxEmailID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
@@ -79,4 +80,3 @@
             </div>
         </div>
     </div>
-</div>

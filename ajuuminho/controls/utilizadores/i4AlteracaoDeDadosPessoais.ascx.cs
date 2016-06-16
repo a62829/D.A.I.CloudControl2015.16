@@ -13,5 +13,10 @@ namespace ajuUminho.controls.utilizadores
         {
 
         }
+
+        protected void ButtonEditarID_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

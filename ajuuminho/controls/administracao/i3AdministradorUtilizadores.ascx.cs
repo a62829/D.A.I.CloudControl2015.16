@@ -17,6 +17,8 @@ namespace ajuUminho.controls.administracao
 
         protected void TabCriarUtilizador_Click(object sender, EventArgs e)
         {
+            TrPasswordID.Visible = true;
+            TrConfirmarPasswordID.Visible = true;
             ListBoxVisibility.Visible = false;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
             ViewBoxVisible.Visible = true;
@@ -30,6 +32,8 @@ namespace ajuUminho.controls.administracao
 
         protected void TabEditarUtilizador_Click(object sender, EventArgs e)
         {
+            TrPasswordID.Visible = false;
+            TrConfirmarPasswordID.Visible = false;
             ListBoxVisibility.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
             ViewBoxVisible.Visible = true;
@@ -43,6 +47,8 @@ namespace ajuUminho.controls.administracao
 
         protected void TabEliminarUtilizador_Click(object sender, EventArgs e)
         {
+            TrPasswordID.Visible = false;
+            TrConfirmarPasswordID.Visible = false;
             ListBoxVisibility.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
             ViewBoxVisible.Visible = true;
@@ -59,7 +65,7 @@ namespace ajuUminho.controls.administracao
             gestaoIdentidade ws1 = new gestaoIdentidade();
             if (TextBoxPasswordID.Text == TextBoxConfirmarPasswordID.Text)
             {
-                ws1.criarUtilizador(TextBoxNomeID.Text, TextBoxPasswordID.Text, TextBoxEmailID.Text, TextBoxTelefoneID.Text);
+                ws1.criarUtilizador(TextBoxUsernameID.Text, TextBoxPasswordID.Text, TextBoxEmailID.Text, TextBoxTelefoneID.Text);
                 string mystring = "Utilizador criado com sucesso";
                 this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
             }
