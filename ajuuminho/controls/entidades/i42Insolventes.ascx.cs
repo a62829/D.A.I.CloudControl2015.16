@@ -3,6 +3,7 @@ using ajuUminho.Ws;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace ajuUminho.controls.entidades
@@ -20,6 +21,41 @@ namespace ajuUminho.controls.entidades
             }
         }
 
+        protected void ClearAllText(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Text = string.Empty;
+                else
+                    ClearAllText(c);
+            }
+        }
+
+        protected void EnableAllText(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Enabled = true;
+                else
+                    EnableAllText(c);
+            }
+        }
+
+        protected void DisableAllText(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Enabled = false;
+                else
+                    DisableAllText(c);
+            }
+        }
+
+
+
         protected void ButtonCriarID_Click(object sender, EventArgs e)
         {
             c43EdicaoInsolvente ws = new c43EdicaoInsolvente();
@@ -35,6 +71,7 @@ namespace ajuUminho.controls.entidades
             }
             ListBoxEntidadesID.Items.Clear();
             listaInsolvente();
+            ClearAllText(this);
         }
 
         protected void ListBoxEntidadesID_SelectedIndexChanged(object sender, EventArgs e)
@@ -61,10 +98,12 @@ namespace ajuUminho.controls.entidades
 
         protected void ButtonEditarID_Click(object sender, EventArgs e)
         {
+            ListBoxEntidadesID.ClearSelection();
             c43EdicaoInsolvente WsEI = new c43EdicaoInsolvente();
             WsEI.editarInsolvente(ListBoxEntidadesID.SelectedValue.ToString(), TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text);
+            ClearAllText(this);
         }
 
         protected void listaInsolvente()
@@ -83,6 +122,7 @@ namespace ajuUminho.controls.entidades
 
         protected void TabCriarInsolvente_Click(object sender, EventArgs e)
         {
+            EnableAllText(this);
             ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = false;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
@@ -95,10 +135,13 @@ namespace ajuUminho.controls.entidades
             TabEditarInsolventeID.CssClass = "Initial";
             TabEliminarInsolventeID.CssClass = "Initial";
             TabPesquisarInsolventeID.CssClass = "Initial";
+            ClearAllText(this);
         }
 
         protected void TabEditarInsolvente_Click(object sender, EventArgs e)
         {
+            ListBoxEntidadesID.ClearSelection();
+            EnableAllText(this);
             ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
@@ -111,10 +154,13 @@ namespace ajuUminho.controls.entidades
             TabEditarInsolventeID.CssClass = "Clicked";
             TabEliminarInsolventeID.CssClass = "Initial";
             TabPesquisarInsolventeID.CssClass = "Initial";
+            ClearAllText(this);
         }
 
         protected void TabEliminarInsolvente_Click(object sender, EventArgs e)
         {
+            ListBoxEntidadesID.ClearSelection();
+            DisableAllText(this);
             ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
@@ -127,6 +173,7 @@ namespace ajuUminho.controls.entidades
             TabEditarInsolventeID.CssClass = "Initial";
             TabEliminarInsolventeID.CssClass = "Clicked";
             TabPesquisarInsolventeID.CssClass = "Initial";
+            ClearAllText(this);
         }
 
         protected void ButtonPesquisarID_Click(object sender, EventArgs e)
@@ -136,8 +183,10 @@ namespace ajuUminho.controls.entidades
 
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
         {
+            ListBoxEntidadesID.ClearSelection();
             c44RemocaoInsolvente WsERL = new c44RemocaoInsolvente();
             WsERL.removerInsolvente(ListBoxEntidadesID.SelectedValue.ToString());
+            ClearAllText(this);
         }
 
         protected void TabPesquisarInsolvente_Click(object sender, EventArgs e)
@@ -154,6 +203,7 @@ namespace ajuUminho.controls.entidades
             TabEditarInsolventeID.CssClass = "Initial";
             TabEliminarInsolventeID.CssClass = "Initial";
             TabPesquisarInsolventeID.CssClass = "Clicked";
+            ClearAllText(this);
         }
     }
 }

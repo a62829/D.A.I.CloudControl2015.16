@@ -106,6 +106,7 @@ namespace ajuUminho.controls.entidades
             listaRepresentanteLegal();
             ListBoxEntidadesID.DataBind();
             ClearAllText(this);
+            ListBoxEntidadesID.ClearSelection();
         }
 
         protected void listaRepresentanteLegal()
@@ -132,6 +133,7 @@ namespace ajuUminho.controls.entidades
             c24RemocaoRepresentanteLegal WsERL = new c24RemocaoRepresentanteLegal();
             WsERL.removerRepresentanteLegal(ListBoxEntidadesID.SelectedValue.ToString());
             ClearAllText(this);
+            ListBoxEntidadesID.ClearSelection();
         }
 
         protected void TabCriarRepresentanteLegal_Click(object sender, EventArgs e)
@@ -155,6 +157,8 @@ namespace ajuUminho.controls.entidades
 
         protected void TabEditarRepresentanteLegal_Click(object sender, EventArgs e)
         {
+            ListBoxEntidadesID.ClearSelection();
+
             EnableAllText(this);
             ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = true;
@@ -174,6 +178,7 @@ namespace ajuUminho.controls.entidades
 
         protected void TabEliminarRepresentanteLegal_Click(object sender, EventArgs e)
         {
+            ListBoxEntidadesID.ClearSelection();
             DisableAllText(this);
             ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = true;

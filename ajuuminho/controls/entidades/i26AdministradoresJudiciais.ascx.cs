@@ -3,6 +3,7 @@ using ajuUminho.Ws;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace ajuUminho.controls.entidades
@@ -23,6 +24,39 @@ namespace ajuUminho.controls.entidades
             }
         }
 
+        protected void ClearAllText(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Text = string.Empty;
+                else
+                    ClearAllText(c);
+            }
+        }
+
+        protected void EnableAllText(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Enabled = true;
+                else
+                    EnableAllText(c);
+            }
+        }
+
+        protected void DisableAllText(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Enabled = false;
+                else
+                    DisableAllText(c);
+            }
+        }
+
         protected void ButtonCriarID_Click(object sender, EventArgs e)
         {
             c27EdicaoAdministradorJudicial ws = new c27EdicaoAdministradorJudicial();
@@ -38,6 +72,7 @@ namespace ajuUminho.controls.entidades
             }
             ListBoxEntidadesID.Items.Clear();
             listaAdministradorJudicial();
+            ClearAllText(this);
         }
 
         protected void ListBoxEntidadesID_SelectedIndexChanged(object sender, EventArgs e)
@@ -68,6 +103,8 @@ namespace ajuUminho.controls.entidades
             WsERL.editarAdministradorJudicial(ListBoxEntidadesID.SelectedValue.ToString(), TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text);
+            ClearAllText(this);
+            ListBoxEntidadesID.ClearSelection();
         }
 
         protected void listaAdministradorJudicial()
@@ -88,6 +125,8 @@ namespace ajuUminho.controls.entidades
         {
             c28RemocaoAdministradorJudicial WsERL = new c28RemocaoAdministradorJudicial();
             WsERL.removerAdministradorJudicial(ListBoxEntidadesID.SelectedValue.ToString());
+            ClearAllText(this);
+            ListBoxEntidadesID.ClearSelection();
         }
 
         protected void ButtonPesquisarID_Click(object sender, EventArgs e)
@@ -97,6 +136,7 @@ namespace ajuUminho.controls.entidades
 
         protected void TabCriarAdministradorJudicial_Click(object sender, EventArgs e)
         {
+            EnableAllText(this);
             ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = false;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
@@ -109,10 +149,13 @@ namespace ajuUminho.controls.entidades
             TabEditarAdministradorJudicialID.CssClass = "Initial";
             TabEliminarAdministradorJudicialID.CssClass = "Initial";
             TabPesquisarAdministradorJudicialID.CssClass = "Initial";
+            ClearAllText(this);
         }
 
         protected void TabEditarAdministradorJudicial_Click(object sender, EventArgs e)
         {
+            ListBoxEntidadesID.ClearSelection();
+            EnableAllText(this);
             ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
@@ -125,10 +168,13 @@ namespace ajuUminho.controls.entidades
             TabEditarAdministradorJudicialID.CssClass = "Clicked";
             TabEliminarAdministradorJudicialID.CssClass = "Initial";
             TabPesquisarAdministradorJudicialID.CssClass = "Initial";
+            ClearAllText(this);
         }
 
         protected void TabEliminarAdministradorJudicial_Click(object sender, EventArgs e)
         {
+            ListBoxEntidadesID.ClearSelection();
+            DisableAllText(this);
             ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
@@ -141,6 +187,7 @@ namespace ajuUminho.controls.entidades
             TabEditarAdministradorJudicialID.CssClass = "Initial";
             TabEliminarAdministradorJudicialID.CssClass = "Clicked";
             TabPesquisarAdministradorJudicialID.CssClass = "Initial";
+            ClearAllText(this);
         }
 
         protected void TabPesquisarAdministradorJudicial_Click(object sender, EventArgs e)
@@ -157,6 +204,7 @@ namespace ajuUminho.controls.entidades
             TabEditarAdministradorJudicialID.CssClass = "Initial";
             TabEliminarAdministradorJudicialID.CssClass = "Initial";
             TabPesquisarAdministradorJudicialID.CssClass = "Clicked";
+            ClearAllText(this);
         }
     }
 }
