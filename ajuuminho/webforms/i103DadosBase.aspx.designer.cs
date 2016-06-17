@@ -10,7 +10,7 @@
 namespace ajuUminho.webforms {
     
     
-    public partial class i72Credores {
+    public partial class i103DadosBase {
         
         /// <summary>
         /// form1 control.
@@ -22,66 +22,66 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// DropDownListCredoresID control.
+        /// LabelIdLegalID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListCredoresID;
+        protected global::System.Web.UI.WebControls.Label LabelIdLegalID;
         
         /// <summary>
-        /// ListBoxCredoresID control.
+        /// TextBoxIdLegalID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBoxCredoresID;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxIdLegalID;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// LabelIdEstadoID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.Label LabelIdEstadoID;
         
         /// <summary>
-        /// ButtonMoreID control.
+        /// DropDownListIdEstadoID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonMoreID;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListIdEstadoID;
         
         /// <summary>
-        /// ButtonLessID control.
+        /// LabelIdTipoProcessoID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonLessID;
+        protected global::System.Web.UI.WebControls.Label LabelIdTipoProcessoID;
         
         /// <summary>
-        /// ListBoxCredoresAssociadosID control.
+        /// DropDownListIdTipoProcessoID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBoxCredoresAssociadosID;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListIdTipoProcessoID;
         
         /// <summary>
-        /// ButtonGravarID control.
+        /// ButtonEditarID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonGravarID;
+        protected global::System.Web.UI.WebControls.Button ButtonEditarID;
     }
 }

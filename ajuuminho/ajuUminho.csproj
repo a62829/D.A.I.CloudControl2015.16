@@ -473,6 +473,13 @@
     <Compile Include="webforms\i102EditarProcesso.aspx.designer.cs">
       <DependentUpon>i102EditarProcesso.aspx</DependentUpon>
     </Compile>
+    <Compile Include="webforms\i103DadosBase.aspx.cs">
+      <DependentUpon>i103DadosBase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\i103DadosBase.aspx.designer.cs">
+      <DependentUpon>i103DadosBase.aspx</DependentUpon>
+    </Compile>
     <Compile Include="webforms\i56AtribuicaoEntidades.aspx.cs">
       <DependentUpon>i56AtribuicaoEntidades.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -678,6 +685,7 @@
     <Content Include="webforms\gestaoProcessos.aspx" />
     <Content Include="webforms\home.aspx" />
     <Content Include="webforms\i102EditarProcesso.aspx" />
+    <Content Include="webforms\i103DadosBase.aspx" />
     <Content Include="webforms\i56AtribuicaoEntidades.aspx" />
     <Content Include="webforms\i60Eventos.aspx" />
     <Content Include="webforms\i64Bens.aspx" />
