@@ -27,7 +27,7 @@
                 </asp:TreeView>
             </div>
 
-            <asp:SiteMapDataSource ID="SiteMapDataSource1" StartFromCurrentNode="true" runat="server" />
+            <asp:SiteMapDataSource ID="SiteMapDataSource1" SiteMapProvider="MyNewSiteMapProvider" runat="server" />
 
             <div class="ProcessosContentBox">
 
@@ -37,21 +37,17 @@
                     </div>
                 </div>
 
-                <div id="MultiViewBox">
-
-                    <div id="MultiViewButtonsBox">
-                        <asp:Button Text="Criar processo" BorderStyle="None" ID="TabCriarProcessoID" CssClass="Initial" runat="server"
-                            OnClick="TabCriarProcesso_Click" />
-                        <asp:Button Text="Editar processo" BorderStyle="None" ID="TabEditarProcessoID" CssClass="Initial" runat="server"
-                            OnClick="TabEditarProcesso_Click" />
-                    </div>
-
+                <div id="MultiViewButtonsBoxProcessos">
+                    <asp:Button Text="Criar processo" BorderStyle="None" ID="TabCriarProcessoID" CssClass="Initial" runat="server"
+                        OnClick="TabCriarProcesso_Click" />
+                    <asp:Button Text="Editar processo" BorderStyle="None" ID="TabEditarProcessoID" CssClass="Initial" runat="server"
+                        OnClick="TabEditarProcesso_Click" />
                 </div>
 
             </div>
 
         </div>
-    
+
     </form>
 
     <div id="FooterBox">

@@ -619,6 +619,7 @@
     <Content Include="Ws\c87.asmx" />
     <Content Include="Ws\ControloDeEntidades.asmx" />
     <Content Include="Ws\gestaoIdentidade.asmx" />
+    <Content Include="MyNewSiteMapFile.sitemap" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

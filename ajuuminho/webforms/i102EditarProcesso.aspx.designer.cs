@@ -31,13 +31,31 @@ namespace ajuUminho.webforms {
         protected global::ajuUminho.controls.utilizadores.i14TerminoDeSessao headerID;
         
         /// <summary>
-        /// TreeView1 control.
+        /// TreeViewID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TreeView TreeView1;
+        protected global::System.Web.UI.WebControls.TreeView TreeViewID;
+        
+        /// <summary>
+        /// TreeViewID1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TreeView TreeViewID1;
+        
+        /// <summary>
+        /// SiteMapDataSource2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SiteMapDataSource SiteMapDataSource2;
         
         /// <summary>
         /// SiteMapDataSource1 control.
