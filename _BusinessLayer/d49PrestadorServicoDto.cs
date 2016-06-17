@@ -95,7 +95,7 @@ namespace _BusinessLayer
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 d49PrestadorServicoDto psdto = new d49PrestadorServicoDto(dt, i);
-                lista.Add(Convert.ToString(psdto.id), psdto);
+                lista.Add(i.ToString(), psdto);
             }
             return lista;
         }
@@ -114,7 +114,7 @@ namespace _BusinessLayer
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 d49PrestadorServicoDto psdto = new d49PrestadorServicoDto(dt, i);
-                lista.Add(Convert.ToString(psdto.id), psdto);
+                lista.Add(i.ToString(), psdto);
             }
             return lista;
         }
@@ -127,9 +127,21 @@ namespace _BusinessLayer
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 d49PrestadorServicoDto psdto = new d49PrestadorServicoDto(dt, i);
-                lista.Add(Convert.ToString(psdto.id), psdto);
+                lista.Add(i.ToString(), psdto);
             }
             return lista;
+        }
+
+        public void adicionarPrestadorServicoAoProcesso(string idProcesso, string idPrestadorServico, string lastChangeBy)
+        {
+            d49PrestadorServico t = new d49PrestadorServico();
+            t.adicionarPrestadorServicoAoProcesso(idProcesso, idPrestadorServico, lastChangeBy);
+        }
+
+        public void removerPrestadorServicoDoProcesso(string idProcesso, string idPrestadorServico, string lastChangeBy)
+        {
+            d49PrestadorServico cr = new d49PrestadorServico();
+            cr.removerPrestadorServicoDoProcesso(idProcesso, idPrestadorServico, lastChangeBy);
         }
     }
 }

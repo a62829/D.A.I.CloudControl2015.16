@@ -14,72 +14,64 @@
         <uc1:i14TerminoDeSessao runat="server" ID="headerID" />
         <div id="BigBox">
 
-            <div class="TreeViewBox">
-                <asp:TreeView ID="TreeView1" CssClass="TreeView" runat="server" DataSourceID="SiteMapDataSource1" ImageSet="Msdn" NodeIndent="10">
-                    <HoverNodeStyle Font-Underline="false" BackColor="#CCCCCC" BorderColor="#888888" BorderStyle="none" />
-                    <NodeStyle Font-Names="Helvetica" Font-Size="8pt" ForeColor="Black" HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="2px" />
-                    <ParentNodeStyle Font-Bold="False" />
-                    <SelectedNodeStyle Font-Underline="False" HorizontalPadding="3px" VerticalPadding="1px" BackColor="White" BorderColor="#888888" BorderStyle="Solid" BorderWidth="1px" />
-                </asp:TreeView>
-            </div>
+            <div class="ViewBoxCRUD">
 
-            <asp:SiteMapDataSource ID="SiteMapDataSource1"  StartingNodeUrl="~/webforms/i102EditarProcesso.aspx"  runat="server" />
-
-            <div class="ProcessosContentBox">
-
-                <div class="ViewBoxCRUD">
-
-                    <div class="EntidadesProcessoBox">
-                        <div class="titleh4">
-                            <h4>Entidades</h4>
-                        </div>
-                        <div class="DropDpwnEntidadesProcesso">
-                            <asp:DropDownList ID="DropDownListEntidadesID" CssClass="DropDpwnEntidadesProcesso-Item" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownListEntidadesID_SelectedIndexChanged">
-                                <asp:ListItem>Representante Legal</asp:ListItem>
-                                <asp:ListItem>Administrador Judicial</asp:ListItem>
-                                <asp:ListItem>Tribunal</asp:ListItem>
-                                <asp:ListItem>Juiz</asp:ListItem>
+                <div class="EntidadesProcessoBox">
+                    <div class="titleh4">
+                        <h4>Entidades</h4>
+                    </div>
+                    <div class="DropDpwnEntidadesProcesso">
+                        <asp:DropDownList ID="DropDownListEntidadesID" CssClass="DropDpwnEntidadesProcesso-Item" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownListEntidadesID_SelectedIndexChanged">
+                            <asp:ListItem>Representante Legal</asp:ListItem>
+                            <asp:ListItem>Administrador Judicial</asp:ListItem>
+                            <asp:ListItem>Tribunal</asp:ListItem>
+                            <asp:ListItem>Juiz</asp:ListItem>
+                            <asp:ListItem>Credor</asp:ListItem>
+                            <asp:ListItem>Insolvente</asp:ListItem>
+                            <asp:ListItem>Contabilista</asp:ListItem>
+                            <asp:ListItem>Prestador de Serviços</asp:ListItem>
+                            <asp:ListItem>Outras Entidades</asp:ListItem>
+                        </asp:DropDownList>
+                        <p>
+                            <asp:RadioButtonList ID="RadioButtonList1" runat="server" Visible="false">
+                                <asp:ListItem selected="True">Insolvente</asp:ListItem>
                                 <asp:ListItem>Credor</asp:ListItem>
-                                <asp:ListItem>Insolvente</asp:ListItem>
-                                <asp:ListItem>Contabilista</asp:ListItem>
-                                <asp:ListItem>Prestador de Serviços</asp:ListItem>
-                                <asp:ListItem>Outras Entidades</asp:ListItem>
-                            </asp:DropDownList>
-                        </div>
-                    </div>
+                            </asp:RadioButtonList></p>
 
-                    <div class="AtribuirEntidadesBox">
-                        <div class="titleh4big">
-                            <h4>Atribuir ao processo</h4>
-                        </div>
-                        <div class="AtribuirEntidadesListBox1">
-                            <div class="AtribuirEntidadesListBox2">
-                                <div class="titleh5">
-                                    <h5>Entidades no Sistema</h5>
-                                </div>
-                                <div class="EntidadesListBox-Item">
-                                    <asp:ListBox ID="ListBoxEntidadesID" runat="server" CssClass="EntidadesList-Item" DataSourceID="SqlDataSource1" AutoPostBack="True" OnSelectedIndexChanged="ListBoxEntidadesID_SelectedIndexChanged"></asp:ListBox>
-                                </div>
-                                <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
-                            </div>
-                            <div id="AtrbuirEntidadesButtonsBox">
-                                <asp:Button ID="ButtonMoreID" runat="server" Text=">" CssClass="PerfilUserButton" OnClick="ButtonMoreID_Click" />
-                                <asp:Button ID="ButtonLessID" runat="server" Text="<" CssClass="PerfilUserButton" OnClick="ButtonLessID_Click" />
-                            </div>
-                            <div class="AtribuirEntidadesListBox3">
-                                <div class="titleh5">
-                                    <h5>Entidades associadas ao processo</h5>
-                                </div>
-                                <div class="EntidadesListBox-Item">
-                                    <asp:ListBox ID="ListBoxEntidadesAssociadosID" runat="server" CssClass="EntidadesList-Item" AutoPostBack="True" OnSelectedIndexChanged="ListBoxEntidadesAssociadosID_SelectedIndexChanged"></asp:ListBox>
-                                </div>
-                            </div>
-                        </div>
                     </div>
+                </div>
 
-                    <div id="ContentButtonsBox">
-                        <asp:Button ID="ButtonGravarID" runat="server" Text="Gravar" CssClass="ContentButton" />
+                <div class="AtribuirEntidadesBox">
+                    <div class="titleh4big">
+                        <h4>Atribuir ao processo</h4>
                     </div>
+                    <div class="AtribuirEntidadesListBox1">
+                        <div class="AtribuirEntidadesListBox2">
+                            <div class="titleh5">
+                                <h5>Entidades no Sistema</h5>
+                            </div>
+                            <div class="EntidadesListBox-Item">
+                                <asp:ListBox ID="ListBoxEntidadesID" runat="server" CssClass="EntidadesList-Item" DataSourceID="SqlDataSource1" AutoPostBack="True" OnSelectedIndexChanged="ListBoxEntidadesID_SelectedIndexChanged"></asp:ListBox>
+                            </div>
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+                        </div>
+                        <div id="AtrbuirEntidadesButtonsBox">
+                            <asp:Button ID="ButtonMoreID" runat="server" Text=">" CssClass="PerfilUserButton" OnClick="ButtonMoreID_Click" />
+                            <asp:Button ID="ButtonLessID" runat="server" Text="<" CssClass="PerfilUserButton" OnClick="ButtonLessID_Click" />
+                        </div>
+                        <div class="AtribuirEntidadesListBox3">
+                            <div class="titleh5">
+                                <h5>Entidades associadas ao processo</h5>
+                            </div>
+                            <div class="EntidadesListBox-Item">
+                                <asp:ListBox ID="ListBoxEntidadesAssociadosID" runat="server" CssClass="EntidadesList-Item" AutoPostBack="True" OnSelectedIndexChanged="ListBoxEntidadesAssociadosID_SelectedIndexChanged"></asp:ListBox>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ContentButtonsBox">
+                    <asp:Button ID="ButtonGravarID" runat="server" Text="Gravar" CssClass="ContentButton" />
                 </div>
             </div>
         </div>

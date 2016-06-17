@@ -62,5 +62,12 @@ namespace ajuUminho.Ws
             d37CredorDto cdto = new d37CredorDto();
             return cdto.getListaCredor();
         }
+
+        [WebMethod]
+        public void adicionarCredorAoProcesso(string idProcesso, string idCredor, string lastChangeBy)
+        {
+            d37CredorDto crdto = new d37CredorDto();
+            crdto.adicionarCredorAoProcesso(idProcesso, idCredor, lastChangeBy);
+        }
     }
 }

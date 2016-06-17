@@ -46,5 +46,19 @@ namespace ajuUminho.Ws
             d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
             return rldto.getListaRepresentanteLegal();
         }
+
+        [WebMethod]
+        public void adicionarRepresentanteLegalAoInsolventeNoProcesso(string idProcesso, string idRepresentanteLegal, string lastChangeBy, string idInsolvente)
+        {
+            d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
+            rldto.adicionarRepresentanteLegalAoInsolventeNoProcesso(idProcesso, idRepresentanteLegal, lastChangeBy, idInsolvente);
+        }
+
+        [WebMethod]
+        public void adicionarRepresentanteLegalAoCredorNoProcesso(string idProcesso, string idRepresentanteLegal, string lastChangeBy, string idCredor)
+        {
+            d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
+            rldto.adicionarRepresentanteLegalAoInsolventeNoProcesso(idProcesso, idRepresentanteLegal, lastChangeBy, idCredor);
+        }
     }
 }

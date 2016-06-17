@@ -25,5 +25,12 @@ namespace ajuUminho.Ws
             d41InsolventeDto idto = new d41InsolventeDto();
             idto.removerInsolvente(id);
         }
+
+        [WebMethod]
+        public void removerInsolventeDoProcesso(string idProcesso, string idInsolvente, string lastChangeBy)
+        {
+            d41InsolventeDto idto = new d41InsolventeDto();
+            idto.removerInsolventeDoProcesso(idProcesso, idInsolvente, lastChangeBy);
+        }
     }
 }

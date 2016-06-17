@@ -95,7 +95,7 @@ namespace _BusinessLayer
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto(dt, i);
-                lista.Add(Convert.ToString(rldto.id), rldto);
+                lista.Add(i.ToString(), rldto);
             }
             return lista;
         }
@@ -106,30 +106,80 @@ namespace _BusinessLayer
             rl.removerRepresentanteLegal(id);
         }
 
-        public Dictionary<String, d21RepresentanteLegalDto> getListaRepresentanteLegalNoProcesso(string id)
+        public Dictionary<String, d21RepresentanteLegalDto> getListaRepresentanteLegalNoCredorNoProcesso(string id)
         {
             d21RepresentanteLegal rl = new d21RepresentanteLegal();
-            DataTable dt = rl.getListaRepresentanteLegalNoProcesso(id);
+            DataTable dt = rl.getListaRepresentanteLegalNocredorNoProcesso(id);
             Dictionary<String, d21RepresentanteLegalDto> lista = new Dictionary<String, d21RepresentanteLegalDto>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto(dt, i);
-                lista.Add(Convert.ToString(rldto.id), rldto);
+                lista.Add(i.ToString(), rldto);
             }
             return lista;
         }
 
-        public Dictionary<String, d21RepresentanteLegalDto> getListaRepresentanteLegalForaDoProcesso(string id)
+        public Dictionary<String, d21RepresentanteLegalDto> getListaRepresentanteLegalNoInsolventeNoProcesso(string id)
         {
             d21RepresentanteLegal rl = new d21RepresentanteLegal();
-            DataTable dt = rl.getListaRepresentanteLegalForaDoProcesso(id);
+            DataTable dt = rl.getListaRepresentanteLegalNoInsolventeNoProcesso(id);
             Dictionary<String, d21RepresentanteLegalDto> lista = new Dictionary<String, d21RepresentanteLegalDto>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto(dt, i);
-                lista.Add(Convert.ToString(rldto.id), rldto);
+                lista.Add(i.ToString(), rldto);
             }
             return lista;
+        }
+
+        public Dictionary<String, d21RepresentanteLegalDto> getListaRepresentanteLegalForaDoCredorNoProcesso(string id)
+        {
+            d21RepresentanteLegal rl = new d21RepresentanteLegal();
+            DataTable dt = rl.getListaRepresentanteLegalForaDoCredorNoProcesso(id);
+            Dictionary<String, d21RepresentanteLegalDto> lista = new Dictionary<String, d21RepresentanteLegalDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto(dt, i);
+                lista.Add(i.ToString(), rldto);
+            }
+            return lista;
+        }
+
+        public Dictionary<String, d21RepresentanteLegalDto> getListaRepresentanteLegalForaDoInsolventeNoProcesso(string id)
+        {
+            d21RepresentanteLegal rl = new d21RepresentanteLegal();
+            DataTable dt = rl.getListaRepresentanteLegalForaDoInsolventeNoProcesso(id);
+            Dictionary<String, d21RepresentanteLegalDto> lista = new Dictionary<String, d21RepresentanteLegalDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto(dt, i);
+                lista.Add(i.ToString(), rldto);
+            }
+            return lista;
+        }
+
+        public void adicionarRepresentanteLegalAoInsolventeNoProcesso(string idProcesso, string idRepresentanteLegal, string lastChangeBy, string idInsolvente)
+        {
+            d21RepresentanteLegal i = new d21RepresentanteLegal();
+            i.adicionarRepresentanteLegalAoInsolventeNoProcesso(idProcesso, idRepresentanteLegal, lastChangeBy, idInsolvente);
+        }
+
+        public void adicionarRepresentanteLegalAoCredorNoProcesso(string idProcesso, string idRepresentanteLegal, string lastChangeBy, string idCredor)
+        {
+            d21RepresentanteLegal i = new d21RepresentanteLegal();
+            i.adicionarRepresentanteLegalAoCredorNoProcesso(idProcesso, idRepresentanteLegal, lastChangeBy, idCredor);
+        }
+
+        public void removerRepresentanteLegalDoCredorNoProcesso(string idProcesso, string idTribunal, string lastChangeBy)
+        {
+            d21RepresentanteLegal cr = new d21RepresentanteLegal();
+            cr.removerRepresentanteLegalDoCredorNoProcesso(idProcesso, idTribunal, lastChangeBy);
+        }
+
+        public void removerRepresentanteLegalDoInsolventeNoProcesso(string idProcesso, string idTribunal, string lastChangeBy)
+        {
+            d21RepresentanteLegal cr = new d21RepresentanteLegal();
+            cr.removerRepresentanteLegalDoInsolventeNoProcesso(idProcesso, idTribunal, lastChangeBy);
         }
     }
 }

@@ -62,5 +62,19 @@ namespace ajuUminho.Ws
             d45ContabilistaDto cdto = new d45ContabilistaDto();
             return cdto.getListaContabilista();
         }
+
+        [WebMethod]
+        public void adicionarContabilistaAoCredorNoProcesso(string idProcesso, string idContabilista, string lastChangeBy, string idInsolvente)
+        {
+            d45ContabilistaDto idto = new d45ContabilistaDto();
+            idto.adicionarContabilistaAoCredorNoProcesso(idProcesso, idContabilista, lastChangeBy, idInsolvente);
+        }
+
+        [WebMethod]
+        public void adicionarContabilistaAoInsolventeNoProcesso(string idProcesso, string idContabilista, string lastChangeBy, string idInsolvente)
+        {
+            d45ContabilistaDto idto = new d45ContabilistaDto();
+            idto.adicionarContabilistaAoInsolventeNoProcesso(idProcesso, idContabilista, lastChangeBy, idInsolvente);
+        }
     }
 }

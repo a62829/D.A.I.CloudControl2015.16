@@ -15,7 +15,8 @@ namespace _BusinessLayer
         public string dataInicio { get; set; }
         public string dataEncerramento { get; set; }
         public string lastChangeBy { get; set; }
-        public Dictionary<string, d21RepresentanteLegalDto> listaRlDtoNoProcesso { get; set; }
+        public Dictionary<string, d21RepresentanteLegalDto> listaRlDtoNoCredorNoProcesso { get; set; }
+        public Dictionary<string, d21RepresentanteLegalDto> listaRlDtoNoInsolventeNoProcesso { get; set; }
         public Dictionary<string, d25AdministradorJudicialDto> listaAjDtoNoProcesso { get; set; }
         public Dictionary<string, d29TribunalDto> listaTDtoNoProcesso { get; set; }
         public Dictionary<string, d33JuizDto> listaJDtoNoProcesso { get; set; }
@@ -84,7 +85,8 @@ namespace _BusinessLayer
             var x = p.getProcesso(id);
             d85ProcessoDto pdto = new d85ProcessoDto(x);
             d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
-            pdto.listaRlDtoNoProcesso = rldto.getListaRepresentanteLegalNoProcesso(id);
+            pdto.listaRlDtoNoCredorNoProcesso = rldto.getListaRepresentanteLegalNoCredorNoProcesso(id);
+            pdto.listaRlDtoNoInsolventeNoProcesso = rldto.getListaRepresentanteLegalNoInsolventeNoProcesso(id);
             d25AdministradorJudicialDto ajdto = new d25AdministradorJudicialDto();
             pdto.listaAjDtoNoProcesso = ajdto.getListaAdministradorJudicialNoProcesso(id);
             d29TribunalDto tdto = new d29TribunalDto();

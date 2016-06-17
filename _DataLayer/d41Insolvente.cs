@@ -51,7 +51,7 @@ namespace _DataLayer
         {
             SqlDataReader reader;
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.CommandText = "SELECT insolvente.id, insolvente.nome, insolvente.morada, insolvente.codPostal, insolvente.localidade, insolvente.email, insolvente.telefone, insolvente.telemovel, insolvente.fax, insolvente.cc, insolvente.iban, insolvente.nif, insolvente.lastChangeBy FROM insolvente Right Join insolventeNoProcesso ON insolventeNoProcesso.idinsolvente = insolvente.id WHERE insolventeNoProcesso.idProcesso = @id ORDER BY insolvente.id; ";
+            cmd.CommandText = "SELECT insolvente.id, insolvente.nome, insolvente.morada, insolvente.codPostal, insolvente.localidade, insolvente.email, insolvente.telefone, insolvente.telemovel, insolvente.fax, insolvente.cc, insolvente.iban, insolvente.nif, insolvente.lastChangeBy , processo.id  FROM insolvente Right Join insolventeNoProcesso ON insolvente.id = insolventeNoProcesso.idInsolvente Right Join processo ON  processo.id = insolventeNoProcesso.idProcesso WHERE processo.id = @id ORDER BY insolvente.id; ";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -116,7 +116,7 @@ namespace _DataLayer
         {
             SqlDataReader reader;
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.CommandText = "SELECT insolvente.id, insolvente.nome, insolvente.lastChangeBy FROM insolvente WHERE NOT EXISTS (SELECT * FROM insolventeNoProcesso WHERE idInsolvente = insolvente.id AND idProcesso = @id)";
+            cmd.CommandText = "SELECT * FROM insolvente WHERE NOT EXISTS (SELECT * FROM insolventeNoProcesso WHERE idInsolvente = insolvente.id AND idProcesso = @id)";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -125,6 +125,32 @@ namespace _DataLayer
             dataTable.Load(reader);
             con.Close();
             return dataTable;
+        }
+
+        public void adicionarInsolventeAoProcesso (string idProcesso, string idInsolvente, string lastChangeBy)
+        {
+            con.Open();
+            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+            cmd.Parameters.AddWithValue("@idInsolvente", idInsolvente);
+            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+            cmd.CommandText = "INSERT INTO dbo.insolventeNoProcesso VALUES (@idProcesso, @idInsolvente, null, null, @lastChangeBy);";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        public void removerInsolventeDoProcesso(string idProcesso, string idInsolvente, string lastChangeBy)
+        {
+            con.Open();
+            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+            cmd.Parameters.AddWithValue("@idInsolvente", idInsolvente);
+            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+            cmd.CommandText = "DELETE FROM dbo.insolventeNoProcesso WHERE id = @id AND idInsolvente = @idInsolvente";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+
         }
     }
 }

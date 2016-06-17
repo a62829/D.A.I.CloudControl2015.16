@@ -63,5 +63,12 @@ namespace ajuUminho.Ws
             d29TribunalDto tdto = new d29TribunalDto();
             return tdto.getListaTribunal();
         }
+
+        [WebMethod]
+        public void adicionarTribunalAoProcesso(string idProcesso, string idTribunal, string lastChangeBy)
+        {
+            d29TribunalDto tdto = new d29TribunalDto();
+            tdto.adicionarTribunalAoProcesso(idProcesso, idTribunal, lastChangeBy);
+        }
     }
 }

@@ -116,7 +116,7 @@ namespace _DataLayer
         {
             SqlDataReader reader;
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.CommandText = "SELECT tribunal.id, tribunal.nome, tribunal.lastChangeBy FROM tribunal WHERE NOT EXISTS (SELECT * FROM tribunalNoProcesso WHERE idTribunal = tribunal.id AND idProcesso = @id)";
+            cmd.CommandText = "SELECT * FROM tribunal WHERE NOT EXISTS (SELECT * FROM tribunalNoProcesso WHERE idTribunal = tribunal.id AND idProcesso = @id)";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -125,6 +125,32 @@ namespace _DataLayer
             dataTable.Load(reader);
             con.Close();
             return dataTable;
+        }
+
+        public void adicionarTribunalAoProcesso(string idProcesso, string idTribunal, string lastChangeBy)
+        {
+            con.Open();
+            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+            cmd.Parameters.AddWithValue("@idTribunal", idTribunal);
+            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+            cmd.CommandText = "INSERT INTO dbo.tribunalNoProcesso VALUES (@idProcesso, @idTribunal, @lastChangeBy);";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        public void removerTribunalDoProcesso(string idProcesso, string idTribunalJudicial, string lastChangeBy)
+        {
+            con.Open();
+            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+            cmd.Parameters.AddWithValue("@idTribunalJudicial", idTribunalJudicial);
+            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+            cmd.CommandText = "DELETE FROM dbo.tribunalJudicialNoProcesso WHERE id = @id AND idTribunalJudicial = @idTribunalJudicial";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+
         }
 
     }

@@ -95,7 +95,7 @@ namespace _BusinessLayer
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 d41InsolventeDto idto = new d41InsolventeDto(dt, i);
-                lista.Add(Convert.ToString(idto.id), idto);
+                lista.Add(i.ToString(), idto);
             }
             return lista;
         }
@@ -114,7 +114,7 @@ namespace _BusinessLayer
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 d41InsolventeDto idto = new d41InsolventeDto(dt, i);
-                lista.Add(Convert.ToString(idto.id), idto);
+                lista.Add(i.ToString(), idto);
             }
             return lista;
         }
@@ -127,9 +127,21 @@ namespace _BusinessLayer
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 d41InsolventeDto idto = new d41InsolventeDto(dt, i);
-                lista.Add(Convert.ToString(idto.id), idto);
+                lista.Add(i.ToString(), idto);
             }
             return lista;
+        }
+
+        public void adicionarInsolventeAoProcesso(string idProcesso, string idInsolvente, string lastChangeBy)
+        {
+            d41Insolvente i = new d41Insolvente();
+            i.adicionarInsolventeAoProcesso(idProcesso, idInsolvente, lastChangeBy);
+        }
+
+        public void removerInsolventeDoProcesso(string idProcesso, string idInsolvente, string lastChangeBy)
+        {
+            d41Insolvente cr = new d41Insolvente();
+            cr.removerInsolventeDoProcesso(idProcesso, idInsolvente, lastChangeBy);
         }
     }
 }

@@ -45,5 +45,12 @@ namespace ajuUminho.Ws
             d33JuizDto jdto = new d33JuizDto();
             return jdto.getListaJuiz();
         }
+
+        [WebMethod]
+        public void adicionarJuizAoProcesso(string idProcesso, string idJuiz, string lastChangeBy)
+        {
+            d33JuizDto jdto = new d33JuizDto();
+            jdto.adicionarJuizAoProcesso(idProcesso, idJuiz, lastChangeBy);
+        }
     }
 }

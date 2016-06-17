@@ -48,11 +48,26 @@ namespace _DataLayer
             return dataTable;
         }
 
-        public DataTable getListaRepresentanteLegalNoProcesso(string id)
+        public DataTable getListaRepresentanteLegalNoInsolventeNoProcesso(string id)
         {
             SqlDataReader reader;
             cmd.Parameters.AddWithValue("@id", id);
             cmd.CommandText = "SELECT representanteLegal.id, representanteLegal.nome, representanteLegal.morada, representanteLegal.codPostal, representanteLegal.localidade, representanteLegal.email, representanteLegal.telefone, representanteLegal.telemovel, representanteLegal.fax, representanteLegal.cc, representanteLegal.iban, representanteLegal.nif, representanteLegal.lastChangeBy , processo.id FROM representanteLegal Right Join insolventeNoProcesso ON representanteLegal.id = insolventeNoProcesso.idRepresentanteLegal Right Join processo ON  processo.id = insolventeNoProcesso.idProcesso WHERE processo.id = @id ORDER BY representanteLegal.id; ";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.Connection.Open();
+            reader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
+        }
+
+        public DataTable getListaRepresentanteLegalNocredorNoProcesso(string id)
+        {
+            SqlDataReader reader;
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "SELECT representanteLegal.id, representanteLegal.nome, representanteLegal.morada, representanteLegal.codPostal, representanteLegal.localidade, representanteLegal.email, representanteLegal.telefone, representanteLegal.telemovel, representanteLegal.fax, representanteLegal.cc, representanteLegal.iban, representanteLegal.nif, representanteLegal.lastChangeBy , processo.id FROM representanteLegal Right Join credorNoProcesso ON representanteLegal.id = credorNoProcesso.idRepresentanteLegal Right Join processo ON  processo.id = credorNoProcesso.idProcesso WHERE processo.id = @id ORDER BY representanteLegal.id; ";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -114,11 +129,11 @@ namespace _DataLayer
             con.Close();
         }
 
-        public DataTable getListaRepresentanteLegalForaDoProcesso(string id)
+        public DataTable getListaRepresentanteLegalForaDoCredorNoProcesso(string id)
         {
             SqlDataReader reader;
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.CommandText = "SELECT representanteLegal.id, representanteLegal.nome, representanteLegal.lastChangeBy FROM representanteLegal WHERE NOT EXISTS (SELECT * FROM representanteLegalNoProcesso WHERE idRepresentanteLegal = representanteLegal.id AND idProcesso = @id)";
+            cmd.CommandText = "SELECT * FROM representanteLegal WHERE NOT EXISTS(Select * FROM credorNoProcesso WHERE idRepresentanteLegal = representanteLegal.id AND idProcesso = @id)";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -127,6 +142,75 @@ namespace _DataLayer
             dataTable.Load(reader);
             con.Close();
             return dataTable;
+        }
+
+        public DataTable getListaRepresentanteLegalForaDoInsolventeNoProcesso(string id)
+        {
+            SqlDataReader reader;
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "SELECT * FROM representanteLegal WHERE NOT EXISTS(Select * FROM insolventeNoProcesso WHERE idRepresentanteLegal = representanteLegal.id AND idProcesso = @id)";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.Connection.Open();
+            reader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
+        }
+
+        public void adicionarRepresentanteLegalAoInsolventeNoProcesso(string idProcesso, string idRepresentanteLegal, string lastChangeBy, string idInsolvente)
+        {
+            con.Open();
+            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+            cmd.Parameters.AddWithValue("@idRepresentanteLegal", idRepresentanteLegal);
+            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+            cmd.Parameters.AddWithValue("@idInsolvente", idInsolvente);
+            cmd.CommandText = "UPDATE dbo.insolventeNoProcesso SET idRepresentanteLegal = @idRepresentanteLegal WHERE idProcesso = @idProcesso AND idInsolvente = @idInsolvente;";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        public void adicionarRepresentanteLegalAoCredorNoProcesso(string idProcesso, string idRepresentanteLegal, string lastChangeBy, string idCredor)
+        {
+            con.Open();
+            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+            cmd.Parameters.AddWithValue("@idRepresentanteLegal", idRepresentanteLegal);
+            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+            cmd.Parameters.AddWithValue("@idCredor", idCredor);
+            cmd.CommandText = "UPDATE dbo.credorNoProcesso SET idRepresentanteLegal = @idRepresentanteLegal WHERE idProcesso = @idProcesso AND idCredor = @idCredor;";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        public void removerRepresentanteLegalDoCredorNoProcesso(string idProcesso, string idCredor, string lastChangeBy)
+        {
+            con.Open();
+            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+            cmd.Parameters.AddWithValue("@idCredor", idCredor);
+            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+            cmd.CommandText = "UPDATE dbo.credorNoProcesso SET idRepresentanteLegal = null WHERE idProcesso = @idProcesso AND idCredor = @idCredor";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+                        
+
+        }
+
+        public void removerRepresentanteLegalDoInsolventeNoProcesso(string idProcesso, string idInsolvente, string lastChangeBy)
+        {
+            con.Open();
+            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+            cmd.Parameters.AddWithValue("@idInsolvente", idInsolvente);
+            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+            cmd.CommandText = "UPDATE dbo.insolventeNoProcesso SET idRepresentanteLegal = null WHERE idProcesso = @idProcesso AND idInsolvente = @idInsolvente";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
         }
     }
 }
