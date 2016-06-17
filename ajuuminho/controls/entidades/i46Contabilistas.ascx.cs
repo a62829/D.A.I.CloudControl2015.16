@@ -54,7 +54,7 @@ namespace ajuUminho.controls.entidades
             TextBoxIbanID.Text = cdto.iban;
             TextBoxNifID.Text = cdto.nif;
             TextBoxLastChangedID.Text = cdto.lastChangeBy;
-            ListBoxEntidadesID.ClearSelection();
+            //ListBoxEntidadesID.ClearSelection();
             //ListBoxEntidadesID.Items.Clear();
             //listaContabilista();
         }
@@ -69,6 +69,7 @@ namespace ajuUminho.controls.entidades
 
         protected void listaContabilista()
         {
+            ListBoxEntidadesID.Items.Clear();
             c47EdicaoContabilista WsEC = new c47EdicaoContabilista();
             var lista = WsEC.getListaContabilista();
             foreach (KeyValuePair<String, d45ContabilistaDto> pair in lista)
@@ -84,7 +85,9 @@ namespace ajuUminho.controls.entidades
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
         {
             c48RemocaoContabilista WsERL = new c48RemocaoContabilista();
-            WsERL.removerContabilista(ListBoxEntidadesID.SelectedValue.ToString());
+            var y = ListBoxEntidadesID.SelectedValue.ToString();
+            WsERL.removerContabilista(y);
+            listaContabilista();
         }
 
         protected void ButtonPesquisarID_Click(object sender, EventArgs e)

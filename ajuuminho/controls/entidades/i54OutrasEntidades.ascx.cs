@@ -53,8 +53,8 @@ namespace ajuUminho.controls.entidades
             TextBoxIbanID.Text = oedto.iban;
             TextBoxNifID.Text = oedto.nif;
             TextBoxLastChangedID.Text = oedto.lastChangeBy;
-            ListBoxEntidadesID.Items.Clear();
-            listaOutraEntidade();
+            //ListBoxEntidadesID.Items.Clear();
+            //listaOutraEntidade();
         }
 
         protected void ButtonEditarID_Click(object sender, EventArgs e)
@@ -67,6 +67,7 @@ namespace ajuUminho.controls.entidades
 
         protected void listaOutraEntidade()
         {
+            ListBoxEntidadesID.Items.Clear();
             c55RemocaoOutraEntidade WsEOE = new c55RemocaoOutraEntidade();
             var lista = WsEOE.getListaOutraEntidade();
             foreach (KeyValuePair<String, d53OutraEntidadeDto> pair in lista)
@@ -82,7 +83,9 @@ namespace ajuUminho.controls.entidades
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
         {
             c55RemocaoOutraEntidade WsERL = new c55RemocaoOutraEntidade();
-            WsERL.removerOutraEntidade(ListBoxEntidadesID.SelectedValue.ToString());
+            var y = ListBoxEntidadesID.SelectedValue.ToString();
+            WsERL.removerOutraEntidade(y);
+            listaOutraEntidade();
         }
 
         protected void ButtonPesquisarID_Click(object sender, EventArgs e)

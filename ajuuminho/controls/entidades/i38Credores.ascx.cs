@@ -55,7 +55,7 @@ namespace ajuUminho.controls.entidades
             TextBoxIbanID.Text = cdto.iban;
             TextBoxNifID.Text = cdto.nif;
             TextBoxLastChangedID.Text = cdto.lastChangeBy;
-            ListBoxEntidadesID.ClearSelection();
+            //ListBoxEntidadesID.ClearSelection();
             //ListBoxEntidadesID.Items.Clear();
             //listaCredor();
         }
@@ -70,6 +70,7 @@ namespace ajuUminho.controls.entidades
 
         protected void listaCredor()
         {
+            ListBoxEntidadesID.Items.Clear();
             c39EdicaoCredor WsERL = new c39EdicaoCredor();
             var lista = WsERL.getListaCredor();
             foreach (KeyValuePair<String, d37CredorDto> pair in lista)
@@ -85,7 +86,9 @@ namespace ajuUminho.controls.entidades
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
         {
             c40RemocaoCredor WsERL = new c40RemocaoCredor();
-            WsERL.removerCredor(ListBoxEntidadesID.SelectedValue.ToString());
+            var y = ListBoxEntidadesID.SelectedValue.ToString();
+            WsERL.removerCredor(y);
+            listaCredor();
         }
 
         protected void TabCriarCredor_Click(object sender, EventArgs e)

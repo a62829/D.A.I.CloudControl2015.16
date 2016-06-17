@@ -54,7 +54,7 @@ namespace ajuUminho.controls.entidades
             TextBoxIbanID.Text = psdto.iban;
             TextBoxNifID.Text = psdto.nif;
             TextBoxLastChangedID.Text = psdto.lastChangeBy;
-            ListBoxEntidadesID.ClearSelection();
+            //ListBoxEntidadesID.ClearSelection();
             //ListBoxEntidadesID.Items.Clear();
             //listaRepresentanteLegal();
         }
@@ -69,6 +69,7 @@ namespace ajuUminho.controls.entidades
 
         protected void listaPrestadorServico()
         {
+            ListBoxEntidadesID.Items.Clear();
             c51EdicaoPrestadorServico WsEPS = new c51EdicaoPrestadorServico();
             var lista = WsEPS.getListaPrestadorServico();
             foreach (KeyValuePair<String, d49PrestadorServicoDto> pair in lista)
@@ -84,7 +85,9 @@ namespace ajuUminho.controls.entidades
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
         {
             c52RemocaoPrestadorServico WsERL = new c52RemocaoPrestadorServico();
-            WsERL.removerPrestadorServico(ListBoxEntidadesID.SelectedValue.ToString());
+            var y = ListBoxEntidadesID.SelectedValue.ToString();
+            WsERL.removerPrestadorServico(y);
+            listaPrestadorServico();
         }
 
         protected void ButtonPesquisarID_Click(object sender, EventArgs e)

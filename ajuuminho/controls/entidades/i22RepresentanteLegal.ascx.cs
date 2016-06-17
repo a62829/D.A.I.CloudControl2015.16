@@ -99,6 +99,7 @@ namespace ajuUminho.controls.entidades
 
         protected void listaRepresentanteLegal()
         {
+            ListBoxEntidadesID.Items.Clear();
             c23EditarRepresentanteLegal WsERL = new c23EditarRepresentanteLegal();
             this.lista = WsERL.getListaRepresentanteLegal();
             foreach (KeyValuePair<String, d21RepresentanteLegalDto> pair in lista)
@@ -127,7 +128,9 @@ namespace ajuUminho.controls.entidades
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
         {
             c24RemocaoRepresentanteLegal WsERL = new c24RemocaoRepresentanteLegal();
-            WsERL.removerRepresentanteLegal(ListBoxEntidadesID.SelectedValue.ToString());
+            var y = ListBoxEntidadesID.SelectedValue.ToString();
+            WsERL.removerRepresentanteLegal(y);
+            listaRepresentanteLegal();
         }
 
         protected void TabCriarRepresentanteLegal_Click(object sender, EventArgs e)

@@ -55,7 +55,7 @@ namespace ajuUminho.controls.entidades
             TextBoxIbanID.Text = jdto.iban;
             TextBoxNifID.Text = jdto.nif;
             TextBoxLastChangedID.Text = jdto.lastChangeBy;
-            ListBoxEntidadesID.ClearSelection();
+            //ListBoxEntidadesID.ClearSelection();
             //ListBoxEntidadesID.Items.Clear();
             //listaRepresentanteLegal();
         }
@@ -70,6 +70,7 @@ namespace ajuUminho.controls.entidades
 
         protected void listaJuiz()
         {
+            ListBoxEntidadesID.Items.Clear();
             c35EdicaoJuiz WsEJ = new c35EdicaoJuiz();
             var lista = WsEJ.getListaJuiz();
             foreach (KeyValuePair<String, d33JuizDto> pair in lista)
@@ -90,7 +91,9 @@ namespace ajuUminho.controls.entidades
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
         {
             c36RemocaoJuiz WsERL = new c36RemocaoJuiz();
-            WsERL.removerJuiz(ListBoxEntidadesID.SelectedValue.ToString());
+            var y = ListBoxEntidadesID.SelectedValue.ToString();
+            WsERL.removerJuiz(y);
+            listaJuiz();
         }
 
         protected void TabCriarJuiz_Click(object sender, EventArgs e)

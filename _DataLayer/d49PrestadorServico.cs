@@ -144,7 +144,7 @@ namespace _DataLayer
             cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
             cmd.Parameters.AddWithValue("@idPrestadorServico", idPrestadorServico);
             cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
-            cmd.CommandText = "DELETE FROM dbo.prestadorServicoNoProcesso WHERE id = @id AND idPrestadorServico = @idPrestadorServico";
+            cmd.CommandText = "DELETE FROM dbo.prestadorServicoNoProcesso WHERE idProcesso = @idProcesso AND idPrestadorServico = @idPrestadorServico";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.ExecuteNonQuery();

@@ -3,6 +3,7 @@ using ajuUminho.Ws;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace ajuUminho.controls.entidades
@@ -13,10 +14,12 @@ namespace ajuUminho.controls.entidades
         {
             if (!IsPostBack)
             {
+                
                 listaInsolvente();
             }
             else
             {
+
             }
         }
 
@@ -27,7 +30,7 @@ namespace ajuUminho.controls.entidades
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text);
 
-            string mystring = "Representante Legal criado com sucesso.";
+            string mystring = "Insolvente criado com sucesso.";
             this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
             foreach (TextBox textbox in this.Controls.OfType<TextBox>())
             {
@@ -54,7 +57,7 @@ namespace ajuUminho.controls.entidades
             TextBoxIbanID.Text = idto.iban;
             TextBoxNifID.Text = idto.nif;
             TextBoxLastChangedID.Text = idto.lastChangeBy;
-            ListBoxEntidadesID.ClearSelection();
+            //ListBoxEntidadesID.ClearSelection();
             //ListBoxEntidadesID.Items.Clear();
             //listaRepresentanteLegal();
         }
@@ -65,10 +68,19 @@ namespace ajuUminho.controls.entidades
             WsEI.editarInsolvente(ListBoxEntidadesID.SelectedValue.ToString(), TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text);
+            string mystring = "Insolvente editado com sucesso.";
+            this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
+            foreach (TextBox textbox in this.Controls.OfType<TextBox>())
+            {
+                textbox.Text = string.Empty;
+            }
+            ListBoxEntidadesID.Items.Clear();
+            listaInsolvente();
         }
 
         protected void listaInsolvente()
         {
+            ListBoxEntidadesID.Items.Clear();
             c43EdicaoInsolvente WsEI = new c43EdicaoInsolvente();
             var lista = WsEI.getListaInsolvente();
             foreach (KeyValuePair<String, d41InsolventeDto> pair in lista)
@@ -77,8 +89,22 @@ namespace ajuUminho.controls.entidades
                 Item.Text = pair.Value.nome.ToString();
                 Item.Value = pair.Value.id.ToString();
                 ListBoxEntidadesID.Items.Add(Item);
-                ListBoxEntidadesID.DataBind();
             }
+
+            ListBoxEntidadesID.DataBind();
+        }
+
+        protected void ButtonPesquisarID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ButtonEliminarID_Click(object sender, EventArgs e)
+        {
+            c44RemocaoInsolvente WsERL = new c44RemocaoInsolvente();
+            var y = ListBoxEntidadesID.SelectedValue.ToString();
+            WsERL.removerInsolvente(y);
+            listaInsolvente();
         }
 
         protected void TabCriarInsolvente_Click(object sender, EventArgs e)
@@ -127,17 +153,6 @@ namespace ajuUminho.controls.entidades
             TabEditarInsolventeID.CssClass = "Initial";
             TabEliminarInsolventeID.CssClass = "Clicked";
             TabPesquisarInsolventeID.CssClass = "Initial";
-        }
-
-        protected void ButtonPesquisarID_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void ButtonEliminarID_Click(object sender, EventArgs e)
-        {
-            c44RemocaoInsolvente WsERL = new c44RemocaoInsolvente();
-            WsERL.removerInsolvente(ListBoxEntidadesID.SelectedValue.ToString());
         }
 
         protected void TabPesquisarInsolvente_Click(object sender, EventArgs e)
