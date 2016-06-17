@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="i60Eventos.aspx.cs" Inherits="ajuUminho.webforms.i60Eventos" %>
-
 <%@ Register TagPrefix="uc1" TagName="i14TerminoDeSessao" Src="~/controls/utilizadores/i14TerminoDeSessao.ascx" %>
-s
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -14,7 +13,18 @@ s
         <uc1:i14TerminoDeSessao runat="server" ID="headerID" />
         <div id="BigBox">
 
-            <div class="ViewBoxCRUD">
+            <div class="TreeViewBox">
+                <asp:TreeView ID="TreeView1" CssClass="TreeView" runat="server" DataSourceID="SiteMapDataSource1" ImageSet="Msdn" NodeIndent="10">
+                    <HoverNodeStyle Font-Underline="false" BackColor="#CCCCCC" BorderColor="#888888" BorderStyle="none" />
+                    <NodeStyle Font-Names="Helvetica" Font-Size="8pt" ForeColor="Black" HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="2px" />
+                    <ParentNodeStyle Font-Bold="False" />
+                    <SelectedNodeStyle Font-Underline="False" HorizontalPadding="3px" VerticalPadding="1px" BackColor="White" BorderColor="#888888" BorderStyle="Solid" BorderWidth="1px" />
+                </asp:TreeView>
+            </div>
+
+            <asp:SiteMapDataSource ID="SiteMapDataSource1" StartingNodeUrl="~/webforms/i102EditarProcesso.aspx" runat="server" />
+
+            <div class="ProcessosContentBox">
 
                 <div class="ViewsButtonsBox2">
                     <asp:Button Text="Criar" BorderStyle="None" ID="TabCriarID" CssClass="Initial" runat="server"
@@ -27,7 +37,7 @@ s
                         OnClick="TabPesquisar_Click" />
                 </div>
 
-                <div class="ViewsBox3">
+                <div class="ViewsBoxProcessosCRUD">
 
                     <div class="InsideViewsTableBox" runat="server" id="ContentListBox" visible="false">
                         <div class="titleh4big">
@@ -79,10 +89,8 @@ s
                         <asp:Button ID="ButtonEliminarID" runat="server" Text="Eliminar" CssClass="ContentButton" Visible="false" />
                         <asp:Button ID="ButtonPesquisarID" runat="server" Text="Pesquisar" CssClass="ContentButton" Visible="false" />
                     </div>
-
                 </div>
             </div>
-
         </div>
     </form>
 

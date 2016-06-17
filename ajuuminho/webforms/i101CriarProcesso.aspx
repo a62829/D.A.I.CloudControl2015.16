@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="i103DadosBase.aspx.cs" Inherits="ajuUminho.webforms.i103DadosBase" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="i101CriarProcesso.aspx.cs" Inherits="ajuUminho.webforms.i101CriarProcesso" %>
 
 <%@ Register TagPrefix="uc1" TagName="i14TerminoDeSessao" Src="~/controls/utilizadores/i14TerminoDeSessao.ascx" %>
 
@@ -23,16 +23,18 @@
                 </asp:TreeView>
             </div>
 
-            <asp:SiteMapDataSource ID="SiteMapDataSource1" StartingNodeUrl="~/webforms/i102EditarProcesso.aspx"  runat="server" />
+            <asp:SiteMapDataSource ID="SiteMapDataSource1"  StartingNodeUrl="~/webforms/InterfaceProcesso.aspx" runat="server" />
 
             <div class="ProcessosContentBox">
 
                     <div class="ViewsBoxProcessos">
 
-                        <div class="InsideViewsBox">
+
+                        <div class="InsideViewsTableBox">
                             <div class="titleh4">
                                 <h4>Dados base</h4>
                             </div>
+
                             <table class="ContentTable">
                                 <tr>
                                     <td>
@@ -62,16 +64,25 @@
                                     </td>
                                 </tr>
                             </table>
+                        </div>
 
-                            <div id="ContentButtonsBox">
-                                <asp:Button ID="ButtonEditarID" runat="server" Text="Editar" CssClass="ContentButton" />
+                        <div class="InsideViewsDetailsBox">
+                            <div class="titleh4big">
+                                <h4>Selecione um insolvente</h4>
                             </div>
+                            <div class="AlignBox">
+                                <asp:ListBox ID="ListBoxInsolventesID" runat="server" CssClass="ListBoxEntidades-Item" AutoPostBack="True"></asp:ListBox>
+                            </div>
+                        </div>
+
+                        <div id="ContentButtonsBox">
+                            <asp:Button ID="ButtonCriarID" runat="server" Text="Criar" CssClass="ContentButton" OnClick="ButtonCriarID_Click1" />
                         </div>
                     </div>
                 </div>
+
         </div>
     </form>
-
     <div id="FooterBox">
         <div id="FooterBox2">
             <% 

@@ -14,9 +14,22 @@
         <uc1:i14TerminoDeSessao runat="server" ID="headerID" />
         <div id="BigBox">
 
-            <div class="ViewBoxCRUD">
+            <div class="TreeViewBox">
+                <asp:TreeView ID="TreeView1" CssClass="TreeView" runat="server" DataSourceID="SiteMapDataSource1" ImageSet="Msdn" NodeIndent="10">
+                    <HoverNodeStyle Font-Underline="false" BackColor="#CCCCCC" BorderColor="#888888" BorderStyle="none" />
+                    <NodeStyle Font-Names="Helvetica" Font-Size="8pt" ForeColor="Black" HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="2px" />
+                    <ParentNodeStyle Font-Bold="False" />
+                    <SelectedNodeStyle Font-Underline="False" HorizontalPadding="3px" VerticalPadding="1px" BackColor="White" BorderColor="#888888" BorderStyle="Solid" BorderWidth="1px" />
+                </asp:TreeView>
+            </div>
 
-                <div class="EntidadesProcessoBox">
+            <asp:SiteMapDataSource ID="SiteMapDataSource1" StartingNodeUrl="~/webforms/i102EditarProcesso.aspx" runat="server" />
+
+            <div class="ProcessosContentBox">
+
+                <div class="ViewsBoxProcessosCRUD">
+
+                                  <div class="EntidadesProcessoBox">
                     <div class="titleh4">
                         <h4>Credores</h4>
                     </div>
@@ -25,37 +38,38 @@
                     </div>
                 </div>
 
-                <div class="AtribuirEntidadesBox">
-                    <div class="titleh4big">
-                        <h4>Atribuir ao processo</h4>
+                    <div class="AtribuirEntidadesBox">
+                        <div class="titleh4big">
+                            <h4>Atribuir ao processo</h4>
+                        </div>
+                        <div class="AtribuirEntidadesListBox1">
+                            <div class="AtribuirEntidadesListBox2">
+                                <div class="titleh5">
+                                    <h5>Credores no Sistema</h5>
+                                </div>
+                                <div class="EntidadesListBox-Item">
+                                    <asp:ListBox ID="ListBoxCredoresID" runat="server" CssClass="EntidadesList-Item" DataSourceID="SqlDataSource1" AutoPostBack="True"></asp:ListBox>
+                                </div>
+                                <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+                            </div>
+                            <div id="AtrbuirEntidadesButtonsBox">
+                                <asp:Button ID="ButtonMoreID" runat="server" Text=">" CssClass="PerfilUserButton" OnClick="ButtonMoreID_Click" />
+                                <asp:Button ID="ButtonLessID" runat="server" Text="<" CssClass="PerfilUserButton" OnClick="ButtonLessID_Click" />
+                            </div>
+                            <div class="AtribuirEntidadesListBox3">
+                                <div class="titleh5">
+                                    <h5>Credores associados ao processo</h5>
+                                </div>
+                                <div class="EntidadesListBox-Item">
+                                    <asp:ListBox ID="ListBoxCredoresAssociadosID" runat="server" CssClass="EntidadesList-Item" AutoPostBack="True"></asp:ListBox>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="AtribuirEntidadesListBox1">
-                        <div class="AtribuirEntidadesListBox2">
-                            <div class="titleh5">
-                                <h5>Credores no Sistema</h5>
-                            </div>
-                            <div class="EntidadesListBox-Item">
-                                <asp:ListBox ID="ListBoxCredoresID" runat="server" CssClass="EntidadesList-Item" DataSourceID="SqlDataSource1" AutoPostBack="True"></asp:ListBox>
-                            </div>
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
-                        </div>
-                        <div id="AtrbuirEntidadesButtonsBox">
-                            <asp:Button ID="ButtonMoreID" runat="server" Text=">" CssClass="PerfilUserButton" OnClick="ButtonMoreID_Click" />
-                            <asp:Button ID="ButtonLessID" runat="server" Text="<" CssClass="PerfilUserButton" OnClick="ButtonLessID_Click" />
-                        </div>
-                        <div class="AtribuirEntidadesListBox3">
-                            <div class="titleh5">
-                                <h5>Credores associados ao processo</h5>
-                            </div>
-                            <div class="EntidadesListBox-Item">
-                                <asp:ListBox ID="ListBoxCredoresAssociadosID" runat="server" CssClass="EntidadesList-Item" AutoPostBack="True"></asp:ListBox>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div id="ContentButtonsBox">
-                    <asp:Button ID="ButtonGravarID" runat="server" Text="Gravar" CssClass="ContentButton" OnClick="ButtonGravarID_Click" />
+                    <div id="ContentButtonsBox">
+                        <asp:Button ID="ButtonGravarID" runat="server" Text="Gravar" CssClass="ContentButton" OnClick="ButtonGravarID_Click" />
+                    </div>
                 </div>
             </div>
         </div>
