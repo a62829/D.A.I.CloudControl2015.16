@@ -23,7 +23,7 @@
             </div>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
             <div class="AlignBoxEliminarPerfil">
-                 <asp:Button ID="ButtonEliminarID" runat="server" Text="x" CssClass="PerfilRemoveSistemaButton" /> Remover do sistema 
+                 <asp:Button ID="ButtonEliminarID" runat="server" Text="x" CssClass="PerfilRemoveSistemaButton" OnClick="ButtonEliminarID_Click"/> Remover do sistema 
             </div>
         </div>
         <div id="PerfisButtonsBox">

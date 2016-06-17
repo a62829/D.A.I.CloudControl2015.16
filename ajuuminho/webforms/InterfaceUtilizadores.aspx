@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InterfaceUtilizadores.aspx.cs" Inherits="ajuUminho.webforms.InterfaceUtilizadores" %>
+
 <%@ Register TagPrefix="uc1" TagName="i14TerminoDeSessao" Src="~/controls/utilizadores/i14TerminoDeSessao.ascx" %>
 <%@ Register Src="~/controls/utilizadores/i4AlteracaoDeDadosPessoais.ascx" TagPrefix="uc2" TagName="i4AlteracaoDeDadosPessoais" %>
 
@@ -16,10 +17,12 @@
 
         <div id="BigBox">
 
+            <div class="ViewsBoxProcessos">
+
             <br/><br/><br/><br/>
 
-            <uc2:i4AlteracaoDeDadosPessoais runat="server" ID="i4AlteracaoDeDadosPessoaisID" />
-               
+                <uc2:i4AlteracaoDeDadosPessoais runat="server" ID="i4AlteracaoDeDadosPessoaisID" />
+            </div>
         </div>
     </form>
 

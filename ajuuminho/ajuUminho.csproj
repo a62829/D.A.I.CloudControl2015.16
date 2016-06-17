@@ -159,20 +159,6 @@
     <Content Include="controls\entidades\i46Contabilistas.ascx" />
     <Content Include="controls\entidades\i50PrestadoresServico.ascx" />
     <Content Include="controls\entidades\i54OutrasEntidades.ascx" />
-    <Content Include="controls\processo\i101CriarProcesso.ascx" />
-    <Content Include="controls\processo\i102EditarProcesso.ascx" />
-    <Content Include="controls\processo\i103DadosBase.ascx" />
-    <Content Include="controls\processo\i56AtribuicaoEntidades.ascx" />
-    <Content Include="controls\processo\i60Eventos.ascx" />
-    <Content Include="controls\processo\i64Bens.ascx" />
-    <Content Include="controls\processo\i68MovimentosFinanceiros.ascx" />
-    <Content Include="controls\processo\i72Credores.ascx" />
-    <Content Include="controls\processo\i75ServicosExternos.ascx" />
-    <Content Include="controls\processo\i80FicheirosMultimedia.ascx" />
-    <Content Include="controls\processo\i83FicheirosTexto.ascx" />
-    <Content Include="controls\processo\i86Arquivo.ascx" />
-    <Content Include="controls\processo\i89Tipos.ascx" />
-    <Content Include="controls\processo\i91CreditosReclamados.ascx" />
     <Content Include="controls\relatorios\i100Custos.ascx" />
     <Content Include="controls\relatorios\i16TiposEworkflows.ascx" />
     <Content Include="controls\relatorios\i19Relatorios.ascx" />
@@ -278,104 +264,6 @@
     <Compile Include="controls\entidades\i54OutrasEntidades.ascx.designer.cs">
       <DependentUpon>i54OutrasEntidades.ascx</DependentUpon>
     </Compile>
-    <Compile Include="controls\processo\i101CriarProcesso.ascx.cs">
-      <DependentUpon>i101CriarProcesso.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="controls\processo\i101CriarProcesso.ascx.designer.cs">
-      <DependentUpon>i101CriarProcesso.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="controls\processo\i102EditarProcesso.ascx.cs">
-      <DependentUpon>i102EditarProcesso.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="controls\processo\i102EditarProcesso.ascx.designer.cs">
-      <DependentUpon>i102EditarProcesso.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="controls\processo\i103DadosBase.ascx.cs">
-      <DependentUpon>i103DadosBase.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="controls\processo\i103DadosBase.ascx.designer.cs">
-      <DependentUpon>i103DadosBase.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="controls\processo\i56AtribuicaoEntidades.ascx.cs">
-      <DependentUpon>i56AtribuicaoEntidades.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="controls\processo\i56AtribuicaoEntidades.ascx.designer.cs">
-      <DependentUpon>i56AtribuicaoEntidades.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="controls\processo\i60Eventos.ascx.cs">
-      <DependentUpon>i60Eventos.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="controls\processo\i60Eventos.ascx.designer.cs">
-      <DependentUpon>i60Eventos.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="controls\processo\i64Bens.ascx.cs">
-      <DependentUpon>i64Bens.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="controls\processo\i64Bens.ascx.designer.cs">
-      <DependentUpon>i64Bens.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="controls\processo\i68MovimentosFinanceiros.ascx.cs">
-      <DependentUpon>i68MovimentosFinanceiros.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="controls\processo\i68MovimentosFinanceiros.ascx.designer.cs">
-      <DependentUpon>i68MovimentosFinanceiros.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="controls\processo\i72Credores.ascx.cs">
-      <DependentUpon>i72Credores.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="controls\processo\i72Credores.ascx.designer.cs">
-      <DependentUpon>i72Credores.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="controls\processo\i75ServicosExternos.ascx.cs">
-      <DependentUpon>i75ServicosExternos.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="controls\processo\i75ServicosExternos.ascx.designer.cs">
-      <DependentUpon>i75ServicosExternos.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="controls\processo\i80FicheirosMultimedia.ascx.cs">
-      <DependentUpon>i80FicheirosMultimedia.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="controls\processo\i80FicheirosMultimedia.ascx.designer.cs">
-      <DependentUpon>i80FicheirosMultimedia.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="controls\processo\i83FicheirosTexto.ascx.cs">
-      <DependentUpon>i83FicheirosTexto.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="controls\processo\i83FicheirosTexto.ascx.designer.cs">
-      <DependentUpon>i83FicheirosTexto.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="controls\processo\i86Arquivo.ascx.cs">
-      <DependentUpon>i86Arquivo.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="controls\processo\i86Arquivo.ascx.designer.cs">
-      <DependentUpon>i86Arquivo.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="controls\processo\i89Tipos.ascx.cs">
-      <DependentUpon>i89Tipos.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="controls\processo\i89Tipos.ascx.designer.cs">
-      <DependentUpon>i89Tipos.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="controls\processo\i91CreditosReclamados.ascx.cs">
-      <DependentUpon>i91CreditosReclamados.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="controls\processo\i91CreditosReclamados.ascx.designer.cs">
-      <DependentUpon>i91CreditosReclamados.ascx</DependentUpon>
-    </Compile>
     <Compile Include="controls\relatorios\i100Custos.ascx.cs">
       <DependentUpon>i100Custos.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -465,6 +353,13 @@
     </Compile>
     <Compile Include="webforms\home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\i101CriarProcesso.aspx.cs">
+      <DependentUpon>i101CriarProcesso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\i101CriarProcesso.aspx.designer.cs">
+      <DependentUpon>i101CriarProcesso.aspx</DependentUpon>
     </Compile>
     <Compile Include="webforms\i102EditarProcesso.aspx.cs">
       <DependentUpon>i102EditarProcesso.aspx</DependentUpon>
@@ -684,6 +579,7 @@
     <Content Include="webforms\gestaoIdentidades.aspx" />
     <Content Include="webforms\gestaoProcessos.aspx" />
     <Content Include="webforms\home.aspx" />
+    <Content Include="webforms\i101CriarProcesso.aspx" />
     <Content Include="webforms\i102EditarProcesso.aspx" />
     <Content Include="webforms\i103DadosBase.aspx" />
     <Content Include="webforms\i56AtribuicaoEntidades.aspx" />
@@ -764,6 +660,9 @@
       <Project>{6a0955a2-d621-4c77-8cac-647e03593447}</Project>
       <Name>_BusinessLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="controls\processo\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

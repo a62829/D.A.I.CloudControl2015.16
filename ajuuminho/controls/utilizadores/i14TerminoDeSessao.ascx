@@ -43,6 +43,11 @@
     </div>
 
     <div id="SiteMapPathBox">
-        <asp:SiteMapPath runat="server" ID="SiteMapPath" />
+        <asp:SiteMapPath runat="server" ID="SiteMapPath" Font-Names="Verdana" Font-Size="0.8em" PathSeparator=" : " >
+            <CurrentNodeStyle ForeColor="#333333" />
+            <NodeStyle Font-Bold="True" ForeColor="#990000" />
+            <PathSeparatorStyle Font-Bold="True" ForeColor="#990000" />
+            <RootNodeStyle Font-Bold="True" ForeColor="#FF8000" />
+        </asp:SiteMapPath>
     </div>
 </div>

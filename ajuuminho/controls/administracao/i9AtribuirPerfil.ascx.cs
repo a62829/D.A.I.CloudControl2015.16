@@ -31,9 +31,9 @@ namespace ajuUminho.controls.administracao
 
         protected void ButtonAdicionarPerfilID_Click(object sender, EventArgs e)
         {
-            if (ListBoxIdentidadesID.SelectedIndex == -1)
+            if (TextBoxAdicionarPerfilID.Text == "")
             {
-                string mystring = "Primeiro selecione um utilizador e depois selecione um perfil de sistema.";
+                string mystring = "Deve primeiro definir um nome para o novo perfil de sistema.";
                 this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
             }
             else
@@ -46,11 +46,31 @@ namespace ajuUminho.controls.administracao
             }
         }
 
+        protected void ButtonEliminarID_Click(object sender, EventArgs e)
+        {
+            if (ListBoxPerfisID.SelectedIndex == -1)
+            {
+                string mystring = "Primeiro deve seleccionar um perfil do sistema que pretende remover.";
+                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
+            }
+            else
+            {
+               
+                string role = ListBoxPerfisID.SelectedItem.Text;
+                gestaoIdentidade ws1 = new gestaoIdentidade();
+                //ws1.removeRoleFromSystem(role); metodo para remover role do sistem
+                
+                ListBoxPerfisID.DataBind();
+                
+                listaRoles();
+            }
+        }
+
         protected void ButtonMoreID_Click(object sender, EventArgs e)
         {
-            if (ListBoxIdentidadesID.SelectedIndex == -1)
+            if (ListBoxPerfisID.SelectedIndex == -1)
             {
-                string mystring = "Primeiro selecione um utilizador e depois selecione um perfil de sistema.";
+                string mystring = "Primeiro deve seleccionar um utilizador e o perfil do sistema que pretende atribuir-lhe.";
                 this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
             }
             else {
@@ -65,11 +85,12 @@ namespace ajuUminho.controls.administracao
             }
         }
 
+
         protected void ButtonLessID_Click(object sender, EventArgs e)
         {
-            if (ListBoxIdentidadesID.SelectedIndex == -1)
+            if (ListBoxPerfisAssociadosID.SelectedIndex == -1)
             {
-                    string mystring = "Primeiro selecione um utilizador e depois selecione um perfil de sistema.";
+                    string mystring = "Primeiro deve seleccionar um perfil associado ao utilizador.";
                     this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
                 }
             else

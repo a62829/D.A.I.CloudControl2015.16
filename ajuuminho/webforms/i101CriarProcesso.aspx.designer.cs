@@ -7,10 +7,46 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ajuUminho.controls.processo {
+namespace ajuUminho.webforms {
     
     
-    public partial class i103DadosBase {
+    public partial class i101CriarProcesso {
+        
+        /// <summary>
+        /// form1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
+        /// headerID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::ajuUminho.controls.utilizadores.i14TerminoDeSessao headerID;
+        
+        /// <summary>
+        /// TreeView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TreeView TreeView1;
+        
+        /// <summary>
+        /// SiteMapDataSource1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SiteMapDataSource SiteMapDataSource1;
         
         /// <summary>
         /// LabelIdLegalID control.
@@ -67,12 +103,21 @@ namespace ajuUminho.controls.processo {
         protected global::System.Web.UI.WebControls.DropDownList DropDownListIdTipoProcessoID;
         
         /// <summary>
-        /// ButtonEditarID control.
+        /// ListBoxInsolventesID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonEditarID;
+        protected global::System.Web.UI.WebControls.ListBox ListBoxInsolventesID;
+        
+        /// <summary>
+        /// ButtonCriarID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonCriarID;
     }
 }
