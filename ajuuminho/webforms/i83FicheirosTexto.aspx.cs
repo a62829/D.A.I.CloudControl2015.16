@@ -11,7 +11,21 @@ namespace ajuUminho.webforms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsCrossPagePostBack)
+            {
 
+            }
+            else
+            {
+                if (!IsPostBack)
+                {
+                    string idProcesso = Application["idProcesso"].ToString();
+                }
+                else
+                {
+
+                }
+            }
         }
     }
 }

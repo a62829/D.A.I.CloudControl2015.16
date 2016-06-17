@@ -9,7 +9,9 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+    escolher tipo processo
+
+listar tipo processos
     </div>
     </form>
 </body>
