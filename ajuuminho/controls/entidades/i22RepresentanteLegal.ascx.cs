@@ -26,19 +26,41 @@ namespace ajuUminho.controls.entidades
 
         protected void ButtonCriarID_Click(object sender, EventArgs e)
         {
-            c23EditarRepresentanteLegal ws = new c23EditarRepresentanteLegal();
-            ws.criarRepresentanteLegal(TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
-                TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
-                TextBoxNifID.Text, TextBoxLastChangedID.Text);
 
-            string mystring = "Representante Legal criado com sucesso.";
-            this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
-            foreach (TextBox textbox in this.Controls.OfType<TextBox>())
+            if
+                ((string.IsNullOrWhiteSpace(TextBoxNomeID.Text)) ||
+                (string.IsNullOrWhiteSpace(TextBoxMoradaID.Text)) ||
+                (string.IsNullOrWhiteSpace(TextBoxCodPostalID.Text)) ||
+                (string.IsNullOrWhiteSpace(TextBoxLocalidadeID.Text)) ||
+                (string.IsNullOrWhiteSpace(TextBoxEmailID.Text)) ||
+                (string.IsNullOrWhiteSpace(TextBoxTelefoneID.Text)) ||
+                (string.IsNullOrWhiteSpace(TextBoxTelemovelID.Text)) ||
+                (string.IsNullOrWhiteSpace(TextBoxFaxID.Text)) ||
+                (string.IsNullOrWhiteSpace(TextBoxCcID.Text)) ||
+                (string.IsNullOrWhiteSpace(TextBoxIbanID.Text)) ||
+                (string.IsNullOrWhiteSpace(TextBoxNifID.Text)) ||
+                (string.IsNullOrWhiteSpace(TextBoxLastChangedID.Text)))
+
             {
-                textbox.Text = string.Empty;
+                string mystring = "Deve preencher todos os campos";
+                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
             }
-            ListBoxEntidadesID.Items.Clear();
-            listaRepresentanteLegal();
+            else
+            {
+                c23EditarRepresentanteLegal ws = new c23EditarRepresentanteLegal();
+                ws.criarRepresentanteLegal(TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
+                    TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
+                    TextBoxNifID.Text, TextBoxLastChangedID.Text);
+
+                string mystring = "Representante Legal criado com sucesso.";
+                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
+                foreach (TextBox textbox in this.Controls.OfType<TextBox>())
+                {
+                    textbox.Text = string.Empty;
+                }
+                ListBoxEntidadesID.Items.Clear();
+                listaRepresentanteLegal();
+            }
         }
 
         protected void ListBoxEntidadesID_SelectedIndexChanged(object sender, EventArgs e)

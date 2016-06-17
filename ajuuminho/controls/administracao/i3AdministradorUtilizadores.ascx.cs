@@ -63,28 +63,74 @@ namespace ajuUminho.controls.administracao
 
         protected void ButtonCriarID_Click(object sender, EventArgs e)
         {
-            gestaoIdentidade ws1 = new gestaoIdentidade();
-            if (TextBoxPasswordID.Text == TextBoxConfirmarPasswordID.Text)
+
+            if ( (TextBoxUsernameID.Text=="") ||
+                 (TextBoxPasswordID.Text == "") ||
+                 (TextBoxConfirmarPasswordID.Text == "") ||
+                 (TextBoxEmailID.Text == "") ||
+                 (TextBoxTelefoneID.Text == ""))
+
+                {
+                string mystring = "Deve preencher todos os campos.";
+                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
+
+                }
+
+            else
             {
-                ws1.criarUtilizador(TextBoxUsernameID.Text, TextBoxPasswordID.Text, TextBoxEmailID.Text, TextBoxTelefoneID.Text);
-                string mystring = "Utilizador criado com sucesso";
-                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
-            }
-            else {
-                string mystring = "Confirmação da Password incorrecta";
-                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
+                gestaoIdentidade ws1 = new gestaoIdentidade();
+                if (TextBoxPasswordID.Text == TextBoxConfirmarPasswordID.Text)
+                {
+                    ws1.criarUtilizador(TextBoxUsernameID.Text, TextBoxPasswordID.Text, TextBoxEmailID.Text, TextBoxTelefoneID.Text);
+                    string mystring = "Utilizador criado com sucesso";
+                    this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
+                }
+                else {
+                    string mystring = "Confirmação da Password incorrecta";
+                    this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
+                }
             }
         }
 
         protected void ButtonEditarID_Click(object sender, EventArgs e)
         {
+            if (ListBoxEntidadesID.SelectedIndex == -1)
+            {
+                string mystring = "Primeiro deve seleccionar um utilizador que deseje editar.";
+                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
+            }
+            else
+            {
 
+                if ((TextBoxUsernameID.Text == "") ||
+                    (TextBoxEmailID.Text == "") ||
+                    (TextBoxTelefoneID.Text == ""))
+                {
+                    string mystring = "Todos os campos devem estar preenchidos.";
+                    this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
+                }
+                else
+                {
+                //////// CODIGO CRL
+
+                }
+
+
+            }
         }
 
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
         {
 
+            if (ListBoxEntidadesID.SelectedIndex == -1)
+            {
+                string mystring = "Primeiro deve seleccionar um utilizador que deseje eliminar.";
+                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
+            }
+            else
+            {
+            //////// CODIGO CRL
+            }
         }
-
     }
 }
