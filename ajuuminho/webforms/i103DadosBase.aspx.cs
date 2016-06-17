@@ -7,16 +7,15 @@ using System.Web.UI.WebControls;
 
 namespace ajuUminho.webforms
 {
-    public partial class i72Credores : System.Web.UI.Page
+    public partial class i103DadosBase : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsCrossPagePostBack)
+            if (!IsPostBack)
             {
 
             }
-            else
-            {
+            else {
                 if (!IsPostBack)
                 {
                     string idProcesso = Application["idProcesso"].ToString();
@@ -25,21 +24,6 @@ namespace ajuUminho.webforms
 
                 }
             }
-        }
-
-        protected void ButtonMoreID_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void ButtonLessID_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void ButtonGravarID_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

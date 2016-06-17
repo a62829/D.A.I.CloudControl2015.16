@@ -82,37 +82,6 @@
         <asp:Button ID="ButtonArquivarID" runat="server" Text="Arquivar" CssClass="ContentButton" Visible="false" />
         <asp:Button ID="ButtonReativarID" runat="server" Text="Reativar" CssClass="ContentButton" Visible="false" />
     </div>
-
-
-    <%--                                <asp:MultiView ID="MainViewID2" runat="server">
-                                    <asp:View ID="ViewSuspenderProcessoID" runat="server"> 
-                                        <div class ="ViewBoxCRUD">
-                                            
-
-                                            Suspender
-
-
-                                        </div>
-                                    </asp:View>
-                                    <asp:View ID="ViewArquivarProcessoID" runat="server"> 
-                                        <div class ="ViewBoxCRUD">
-                                            
-
-                                            Arquivar
-
-
-                                        </div>
-                                    </asp:View>
-                                    <asp:View ID="ViewReativarProcessoID" runat="server"> 
-                                        <div class ="ViewBoxCRUD">
-                                            
-
-
-                                            Reativar
-
-                                        </div>
-                                    </asp:View>
-                                </asp:MultiView>--%>
 </div>
 
 
