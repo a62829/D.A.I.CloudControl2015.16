@@ -3,6 +3,7 @@ using ajuUminho.Ws;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace ajuUminho.controls.entidades
@@ -24,43 +25,52 @@ namespace ajuUminho.controls.entidades
             }
         }
 
+        protected void ClearAllText(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Text = string.Empty;
+                else
+                    ClearAllText(c);
+            }
+        }
+
+        protected void EnableAllText(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Enabled = true;
+                else
+                    EnableAllText(c);
+            }
+        }
+
+        protected void DisableAllText(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Enabled = false;
+                else
+                    DisableAllText(c);
+            }
+        }
+
         protected void ButtonCriarID_Click(object sender, EventArgs e)
         {
-
-            if
-                ((string.IsNullOrWhiteSpace(TextBoxNomeID.Text)) ||
-                (string.IsNullOrWhiteSpace(TextBoxMoradaID.Text)) ||
-                (string.IsNullOrWhiteSpace(TextBoxCodPostalID.Text)) ||
-                (string.IsNullOrWhiteSpace(TextBoxLocalidadeID.Text)) ||
-                (string.IsNullOrWhiteSpace(TextBoxEmailID.Text)) ||
-                (string.IsNullOrWhiteSpace(TextBoxTelefoneID.Text)) ||
-                (string.IsNullOrWhiteSpace(TextBoxTelemovelID.Text)) ||
-                (string.IsNullOrWhiteSpace(TextBoxFaxID.Text)) ||
-                (string.IsNullOrWhiteSpace(TextBoxCcID.Text)) ||
-                (string.IsNullOrWhiteSpace(TextBoxIbanID.Text)) ||
-                (string.IsNullOrWhiteSpace(TextBoxNifID.Text)) ||
-                (string.IsNullOrWhiteSpace(TextBoxLastChangedID.Text)))
-
-            {
-                string mystring = "Deve preencher todos os campos";
-                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
-            }
-            else
-            {
-                c23EditarRepresentanteLegal ws = new c23EditarRepresentanteLegal();
+            c23EditarRepresentanteLegal ws = new c23EditarRepresentanteLegal();
                 ws.criarRepresentanteLegal(TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
                     TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
                     TextBoxNifID.Text, TextBoxLastChangedID.Text);
-
                 string mystring = "Representante Legal criado com sucesso.";
                 this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
-                foreach (TextBox textbox in this.Controls.OfType<TextBox>())
-                {
-                    textbox.Text = string.Empty;
-                }
+
+                ClearAllText(this);
+
                 ListBoxEntidadesID.Items.Clear();
                 listaRepresentanteLegal();
-            }
         }
 
         protected void ListBoxEntidadesID_SelectedIndexChanged(object sender, EventArgs e)
@@ -95,11 +105,12 @@ namespace ajuUminho.controls.entidades
             ListBoxEntidadesID.Items.Clear();
             listaRepresentanteLegal();
             ListBoxEntidadesID.DataBind();
+            ClearAllText(this);
+            ListBoxEntidadesID.ClearSelection();
         }
 
         protected void listaRepresentanteLegal()
         {
-            ListBoxEntidadesID.Items.Clear();
             c23EditarRepresentanteLegal WsERL = new c23EditarRepresentanteLegal();
             this.lista = WsERL.getListaRepresentanteLegal();
             foreach (KeyValuePair<String, d21RepresentanteLegalDto> pair in lista)
@@ -112,14 +123,6 @@ namespace ajuUminho.controls.entidades
             }
         }
 
-        protected void textBoxClear()
-        {
-            foreach (TextBox textbox in this.Controls.OfType<TextBox>())
-            {
-                textbox.Text = string.Empty;
-            }
-        }
-
         protected void ButtonPesquisarID_Click(object sender, EventArgs e)
         {
 
@@ -128,13 +131,14 @@ namespace ajuUminho.controls.entidades
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
         {
             c24RemocaoRepresentanteLegal WsERL = new c24RemocaoRepresentanteLegal();
-            var y = ListBoxEntidadesID.SelectedValue.ToString();
-            WsERL.removerRepresentanteLegal(y);
-            listaRepresentanteLegal();
+            WsERL.removerRepresentanteLegal(ListBoxEntidadesID.SelectedValue.ToString());
+            ClearAllText(this);
+            ListBoxEntidadesID.ClearSelection();
         }
 
         protected void TabCriarRepresentanteLegal_Click(object sender, EventArgs e)
         {
+            EnableAllText(this);
             ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = false;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
@@ -147,11 +151,15 @@ namespace ajuUminho.controls.entidades
             TabEditarRepresentanteLegalID.CssClass = "Initial";
             TabEliminarRepresentanteLegalID.CssClass = "Initial";
             TabPesquisarRepresentanteLegalID.CssClass = "Initial";
-            textBoxClear();
+
+            ClearAllText(this);
         }
 
         protected void TabEditarRepresentanteLegal_Click(object sender, EventArgs e)
         {
+            ListBoxEntidadesID.ClearSelection();
+
+            EnableAllText(this);
             ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
@@ -164,11 +172,14 @@ namespace ajuUminho.controls.entidades
             TabEditarRepresentanteLegalID.CssClass = "Clicked";
             TabEliminarRepresentanteLegalID.CssClass = "Initial";
             TabPesquisarRepresentanteLegalID.CssClass = "Initial";
-            textBoxClear();
+
+            ClearAllText(this);
         }
 
         protected void TabEliminarRepresentanteLegal_Click(object sender, EventArgs e)
         {
+            ListBoxEntidadesID.ClearSelection();
+            DisableAllText(this);
             ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
@@ -181,7 +192,8 @@ namespace ajuUminho.controls.entidades
             TabEditarRepresentanteLegalID.CssClass = "Initial";
             TabEliminarRepresentanteLegalID.CssClass = "Clicked";
             TabPesquisarRepresentanteLegalID.CssClass = "Initial";
-            textBoxClear();
+
+            ClearAllText(this);
         }
 
         protected void TabPesquisarRepresentanteLegal_Click(object sender, EventArgs e)
@@ -198,7 +210,8 @@ namespace ajuUminho.controls.entidades
             TabEditarRepresentanteLegalID.CssClass = "Initial";
             TabEliminarRepresentanteLegalID.CssClass = "Initial";
             TabPesquisarRepresentanteLegalID.CssClass = "Clicked";
-            textBoxClear();
+
+            ClearAllText(this);
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI.WebControls;
 using _BusinessLayer;
+using System.Web.UI;
 
 namespace ajuUminho.controls.entidades
 {
@@ -18,6 +19,39 @@ namespace ajuUminho.controls.entidades
             else
             {
 
+            }
+        }
+
+        protected void ClearAllText(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Text = string.Empty;
+                else
+                    ClearAllText(c);
+            }
+        }
+
+        protected void EnableAllText(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Enabled = true;
+                else
+                    EnableAllText(c);
+            }
+        }
+
+        protected void DisableAllText(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Enabled = false;
+                else
+                    DisableAllText(c);
             }
         }
 
@@ -36,6 +70,7 @@ namespace ajuUminho.controls.entidades
             }
             ListBoxEntidadesID.Items.Clear();
             listaJuiz();
+            ClearAllText(this);
         }
 
         protected void ListBoxEntidadesID_SelectedIndexChanged(object sender, EventArgs e)
@@ -55,22 +90,23 @@ namespace ajuUminho.controls.entidades
             TextBoxIbanID.Text = jdto.iban;
             TextBoxNifID.Text = jdto.nif;
             TextBoxLastChangedID.Text = jdto.lastChangeBy;
-            //ListBoxEntidadesID.ClearSelection();
+            ListBoxEntidadesID.ClearSelection();
             //ListBoxEntidadesID.Items.Clear();
             //listaRepresentanteLegal();
         }
 
         protected void ButtonEditarID_Click(object sender, EventArgs e)
         {
+            ListBoxEntidadesID.ClearSelection();
             c35EdicaoJuiz WsEJ = new c35EdicaoJuiz();
             WsEJ.editarJuiz(ListBoxEntidadesID.SelectedValue.ToString(), TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text);
+            ClearAllText(this);
         }
 
         protected void listaJuiz()
         {
-            ListBoxEntidadesID.Items.Clear();
             c35EdicaoJuiz WsEJ = new c35EdicaoJuiz();
             var lista = WsEJ.getListaJuiz();
             foreach (KeyValuePair<String, d33JuizDto> pair in lista)
@@ -90,14 +126,15 @@ namespace ajuUminho.controls.entidades
 
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
         {
+            ListBoxEntidadesID.ClearSelection();
             c36RemocaoJuiz WsERL = new c36RemocaoJuiz();
-            var y = ListBoxEntidadesID.SelectedValue.ToString();
-            WsERL.removerJuiz(y);
-            listaJuiz();
+            WsERL.removerJuiz(ListBoxEntidadesID.SelectedValue.ToString());
+            ClearAllText(this);
         }
 
         protected void TabCriarJuiz_Click(object sender, EventArgs e)
         {
+            EnableAllText(this);
             ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = false;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
@@ -110,10 +147,13 @@ namespace ajuUminho.controls.entidades
             TabEditarJuizID.CssClass = "Initial";
             TabEliminarJuizID.CssClass = "Initial";
             TabPesquisarJuizID.CssClass = "Initial";
+            ClearAllText(this);
         }
 
         protected void TabEditarJuiz_Click(object sender, EventArgs e)
         {
+            ListBoxEntidadesID.ClearSelection();
+            EnableAllText(this);
             ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
@@ -126,10 +166,13 @@ namespace ajuUminho.controls.entidades
             TabEditarJuizID.CssClass = "Clicked";
             TabEliminarJuizID.CssClass = "Initial";
             TabPesquisarJuizID.CssClass = "Initial";
+            ClearAllText(this);
         }
 
         protected void TabEliminarJuiz_Click(object sender, EventArgs e)
         {
+            ListBoxEntidadesID.ClearSelection();
+            DisableAllText(this);
             ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
@@ -142,6 +185,7 @@ namespace ajuUminho.controls.entidades
             TabEditarJuizID.CssClass = "Initial";
             TabEliminarJuizID.CssClass = "Clicked";
             TabPesquisarJuizID.CssClass = "Initial";
+            ClearAllText(this);
         }
 
         protected void TabPesquisarJuiz_Click(object sender, EventArgs e)
@@ -158,6 +202,7 @@ namespace ajuUminho.controls.entidades
             TabEditarJuizID.CssClass = "Initial";
             TabEliminarJuizID.CssClass = "Initial";
             TabPesquisarJuizID.CssClass = "Clicked";
+            ClearAllText(this);
         }
     }
 }

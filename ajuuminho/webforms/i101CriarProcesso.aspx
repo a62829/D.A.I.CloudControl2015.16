@@ -23,14 +23,15 @@
                 </asp:TreeView>
             </div>
 
-            <asp:SiteMapDataSource ID="SiteMapDataSource1"  StartingNodeUrl="~/webforms/InterfaceProcesso.aspx" runat="server" />
+            <asp:SiteMapDataSource ID="SiteMapDataSource1" StartingNodeUrl="~/webforms/InterfaceProcesso.aspx" SiteMapProvider="MyNewSiteMapProvider" runat="server" />
+
 
             <div class="ProcessosContentBox">
 
                     <div class="ViewsBoxProcessos">
 
 
-                        <div class="InsideViewsTableBox">
+                        <div class="InsideViewsTableBoxProcessos">
                             <div class="titleh4">
                                 <h4>Dados base</h4>
                             </div>
@@ -66,7 +67,7 @@
                             </table>
                         </div>
 
-                        <div class="InsideViewsDetailsBox">
+                        <div class="InsideViewsDetailsBoxProcessos">
                             <div class="titleh4big">
                                 <h4>Selecione um insolvente</h4>
                             </div>

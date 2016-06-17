@@ -12,11 +12,18 @@
 <body>
     <form id="form1" runat="server">
 
-        <uc1:i14TerminoDeSessao runat="server" ID="headerID" />
+        <uc1:i14TerminoDeSessao runat="server" ID="headerID"/>
+
         <div id="BigBox">
 
             <div class="TreeViewBox">
-                <asp:TreeView ID="TreeView1" CssClass="TreeView" runat="server" DataSourceID="SiteMapDataSource1" ImageSet="Msdn" NodeIndent="10">
+                <asp:TreeView ID="TreeViewID" CssClass="TreeView" runat="server" DataSourceID="SiteMapDataSource1" ImageSet="Msdn" NodeIndent="10">
+                    <HoverNodeStyle Font-Underline="false" BackColor="#CCCCCC" BorderColor="#888888" BorderStyle="none" />
+                    <NodeStyle Font-Names="Helvetica" Font-Size="8pt" ForeColor="Black" HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="2px" />
+                    <ParentNodeStyle Font-Bold="False" />
+                    <SelectedNodeStyle Font-Underline="False" HorizontalPadding="3px" VerticalPadding="1px" BackColor="White" BorderColor="#888888" BorderStyle="Solid" BorderWidth="1px" />
+                </asp:TreeView>
+                <asp:TreeView ID="TreeViewID1" CssClass="TreeView" runat="server" DataSourceID="SiteMapDataSource2" ImageSet="Msdn" NodeIndent="10" Visible="false">
                     <HoverNodeStyle Font-Underline="false" BackColor="#CCCCCC" BorderColor="#888888" BorderStyle="none" />
                     <NodeStyle Font-Names="Helvetica" Font-Size="8pt" ForeColor="Black" HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="2px" />
                     <ParentNodeStyle Font-Bold="False" />
@@ -24,21 +31,30 @@
                 </asp:TreeView>
             </div>
 
-            <asp:SiteMapDataSource ID="SiteMapDataSource1" StartFromCurrentNode="true" runat="server" />
+            <asp:SiteMapDataSource ID="SiteMapDataSource2" StartFromCurrentNode="true" runat="server" />
+            <asp:SiteMapDataSource ID="SiteMapDataSource1" StartingNodeUrl="~/webforms/InterfaceProcesso.aspx" SiteMapProvider="MyNewSiteMapProvider" runat="server" />
+
 
             <div class="ProcessosContentBox">
 
-                <div class="ViewsBoxProcessos">
+            <div class="ViewsBoxProcessos" >
 
-                        <div class="AlignBox">
-                            <div class="titleh3">
-                                <h3>Selecione um processo</h3>
-                            </div>
-                            <asp:ListBox ID="ListBoxProcessosID" runat="server" CssClass="ListBoxProcessos-Item" AutoPostBack="True" OnSelectedIndexChanged="ListBoxProcessosID_SelectedIndexChanged"></asp:ListBox>
+                <%--<div class="InsideViewsBox">--%>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+
+                    <div class="AlignBox">
+                        <div class="titleh3">
+                            <h3>Selecione um processo</h3>
                         </div>
+                        <asp:ListBox ID="ListBoxProcessosID" runat="server" CssClass="ListBoxProcessos-Item" AutoPostBack="True" OnSelectedIndexChanged="ListBoxProcessosID_SelectedIndexChanged"></asp:ListBox>
+                    </div>
 
                 </div>
-            </div>
+        </div>
 
         </div>
 

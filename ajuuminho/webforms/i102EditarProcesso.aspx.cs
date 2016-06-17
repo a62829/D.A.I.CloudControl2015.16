@@ -78,6 +78,8 @@ namespace ajuUminho.webforms
         protected void ListBoxProcessosID_SelectedIndexChanged(object sender, EventArgs e)
         {
             Session["idProcesso"] = ListBoxProcessosID.SelectedItem.Value.ToString();
+            TreeViewID.Visible = false;
+            TreeViewID1.Visible = true;
         }
 
         protected void listaProcesso()
