@@ -466,6 +466,90 @@
     <Compile Include="webforms\home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="webforms\i102EditarProcesso.aspx.cs">
+      <DependentUpon>i102EditarProcesso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\i102EditarProcesso.aspx.designer.cs">
+      <DependentUpon>i102EditarProcesso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\i56AtribuicaoEntidades.aspx.cs">
+      <DependentUpon>i56AtribuicaoEntidades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\i56AtribuicaoEntidades.aspx.designer.cs">
+      <DependentUpon>i56AtribuicaoEntidades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\i60Eventos.aspx.cs">
+      <DependentUpon>i60Eventos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\i60Eventos.aspx.designer.cs">
+      <DependentUpon>i60Eventos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\i64Bens.aspx.cs">
+      <DependentUpon>i64Bens.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\i64Bens.aspx.designer.cs">
+      <DependentUpon>i64Bens.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\i68MovimentosFinanceiros.aspx.cs">
+      <DependentUpon>i68MovimentosFinanceiros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\i68MovimentosFinanceiros.aspx.designer.cs">
+      <DependentUpon>i68MovimentosFinanceiros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\i72Credores.aspx.cs">
+      <DependentUpon>i72Credores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\i72Credores.aspx.designer.cs">
+      <DependentUpon>i72Credores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\i75ServicosExternos.aspx.cs">
+      <DependentUpon>i75ServicosExternos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\i75ServicosExternos.aspx.designer.cs">
+      <DependentUpon>i75ServicosExternos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\i80FicheirosMultimedia.aspx.cs">
+      <DependentUpon>i80FicheirosMultimedia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\i80FicheirosMultimedia.aspx.designer.cs">
+      <DependentUpon>i80FicheirosMultimedia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\i83FicheirosTexto.aspx.cs">
+      <DependentUpon>i83FicheirosTexto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\i83FicheirosTexto.aspx.designer.cs">
+      <DependentUpon>i83FicheirosTexto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\i86Arquivo.aspx.cs">
+      <DependentUpon>i86Arquivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\i86Arquivo.aspx.designer.cs">
+      <DependentUpon>i86Arquivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\i89Tipos.aspx.cs">
+      <DependentUpon>i89Tipos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\i89Tipos.aspx.designer.cs">
+      <DependentUpon>i89Tipos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\i91CreditosReclamados.aspx.cs">
+      <DependentUpon>i91CreditosReclamados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\i91CreditosReclamados.aspx.designer.cs">
+      <DependentUpon>i91CreditosReclamados.aspx</DependentUpon>
+    </Compile>
     <Compile Include="webforms\InterfaceAdministracao.aspx.cs">
       <DependentUpon>InterfaceAdministracao.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -593,6 +677,18 @@
     <Content Include="webforms\gestaoIdentidades.aspx" />
     <Content Include="webforms\gestaoProcessos.aspx" />
     <Content Include="webforms\home.aspx" />
+    <Content Include="webforms\i102EditarProcesso.aspx" />
+    <Content Include="webforms\i56AtribuicaoEntidades.aspx" />
+    <Content Include="webforms\i60Eventos.aspx" />
+    <Content Include="webforms\i64Bens.aspx" />
+    <Content Include="webforms\i68MovimentosFinanceiros.aspx" />
+    <Content Include="webforms\i72Credores.aspx" />
+    <Content Include="webforms\i75ServicosExternos.aspx" />
+    <Content Include="webforms\i80FicheirosMultimedia.aspx" />
+    <Content Include="webforms\i83FicheirosTexto.aspx" />
+    <Content Include="webforms\i86Arquivo.aspx" />
+    <Content Include="webforms\i89Tipos.aspx" />
+    <Content Include="webforms\i91CreditosReclamados.aspx" />
     <Content Include="webforms\InterfaceAdministracao.aspx" />
     <Content Include="webforms\InterfaceEntidades.aspx" />
     <Content Include="webforms\InterfaceProcesso.aspx" />

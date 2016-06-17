@@ -38,6 +38,11 @@ namespace ajuUminho.controls.processo
             TabFicheirosMultimediaID.CssClass = "Initial";
             TabFicheirosTextoID.CssClass = "Initial";
             MainViewID1.ActiveViewIndex = 0;
+            //Populate the form.
+            i103DadosBase c1 = (i103DadosBase)LoadControl("i103DadosBase.ascx");
+            //Adding user control inside the form element.
+            //form1.Controls.Add(c1);
+            //SampleUserControl c2 = (SampleUserControl)LoadControl("SampleUserControl.ascx"); form1.Controls.Add(c2);
         }
 
         protected void TabEntidades_Click(object sender, EventArgs e)

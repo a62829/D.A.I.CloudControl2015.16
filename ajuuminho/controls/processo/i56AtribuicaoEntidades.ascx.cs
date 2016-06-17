@@ -15,18 +15,18 @@ namespace ajuUminho.controls.processos
         protected void Page_Load(object sender, EventArgs e)
         {
 
-                if (!IsPostBack)
-                {
-                    if (Session["idProcesso"] != null)
-                    {
-                    string idProcesso = Session["idProcesso"].ToString();
-                    }
-                    else {
-                    Label1.Text = Session["idProcesso"].ToString();
-                    }
-                }else{
+                //if (!IsPostBack)
+                //{
+                //    if (Session["idProcesso"] != null)
+                //    {
+                //    string idProcesso = Session["idProcesso"].ToString();
+                //    }
+                //    else {
+                //    Label1.Text = Session["idProcesso"].ToString();
+                //    }
+                //}else{
 
-                }
+                //}
 
         }
 
