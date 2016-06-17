@@ -22,6 +22,15 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// headerID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::ajuUminho.controls.utilizadores.i14TerminoDeSessao headerID;
+        
+        /// <summary>
         /// DropDownListEntidadesID control.
         /// </summary>
         /// <remarks>
@@ -83,14 +92,5 @@ namespace ajuUminho.webforms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ButtonGravarID;
-        
-        /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
     }
 }

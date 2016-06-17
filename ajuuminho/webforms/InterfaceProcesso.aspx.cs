@@ -42,9 +42,7 @@ namespace ajuUminho.webforms
 
         protected void TabEditarProcesso_Click(object sender, EventArgs e)
         {
-            TabCriarProcessoID.CssClass = "Initial";
-            TabEditarProcessoID.CssClass = "Clicked";
-            MainViewID.ActiveViewIndex = 1;
+            Response.Redirect("~/webforms/I102EditarProcesso.aspx");
         }
 
         //protected void TabListarProcesso_Click(object sender, EventArgs e)

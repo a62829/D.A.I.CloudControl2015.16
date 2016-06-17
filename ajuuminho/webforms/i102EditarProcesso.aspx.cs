@@ -29,133 +29,52 @@ namespace ajuUminho.webforms
 
         protected void TabDadosBase_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/webforms/i103DadosBase.aspx");
         }
 
         protected void TabEntidades_Click(object sender, EventArgs e)
         {
-            TabDadosBaseID.CssClass = "Initial";
-            TabEntidadesID.CssClass = "Clicked";
-            TabCredoresID.CssClass = "Initial";
-            TabArquivoID.CssClass = "Initial";
-            TabEventosID.CssClass = "Initial";
-            TabBensID.CssClass = "Initial";
-            TabMovimentosFinanceirosID.CssClass = "Initial";
-            TabServicosExternosID.CssClass = "Initial";
-            TabFicheirosMultimediaID.CssClass = "Initial";
-            TabFicheirosTextoID.CssClass = "Initial";
+            Response.Redirect("~/webforms/i56AtribuicaoEntidades.aspx");
         }
 
         protected void TabCredores_Click(object sender, EventArgs e)
         {
-            TabDadosBaseID.CssClass = "Initial";
-            TabEntidadesID.CssClass = "Initial";
-            TabCredoresID.CssClass = "Clicked";
-            TabArquivoID.CssClass = "Initial";
-            TabEventosID.CssClass = "Initial";
-            TabBensID.CssClass = "Initial";
-            TabMovimentosFinanceirosID.CssClass = "Initial";
-            TabServicosExternosID.CssClass = "Initial";
-            TabFicheirosMultimediaID.CssClass = "Initial";
-            TabFicheirosTextoID.CssClass = "Initial";
+            Response.Redirect("~/webforms/i72Credores.aspx");
         }
 
         protected void TabArquivo_Click(object sender, EventArgs e)
         {
-            TabDadosBaseID.CssClass = "Initial";
-            TabEntidadesID.CssClass = "Initial";
-            TabCredoresID.CssClass = "Initial";
-            TabArquivoID.CssClass = "Clicked";
-            TabEventosID.CssClass = "Initial";
-            TabBensID.CssClass = "Initial";
-            TabMovimentosFinanceirosID.CssClass = "Initial";
-            TabServicosExternosID.CssClass = "Initial";
-            TabFicheirosMultimediaID.CssClass = "Initial";
-            TabFicheirosTextoID.CssClass = "Initial";
+            Response.Redirect("~/webforms/i86Arquivo.aspx");
         }
 
         protected void TabEventos_Click(object sender, EventArgs e)
         {
-            TabDadosBaseID.CssClass = "Initial";
-            TabEntidadesID.CssClass = "Initial";
-            TabCredoresID.CssClass = "Initial";
-            TabArquivoID.CssClass = "Initial";
-            TabEventosID.CssClass = "Clicked";
-            TabBensID.CssClass = "Initial";
-            TabMovimentosFinanceirosID.CssClass = "Initial";
-            TabServicosExternosID.CssClass = "Initial";
-            TabFicheirosMultimediaID.CssClass = "Initial";
-            TabFicheirosTextoID.CssClass = "Initial";
+            Response.Redirect("~/webforms/i60Eventos.aspx");
         }
 
         protected void TabBens_Click(object sender, EventArgs e)
         {
-            TabDadosBaseID.CssClass = "Initial";
-            TabEntidadesID.CssClass = "Initial";
-            TabCredoresID.CssClass = "Initial";
-            TabArquivoID.CssClass = "Initial";
-            TabEventosID.CssClass = "Initial";
-            TabBensID.CssClass = "Clicked";
-            TabMovimentosFinanceirosID.CssClass = "Initial";
-            TabServicosExternosID.CssClass = "Initial";
-            TabFicheirosMultimediaID.CssClass = "Initial";
-            TabFicheirosTextoID.CssClass = "Initial";
+            Response.Redirect("~/webforms/i64Bens.aspx");
         }
 
         protected void TabMovimentosFinanceiros_Click(object sender, EventArgs e)
         {
-            TabDadosBaseID.CssClass = "Initial";
-            TabEntidadesID.CssClass = "Initial";
-            TabCredoresID.CssClass = "Initial";
-            TabArquivoID.CssClass = "Initial";
-            TabEventosID.CssClass = "Initial";
-            TabBensID.CssClass = "Initial";
-            TabMovimentosFinanceirosID.CssClass = "Clicked";
-            TabServicosExternosID.CssClass = "Initial";
-            TabFicheirosMultimediaID.CssClass = "Initial";
-            TabFicheirosTextoID.CssClass = "Initial";
+            Response.Redirect("~/webforms/i68MovimentosFinanceiros.aspx");
         }
 
         protected void TabServicosExternos_Click(object sender, EventArgs e)
         {
-            TabEventosID.CssClass = "Initial";
-            TabEntidadesID.CssClass = "Initial";
-            TabCredoresID.CssClass = "Initial";
-            TabArquivoID.CssClass = "Initial";
-            TabBensID.CssClass = "Initial";
-            TabMovimentosFinanceirosID.CssClass = "Initial";
-            TabCredoresID.CssClass = "Initial";
-            TabServicosExternosID.CssClass = "Clicked";
-            TabFicheirosMultimediaID.CssClass = "Initial";
-            TabFicheirosTextoID.CssClass = "Initial";
+            Response.Redirect("~/webforms/i75ServicosExternos.aspx");
         }
 
         protected void TabFicheirosMultimedia_Click(object sender, EventArgs e)
         {
-            TabDadosBaseID.CssClass = "Initial";
-            TabEntidadesID.CssClass = "Initial";
-            TabCredoresID.CssClass = "Initial";
-            TabArquivoID.CssClass = "Initial";
-            TabEventosID.CssClass = "Initial";
-            TabBensID.CssClass = "Initial";
-            TabMovimentosFinanceirosID.CssClass = "Initial";
-            TabServicosExternosID.CssClass = "Initial";
-            TabFicheirosMultimediaID.CssClass = "Clicked";
-            TabFicheirosTextoID.CssClass = "Initial";
+            Response.Redirect("~/webforms/i80FicheirosMultimedia.aspx");
         }
 
         protected void TabFicheirosTexto_Click(object sender, EventArgs e)
         {
-            TabDadosBaseID.CssClass = "Initial";
-            TabEntidadesID.CssClass = "Initial";
-            TabCredoresID.CssClass = "Initial";
-            TabArquivoID.CssClass = "Initial";
-            TabEventosID.CssClass = "Initial";
-            TabBensID.CssClass = "Initial";
-            TabMovimentosFinanceirosID.CssClass = "Initial";
-            TabServicosExternosID.CssClass = "Initial";
-            TabFicheirosMultimediaID.CssClass = "Initial";
-            TabFicheirosTextoID.CssClass = "Clicked";
+            Response.Redirect("~/webforms/i83FicheirosTexto.aspx");
         }
 
         protected void ListBoxProcessosID_SelectedIndexChanged(object sender, EventArgs e)

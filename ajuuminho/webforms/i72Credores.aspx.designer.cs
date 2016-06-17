@@ -22,6 +22,15 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// headerID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::ajuUminho.controls.utilizadores.i14TerminoDeSessao headerID;
+        
+        /// <summary>
         /// DropDownListCredoresID control.
         /// </summary>
         /// <remarks>
