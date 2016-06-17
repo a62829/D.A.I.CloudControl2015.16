@@ -139,5 +139,18 @@ namespace _DataLayer
             cmd.ExecuteNonQuery();
             con.Close();
         }
+
+        public void removerOutraEntidadeDoProcesso(string idProcesso, string idOutraEntidade, string lastChangeBy)
+        {
+            con.Open();
+            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+            cmd.Parameters.AddWithValue("@idOutraEntidade", idOutraEntidade);
+            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+            cmd.CommandText = "DELETE FROM dbo.outraEntidadeNoProcesso WHERE id = @id AND idOutraEntidade = @idOutraEntidade";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+
+        }
     }
 }

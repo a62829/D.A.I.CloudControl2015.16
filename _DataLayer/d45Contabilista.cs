@@ -125,17 +125,58 @@ namespace _DataLayer
             return dataTable;
         }
 
-        public void adicionarContabilistaAoProcesso(string idProcesso, string idContabilista, string lastChangeBy, string idInsolvente)
+        public void adicionarContabilistaAoInsolventeNoProcesso(string idProcesso, string idContabilista, string lastChangeBy, string idInsolvente)
         {
             con.Open();
             cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
             cmd.Parameters.AddWithValue("@idContabilista", idContabilista);
             cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
-            cmd.CommandText = "UPDATE INTO dbo.contabilistaNoProcesso VALUES (@idProcesso, @idContabilista, @lastChangeBy);";
+            cmd.Parameters.AddWithValue("@idInsolvente", idInsolvente);
+            cmd.CommandText = "UPDATE dbo.insolventeNoProcesso SET idContabilista = @idContabilista WHERE idProcesso = @idProcesso AND idInsolvente = @idInsolvente;";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.ExecuteNonQuery();
             con.Close();
+        }
+
+        public void adicionarContabilistaAoCredorNoProcesso(string idProcesso, string idContabilista, string lastChangeBy, string idCredor)
+        {
+            con.Open();
+            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+            cmd.Parameters.AddWithValue("@idContabilista", idContabilista);
+            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+            cmd.Parameters.AddWithValue("@idCredor", idCredor);
+            cmd.CommandText = "UPDATE dbo.credorNoProcesso SET idContabilista = @idContabilista WHERE idProcesso = @idProcesso AND idCredor = @idCredor;";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        public void removerContabilistaDoCredorNoProcesso(string idProcesso, string idCredor, string lastChangeBy)
+        {
+            con.Open();
+            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+            cmd.Parameters.AddWithValue("@idCredor", idCredor);
+            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+            cmd.CommandText = "UPDATE dbo.credorNoProcesso SET idContabilista = null WHERE idProcesso = @idProcesso AND idCredor = @idCredor";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+
+
+        }
+
+        public void removerContabilistaDoInsolventeNoProcesso(string idProcesso, string idInsolvente, string lastChangeBy)
+        {
+            con.Open();
+            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+            cmd.Parameters.AddWithValue("@idInsolvente", idInsolvente);
+            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+            cmd.CommandText = "UPDATE dbo.insolventeNoProcesso SET idContabilista = null WHERE idProcesso = @idProcesso AND idInsolvente = @idInsolvente";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
         }
     }
 }

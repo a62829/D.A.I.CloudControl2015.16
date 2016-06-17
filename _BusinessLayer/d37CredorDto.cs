@@ -95,7 +95,7 @@ namespace _BusinessLayer
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 d37CredorDto rldto = new d37CredorDto(dt, i);
-                lista.Add(Convert.ToString(rldto.id), rldto);
+                lista.Add(i.ToString(), rldto);
             }
             return lista;
         }
@@ -114,7 +114,7 @@ namespace _BusinessLayer
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 d37CredorDto cdto = new d37CredorDto(dt, i);
-                lista.Add(Convert.ToString(cdto.id), cdto);
+                lista.Add(i.ToString(), cdto);
             }
             return lista;
         }
@@ -127,7 +127,7 @@ namespace _BusinessLayer
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 d37CredorDto cdto = new d37CredorDto(dt, i);
-                lista.Add(Convert.ToString(cdto.id), cdto);
+                lista.Add(i.ToString(), cdto);
             }
             return lista;
         }
@@ -136,6 +136,12 @@ namespace _BusinessLayer
         {
             d37Credor cr = new d37Credor();
             cr.adicionarCredorAoProcesso(idProcesso, idCredor, lastChangeBy);
+        }
+
+        public void removerCredorDoProcesso(string idProcesso, string idCredor, string lastChangeBy)
+        {
+            d37Credor cr = new d37Credor();
+            cr.removerCredorDoProcesso(idProcesso, idCredor, lastChangeBy);
         }
     }
 }

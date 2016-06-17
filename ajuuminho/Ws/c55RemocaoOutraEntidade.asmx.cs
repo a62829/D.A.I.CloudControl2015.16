@@ -80,5 +80,12 @@ namespace ajuUminho.Ws
             d53OutraEntidadeDto oedto = new d53OutraEntidadeDto();
             oedto.adicionarOutraEntidadeAoProcesso(idProcesso, idOutraEntidade, lastChangeBy);
         }
+
+        [WebMethod]
+        public void removerOutraEntidadeDoProcesso(string idProcesso, string idOutraEntidade, string lastChangeBy)
+        {
+            d53OutraEntidadeDto oedto = new d53OutraEntidadeDto();
+            oedto.removerOutraEntidadeDoProcesso(idProcesso, idOutraEntidade, lastChangeBy);
+        }
     }
 }

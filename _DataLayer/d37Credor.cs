@@ -139,5 +139,17 @@ namespace _DataLayer
             cmd.ExecuteNonQuery();
             con.Close();
         }
+        public void removerCredorDoProcesso(string idProcesso, string idCredor, string lastChangeBy)
+        {
+            con.Open();
+            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+            cmd.Parameters.AddWithValue("@idCredor", idCredor);
+            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+            cmd.CommandText = "DELETE FROM dbo.credorNoProcesso WHERE id = @id AND idCredor = @idCredor";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+
+        }
     }
 }

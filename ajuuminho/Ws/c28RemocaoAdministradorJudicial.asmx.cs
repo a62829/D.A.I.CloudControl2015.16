@@ -21,5 +21,12 @@ namespace ajuUminho.Ws
             d25AdministradorJudicialDto ajdto = new d25AdministradorJudicialDto();
             ajdto.removerAdministradorJudicial(id);
         }
+
+        [WebMethod]
+        public void removerAdministradorJudicialDoProcesso(string idProcesso, string idAdministradorJudicial, string lastChangeBy)
+        {
+            d25AdministradorJudicialDto jdto = new d25AdministradorJudicialDto();
+            jdto.removerAdministradorJudicialDoProcesso(idProcesso, idAdministradorJudicial, lastChangeBy);
+        }
     }
 }

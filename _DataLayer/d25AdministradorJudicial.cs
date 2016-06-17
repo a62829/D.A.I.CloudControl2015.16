@@ -125,5 +125,31 @@ namespace _DataLayer
             con.Close();
             return dataTable;
         }
+
+        public void adicionarAdministradorJudicialAoProcesso(string idProcesso, string idAdministradorJudicial, string lastChangeBy)
+        {
+            con.Open();
+            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+            cmd.Parameters.AddWithValue("@idAdministradorJudicial", idAdministradorJudicial);
+            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+            cmd.CommandText = "INSERT INTO dbo.administradorJudicialNoProcesso VALUES (@idProcesso, @idAdministradorJudicial, @lastChangeBy);";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        public void removerAdministradorJudicialDoProcesso(string idProcesso, string idAdministradorJudicial, string lastChangeBy)
+        {
+            con.Open();
+            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+            cmd.Parameters.AddWithValue("@idAdministradorJudicial", idAdministradorJudicial);
+            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+            cmd.CommandText = "DELETE FROM dbo.administradorJudicialNoProcesso WHERE id = @id AND idAdministradorJudicial = @idAdministradorJudicial";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+
+        }
     }
 }

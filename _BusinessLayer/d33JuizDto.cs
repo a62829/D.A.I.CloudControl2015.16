@@ -95,7 +95,7 @@ namespace _BusinessLayer
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 d33JuizDto jdto = new d33JuizDto(dt, i);
-                lista.Add(Convert.ToString(jdto.id), jdto);
+                lista.Add(i.ToString(), jdto);
             }
             return lista;
         }
@@ -114,7 +114,7 @@ namespace _BusinessLayer
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 d33JuizDto jdto = new d33JuizDto(dt, i);
-                lista.Add(Convert.ToString(jdto.id), jdto);
+                lista.Add(i.ToString(), jdto);
             }
             return lista;
         }
@@ -127,7 +127,7 @@ namespace _BusinessLayer
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 d33JuizDto jdto = new d33JuizDto(dt, i);
-                lista.Add(Convert.ToString(jdto.id), jdto);
+                lista.Add(i.ToString(), jdto);
             }
             return lista;
         }
@@ -136,6 +136,12 @@ namespace _BusinessLayer
         {
             d33Juiz cr = new d33Juiz();
             cr.adicionarJuizAoProcesso(idProcesso, idJuiz, lastChangeBy);
+        }
+
+        public void removerJuizDoProcesso(string idProcesso, string idJuiz, string lastChangeBy)
+        {
+            d33Juiz cr = new d33Juiz();
+            cr.removerJuizDoProcesso(idProcesso, idJuiz, lastChangeBy);
         }
     }
 }

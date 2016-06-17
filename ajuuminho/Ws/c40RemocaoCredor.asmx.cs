@@ -24,6 +24,13 @@ namespace ajuUminho.Ws
             cdto.removerCredor(id);
         }
 
+        [WebMethod]
+        public void removerCredorDoProcesso(string idProcesso, string idCredor, string lastChangeBy)
+        {
+            d37CredorDto crdto = new d37CredorDto();
+            crdto.removerCredorDoProcesso(idProcesso, idCredor, lastChangeBy);
+        }
+
 
     }
 }

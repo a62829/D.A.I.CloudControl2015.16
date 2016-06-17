@@ -23,5 +23,12 @@ namespace ajuUminho.Ws
             d29TribunalDto tdto = new d29TribunalDto();
             tdto.removerTribunal(id);
         }
+
+        [WebMethod]
+        public void removerTribunalDoProcesso(string idProcesso, string idTribunal, string lastChangeBy)
+        {
+            d29TribunalDto tdto = new d29TribunalDto();
+            tdto.removerTribunalDoProcesso(idProcesso, idTribunal, lastChangeBy);
+        }
     }
 }

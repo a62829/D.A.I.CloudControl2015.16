@@ -96,7 +96,7 @@ namespace _BusinessLayer
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 d25AdministradorJudicialDto ajdto = new d25AdministradorJudicialDto(dt, i);
-                lista.Add(Convert.ToString(ajdto.id), ajdto);
+                lista.Add(i.ToString(), ajdto);
             }
             return lista;
         }
@@ -115,7 +115,7 @@ namespace _BusinessLayer
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 d25AdministradorJudicialDto ajdto = new d25AdministradorJudicialDto(dt, i);
-                lista.Add(Convert.ToString(ajdto.id), ajdto);
+                lista.Add(i.ToString(), ajdto);
             }
             return lista;
         }
@@ -128,9 +128,21 @@ namespace _BusinessLayer
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 d25AdministradorJudicialDto ajdto = new d25AdministradorJudicialDto(dt, i);
-                lista.Add(Convert.ToString(ajdto.id), ajdto);
+                lista.Add(i.ToString(), ajdto);
             }
             return lista;
+        }
+
+        public void adicionarAdministradorJudicialAoProcesso(string idProcesso, string idAdministradorJudicial, string lastChangeBy)
+        {
+            d25AdministradorJudicial cr = new d25AdministradorJudicial();
+            cr.adicionarAdministradorJudicialAoProcesso(idProcesso, idAdministradorJudicial, lastChangeBy);
+        }
+
+        public void removerAdministradorJudicialDoProcesso(string idProcesso, string idAdministradorJudicial, string lastChangeBy)
+        {
+            d25AdministradorJudicial cr = new d25AdministradorJudicial();
+            cr.removerAdministradorJudicialDoProcesso(idProcesso, idAdministradorJudicial, lastChangeBy);
         }
     }
 }

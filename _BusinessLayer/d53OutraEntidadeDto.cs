@@ -95,7 +95,7 @@ namespace _BusinessLayer
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 d53OutraEntidadeDto oedto = new d53OutraEntidadeDto(dt, i);
-                lista.Add(Convert.ToString(oedto.id), oedto);
+                lista.Add(i.ToString(), oedto);
             }
             return lista;
         }
@@ -114,7 +114,7 @@ namespace _BusinessLayer
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 d53OutraEntidadeDto oedto = new d53OutraEntidadeDto(dt, i);
-                lista.Add(Convert.ToString(oedto.id), oedto);
+                lista.Add(i.ToString(), oedto);
             }
             return lista;
         }
@@ -127,7 +127,7 @@ namespace _BusinessLayer
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 d53OutraEntidadeDto oedto = new d53OutraEntidadeDto(dt, i);
-                lista.Add(Convert.ToString(oedto.id), oedto);
+                lista.Add(i.ToString(), oedto);
             }
             return lista;
         }
@@ -136,6 +136,12 @@ namespace _BusinessLayer
         {
             d53OutraEntidade oe = new d53OutraEntidade();
             oe.adicionarOutraEntidadeAoProcesso(idProcesso, idOutraEntidade, lastChangeBy);
+        }
+
+        public void removerOutraEntidadeDoProcesso(string idProcesso, string idOutraEntidade, string lastChangeBy)
+        {
+            d53OutraEntidade cr = new d53OutraEntidade();
+            cr.removerOutraEntidadeDoProcesso(idProcesso, idOutraEntidade, lastChangeBy);
         }
     }
 }

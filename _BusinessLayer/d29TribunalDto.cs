@@ -92,7 +92,7 @@ namespace _BusinessLayer
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 d29TribunalDto tdto = new d29TribunalDto(dt, i);
-                lista.Add(Convert.ToString(tdto.id), tdto);
+                lista.Add(i.ToString(), tdto);
             }
             return lista;
         }
@@ -111,7 +111,7 @@ namespace _BusinessLayer
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 d29TribunalDto tdto = new d29TribunalDto(dt, i);
-                lista.Add(Convert.ToString(tdto.id), tdto);
+                lista.Add(i.ToString(), tdto);
             }
             return lista;
         }
@@ -124,7 +124,7 @@ namespace _BusinessLayer
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 d29TribunalDto tdto = new d29TribunalDto(dt, i);
-                lista.Add(Convert.ToString(tdto.id), tdto);
+                lista.Add(i.ToString(), tdto);
             }
             return lista;
         }
@@ -133,6 +133,12 @@ namespace _BusinessLayer
         {
             d29Tribunal t = new d29Tribunal();
             t.adicionarTribunalAoProcesso(idProcesso, idTribunal, lastChangeBy);
+        }
+
+        public void removerTribunalDoProcesso(string idProcesso, string idTribunal, string lastChangeBy)
+        {
+            d29Tribunal cr = new d29Tribunal();
+            cr.removerTribunalDoProcesso(idProcesso, idTribunal, lastChangeBy);
         }
     }
 }

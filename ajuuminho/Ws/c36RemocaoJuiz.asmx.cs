@@ -24,5 +24,12 @@ namespace ajuUminho.Ws
             d33JuizDto jdto = new d33JuizDto();
             jdto.removerJuiz(id);
         }
+
+        [WebMethod]
+        public void removerJuizDoProcesso(string idProcesso, string idJuiz, string lastChangeBy)
+        {
+            d33JuizDto jdto = new d33JuizDto();
+            jdto.removerJuizDoProcesso(idProcesso, idJuiz, lastChangeBy);
+        }
     }
 }

@@ -137,5 +137,18 @@ namespace _DataLayer
             cmd.ExecuteNonQuery();
             con.Close();
         }
+
+        public void removerPrestadorServicoDoProcesso(string idProcesso, string idPrestadorServico, string lastChangeBy)
+        {
+            con.Open();
+            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+            cmd.Parameters.AddWithValue("@idPrestadorServico", idPrestadorServico);
+            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+            cmd.CommandText = "DELETE FROM dbo.prestadorServicoNoProcesso WHERE id = @id AND idPrestadorServico = @idPrestadorServico";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+
+        }
     }
 }

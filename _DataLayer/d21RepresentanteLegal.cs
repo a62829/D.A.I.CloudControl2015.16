@@ -186,5 +186,31 @@ namespace _DataLayer
             cmd.ExecuteNonQuery();
             con.Close();
         }
+
+        public void removerRepresentanteLegalDoCredorNoProcesso(string idProcesso, string idCredor, string lastChangeBy)
+        {
+            con.Open();
+            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+            cmd.Parameters.AddWithValue("@idCredor", idCredor);
+            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+            cmd.CommandText = "UPDATE dbo.credorNoProcesso SET idRepresentanteLegal = null WHERE idProcesso = @idProcesso AND idCredor = @idCredor";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+                        
+
+        }
+
+        public void removerRepresentanteLegalDoInsolventeNoProcesso(string idProcesso, string idInsolvente, string lastChangeBy)
+        {
+            con.Open();
+            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+            cmd.Parameters.AddWithValue("@idInsolvente", idInsolvente);
+            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+            cmd.CommandText = "UPDATE dbo.insolventeNoProcesso SET idRepresentanteLegal = null WHERE idProcesso = @idProcesso AND idInsolvente = @idInsolvente";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+        }
     }
 }

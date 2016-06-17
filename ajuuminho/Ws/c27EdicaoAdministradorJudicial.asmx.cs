@@ -63,5 +63,12 @@ namespace ajuUminho.Ws
             d25AdministradorJudicialDto ajdto = new d25AdministradorJudicialDto();
             return ajdto.getListaAdministradorJudicial();
         }
+
+        [WebMethod]
+        public void adicionarAdministradorJudicialAoProcesso(string idProcesso, string idAdministradorJudicial, string lastChangeBy)
+        {
+            d25AdministradorJudicialDto jdto = new d25AdministradorJudicialDto();
+            jdto.adicionarAdministradorJudicialAoProcesso(idProcesso, idAdministradorJudicial, lastChangeBy);
+        }
     }
 }
