@@ -23,8 +23,8 @@ namespace ajuUminho.webforms
             pdto.getProcessoCompleto((string)Session["idProcesso"]);
             if (ListBoxEntidadesID.SelectedIndex == -1)
             {
-                string mystring = "Primeiro selecione um utilizador e depois selecione um perfil de sistema.";
-                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
+                string mystring = "Selecione item a adicionar";
+                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
             }
             else {
 
@@ -115,38 +115,109 @@ namespace ajuUminho.webforms
                     ListBoxEntidadesID.Items.Clear();
                     listaTribunais();
                 }
-                //else if (DropDownListEntidadesID.Text == "Administrador Judicial")
-                //{
-                //    c27EdicaoAdministradorJudicial ct = new c27EdicaoAdministradorJudicial();
-                //    ct.ad((string)Session["idProcesso"], ListBoxEntidadesID.SelectedItem.Value.ToString(), Session["userId"].ToString());
-                //    ListBoxEntidadesAssociadosID.Items.Clear();
-                //    ListBoxEntidadesID.Items.Clear();
-                //    listaTribunais();
-                //}
-                //ListBoxEntidadesAssociadosID.Items.Clear();
-                //ListBoxEntidadesID.Items.Clear();
-
             }
         }
 
         protected void ButtonLessID_Click(object sender, EventArgs e)
         {
-            //if (ListBoxIdentidadesID.SelectedIndex == -1)
-            //{
-            //    string mystring = "Primeiro selecione um utilizador e depois selecione um perfil de sistema.";
-            //    this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
-            //}
-            //else
-            //{
-            //    string user = ListBoxIdentidadesID.SelectedValue;
-            //    string role = ListBoxPerfisAssociadosID.SelectedItem.Text;
-            //    gestaoIdentidade ws1 = new gestaoIdentidade();
-            //    ws1.removeRoleToUser(user, role);
-            //    ListBoxPerfisAssociadosID.DataBind();
-            //    ListBoxPerfisID.DataBind();
-            //    listaRolesUserDontHave();
-            //    listaUserRoles();
-            //}
+            d85ProcessoDto pdto = new d85ProcessoDto();
+            pdto.getProcessoCompleto((string)Session["idProcesso"]);
+            if (ListBoxEntidadesAssociadosID.SelectedIndex == -1)
+            {
+                string mystring = "Selecione item a remover";
+                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
+            }
+            else {
+
+                if (DropDownListEntidadesID.Text == "Insolvente")
+                {
+                    c44RemocaoInsolvente ci = new c44RemocaoInsolvente();
+                    ci.removerInsolventeDoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString());
+                    ListBoxEntidadesAssociadosID.Items.Clear();
+                    ListBoxEntidadesID.Items.Clear();
+                    listaInsolventes();
+                }
+                else if (DropDownListEntidadesID.Text == "Representante Legal")
+                {
+                    c23EditarRepresentanteLegal crl = new c23EditarRepresentanteLegal();
+                    if (RadioButtonList1.SelectedItem.Text == "Insolvente")
+                    {
+                        crl.adicionarRepresentanteLegalAoInsolventeNoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString(), pdto.listaIDtoNoProcesso.Values.ToString());
+                        ListBoxEntidadesAssociadosID.Items.Clear();
+                        ListBoxEntidadesID.Items.Clear();
+                        listaRepresentantesLegais();
+                    }
+                    else
+                    {
+                        // crl.adicionarRepresentanteLegalAoCredorNoProcesso(pdto.idProcesso.ToString(), ListBoxEntidadesID.SelectedItem.Value.ToString(), Session["userId"].ToString(), pdto.listaIDtoNoProcesso.Values.ToString());
+                    }
+
+                }
+                else if (DropDownListEntidadesID.Text == "Credor")
+                {
+                    c39EdicaoCredor ccr = new c39EdicaoCredor();
+                    ccr.adicionarCredorAoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString());
+                    ListBoxEntidadesAssociadosID.Items.Clear();
+                    ListBoxEntidadesID.Items.Clear();
+                    listaCredores();
+
+                }
+                else if (DropDownListEntidadesID.Text == "Juiz")
+                {
+                    c35EdicaoJuiz cj = new c35EdicaoJuiz();
+                    cj.adicionarJuizAoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString());
+                    ListBoxEntidadesAssociadosID.Items.Clear();
+                    ListBoxEntidadesID.Items.Clear();
+                    listaJuizes();
+
+                }
+                else if (DropDownListEntidadesID.Text == "Prestador de Serviços")
+                {
+                    c51EdicaoPrestadorServico cps = new c51EdicaoPrestadorServico();
+                    cps.adicionarPrestadorServicoAoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString());
+                    ListBoxEntidadesAssociadosID.Items.Clear();
+                    ListBoxEntidadesID.Items.Clear();
+                    listaPrestadoresDeServicos();
+                }
+                else if (DropDownListEntidadesID.Text == "Outras Entidades")
+                {
+                    c55RemocaoOutraEntidade coe = new c55RemocaoOutraEntidade();
+                    coe.adicionarOutraEntidadeAoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString());
+                    ListBoxEntidadesAssociadosID.Items.Clear();
+                    ListBoxEntidadesID.Items.Clear();
+                    listaOutrasEntidades();
+                }
+                else if (DropDownListEntidadesID.Text == "Contabilista")
+                {
+                    c47EdicaoContabilista c = new c47EdicaoContabilista();
+                    if (RadioButtonList1.SelectedItem.Text == "Credor")
+                    {
+                        c.adicionarContabilistaAoCredorNoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString(), pdto.listaIDtoNoProcesso.Values.ToString());
+                        ListBoxEntidadesAssociadosID.Items.Clear();
+                        ListBoxEntidadesID.Items.Clear();
+                        listaContabilistas();
+                    }
+                    else if (DropDownListEntidadesID.Text == "Insolvente")
+                    {
+                        c.adicionarContabilistaAoInsolventeNoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString(), pdto.listaIDtoNoProcesso.Values.ToString());
+                        ListBoxEntidadesAssociadosID.Items.Clear();
+                        ListBoxEntidadesID.Items.Clear();
+                        listaContabilistas();
+                    }
+                    else
+                    {
+                        //
+                    }
+                }
+                else if (DropDownListEntidadesID.Text == "Tribunal")
+                {
+                    c32RemocaoTribunal ct = new c32RemocaoTribunal();
+                    ct.removerTribunalDoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString());
+                    ListBoxEntidadesAssociadosID.Items.Clear();
+                    ListBoxEntidadesID.Items.Clear();
+                    listaTribunais();
+                }
+            }
         }
 
         protected void ListBoxEntidadesID_SelectedIndexChanged(object sender, EventArgs e)

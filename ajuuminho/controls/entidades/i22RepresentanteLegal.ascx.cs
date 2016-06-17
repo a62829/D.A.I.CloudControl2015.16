@@ -131,7 +131,9 @@ namespace ajuUminho.controls.entidades
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
         {
             c24RemocaoRepresentanteLegal WsERL = new c24RemocaoRepresentanteLegal();
-            WsERL.removerRepresentanteLegal(ListBoxEntidadesID.SelectedValue.ToString());
+            var y = ListBoxEntidadesID.SelectedValue.ToString();
+            WsERL.removerRepresentanteLegal(y);
+            listaRepresentanteLegal();
             ClearAllText(this);
             ListBoxEntidadesID.ClearSelection();
         }
