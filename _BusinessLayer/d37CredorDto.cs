@@ -131,5 +131,11 @@ namespace _BusinessLayer
             }
             return lista;
         }
+
+        public void adicionarCredorAoProcesso(string idProcesso, string idCredor, string lastChangeBy)
+        {
+            d37Credor cr = new d37Credor();
+            cr.adicionarCredorAoProcesso(idProcesso, idCredor, lastChangeBy);
+        }
     }
 }

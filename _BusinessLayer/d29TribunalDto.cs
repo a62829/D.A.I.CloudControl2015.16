@@ -128,5 +128,11 @@ namespace _BusinessLayer
             }
             return lista;
         }
+
+        public void adicionarTribunalAoProcesso(string idProcesso, string idTribunal, string lastChangeBy)
+        {
+            d29Tribunal t = new d29Tribunal();
+            t.adicionarTribunalAoProcesso(idProcesso, idTribunal, lastChangeBy);
+        }
     }
 }

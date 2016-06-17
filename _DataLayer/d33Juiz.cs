@@ -119,7 +119,7 @@ namespace _DataLayer
         {
             SqlDataReader reader;
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.CommandText = "SELECT juiz.id, juiz.nome, juiz.lastChangeBy FROM juiz WHERE NOT EXISTS (SELECT * FROM juizNoProcesso WHERE idJuiz = juiz.id AND idProcesso = @id)";
+            cmd.CommandText = "SELECT * FROM juiz WHERE NOT EXISTS (SELECT * FROM juizNoProcesso WHERE idJuiz = juiz.id AND idProcesso = @id)";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -128,6 +128,19 @@ namespace _DataLayer
             dataTable.Load(reader);
             con.Close();
             return dataTable;
+        }
+
+        public void adicionarJuizAoProcesso(string idProcesso, string idJuiz, string lastChangeBy)
+        {
+            con.Open();
+            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+            cmd.Parameters.AddWithValue("@idJuiz", idJuiz);
+            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+            cmd.CommandText = "INSERT INTO dbo.juizNoProcesso VALUES (@idProcesso, @idJuiz, @lastChangeBy);";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+            con.Close();
         }
     }
 }

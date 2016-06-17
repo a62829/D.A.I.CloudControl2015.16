@@ -32,6 +32,12 @@
                             <asp:ListItem>Prestador de Serviços</asp:ListItem>
                             <asp:ListItem>Outras Entidades</asp:ListItem>
                         </asp:DropDownList>
+                        <p>
+                            <asp:RadioButtonList ID="RadioButtonList1" runat="server" Visible="false">
+                                <asp:ListItem selected="True">Insolvente</asp:ListItem>
+                                <asp:ListItem>Credor</asp:ListItem>
+                            </asp:RadioButtonList></p>
+
                     </div>
                 </div>
 

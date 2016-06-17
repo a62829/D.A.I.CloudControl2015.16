@@ -62,5 +62,12 @@ namespace ajuUminho.Ws
             d41InsolventeDto cdto = new d41InsolventeDto();
             return cdto.getListaInsolvente();
         }
+
+        [WebMethod]
+        public void adicionarInsolventeAoProcesso(string idProcesso, string idInsolvente, string lastChangeBy)
+        {
+            d41InsolventeDto idto = new d41InsolventeDto();
+            idto.adicionarInsolventeAoProcesso(idProcesso, idInsolvente, lastChangeBy);
+        }
     }
 }

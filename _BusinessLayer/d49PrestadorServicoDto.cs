@@ -131,5 +131,11 @@ namespace _BusinessLayer
             }
             return lista;
         }
+
+        public void adicionarPrestadorServicoAoProcesso(string idProcesso, string idPrestadorServico, string lastChangeBy)
+        {
+            d49PrestadorServico t = new d49PrestadorServico();
+            t.adicionarPrestadorServicoAoProcesso(idProcesso, idPrestadorServico, lastChangeBy);
+        }
     }
 }

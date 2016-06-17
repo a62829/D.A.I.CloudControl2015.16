@@ -49,7 +49,7 @@ namespace _DataLayer
         {
             SqlDataReader reader;
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.CommandText = "SELECT contabilista.id, contabilista.nome, contabilista.morada, contabilista.codPostal, contabilista.localidade, contabilista.email, contabilista.telefone, contabilista.telemovel, contabilista.fax, contabilista.cc, contabilista.iban, contabilista.nif, contabilista.lastChangeBy FROM contabilista Right Join insolventeNoProcesso ON insolventeNoProcesso.idcontabilista = contabilista.id WHERE insolventeNoProcesso.idProcesso = @id ORDER BY contabilista.id; ";
+            cmd.CommandText = "SELECT contabilista.id, contabilista.nome, contabilista.morada, contabilista.codPostal, contabilista.localidade, contabilista.email, contabilista.telefone, contabilista.telemovel, contabilista.fax, contabilista.cc, contabilista.iban, contabilista.nif, contabilista.lastChangeBy , processo.id  FROM contabilista Right Join insolventeNoProcesso ON contabilista.id = insolventeNoProcesso.idContabilista Right Join processo ON  processo.id = insolventeNoProcesso.idProcesso WHERE processo.id = @id ORDER BY contabilista.id; ";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -114,7 +114,7 @@ namespace _DataLayer
         {
             SqlDataReader reader;
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.CommandText = "SELECT contabilista.id, contabilista.nome, contabilista.lastChangeBy FROM contabilista WHERE NOT EXISTS (SELECT * FROM contabilistaNoProcesso WHERE idContabilista = contabilista.id AND idProcesso = @id)";
+            cmd.CommandText = "SELECT * FROM contabilista WHERE NOT ( EXISTS( Select * FROM insolventeNoProcesso WHERE idContabilista = contabilista.id AND idProcesso = '1'))";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -123,6 +123,19 @@ namespace _DataLayer
             dataTable.Load(reader);
             con.Close();
             return dataTable;
+        }
+
+        public void adicionarContabilistaAoProcesso(string idProcesso, string idContabilista, string lastChangeBy, string idInsolvente)
+        {
+            con.Open();
+            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+            cmd.Parameters.AddWithValue("@idContabilista", idContabilista);
+            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+            cmd.CommandText = "UPDATE INTO dbo.contabilistaNoProcesso VALUES (@idProcesso, @idContabilista, @lastChangeBy);";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+            con.Close();
         }
     }
 }

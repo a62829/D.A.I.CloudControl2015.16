@@ -14,12 +14,10 @@ namespace ajuUminho.webforms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["idProcesso"] = null;
+
             if (!IsPostBack)
             {
                 listaProcesso();
-
-
             }
             else
             {
@@ -79,9 +77,7 @@ namespace ajuUminho.webforms
 
         protected void ListBoxProcessosID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var y = listaProcessoCompleto(ListBoxProcessosID.SelectedValue.ToString());
-            Session["idProcesso"] = y.idProcesso.ToString();
-
+            Session["idProcesso"] = ListBoxProcessosID.SelectedItem.Value.ToString();
         }
 
         protected void listaProcesso()

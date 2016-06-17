@@ -65,5 +65,12 @@ namespace ajuUminho.Ws
             d49PrestadorServicoDto psdto = new d49PrestadorServicoDto();
             return psdto.getListaPrestadorServico();
         }
+
+        [WebMethod]
+        public void adicionarPrestadorServicoAoProcesso(string idProcesso, string idPrestadorServico, string lastChangeBy)
+        {
+            d49PrestadorServicoDto psdto = new d49PrestadorServicoDto();
+            psdto.adicionarPrestadorServicoAoProcesso(idProcesso, idPrestadorServico, lastChangeBy);
+        }
     }
 }

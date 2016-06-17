@@ -131,5 +131,11 @@ namespace _BusinessLayer
             }
             return lista;
         }
+
+        public void adicionarContabilistaAoProcesso(string idProcesso, string idContabilista, string lastChangeBy, string idInsolvente)
+        {
+            d45Contabilista i = new d45Contabilista();
+            i.adicionarContabilistaAoProcesso(idProcesso, idContabilista, lastChangeBy, idInsolvente);
+        }
     }
 }

@@ -131,5 +131,11 @@ namespace _BusinessLayer
             }
             return lista;
         }
+
+        public void adicionarJuizAoProcesso(string idProcesso, string idJuiz, string lastChangeBy)
+        {
+            d33Juiz cr = new d33Juiz();
+            cr.adicionarJuizAoProcesso(idProcesso, idJuiz, lastChangeBy);
+        }
     }
 }

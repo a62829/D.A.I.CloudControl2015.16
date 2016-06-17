@@ -49,7 +49,7 @@ namespace _DataLayer
         {
             SqlDataReader reader;
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.CommandText = "SELECT prestadorServico.id, prestadorServico.nome, prestadorServico.morada, prestadorServico.codPostal, prestadorServico.localidade, prestadorServico.email, prestadorServico.telefone, prestadorServico.telemovel, prestadorServico.fax, prestadorServico.cc, prestadorServico.iban, prestadorServico.nif, prestadorServico.lastChangeBy FROM prestadorServico Right Join prestadorServicoNoProcesso ON prestadorServicoNoProcesso.idprestadorServico = prestadorServico.id WHERE prestadorServicoNoProcesso.idProcesso = @id ORDER BY prestadorServico.id; ";
+            cmd.CommandText = "SELECT prestadorServico.id, prestadorServico.nome, prestadorServico.morada, prestadorServico.codPostal, prestadorServico.localidade, prestadorServico.email, prestadorServico.telefone, prestadorServico.telemovel, prestadorServico.fax, prestadorServico.cc, prestadorServico.iban, prestadorServico.nif, prestadorServico.lastChangeBy , processo.id  FROM prestadorServico Right Join prestadorServicoNoProcesso ON prestadorServico.id = prestadorServicoNoProcesso.idPrestadorServico Right Join processo ON  processo.id = prestadorServicoNoProcesso.idProcesso WHERE processo.id = @id ORDER BY prestadorServico.id; ";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -114,7 +114,7 @@ namespace _DataLayer
         {
             SqlDataReader reader;
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.CommandText = "SELECT prestadorServico.id, prestadorServico.nome, prestadorServico.lastChangeBy FROM prestadorServico WHERE NOT EXISTS (SELECT * FROM prestadorServicoNoProcesso WHERE idPrestadorServico = prestadorServico.id AND idProcesso = @id)";
+            cmd.CommandText = "SELECT * FROM prestadorServico WHERE NOT EXISTS (SELECT * FROM prestadorServicoNoProcesso WHERE idPrestadorServico = prestadorServico.id AND idProcesso = @id)";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -123,6 +123,19 @@ namespace _DataLayer
             dataTable.Load(reader);
             con.Close();
             return dataTable;
+        }
+
+        public void adicionarPrestadorServicoAoProcesso(string idProcesso, string idPrestacaoServico, string lastChangeBy)
+        {
+            con.Open();
+            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+            cmd.Parameters.AddWithValue("@idPrestadorServico", idPrestacaoServico);
+            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+            cmd.CommandText = "INSERT INTO dbo.prestadorServicoNoProcesso VALUES (@idProcesso, @idPrestadorServico, @lastChangeBy);";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+            con.Close();
         }
     }
 }

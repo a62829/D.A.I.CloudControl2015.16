@@ -131,5 +131,11 @@ namespace _BusinessLayer
             }
             return lista;
         }
+
+        public void adicionarInsolventeAoProcesso(string idProcesso, string idInsolvente, string lastChangeBy)
+        {
+            d41Insolvente i = new d41Insolvente();
+            i.adicionarInsolventeAoProcesso(idProcesso, idInsolvente, lastChangeBy);
+        }
     }
 }

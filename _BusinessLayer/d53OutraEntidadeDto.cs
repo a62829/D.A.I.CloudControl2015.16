@@ -131,5 +131,11 @@ namespace _BusinessLayer
             }
             return lista;
         }
+
+        public void adicionarOutraEntidadeAoProcesso(string idProcesso, string idOutraEntidade, string lastChangeBy)
+        {
+            d53OutraEntidade oe = new d53OutraEntidade();
+            oe.adicionarOutraEntidadeAoProcesso(idProcesso, idOutraEntidade, lastChangeBy);
+        }
     }
 }

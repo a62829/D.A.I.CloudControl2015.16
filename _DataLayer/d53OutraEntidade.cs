@@ -51,7 +51,7 @@ namespace _DataLayer
         {
             SqlDataReader reader;
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.CommandText = "SELECT outraEntidade.id, outraEntidade.nome, outraEntidade.morada, outraEntidade.codPostal, outraEntidade.localidade, outraEntidade.email, outraEntidade.telefone, outraEntidade.telemovel, outraEntidade.fax, outraEntidade.cc, outraEntidade.iban, outraEntidade.nif, outraEntidade.lastChangeBy FROM outraEntidade Right Join outraEntidadeNoProcesso ON outraEntidadeNoProcesso.idoutraEntidade = outraEntidade.id WHERE outraEntidadeNoProcesso.idProcesso = @id ORDER BY outraEntidade.id; ";
+            cmd.CommandText = "SELECT outraEntidade.id, outraEntidade.nome, outraEntidade.morada, outraEntidade.codPostal, outraEntidade.localidade, outraEntidade.email, outraEntidade.telefone, outraEntidade.telemovel, outraEntidade.fax, outraEntidade.cc, outraEntidade.iban, outraEntidade.nif, outraEntidade.lastChangeBy , processo.id  FROM outraEntidade Right Join outraEntidadeNoProcesso ON outraEntidade.id = outraEntidadeNoProcesso.idOutraEntidade Right Join processo ON  processo.id = outraEntidadeNoProcesso.idProcesso WHERE processo.id = @id ORDER BY outraEntidade.id; ";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -116,7 +116,7 @@ namespace _DataLayer
         {
             SqlDataReader reader;
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.CommandText = "SELECT outraEntidade.id, outraEntidade.nome, outraEntidade.lastChangeBy FROM outraEntidade WHERE NOT EXISTS (SELECT * FROM outraEntidadeNoProcesso WHERE idOutraEntidade = outraEntidade.id AND idProcesso = @id)";
+            cmd.CommandText = "SELECT * FROM outraEntidade WHERE NOT EXISTS (SELECT * FROM outraEntidadeNoProcesso WHERE idOutraEntidade = outraEntidade.id AND idProcesso = @id)";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -125,6 +125,19 @@ namespace _DataLayer
             dataTable.Load(reader);
             con.Close();
             return dataTable;
+        }
+
+        public void adicionarOutraEntidadeAoProcesso(string idProcesso, string idOutraEntidade, string lastChangeBy)
+        {
+            con.Open();
+            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+            cmd.Parameters.AddWithValue("@idOutraEntidade", idOutraEntidade);
+            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+            cmd.CommandText = "INSERT INTO dbo.outraEntidadeNoProcesso VALUES (@idProcesso, @idOutraEntidade, @lastChangeBy);";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+            con.Close();
         }
     }
 }

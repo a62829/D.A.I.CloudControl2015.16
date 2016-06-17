@@ -51,7 +51,7 @@ namespace _DataLayer
         {
             SqlDataReader reader;
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.CommandText = "SELECT credor.id, credor.nome, credor.morada, credor.codPostal, credor.localidade, credor.email, credor.telefone, credor.telemovel, credor.fax, credor.cc, credor.iban, credor.nif, credor.lastChangeBy FROM credor Right Join credorNoProcesso ON credorNoProcesso.idcredor = credor.id WHERE credorNoProcesso.idProcesso = @id ORDER BY credor.id; ";
+            cmd.CommandText = "SELECT credor.id, credor.nome, credor.morada, credor.codPostal, credor.localidade, credor.email, credor.telefone, credor.telemovel, credor.fax, credor.cc, credor.iban, credor.nif, credor.lastChangeBy , processo.id  FROM credor Right Join credorNoProcesso ON credor.id = credorNoProcesso.idcredor Right Join processo ON  processo.id = credorNoProcesso.idProcesso WHERE processo.id = @id ORDER BY credor.id; ";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -116,7 +116,7 @@ namespace _DataLayer
         {
             SqlDataReader reader;
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.CommandText = "SELECT credor.id, credor.nome, credor.lastChangeBy FROM credor WHERE NOT EXISTS (SELECT * FROM credorNoProcesso WHERE idCredor = credor.id AND idProcesso = @id)";
+            cmd.CommandText = "SELECT * FROM credor WHERE NOT EXISTS (SELECT * FROM credorNoProcesso WHERE idCredor = credor.id AND idProcesso = @id)";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -125,6 +125,19 @@ namespace _DataLayer
             dataTable.Load(reader);
             con.Close();
             return dataTable;
+        }
+
+        public void adicionarCredorAoProcesso(string idProcesso, string idCredor, string lastChangeBy)
+        {
+            con.Open();
+            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+            cmd.Parameters.AddWithValue("@idCredor", idCredor);
+            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+            cmd.CommandText = "INSERT INTO dbo.credorNoProcesso VALUES (@idProcesso, @idCredor, null, @lastChangeBy);";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+            con.Close();
         }
     }
 }
