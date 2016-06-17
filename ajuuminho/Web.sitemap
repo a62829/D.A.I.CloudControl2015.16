@@ -3,8 +3,24 @@
     <siteMapNode url="/webforms/home.aspx" title="Home" description="">
         <siteMapNode url="/webforms/InterfaceEntidades.aspx" title="Entidades"  description="" />
         <siteMapNode url="/webforms/InterfaceAdministracao.aspx" title="Administração"  description="" />
-        <siteMapNode url="/webforms/InterfaceProcesso.aspx" title="Processos"  description="" />
+        <siteMapNode url="/webforms/InterfaceProcesso.aspx" title="Processos"  description="">
+          <siteMapNode  url="/webforms/i101CriarProcesso.aspx" title="Criar processo"  description="" />
+          <siteMapNode  url="/webforms/i102EditarProcesso.aspx" title="Editar processo"  description="">
+            <siteMapNode  url="/webforms/i103DadosBase.aspx" title="Dados base"  description="" />
+            <siteMapNode  url="/webforms/i56AtribuicaoEntidades.aspx" title="Atribuição entidades"  description="" />
+            <siteMapNode  url="/webforms/i60Eventos.aspx" title="Eventos"  description="" />
+            <siteMapNode  url="/webforms/i64Bens.aspx" title="Bens"  description="" />
+            <siteMapNode  url="/webforms/i68MovimentosFinanceiros.aspx" title="Movimentos financeiros"  description="" />
+            <siteMapNode  url="/webforms/i72Credores.aspx" title="Credores"  description="" />
+            <siteMapNode  url="/webforms/i75ServicosExternos.aspx" title="Serviços externos"  description="" />
+            <siteMapNode  url="/webforms/i80FicheirosMultimedia.aspx" title="Ficheiros multimédia"  description="" />
+            <siteMapNode  url="/webforms/i83FicheirosTexto.aspx" title="Ficheiros texto"  description="" />
+            <siteMapNode  url="/webforms/i86Arquivo.aspx" title="Arquivo"  description="" />
+            <siteMapNode  url="/webforms/i89Tipos.aspx" title="Tipos"  description="" />
+            <siteMapNode  url="/webforms/i91CreditosReclamados.aspx" title="Créditos reclamados" description="" />
+          </siteMapNode>
+        </siteMapNode>
         <siteMapNode url="/webforms/InterfaceRelatorios.aspx" title="Relatórios"  description="" />
-        <siteMapNode url="/webforms/InterfaceUtilizadores.aspx" title="Utilizadores"  description="" />
+        <siteMapNode url="/webforms/InterfaceUtilizadores.aspx" title="Editar dados de utilizador"  description="" />
     </siteMapNode>
 </siteMap>
