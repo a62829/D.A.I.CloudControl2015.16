@@ -562,6 +562,14 @@
       <DependentUpon>c55RemocaoOutraEntidade.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Ws\c65EdicaoBens.asmx.cs">
+      <DependentUpon>c65EdicaoBens.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ws\c66RemocaoBens.asmx.cs">
+      <DependentUpon>c66RemocaoBens.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Ws\c87.asmx.cs">
       <DependentUpon>c87.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -616,6 +624,8 @@
     <Content Include="Ws\c51EdicaoPrestadorServico.asmx" />
     <Content Include="Ws\c52RemocaoPrestadorServico.asmx" />
     <Content Include="Ws\c55RemocaoOutraEntidade.asmx" />
+    <Content Include="Ws\c65EdicaoBens.asmx" />
+    <Content Include="Ws\c66RemocaoBens.asmx" />
     <Content Include="Ws\c87.asmx" />
     <Content Include="Ws\ControloDeEntidades.asmx" />
     <Content Include="Ws\gestaoIdentidade.asmx" />

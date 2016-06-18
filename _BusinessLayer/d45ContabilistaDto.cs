@@ -138,17 +138,17 @@ namespace _BusinessLayer
             i.adicionarContabilistaAoInsolventeNoProcesso(idProcesso, idContabilista, lastChangeBy, idInsolvente);
         }
 
-        public void adicionarContabilistaAoCredorNoProcesso(string idProcesso, string idContabilista, string lastChangeBy, string idCredor)
-        {
-            d45Contabilista i = new d45Contabilista();
-            i.adicionarContabilistaAoCredorNoProcesso(idProcesso, idContabilista, lastChangeBy, idCredor);
-        }
+        //public void adicionarContabilistaAoCredorNoProcesso(string idProcesso, string idContabilista, string lastChangeBy, string idCredor)
+        //{
+        //    d45Contabilista i = new d45Contabilista();
+        //    i.adicionarContabilistaAoCredorNoProcesso(idProcesso, idContabilista, lastChangeBy, idCredor);
+        //}
 
-        public void removerContabilistaDoCredorNoProcesso(string idProcesso, string idTribunal, string lastChangeBy)
-        {
-            d45Contabilista cr = new d45Contabilista();
-            cr.removerContabilistaDoCredorNoProcesso(idProcesso, idTribunal, lastChangeBy);
-        }
+        //public void removerContabilistaDoCredorNoProcesso(string idProcesso, string idTribunal, string lastChangeBy)
+        //{
+        //    d45Contabilista cr = new d45Contabilista();
+        //    cr.removerContabilistaDoCredorNoProcesso(idProcesso, idTribunal, lastChangeBy);
+        //}
 
         public void removerContabilistaDoInsolventeNoProcesso(string idProcesso, string idTribunal, string lastChangeBy)
         {

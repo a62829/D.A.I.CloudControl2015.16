@@ -24,12 +24,12 @@ namespace ajuUminho.Ws
             cdto.removerContabilista(id);
         }
 
-        [WebMethod]
-        public void removerContabilistaDoCredorNoProcesso(string idProcesso, string lastChangeBy, string idInsolvente)
-        {
-            d45ContabilistaDto idto = new d45ContabilistaDto();
-            idto.removerContabilistaDoCredorNoProcesso(idProcesso, lastChangeBy, idInsolvente);
-        }
+        //[WebMethod]
+        //public void removerContabilistaDoCredorNoProcesso(string idProcesso, string lastChangeBy, string idInsolvente)
+        //{
+        //    d45ContabilistaDto idto = new d45ContabilistaDto();
+        //    idto.removerContabilistaDoCredorNoProcesso(idProcesso, lastChangeBy, idInsolvente);
+        //}
 
         [WebMethod]
         public void removerContabilistaDoInsolventeNoProcesso(string idProcesso, string lastChangeBy, string idInsolvente)

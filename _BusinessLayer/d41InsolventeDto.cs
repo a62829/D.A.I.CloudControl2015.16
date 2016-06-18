@@ -100,6 +100,14 @@ namespace _BusinessLayer
             return lista;
         }
 
+        public string getIdInsolventeNoProcesso(string idProcesso, string idInsolvente)
+        {
+            d41Insolvente i = new d41Insolvente();
+            var x = i.getIdInsolventeNoProcesso(idProcesso, idInsolvente);
+            var y = Convert.ToString(x.Rows[0]["id"]);
+            return (string)y;
+        }
+
         public void removerInsolvente(string id)
         {
             d41Insolvente i = new d41Insolvente();

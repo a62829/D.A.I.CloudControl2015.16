@@ -45,7 +45,7 @@
                             <h4>Lista de Bens</h4>
                         </div>
                         <div class="ListBoxParaTabsProcessos">
-                            <asp:ListBox ID="ListBoxParaTabsProcessosID" CssClass="ListBoxParaTabsProcessos-Item" runat="server"></asp:ListBox>
+                            <asp:ListBox ID="ListBoxParaTabsProcessosID" CssClass="ListBoxParaTabsProcessos-Item" runat="server" OnSelectedIndexChanged="ListBoxParaTabsProcessosID_SelectedIndexChanged"></asp:ListBox>
                         </div>
                     </div>
 
