@@ -19,10 +19,10 @@ namespace ajuUminho.Ws
     {
 
         [WebMethod]
-        public void editarBens(string idBem, string idInsolventeNoProcesso, string idTipoAtivo, string descricao, string valorAquisicao,
+        public void editarBens(string idBem, string idTipoAtivo, string descricao, string valorAquisicao,
             string valorMercado, string valorLiquidacao, string lastChangeBy)
         {
-            d63BensDto bdto = new d63BensDto(idBem, idInsolventeNoProcesso, idTipoAtivo, descricao, valorAquisicao, valorMercado, valorLiquidacao, lastChangeBy);
+            d63BensDto bdto = new d63BensDto(idBem, idTipoAtivo, descricao, valorAquisicao, valorMercado, valorLiquidacao, lastChangeBy);
             bdto.setBem(bdto);
         }
 
@@ -37,11 +37,10 @@ namespace ajuUminho.Ws
         }
 
         [WebMethod]
-        public d63BensDto getBem(string idProcesso, string idInsolvente)
+        public d63BensDto getBem(string idBem)
         {
             d63BensDto cdto = new d63BensDto();
-            string x = cdto.getIdInsolventeNoProcesso(idProcesso, idInsolvente);
-            return cdto.getBem(x);
+            return cdto.getBem(idBem);
         }
 
         [WebMethod]

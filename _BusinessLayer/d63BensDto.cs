@@ -35,8 +35,20 @@ namespace _BusinessLayer
             this.lastChangeBy = Convert.ToString(dt.Rows[i]["lastChangeBy"]);
         }
 
-        public d63BensDto(string idBem, string idInsolventeNoProcesso, string idTipoAtivo, string descricao, string valorAquisicao,
+        public d63BensDto(string idBem, string idTipoAtivo, string descricao, string valorAquisicao,
             string valorMercado, string valorLiquidacao, string lastChangeBy)
+        {
+            this.idBens = idBem;
+            this.idTipoAtivo = idTipoAtivo;
+            this.descricao = descricao;
+            this.valorAquisicao = valorAquisicao;
+            this.valorMercado = valorMercado;
+            this.valorLiquidacao = valorLiquidacao;
+            this.lastChangeBy = lastChangeBy;
+        }
+
+        public d63BensDto(string idBem, string idInsolventeNoProcesso, string idTipoAtivo, string descricao, string valorAquisicao,
+    string valorMercado, string valorLiquidacao, string lastChangeBy)
         {
             this.idBens = idBem;
             this.idInsolventeNoProcesso = idInsolventeNoProcesso;
@@ -67,7 +79,7 @@ namespace _BusinessLayer
         public void setBem(d63BensDto bdto)
         {
             d63Bens b = new d63Bens();
-            b.setBem(bdto.idBens, bdto.idInsolventeNoProcesso, bdto.idTipoAtivo, bdto.descricao, bdto.valorAquisicao, bdto.valorMercado, bdto.valorLiquidacao, bdto.lastChangeBy);
+            b.setBem(bdto.idBens, bdto.idTipoAtivo, bdto.descricao, bdto.valorAquisicao, bdto.valorMercado, bdto.valorLiquidacao, bdto.lastChangeBy);
         }
 
         public void guardar(d63BensDto bdto)
