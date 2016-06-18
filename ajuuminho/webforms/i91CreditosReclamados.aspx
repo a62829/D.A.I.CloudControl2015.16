@@ -25,7 +25,7 @@
 
             <asp:SiteMapDataSource ID="SiteMapDataSource1" StartingNodeUrl="~/webforms/i102EditarProcesso.aspx" runat="server" />
 
-            <div class="ViewsBoxProcessosCRUD">
+            <div class="ViewsBoxProcessos">
 
                 <div class="InsideViewsTableBoxProcessos">
                     <div class="titleh4">
