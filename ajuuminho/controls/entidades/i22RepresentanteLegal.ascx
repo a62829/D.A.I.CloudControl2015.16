@@ -129,7 +129,7 @@
                            Alterado por: </asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="TextBoxLastChangedID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxLastChangedID" runat="server" CssClass="LabelsInputs-Item" Enabled="false" ></asp:TextBox>
                         </td>
                     </tr>
                 </table>
