@@ -90,19 +90,22 @@ namespace ajuUminho.controls.entidades
             TextBoxIbanID.Text = jdto.iban;
             TextBoxNifID.Text = jdto.nif;
             TextBoxLastChangedID.Text = jdto.lastChangeBy;
-            ListBoxEntidadesID.ClearSelection();
+            //ListBoxEntidadesID.ClearSelection();
             //ListBoxEntidadesID.Items.Clear();
             //listaRepresentanteLegal();
         }
 
         protected void ButtonEditarID_Click(object sender, EventArgs e)
         {
-            ListBoxEntidadesID.ClearSelection();
+
             c35EdicaoJuiz WsEJ = new c35EdicaoJuiz();
             WsEJ.editarJuiz(ListBoxEntidadesID.SelectedValue.ToString(), TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text);
             ClearAllText(this);
+            ListBoxEntidadesID.ClearSelection();
+            ListBoxEntidadesID.Items.Clear();
+            listaJuiz();
         }
 
         protected void listaJuiz()
@@ -126,10 +129,13 @@ namespace ajuUminho.controls.entidades
 
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
         {
-            ListBoxEntidadesID.ClearSelection();
             c36RemocaoJuiz WsERL = new c36RemocaoJuiz();
             WsERL.removerJuiz(ListBoxEntidadesID.SelectedValue.ToString());
             ClearAllText(this);
+            ListBoxEntidadesID.ClearSelection();
+            ListBoxEntidadesID.Items.Clear();
+            listaJuiz();
+
         }
 
         protected void TabCriarJuiz_Click(object sender, EventArgs e)

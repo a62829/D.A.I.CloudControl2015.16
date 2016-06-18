@@ -8,7 +8,7 @@ namespace _DataLayer
     {
         public d45Contabilista() { }
 
-        public bool guardar(string nome, string morada, string codPostal, string localidade, string email, string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
+        public void guardar(string nome, string morada, string codPostal, string localidade, string email, string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
             con.Open();
             cmd.Parameters.AddWithValue("@nome", nome);
@@ -28,7 +28,6 @@ namespace _DataLayer
             cmd.Connection = con;
             cmd.ExecuteNonQuery();
             con.Close();
-            return true;
         }
 
         public DataTable getListaContabilista()

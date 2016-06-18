@@ -91,19 +91,21 @@ namespace ajuUminho.controls.entidades
             TextBoxIbanID.Text = idto.iban;
             TextBoxNifID.Text = idto.nif;
             TextBoxLastChangedID.Text = idto.lastChangeBy;
-            ListBoxEntidadesID.ClearSelection();
+            //ListBoxEntidadesID.ClearSelection();
             //ListBoxEntidadesID.Items.Clear();
             //listaRepresentanteLegal();
         }
 
         protected void ButtonEditarID_Click(object sender, EventArgs e)
         {
-            ListBoxEntidadesID.ClearSelection();
             c43EdicaoInsolvente WsEI = new c43EdicaoInsolvente();
             WsEI.editarInsolvente(ListBoxEntidadesID.SelectedValue.ToString(), TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text);
             ClearAllText(this);
+            ListBoxEntidadesID.ClearSelection();
+            ListBoxEntidadesID.Items.Clear();
+            listaInsolvente();
         }
 
         protected void listaInsolvente()
@@ -185,10 +187,12 @@ namespace ajuUminho.controls.entidades
 
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
         {
-            ListBoxEntidadesID.ClearSelection();
             c44RemocaoInsolvente WsERL = new c44RemocaoInsolvente();
             WsERL.removerInsolvente(ListBoxEntidadesID.SelectedValue.ToString());
             ClearAllText(this);
+            ListBoxEntidadesID.ClearSelection();
+            ListBoxEntidadesID.Items.Clear();
+            listaInsolvente();
         }
 
         protected void TabPesquisarInsolvente_Click(object sender, EventArgs e)
