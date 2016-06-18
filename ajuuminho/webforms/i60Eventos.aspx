@@ -24,8 +24,6 @@
 
             <asp:SiteMapDataSource ID="SiteMapDataSource1" StartingNodeUrl="~/webforms/i102EditarProcesso.aspx" runat="server" />
 
-            <div class="ProcessosContentBox">
-
                 <div class="ViewsButtonsBox2">
                     <asp:Button Text="Criar" BorderStyle="None" ID="TabCriarID" CssClass="Initial" runat="server"
                         OnClick="TabCriar_Click" />
@@ -39,8 +37,8 @@
 
                 <div class="ViewsBoxProcessosCRUD">
 
-                    <div class="InsideViewsTableBox" runat="server" id="ContentListBox" visible="false">
-                        <div class="titleh4big">
+                    <div class="InsideViewsTableBoxProcessos" runat="server" id="ContentListBox" visible="false">
+                        <div class="titleh4">
                             <h4>Lista de Eventos</h4>
                         </div>
                         <div class="ListBoxParaTabsProcessos">
@@ -48,10 +46,11 @@
                         </div>
                     </div>
 
-                    <div class="InsideViewsDetailsBox" runat="server" id="ContentDetailsBox" visible="false">
-                        <div class="titleh4big" runat="server" id="DetailsTitleBox" visible="false">
+                    <div class="InsideViewsDetailsBoxProcessos" runat="server" id="ContentDetailsBox" visible="false">
+                        <div class="titleh4" runat="server" id="DetailsTitleBox" visible="false">
                             <h4>Detalhes do Evento</h4>
                         </div>
+
                         <table class="ContentTable">
                             <tr>
                                 <td>
@@ -91,7 +90,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </form>
 
     <div id="FooterBox">

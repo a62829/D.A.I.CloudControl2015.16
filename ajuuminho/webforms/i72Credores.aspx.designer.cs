@@ -49,15 +49,6 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.WebControls.SiteMapDataSource SiteMapDataSource1;
         
         /// <summary>
-        /// DropDownListCredoresID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListCredoresID;
-        
-        /// <summary>
         /// ListBoxCredoresID control.
         /// </summary>
         /// <remarks>
@@ -101,14 +92,5 @@ namespace ajuUminho.webforms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListBox ListBoxCredoresAssociadosID;
-        
-        /// <summary>
-        /// ButtonGravarID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonGravarID;
     }
 }

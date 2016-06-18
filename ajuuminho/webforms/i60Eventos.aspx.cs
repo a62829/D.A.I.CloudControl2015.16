@@ -14,8 +14,8 @@ namespace ajuUminho.webforms
 
                 if (!IsPostBack)
                 {
-                    string idProcesso = Application["idProcesso"].ToString();
-                }
+
+            }
                 else {
 
                 }
@@ -26,7 +26,7 @@ namespace ajuUminho.webforms
         {
             ContentListBox.Visible = false;
             ContentDetailsBox.Visible = true;
-            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Processos");
             DetailsTitleBox.Visible = false;
             ButtonCriarID.Visible = true;
             ButtonEditarID.Visible = false;
@@ -42,7 +42,7 @@ namespace ajuUminho.webforms
         {
             ContentListBox.Visible = true;
             ContentDetailsBox.Visible = true;
-            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBoxProcessos");
             DetailsTitleBox.Visible = true;
             ButtonCriarID.Visible = false;
             ButtonEditarID.Visible = true;
@@ -58,7 +58,7 @@ namespace ajuUminho.webforms
         {
             ContentListBox.Visible = true;
             ContentDetailsBox.Visible = true;
-            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBoxProcessos");
             DetailsTitleBox.Visible = true;
             ButtonCriarID.Visible = false;
             ButtonEditarID.Visible = false;
@@ -74,7 +74,7 @@ namespace ajuUminho.webforms
         {
             ContentListBox.Visible = false;
             ContentDetailsBox.Visible = false;
-            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Processos");
             DetailsTitleBox.Visible = false;
             ButtonCriarID.Visible = false;
             ButtonEditarID.Visible = false;

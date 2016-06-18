@@ -25,8 +25,6 @@
 
             <asp:SiteMapDataSource ID="SiteMapDataSource1" StartingNodeUrl="~/webforms/i102EditarProcesso.aspx" runat="server" />
 
-            <div class="ProcessosContentBox">
-
                 <div class="ViewsBoxProcessos">
 
                     <div class="InsideViewsBox">
@@ -56,7 +54,7 @@
                            Estado: </asp:Label>
                                 </td>
                                 <td>
-                                    <asp:DropDownList ID="DropDownListIdEstadoID" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList ID="DropDownListIdEstadoID" runat="server" CssClass="Dropdowns-Item"></asp:DropDownList>
                                 </td>
                             </tr>
                             <tr>
@@ -65,7 +63,7 @@
                            Tipo processo: </asp:Label>
                                 </td>
                                 <td>
-                                    <asp:DropDownList ID="DropDownListIdTipoProcessoID" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList ID="DropDownListIdTipoProcessoID" runat="server" CssClass="Dropdowns-Item"></asp:DropDownList>
                                 </td>
                             </tr>
                         </table>
@@ -76,7 +74,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+ 
     </form>
 
     <div id="FooterBox">

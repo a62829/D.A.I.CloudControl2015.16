@@ -12,7 +12,7 @@
 <body>
     <form id="form1" runat="server">
 
-        <uc1:i14TerminoDeSessao runat="server" ID="headerID"/>
+        <uc1:i14TerminoDeSessao runat="server" ID="headerID" />
 
         <div id="BigBox">
 
@@ -35,11 +35,9 @@
             <asp:SiteMapDataSource ID="SiteMapDataSource1" StartingNodeUrl="~/webforms/InterfaceProcesso.aspx" SiteMapProvider="MyNewSiteMapProvider" runat="server" />
 
 
-            <div class="ProcessosContentBox">
+            <div class="ViewsBoxProcessos">
 
-            <div class="ViewsBoxProcessos" >
-
-                <%--<div class="InsideViewsBox">--%>
+                <div class="InsideViewsDetailsBoxProcessos">
                     <br />
                     <br />
                     <br />
@@ -47,17 +45,15 @@
                     <br />
 
                     <div class="AlignBox">
-                        <div class="titleh3">
-                            <h3>Selecione um processo</h3>
+                        <div class="titleh4">
+                            <h4>Selecione um processo</h4>
                         </div>
                         <asp:ListBox ID="ListBoxProcessosID" runat="server" CssClass="ListBoxProcessos-Item" AutoPostBack="True" OnSelectedIndexChanged="ListBoxProcessosID_SelectedIndexChanged"></asp:ListBox>
                     </div>
 
                 </div>
+            </div>
         </div>
-
-        </div>
-
     </form>
 
     <div id="FooterBox">

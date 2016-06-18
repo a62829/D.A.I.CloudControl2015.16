@@ -26,10 +26,7 @@
             <asp:SiteMapDataSource ID="SiteMapDataSource1" StartingNodeUrl="~/webforms/InterfaceProcesso.aspx" SiteMapProvider="MyNewSiteMapProvider" runat="server" />
 
 
-            <div class="ProcessosContentBox">
-
                     <div class="ViewsBoxProcessos">
-
 
                         <div class="InsideViewsTableBoxProcessos">
                             <div class="titleh4">
@@ -52,7 +49,7 @@
                            Estado: </asp:Label>
                                     </td>
                                     <td>
-                                        <asp:DropDownList ID="DropDownListIdEstadoID" runat="server"></asp:DropDownList>
+                                        <asp:DropDownList ID="DropDownListIdEstadoID" runat="server" CssClass="Dropdowns-Item"></asp:DropDownList>
                                     </td>
                                 </tr>
                                 <tr>
@@ -61,18 +58,18 @@
                            Tipo processo: </asp:Label>
                                     </td>
                                     <td>
-                                        <asp:DropDownList ID="DropDownListIdTipoProcessoID" runat="server"></asp:DropDownList>
+                                        <asp:DropDownList ID="DropDownListIdTipoProcessoID" runat="server" CssClass="Dropdowns-Item"></asp:DropDownList>
                                     </td>
                                 </tr>
                             </table>
                         </div>
 
                         <div class="InsideViewsDetailsBoxProcessos">
-                            <div class="titleh4big">
+                            <div class="titleh4">
                                 <h4>Selecione um insolvente</h4>
                             </div>
                             <div class="AlignBox">
-                                <asp:ListBox ID="ListBoxInsolventesID" runat="server" CssClass="ListBoxEntidades-Item" AutoPostBack="True"></asp:ListBox>
+                                <asp:ListBox ID="ListBoxInsolventesID" runat="server" CssClass="ListBoxInsolventesProcesso-Item" AutoPostBack="True"></asp:ListBox>
                             </div>
                         </div>
 
@@ -82,7 +79,6 @@
                     </div>
                 </div>
 
-        </div>
     </form>
     <div id="FooterBox">
         <div id="FooterBox2">

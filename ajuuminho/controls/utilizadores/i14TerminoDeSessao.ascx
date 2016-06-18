@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="i14TerminoDeSessao.ascx.cs" Inherits="ajuUminho.controls.utilizadores.i14TerminoDeSessao" %>
 
-<div id="HearderBox">
+<div id="HeaderBox">
 
     <div id="LogoBox">
     </div>

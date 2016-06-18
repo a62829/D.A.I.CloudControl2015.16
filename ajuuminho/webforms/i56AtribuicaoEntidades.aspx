@@ -14,11 +14,22 @@
         <uc1:i14TerminoDeSessao runat="server" ID="headerID" />
         <div id="BigBox">
 
-            <div class="ViewBoxCRUD">
+            <div class="TreeViewBox">
+                <asp:TreeView ID="TreeView1" CssClass="TreeView" runat="server" DataSourceID="SiteMapDataSource1" ImageSet="Msdn" NodeIndent="10">
+                    <HoverNodeStyle Font-Underline="false" BackColor="#CCCCCC" BorderColor="#888888" BorderStyle="none" />
+                    <NodeStyle Font-Names="Helvetica" Font-Size="8pt" ForeColor="Black" HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="2px" />
+                    <ParentNodeStyle Font-Bold="False" />
+                    <SelectedNodeStyle Font-Underline="False" HorizontalPadding="3px" VerticalPadding="1px" BackColor="White" BorderColor="#888888" BorderStyle="Solid" BorderWidth="1px" />
+                </asp:TreeView>
+            </div>
+
+            <asp:SiteMapDataSource ID="SiteMapDataSource1" StartingNodeUrl="~/webforms/i102EditarProcesso.aspx" runat="server" />
+
+            <div class="ViewsBoxProcessos">
 
                 <div class="EntidadesProcessoBox">
                     <div class="titleh4">
-                        <h4>Entidades</h4>
+                        <h4>Selecione uma entidade</h4>
                     </div>
                     <div class="DropDpwnEntidadesProcesso">
                         <asp:DropDownList ID="DropDownListEntidadesID" CssClass="DropDpwnEntidadesProcesso-Item" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownListEntidadesID_SelectedIndexChanged">
@@ -32,17 +43,19 @@
                             <asp:ListItem>Prestador de Serviços</asp:ListItem>
                             <asp:ListItem>Outras Entidades</asp:ListItem>
                         </asp:DropDownList>
-                        <p>
+                        <div class="AlignBox">
                             <asp:RadioButtonList ID="RadioButtonList1" runat="server" Visible="false">
-                                <asp:ListItem selected="True">Insolvente</asp:ListItem>
+                                <asp:ListItem Selected="True">Insolvente</asp:ListItem>
                                 <asp:ListItem>Credor</asp:ListItem>
-                            </asp:RadioButtonList></p>
-
+                            </asp:RadioButtonList>
+                        </div>
                     </div>
                 </div>
 
+                <br /><br />
+
                 <div class="AtribuirEntidadesBox">
-                    <div class="titleh4big">
+                    <div class="titleh4">
                         <h4>Atribuir ao processo</h4>
                     </div>
                     <div class="AtribuirEntidadesListBox1">
@@ -68,10 +81,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div id="ContentButtonsBox">
-                    <asp:Button ID="ButtonGravarID" runat="server" Text="Gravar" CssClass="ContentButton" />
                 </div>
             </div>
         </div>

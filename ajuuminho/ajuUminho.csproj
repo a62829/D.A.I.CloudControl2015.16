@@ -162,6 +162,7 @@
     <Content Include="controls\relatorios\i100Custos.ascx" />
     <Content Include="controls\relatorios\i16TiposEworkflows.ascx" />
     <Content Include="controls\relatorios\i19Relatorios.ascx" />
+    <Content Include="controls\relatorios\i89Tipos.ascx" />
     <Content Include="controls\relatorios\i94PesquisaCreditoReclamado.ascx" />
     <Content Include="controls\relatorios\i98AcoesRelatorio.ascx" />
     <Content Include="controls\utilizadores\i12AutenticacaoDeUtilizadores.ascx" />
@@ -284,6 +285,13 @@
     </Compile>
     <Compile Include="controls\relatorios\i19Relatorios.ascx.designer.cs">
       <DependentUpon>i19Relatorios.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\relatorios\i89Tipos.ascx.cs">
+      <DependentUpon>i89Tipos.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\relatorios\i89Tipos.ascx.designer.cs">
+      <DependentUpon>i89Tipos.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\relatorios\i94PesquisaCreditoReclamado.ascx.cs">
       <DependentUpon>i94PesquisaCreditoReclamado.ascx</DependentUpon>
@@ -437,13 +445,6 @@
     </Compile>
     <Compile Include="webforms\i86Arquivo.aspx.designer.cs">
       <DependentUpon>i86Arquivo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="webforms\i89Tipos.aspx.cs">
-      <DependentUpon>i89Tipos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="webforms\i89Tipos.aspx.designer.cs">
-      <DependentUpon>i89Tipos.aspx</DependentUpon>
     </Compile>
     <Compile Include="webforms\i91CreditosReclamados.aspx.cs">
       <DependentUpon>i91CreditosReclamados.aspx</DependentUpon>
@@ -599,7 +600,6 @@
     <Content Include="webforms\i80FicheirosMultimedia.aspx" />
     <Content Include="webforms\i83FicheirosTexto.aspx" />
     <Content Include="webforms\i86Arquivo.aspx" />
-    <Content Include="webforms\i89Tipos.aspx" />
     <Content Include="webforms\i91CreditosReclamados.aspx" />
     <Content Include="webforms\InterfaceAdministracao.aspx" />
     <Content Include="webforms\InterfaceEntidades.aspx" />
