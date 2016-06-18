@@ -91,19 +91,22 @@ namespace ajuUminho.controls.entidades
             TextBoxIbanID.Text = cdto.iban;
             TextBoxNifID.Text = cdto.nif;
             TextBoxLastChangedID.Text = cdto.lastChangeBy;
-            ListBoxEntidadesID.ClearSelection();
+            //ListBoxEntidadesID.ClearSelection();
             //ListBoxEntidadesID.Items.Clear();
             //listaCredor();
         }
 
         protected void ButtonEditarID_Click(object sender, EventArgs e)
         {
-            ListBoxEntidadesID.ClearSelection();
             c39EdicaoCredor WsEC = new c39EdicaoCredor();
             WsEC.editarCredor(ListBoxEntidadesID.SelectedValue.ToString(), TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text);
             ClearAllText(this);
+            ListBoxEntidadesID.ClearSelection();
+            ListBoxEntidadesID.Items.Clear();
+            listaCredor();
+
         }
 
         protected void listaCredor()
@@ -122,10 +125,12 @@ namespace ajuUminho.controls.entidades
 
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
         {
-            ListBoxEntidadesID.ClearSelection();
             c40RemocaoCredor WsERL = new c40RemocaoCredor();
             WsERL.removerCredor(ListBoxEntidadesID.SelectedValue.ToString());
             ClearAllText(this);
+            ListBoxEntidadesID.ClearSelection();
+            ListBoxEntidadesID.Items.Clear();
+            listaCredor();
         }
 
         protected void TabCriarCredor_Click(object sender, EventArgs e)

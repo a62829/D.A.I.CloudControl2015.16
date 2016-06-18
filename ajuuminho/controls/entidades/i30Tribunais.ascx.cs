@@ -91,20 +91,22 @@ namespace ajuUminho.controls.entidades
             TextBoxIbanID.Text = t.iban;
             TextBoxNifID.Text = t.nif;
             TextBoxLastChangedID.Text = t.lastChangeBy;
-            ListBoxEntidadesID.ClearSelection();
+            //ListBoxEntidadesID.ClearSelection();
             //ListBoxEntidadesID.Items.Clear();
             //listaRepresentanteLegal();
         }
 
         protected void ButtonEditarID_Click(object sender, EventArgs e)
         {
-            ListBoxEntidadesID.ClearSelection();
+            
             c31EdicaoTribunal WsET = new c31EdicaoTribunal();
             WsET.editarTribunal(ListBoxEntidadesID.SelectedValue.ToString(), TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text);
             ClearAllText(this);
-
+            ListBoxEntidadesID.ClearSelection();
+            ListBoxEntidadesID.Items.Clear();
+            listaTribunal();
         }
 
         protected void listaTribunal()
@@ -127,6 +129,8 @@ namespace ajuUminho.controls.entidades
             WsERL.removerTribunal(ListBoxEntidadesID.SelectedValue.ToString());
             ClearAllText(this);
             ListBoxEntidadesID.ClearSelection();
+            ListBoxEntidadesID.Items.Clear();
+            listaTribunal();
         }
 
         protected void TabCriarTribunal_Click(object sender, EventArgs e)

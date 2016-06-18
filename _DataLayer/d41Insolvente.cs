@@ -101,6 +101,22 @@ namespace _DataLayer
             return dataTable;
         }
 
+        public DataTable getIdInsolventeNoProcesso(string idProcesso, string idInsolvente)
+        {
+            SqlDataReader reader;
+            con.Open();
+            cmd.Parameters.AddWithValue("@idProcesso", Convert.ToInt32(idProcesso));
+            cmd.Parameters.AddWithValue("@idInsolvente", Convert.ToInt32(idInsolvente));
+            cmd.CommandText = "SELECT id FROM insolventeNoProcesso WHERE idProcesso = @idProcesso AND idInsolvente = @idInsolvente";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            reader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
+        }
+
         public void removerInsolvente(string id)
         {
             cmd.Parameters.AddWithValue("@id", id);

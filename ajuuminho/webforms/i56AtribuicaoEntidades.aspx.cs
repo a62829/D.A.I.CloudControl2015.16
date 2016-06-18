@@ -89,23 +89,11 @@ namespace ajuUminho.webforms
                 else if (DropDownListEntidadesID.Text == "Contabilista")
                 {
                     c47EdicaoContabilista c = new c47EdicaoContabilista();
-                    if (RadioButtonList1.SelectedItem.Text == "Credor")
-                    {
-                        c.adicionarContabilistaAoCredorNoProcesso((string)Session["idProcesso"], ListBoxEntidadesID.SelectedItem.Value.ToString(), Session["userId"].ToString(), pdto.listaIDtoNoProcesso.Values.ToString());
-                        ListBoxEntidadesAssociadosID.Items.Clear();
-                        ListBoxEntidadesID.Items.Clear();
-                        listaContabilistas();
-                    } else if (DropDownListEntidadesID.Text == "Insolvente")
-                    {
+
                         c.adicionarContabilistaAoInsolventeNoProcesso((string)Session["idProcesso"], ListBoxEntidadesID.SelectedItem.Value.ToString(), Session["userId"].ToString(), pdto.listaIDtoNoProcesso.Values.ToString());
                         ListBoxEntidadesAssociadosID.Items.Clear();
                         ListBoxEntidadesID.Items.Clear();
                         listaContabilistas();
-                    } else
-                    {
-                        //
-                    }
-
                 }
                 else if (DropDownListEntidadesID.Text == "Tribunal")
                 {
@@ -190,24 +178,10 @@ namespace ajuUminho.webforms
                 else if (DropDownListEntidadesID.Text == "Contabilista")
                 {
                     c47EdicaoContabilista c = new c47EdicaoContabilista();
-                    if (RadioButtonList1.SelectedItem.Text == "Credor")
-                    {
-                        c.adicionarContabilistaAoCredorNoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString(), pdto.listaIDtoNoProcesso.Values.ToString());
-                        ListBoxEntidadesAssociadosID.Items.Clear();
-                        ListBoxEntidadesID.Items.Clear();
-                        listaContabilistas();
-                    }
-                    else if (DropDownListEntidadesID.Text == "Insolvente")
-                    {
                         c.adicionarContabilistaAoInsolventeNoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString(), pdto.listaIDtoNoProcesso.Values.ToString());
                         ListBoxEntidadesAssociadosID.Items.Clear();
                         ListBoxEntidadesID.Items.Clear();
                         listaContabilistas();
-                    }
-                    else
-                    {
-                        //
-                    }
                 }
                 else if (DropDownListEntidadesID.Text == "Tribunal")
                 {

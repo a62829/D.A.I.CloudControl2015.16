@@ -106,7 +106,7 @@ namespace ajuUminho.controls.entidades
             listaRepresentanteLegal();
             ListBoxEntidadesID.DataBind();
             ClearAllText(this);
-            ListBoxEntidadesID.ClearSelection();
+            //ListBoxEntidadesID.ClearSelection();
         }
 
         protected void listaRepresentanteLegal()
@@ -136,7 +136,7 @@ namespace ajuUminho.controls.entidades
             WsERL.removerRepresentanteLegal(y);
             listaRepresentanteLegal();
             ClearAllText(this);
-            ListBoxEntidadesID.ClearSelection();
+            //ListBoxEntidadesID.ClearSelection();
             string mystring = "Representante Legal eliminado com sucesso.";
             this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
         }

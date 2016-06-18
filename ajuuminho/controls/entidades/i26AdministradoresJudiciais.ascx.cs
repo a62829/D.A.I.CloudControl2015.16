@@ -92,7 +92,9 @@ namespace ajuUminho.controls.entidades
             TextBoxIbanID.Text = aj.iban;
             TextBoxNifID.Text = aj.nif;
             TextBoxLastChangedID.Text = aj.lastChangeBy;
-            ListBoxEntidadesID.ClearSelection();
+            //listaAdministradorJudicial();
+            //ListBoxEntidadesID.DataBind();
+            //ListBoxEntidadesID.ClearSelection();
             //ListBoxEntidadesID.Items.Clear();
             //listaRepresentanteLegal();
         }
@@ -104,11 +106,11 @@ namespace ajuUminho.controls.entidades
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text);
             ClearAllText(this);
-            ListBoxEntidadesID.ClearSelection();
         }
 
         protected void listaAdministradorJudicial()
         {
+            ListBoxEntidadesID.ClearSelection();
             c27EdicaoAdministradorJudicial WsEAJ = new c27EdicaoAdministradorJudicial();
             this.lista = WsEAJ.getListaAdministradorJudicial();
             foreach (KeyValuePair<String, d25AdministradorJudicialDto> pair in lista)
@@ -127,6 +129,8 @@ namespace ajuUminho.controls.entidades
             WsERL.removerAdministradorJudicial(ListBoxEntidadesID.SelectedValue.ToString());
             ClearAllText(this);
             ListBoxEntidadesID.ClearSelection();
+            ListBoxEntidadesID.Items.Clear();
+            listaAdministradorJudicial();
         }
 
         protected void ButtonPesquisarID_Click(object sender, EventArgs e)

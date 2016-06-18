@@ -121,40 +121,31 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl DetailsTitleBox;
         
         /// <summary>
-        /// LabelAtivosID control.
+        /// LabelInsolventeID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelAtivosID;
+        protected global::System.Web.UI.WebControls.Label LabelInsolventeID;
         
         /// <summary>
-        /// TextBoxAtivosID control.
+        /// TextBoxInsolventeID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxAtivosID;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxInsolventeID;
         
         /// <summary>
-        /// LabelNomeInsolventeID control.
+        /// HiddenFieldInsolventeID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNomeInsolventeID;
-        
-        /// <summary>
-        /// TextBoxNomeInsolventeID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxNomeInsolventeID;
+        protected global::System.Web.UI.WebControls.HiddenField HiddenFieldInsolventeID;
         
         /// <summary>
         /// LabelTipoAtivoID control.

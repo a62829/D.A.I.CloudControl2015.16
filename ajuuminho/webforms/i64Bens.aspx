@@ -44,7 +44,7 @@
                         <h4>Lista de Bens</h4>
                     </div>
                     <div class="ListBoxParaTabsProcessos">
-                        <asp:ListBox ID="ListBoxParaTabsProcessosID" CssClass="ListBoxParaTabsProcessos-Item" runat="server"></asp:ListBox>
+                        <asp:ListBox ID="ListBoxParaTabsProcessosID" CssClass="ListBoxParaTabsProcessos-Item" runat="server" OnSelectedIndexChanged="ListBoxParaTabsProcessosID_SelectedIndexChanged" AutoPostBack="True"></asp:ListBox>
                     </div>
                 </div>
 
@@ -55,20 +55,12 @@
                     <table class="ContentTable">
                         <tr>
                             <td>
-                                <asp:Label ID="LabelAtivosID" runat="server" Text="Label" CssClass="Labels-Item"> 
-                           Ativos: </asp:Label>
+                                <asp:Label ID="LabelInsolventeID" runat="server" Text="Label" CssClass="Labels-Item">
+                           Insolvente: </asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="TextBoxAtivosID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <asp:Label ID="LabelNomeInsolventeID" runat="server" Text="Label" CssClass="Labels-Item">
-                           Nome insolvente: </asp:Label>
-                            </td>
-                            <td>
-                                <asp:TextBox ID="TextBoxNomeInsolventeID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxInsolventeID" runat="server" Enabled="false"></asp:TextBox>
+                                <asp:HiddenField ID="HiddenFieldInsolventeID" runat="server" />
                             </td>
                         </tr>
                         <tr>
@@ -120,9 +112,9 @@
                 </div>
 
                 <div id="ContentButtonsBox">
-                    <asp:Button ID="ButtonCriarID" runat="server" Text="Criar" CssClass="ContentButton" Visible="false" />
-                    <asp:Button ID="ButtonEditarID" runat="server" Text="Editar" CssClass="ContentButton" Visible="false" />
-                    <asp:Button ID="ButtonEliminarID" runat="server" Text="Eliminar" CssClass="ContentButton" Visible="false" />
+                    <asp:Button ID="ButtonCriarID" runat="server" Text="Criar" CssClass="ContentButton" Visible="false" OnClick="ButtonCriarID_Click" />
+                    <asp:Button ID="ButtonEditarID" runat="server" Text="Editar" CssClass="ContentButton" Visible="false" OnClick="ButtonEditarID_Click" />
+                    <asp:Button ID="ButtonEliminarID" runat="server" Text="Eliminar" CssClass="ContentButton" Visible="false" OnClick="ButtonEliminarID_Click" />
                     <asp:Button ID="ButtonPesquisarID" runat="server" Text="Pesquisar" CssClass="ContentButton" Visible="false" />
                 </div>
             </div>

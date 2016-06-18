@@ -8,7 +8,7 @@ namespace _DataLayer
     {
         public d45Contabilista() { }
 
-        public bool guardar(string nome, string morada, string codPostal, string localidade, string email, string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
+        public void guardar(string nome, string morada, string codPostal, string localidade, string email, string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
             con.Open();
             cmd.Parameters.AddWithValue("@nome", nome);
@@ -28,7 +28,6 @@ namespace _DataLayer
             cmd.Connection = con;
             cmd.ExecuteNonQuery();
             con.Close();
-            return true;
         }
 
         public DataTable getListaContabilista()
@@ -139,33 +138,33 @@ namespace _DataLayer
             con.Close();
         }
 
-        public void adicionarContabilistaAoCredorNoProcesso(string idProcesso, string idContabilista, string lastChangeBy, string idCredor)
-        {
-            con.Open();
-            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
-            cmd.Parameters.AddWithValue("@idContabilista", idContabilista);
-            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
-            cmd.Parameters.AddWithValue("@idCredor", idCredor);
-            cmd.CommandText = "UPDATE dbo.credorNoProcesso SET idContabilista = @idContabilista WHERE idProcesso = @idProcesso AND idCredor = @idCredor;";
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = con;
-            cmd.ExecuteNonQuery();
-            con.Close();
-        }
+        //public void adicionarContabilistaAoCredorNoProcesso(string idProcesso, string idContabilista, string lastChangeBy, string idCredor)
+        //{
+        //    con.Open();
+        //    cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+        //    cmd.Parameters.AddWithValue("@idContabilista", idContabilista);
+        //    cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+        //    cmd.Parameters.AddWithValue("@idCredor", idCredor);
+        //    cmd.CommandText = "UPDATE dbo.credorNoProcesso SET idContabilista = @idContabilista WHERE idProcesso = @idProcesso AND idCredor = @idCredor;";
+        //    cmd.CommandType = CommandType.Text;
+        //    cmd.Connection = con;
+        //    cmd.ExecuteNonQuery();
+        //    con.Close();
+        //}
 
-        public void removerContabilistaDoCredorNoProcesso(string idProcesso, string idCredor, string lastChangeBy)
-        {
-            con.Open();
-            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
-            cmd.Parameters.AddWithValue("@idCredor", idCredor);
-            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
-            cmd.CommandText = "UPDATE dbo.credorNoProcesso SET idContabilista = null WHERE idProcesso = @idProcesso AND idCredor = @idCredor";
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = con;
-            cmd.ExecuteNonQuery();
+        //public void removerContabilistaDoCredorNoProcesso(string idProcesso, string idCredor, string lastChangeBy)
+        //{
+        //    con.Open();
+        //    cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+        //    cmd.Parameters.AddWithValue("@idCredor", idCredor);
+        //    cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+        //    cmd.CommandText = "UPDATE dbo.credorNoProcesso SET idContabilista = null WHERE idProcesso = @idProcesso AND idCredor = @idCredor";
+        //    cmd.CommandType = CommandType.Text;
+        //    cmd.Connection = con;
+        //    cmd.ExecuteNonQuery();
 
 
-        }
+        //}
 
         public void removerContabilistaDoInsolventeNoProcesso(string idProcesso, string idInsolvente, string lastChangeBy)
         {
