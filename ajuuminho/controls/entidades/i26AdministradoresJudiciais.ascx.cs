@@ -137,6 +137,7 @@ namespace ajuUminho.controls.entidades
         protected void TabCriarAdministradorJudicial_Click(object sender, EventArgs e)
         {
             EnableAllText(this);
+            TextBoxLastChangedID.Enabled = false;
             ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = false;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
@@ -156,6 +157,7 @@ namespace ajuUminho.controls.entidades
         {
             ListBoxEntidadesID.ClearSelection();
             EnableAllText(this);
+            TextBoxLastChangedID.Enabled = false;
             ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");

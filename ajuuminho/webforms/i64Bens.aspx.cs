@@ -1,4 +1,6 @@
-﻿using System;
+﻿using _BusinessLayer;
+using ajuUminho.Ws;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,15 +11,17 @@ namespace ajuUminho.webforms
 {
     public partial class i64Bens : System.Web.UI.Page
     {
+        public string id { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
 
                 if (!IsPostBack)
                 {
+                    
                 }
                 else
                 {
-
+                    listaBens();
                 }
 
         }
@@ -26,7 +30,7 @@ namespace ajuUminho.webforms
         {
             ContentListBox.Visible = false;
             ContentDetailsBox.Visible = true;
-            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Bens");
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
             DetailsTitleBox.Visible = false;
             ButtonCriarID.Visible = true;
             ButtonEditarID.Visible = false;
@@ -42,7 +46,7 @@ namespace ajuUminho.webforms
         {
             ContentListBox.Visible = true;
             ContentDetailsBox.Visible = true;
-            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBoxBens");
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
             DetailsTitleBox.Visible = true;
             ButtonCriarID.Visible = false;
             ButtonEditarID.Visible = true;
@@ -58,7 +62,7 @@ namespace ajuUminho.webforms
         {
             ContentListBox.Visible = true;
             ContentDetailsBox.Visible = true;
-            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBoxBens");
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
             DetailsTitleBox.Visible = true;
             ButtonCriarID.Visible = false;
             ButtonEditarID.Visible = false;
@@ -74,7 +78,7 @@ namespace ajuUminho.webforms
         {
             ContentListBox.Visible = false;
             ContentDetailsBox.Visible = false;
-            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Bens");
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
             DetailsTitleBox.Visible = false;
             ButtonCriarID.Visible = false;
             ButtonEditarID.Visible = false;
@@ -86,5 +90,29 @@ namespace ajuUminho.webforms
             TabPesquisarID.CssClass = "Clicked";
         }
 
+        protected void ListBoxParaTabsProcessosID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void listaBens()
+        {
+            c65EdicaoBens bdto = new c65EdicaoBens();
+            d41InsolventeDto idto = new d41InsolventeDto();
+            var x = idto.getListaInsolventeNoProcesso((string)Session["idProcesso"]);
+            foreach (KeyValuePair<String, d41InsolventeDto> pair in x)
+            {
+               this.id = pair.Value.id.ToString();
+            }
+            var y = bdto.getListaBens((string)Session["idProcesso"], this.id);
+            foreach (KeyValuePair<String, d63BensDto> pair in y) 
+            {
+                ListItem Item = new ListItem();
+                Item.Text = pair.Value.descricao.ToString();
+                Item.Value = pair.Value.idBens.ToString();
+                ListBoxParaTabsProcessosID.Items.Add(Item);
+                ListBoxParaTabsProcessosID.DataBind();
+            }
+        }
     }
 }

@@ -25,7 +25,7 @@
 
             <asp:SiteMapDataSource ID="SiteMapDataSource1" StartingNodeUrl="~/webforms/i102EditarProcesso.aspx" runat="server" />
 
-            <div class="ViewsBoxProcessosCRUD">
+            <div class="ViewsBoxProcessos">
 
                 <div class="EntidadesProcessoBox">
                     <div class="titleh4">
@@ -43,15 +43,16 @@
                             <asp:ListItem>Prestador de Serviços</asp:ListItem>
                             <asp:ListItem>Outras Entidades</asp:ListItem>
                         </asp:DropDownList>
-                        <p>
+                        <div class="AlignBox">
                             <asp:RadioButtonList ID="RadioButtonList1" runat="server" Visible="false">
                                 <asp:ListItem Selected="True">Insolvente</asp:ListItem>
                                 <asp:ListItem>Credor</asp:ListItem>
                             </asp:RadioButtonList>
-                        </p>
-
+                        </div>
                     </div>
                 </div>
+
+                <br /><br />
 
                 <div class="AtribuirEntidadesBox">
                     <div class="titleh4">
@@ -80,10 +81,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div id="ContentButtonsBox">
-                    <asp:Button ID="ButtonGravarID" runat="server" Text="Gravar" CssClass="ContentButton" />
                 </div>
             </div>
         </div>

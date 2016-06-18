@@ -37,7 +37,7 @@
                     OnClick="TabPesquisar_Click" />
             </div>
 
-            <div class="ViewsBoxProcessosBensCRUD">
+            <div class="ViewsBoxProcessosCRUD">
 
                 <div class="InsideViewsTableBoxBens" runat="server" id="ContentListBox" visible="false">
                     <div class="titleh4">

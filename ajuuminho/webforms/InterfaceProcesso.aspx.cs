@@ -17,15 +17,15 @@ namespace ajuUminho.webforms
             }
         }
 
-        protected void TabCriarProcesso_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/webforms/i101CriarProcesso.aspx");
-        }
+        //protected void TabCriarProcesso_Click(object sender, EventArgs e)
+        //{
+        //    Response.Redirect("~/webforms/i101CriarProcesso.aspx");
+        //}
 
-        protected void TabEditarProcesso_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/webforms/i102EditarProcesso.aspx");
-        }
+        //protected void TabEditarProcesso_Click(object sender, EventArgs e)
+        //{
+        //    Response.Redirect("~/webforms/i102EditarProcesso.aspx");
+        //}
     }
 }
 

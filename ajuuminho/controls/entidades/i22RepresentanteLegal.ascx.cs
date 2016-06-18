@@ -137,11 +137,14 @@ namespace ajuUminho.controls.entidades
             listaRepresentanteLegal();
             ClearAllText(this);
             ListBoxEntidadesID.ClearSelection();
+            string mystring = "Representante Legal eliminado com sucesso.";
+            this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
         }
 
         protected void TabCriarRepresentanteLegal_Click(object sender, EventArgs e)
         {
             EnableAllText(this);
+            TextBoxLastChangedID.Enabled = false;
             ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = false;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
@@ -163,6 +166,7 @@ namespace ajuUminho.controls.entidades
             ListBoxEntidadesID.ClearSelection();
 
             EnableAllText(this);
+            TextBoxLastChangedID.Enabled = false;
             ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             ListBoxVisibility.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");

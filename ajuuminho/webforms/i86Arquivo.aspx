@@ -68,7 +68,7 @@
                            Estado: </asp:Label>
                             </td>
                             <td>
-                                <asp:DropDownList ID="DropDownListIdEstadoID" runat="server" Enabled="false"></asp:DropDownList>
+                                <asp:DropDownList ID="DropDownListIdEstadoID" runat="server" Enabled="false" CssClass="Dropdowns-Item"></asp:DropDownList>
                             </td>
                         </tr>
                         <tr>
@@ -77,7 +77,7 @@
                            Tipo processo: </asp:Label>
                             </td>
                             <td>
-                                <asp:DropDownList ID="DropDownListIdTipoProcessoID" runat="server" Enabled="false"></asp:DropDownList>
+                                <asp:DropDownList ID="DropDownListIdTipoProcessoID" runat="server" Enabled="false" CssClass="Dropdowns-Item"></asp:DropDownList>
                             </td>
                         </tr>
                         <tr>

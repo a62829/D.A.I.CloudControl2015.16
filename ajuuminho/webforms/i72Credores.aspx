@@ -25,9 +25,9 @@
 
             <asp:SiteMapDataSource ID="SiteMapDataSource1" StartingNodeUrl="~/webforms/i102EditarProcesso.aspx" runat="server" />
 
-            <div class="ViewsBoxProcessosCRUD">
+            <div class="ViewsBoxProcessos">
 
-                <br /><br /><br /><br />
+                <br /><br /><br /><br /><br />
 
                 <div class="AtribuirEntidadesBox">
                     <div class="titleh4big">
@@ -56,10 +56,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div id="ContentButtonsBox">
-                    <asp:Button ID="ButtonGravarID" runat="server" Text="Gravar" CssClass="ContentButton" OnClick="ButtonGravarID_Click" />
                 </div>
             </div>
         </div>
