@@ -15,8 +15,43 @@ namespace ajuUminho.controls.administracao
 
         }
 
+        protected void ClearAllText(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Text = string.Empty;
+                else
+                    ClearAllText(c);
+            }
+        }
+
+        protected void EnableAllText(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Enabled = true;
+                else
+                    EnableAllText(c);
+            }
+        }
+
+        protected void DisableAllText(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Enabled = false;
+                else
+                    DisableAllText(c);
+            }
+        }
+
         protected void TabCriarUtilizador_Click(object sender, EventArgs e)
         {
+            EnableAllText(this);
+            ClearAllText(this);
             ViewsBoxNoPadding.Attributes.Add("class", "ViewsBox");
             TrPasswordID.Visible = true;
             TrConfirmarPasswordID.Visible = true;
@@ -33,6 +68,8 @@ namespace ajuUminho.controls.administracao
 
         protected void TabEditarUtilizador_Click(object sender, EventArgs e)
         {
+            EnableAllText(this);
+            ClearAllText(this);
             TrPasswordID.Visible = false;
             TrConfirmarPasswordID.Visible = false;
             ListBoxVisibility.Visible = true;
@@ -48,6 +85,8 @@ namespace ajuUminho.controls.administracao
 
         protected void TabEliminarUtilizador_Click(object sender, EventArgs e)
         {
+            DisableAllText(this);
+            ClearAllText(this);
             TrPasswordID.Visible = false;
             TrConfirmarPasswordID.Visible = false;
             ListBoxVisibility.Visible = true;
@@ -84,6 +123,7 @@ namespace ajuUminho.controls.administracao
                     ws1.criarUtilizador(TextBoxUsernameID.Text, TextBoxPasswordID.Text, TextBoxEmailID.Text, TextBoxTelefoneID.Text);
                     string mystring = "Utilizador criado com sucesso";
                     this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
+                    ClearAllText(this);
                 }
                 else {
                     string mystring = "Confirmação da Password incorrecta";
@@ -111,7 +151,8 @@ namespace ajuUminho.controls.administracao
                 }
                 else
                 {
-                //////// CODIGO CRL
+                    //////// CODIGO AQUI
+                    ClearAllText(this);
 
                 }
 
@@ -129,7 +170,8 @@ namespace ajuUminho.controls.administracao
             }
             else
             {
-            //////// CODIGO CRL
+                //////// CODIGO AQUI
+                ClearAllText(this);
             }
         }
     }

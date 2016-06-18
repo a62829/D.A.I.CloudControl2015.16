@@ -29,7 +29,7 @@
                 <div id="MultiViewBox">
 
                     <div id="MultiViewButtonsBox">
-                        <asp:Button Text="Administrador de Utilizadores" BorderStyle="None" ID="TabAdministradorUtilizadoresID" CssClass="Initial" runat="server"
+                        <asp:Button Text="Administração de Utilizadores" BorderStyle="None" ID="TabAdministradorUtilizadoresID" CssClass="Initial" runat="server"
                             OnClick="TabAdministradorUtilizadores_Click" />
                         <asp:Button Text="Atribuir Perfil" BorderStyle="None" ID="TabAtribuirPerfilID" CssClass="Initial" runat="server"
                             OnClick="TabAtribuirPerfil_Click" />
