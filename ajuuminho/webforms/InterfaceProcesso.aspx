@@ -18,17 +18,6 @@
 
         <div id="BigBox">
 
-            <div class="TreeViewBox">
-                <asp:TreeView ID="TreeView1" CssClass="TreeView" runat="server" DataSourceID="SiteMapDataSource1" ImageSet="Msdn" NodeIndent="10">
-                    <HoverNodeStyle Font-Underline="false" BackColor="#CCCCCC" BorderColor="#888888" BorderStyle="none" />
-                    <NodeStyle Font-Names="Helvetica" Font-Size="8pt" ForeColor="Black" HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="2px" />
-                    <ParentNodeStyle Font-Bold="False" />
-                    <SelectedNodeStyle Font-Underline="False" HorizontalPadding="3px" VerticalPadding="1px" BackColor="White" BorderColor="#888888" BorderStyle="Solid" BorderWidth="1px" />
-                </asp:TreeView>
-            </div>
-
-            <asp:SiteMapDataSource ID="SiteMapDataSource1" SiteMapProvider="MyNewSiteMapProvider" runat="server" />
-
             <div class="ViewsBoxProcessos">
 
                 <div class="AlignBox">
@@ -37,14 +26,17 @@
                     </div>
                 </div>
 
-                <br />
-
-                <div id="MultiViewButtonsBoxProcessos">
-                    <asp:Button Text="Criar processo" BorderStyle="None" ID="TabCriarProcessoID" CssClass="Initial" runat="server"
-                        OnClick="TabCriarProcesso_Click" />
-                    <asp:Button Text="Editar processo" BorderStyle="None" ID="TabEditarProcessoID" CssClass="Initial" runat="server"
-                        OnClick="TabEditarProcesso_Click" />
+                <div class="TreeViewBoxCenter">
+                    <asp:TreeView ID="TreeView1" CssClass="TreeView" runat="server" DataSourceID="SiteMapDataSource1" ImageSet="Msdn" NodeIndent="10">
+                        <HoverNodeStyle Font-Underline="false" BackColor="#CCCCCC" BorderColor="#888888" BorderStyle="none" />
+                        <NodeStyle Font-Names="Helvetica" Font-Size="8pt" ForeColor="Black" HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="2px" />
+                        <ParentNodeStyle Font-Bold="False" />
+                        <SelectedNodeStyle Font-Underline="False" HorizontalPadding="3px" VerticalPadding="1px" BackColor="White" BorderColor="#888888" BorderStyle="Solid" BorderWidth="1px" />
+                    </asp:TreeView>
                 </div>
+
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" SiteMapProvider="MyNewSiteMapProvider" StartFromCurrentNode="true" runat="server" />
+
             </div>
 
         </div>

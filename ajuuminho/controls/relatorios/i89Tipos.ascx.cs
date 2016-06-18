@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ajuUminho.webforms
+namespace ajuUminho.controls.relatorios
 {
-    public partial class i89Tipos : System.Web.UI.Page
+    public partial class i89Tipos : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
