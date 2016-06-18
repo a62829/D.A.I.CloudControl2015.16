@@ -29,7 +29,7 @@
 
             <asp:SiteMapDataSource ID="SiteMapDataSource1" SiteMapProvider="MyNewSiteMapProvider" runat="server" />
 
-            <div class="ProcessosContentBox">
+            <div class="ViewsBoxProcessos">
 
                 <div class="AlignBox">
                     <div class="titleh3">
@@ -37,13 +37,14 @@
                     </div>
                 </div>
 
+                <br />
+
                 <div id="MultiViewButtonsBoxProcessos">
                     <asp:Button Text="Criar processo" BorderStyle="None" ID="TabCriarProcessoID" CssClass="Initial" runat="server"
                         OnClick="TabCriarProcesso_Click" />
                     <asp:Button Text="Editar processo" BorderStyle="None" ID="TabEditarProcessoID" CssClass="Initial" runat="server"
                         OnClick="TabEditarProcesso_Click" />
                 </div>
-
             </div>
 
         </div>

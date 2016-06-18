@@ -14,8 +14,8 @@ namespace ajuUminho.webforms
 
                 if (!IsPostBack)
                 {
-                    string idProcesso = Application["idProcesso"].ToString();
-                }
+                string idProcesso = Application["idProcesso"].ToString();
+            }
                 else
                 {
 

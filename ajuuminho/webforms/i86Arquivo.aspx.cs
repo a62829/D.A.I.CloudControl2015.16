@@ -14,8 +14,8 @@ namespace ajuUminho.webforms
 
                 if (!IsPostBack)
                 {
-                    string idProcesso = Application["idProcesso"].ToString();
-                }
+                string idProcesso = Application["idProcesso"].ToString();
+            }
                 else {
 
                 }
@@ -24,10 +24,9 @@ namespace ajuUminho.webforms
 
         protected void TabSuspenderProcesso_Click(object sender, EventArgs e)
         {
-            HideContenteDive.Visible = true;
             ContentListBox.Visible = false;
             ContentDetailsBox.Visible = true;
-            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Processos");
             DetailsTitleBox.Visible = false;
             ButtonSuspenderID.Visible = true;
             ButtonArquivarID.Visible = false;
@@ -40,10 +39,9 @@ namespace ajuUminho.webforms
 
         protected void TabArquivarProcesso_Click(object sender, EventArgs e)
         {
-            HideContenteDive.Visible = true;
             ContentListBox.Visible = false;
             ContentDetailsBox.Visible = true;
-            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2");
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Processos");
             DetailsTitleBox.Visible = false;
             ButtonSuspenderID.Visible = false;
             ButtonArquivarID.Visible = true;
@@ -56,10 +54,9 @@ namespace ajuUminho.webforms
 
         protected void TabReativarProcesso_Click(object sender, EventArgs e)
         {
-            HideContenteDive.Visible = true;
             ContentListBox.Visible = true;
             ContentDetailsBox.Visible = true;
-            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox");
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBoxProcessos");
             DetailsTitleBox.Visible = true;
             ButtonSuspenderID.Visible = false;
             ButtonArquivarID.Visible = false;
