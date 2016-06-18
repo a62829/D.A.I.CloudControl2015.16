@@ -111,6 +111,7 @@ namespace ajuUminho.controls.entidades
 
         protected void listaRepresentanteLegal()
         {
+            ListBoxEntidadesID.Items.Clear();
             c23EditarRepresentanteLegal WsERL = new c23EditarRepresentanteLegal();
             this.lista = WsERL.getListaRepresentanteLegal();
             foreach (KeyValuePair<String, d21RepresentanteLegalDto> pair in lista)

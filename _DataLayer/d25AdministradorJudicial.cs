@@ -149,7 +149,24 @@ namespace _DataLayer
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.ExecuteNonQuery();
-
         }
+
+        public DataTable getIdAdministradorJudicialNoProcesso(string idProcesso, string idAdministradorJudicial)
+        {
+            SqlDataReader reader;
+            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+            cmd.Parameters.AddWithValue("@idAdministradorJudicial", idAdministradorJudicial);
+            cmd.CommandText = "SELECT * FROM administradorJudicial WHERE NOT EXISTS (SELECT * FROM administradorJudicialNoProcesso WHERE idAdministradorJudicial = administradorJudicial.id AND idProcesso = '1')";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.Connection.Open();
+            reader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
+        }
+
+
     }
 }

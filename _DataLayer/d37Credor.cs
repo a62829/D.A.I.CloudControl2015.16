@@ -144,12 +144,28 @@ namespace _DataLayer
             con.Open();
             cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
             cmd.Parameters.AddWithValue("@idCredor", idCredor);
-            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
+            cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy); 
             cmd.CommandText = "DELETE FROM dbo.credorNoProcesso WHERE idProcesso = @idProcesso AND idCredor = @idCredor";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.ExecuteNonQuery();
 
+        }
+
+        public DataTable getIdCredorNoProcesso(string idProcesso, string idCredor)
+        {
+            SqlDataReader reader;
+            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
+            cmd.Parameters.AddWithValue("@idAdministradorJudicial", idCredor);
+            cmd.CommandText = "SELECT idCredorNoProcesso FROM administradorJudicial WHERE NOT EXISTS (SELECT * FROM administradorJudicialNoProcesso WHERE idAdministradorJudicial = administradorJudicial.id AND idProcesso = '1')";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.Connection.Open();
+            reader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
         }
     }
 }
