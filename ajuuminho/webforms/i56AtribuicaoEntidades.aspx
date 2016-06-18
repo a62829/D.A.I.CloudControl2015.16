@@ -52,6 +52,8 @@
                     </div>
                 </div>
 
+                <br /><br />
+
                 <div class="AtribuirEntidadesBox">
                     <div class="titleh4">
                         <h4>Atribuir ao processo</h4>
@@ -79,10 +81,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div id="ContentButtonsBox">
-                    <asp:Button ID="ButtonGravarID" runat="server" Text="Gravar" CssClass="ContentButton" />
                 </div>
             </div>
         </div>

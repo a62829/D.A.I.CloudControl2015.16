@@ -202,7 +202,7 @@ table {
 
 #HeaderBox {
     margin: auto;
-    width: 1255px;
+    width: 1245px;
     height: 150px;
     background-color: #eee;
     border: 2px solid #ddd;
@@ -219,7 +219,7 @@ table {
 
 #SearchBox {
   margin: auto;
-  width: 994px;
+  width: 984px;
   height: 50px;
   float: left;
   margin-top: 5px;
@@ -242,7 +242,7 @@ table {
   height: 34px;
   font-size: 12px;
   border: 1px solid #CCC;
-  width: 920px;
+  width: 910px;
   padding-left: 7px;
 }
 
@@ -256,7 +256,7 @@ table {
 
 #MenuBox {  
     margin: auto; 
-    width: 994px;
+    width: 984px;
     height: 75px;
     float:left;
 
@@ -295,10 +295,11 @@ table {
 
 #StatusBox {
     float: right;
+    margin-right: 3px;
 }
 
 #StatusBox2 {
-    background-color:lightgray;
+    background-color:gray;
     float: left;
     cursor:pointer;
     height: 30px;
@@ -309,7 +310,7 @@ table {
 }
 
 #StatusBox3 {
-    background-color:lightgray;
+    background-color:gray;
     margin-left: 5px;
     float: left;
     cursor:pointer;
@@ -359,7 +360,7 @@ table {
 #SiteMapPathBox {
     height: 35px;
     margin:auto;
-    width:1250px;
+    width:1240px;
     float:right;
 }
 
@@ -382,40 +383,44 @@ table {
 }
 
 #ProcessesHomeBox {
+    padding-top: 10px;
     width:415px;
-    min-height: 210px;
+    min-height: 200px;
     float: left;
 }
 
 #CalendarHomeBox {
     float: left;
     width:415px;
-    min-height: 210px;
 }
 
 #EventsHomeBox {
+    padding-top: 10px;
     width:415px;
-    min-height: 210px;
+    min-height: 200px;
     float: left;
 }
 
 #OnlineUsersHomeBox {
+    padding-top: 10px;
     margin-top: 30px;
     width:415px;
-    min-height: 210px;
+    min-height: 200px;
     float: left;
 }
 
 #DayDetailHomeBox {
+    padding-top: 10px;
     width:415px;
-    min-height: 210px;
+    min-height: 200px;
     float: left;
     margin-top: 30px;
 }
 
 #LastAccessesHomeBox {
+    padding-top: 10px;
     width:415px;
-    min-height: 210px;
+    min-height: 200px;
     float: left;
     margin-top: 30px;
 }
@@ -439,30 +444,26 @@ table {
 }
 
 .Processes-Item {
-    width:70%;
-    height:100%;
+    width:250px;
 }
 
 .Calendar-Item {
     margin:auto;
-    width:80%;
+    width:300px;
 }
 
 .Events-Item {
-    width:50%;
-    height:100%;
+    width:250px;
 }
 
 .OnlineUsers-Item {
-    width:30%;
-    height:100%;
+    width:150px;
 }
 
 
 .DayDetail-Item {
     margin: auto;
-    width:80%;
-    height:100%;
+    width:300px;
 }
 
 .DayDetail-Item tr th, .DayDetail-Item tr td, .LastAccesses-Item tr th, .LastAccesses-Item tr td {
@@ -479,8 +480,7 @@ table {
 
 .LastAccesses-Item {
     margin: auto;
-    width:80%;
-    height:100%;
+    width:300px;
 }
 
 /*MULTI-VIEW*/
