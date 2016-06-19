@@ -18,7 +18,7 @@ namespace ajuUminho.webforms
 
             if (!IsPostBack)
             {
-                //listaBens();
+                //listaCreditosReclamados();
             }
             else
             {
@@ -31,7 +31,7 @@ namespace ajuUminho.webforms
         {
             ContentListBox.Visible = false;
             ContentDetailsBox.Visible = true;
-            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Bens");
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Processos");
             DetailsTitleBox.Visible = false;
             ButtonCriarID.Visible = true;
             ButtonEditarID.Visible = false;
@@ -47,7 +47,7 @@ namespace ajuUminho.webforms
         {
             ContentListBox.Visible = true;
             ContentDetailsBox.Visible = true;
-            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Bens");
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Processos");
             DetailsTitleBox.Visible = true;
             ButtonCriarID.Visible = false;
             ButtonEditarID.Visible = true;
@@ -63,7 +63,7 @@ namespace ajuUminho.webforms
         {
             ContentListBox.Visible = true;
             ContentDetailsBox.Visible = true;
-            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Bens");
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Processos");
             DetailsTitleBox.Visible = true;
             ButtonCriarID.Visible = false;
             ButtonEditarID.Visible = false;
@@ -79,7 +79,7 @@ namespace ajuUminho.webforms
         {
             ContentListBox.Visible = false;
             ContentDetailsBox.Visible = false;
-            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Bens");
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Processos");
             DetailsTitleBox.Visible = false;
             ButtonCriarID.Visible = false;
             ButtonEditarID.Visible = false;
@@ -93,7 +93,7 @@ namespace ajuUminho.webforms
 
         protected void listaCreditosReclamados()
         {
-            //ListBoxParaTabsProcessosID.Items.Clear();
+            //ListBoxParaTabsCreditosReclamadosID.Items.Clear();
             c93EdicaoCreditosReclamados bdto = new c93EdicaoCreditosReclamados();
             d37CredorDto cdto = new d37CredorDto();
             var x = cdto.getListaCredorNoProcesso((string)Session["idProcesso"]);
@@ -133,7 +133,7 @@ namespace ajuUminho.webforms
             TextBoxDescricaoID.Text = bdto.descricao;
             TextBoxValorDividaID.Text = bdto.valorDivida;
             TextBoxValorRecebidoID.Text = bdto.valorRecebido;
-            //ListBoxParaTabsProcessosID.Items.Clear();
+            //ListBoxParaTabsCreditosReclamadosID.Items.Clear();
             listaCreditosReclamados();
             ListBoxParaTabsCreditosReclamadosID.DataBind();
             listaCredor();
@@ -142,13 +142,13 @@ namespace ajuUminho.webforms
         protected void ButtonEditarID_Click(object sender, EventArgs e)
         {
             c65EdicaoBens wseb = new c65EdicaoBens();
-            wseb.editarBens(ListBoxParaTabsProcessosID.SelectedValue.ToString(), TextBoxTipoAtivoID.Text, TextBoxDescricaoID.Text, TextBoxValorAquisicaoID.Text,
+            wseb.editarBens(ListBoxParaTabsCreditosReclamadosID.SelectedValue.ToString(), TextBoxTipoAtivoID.Text, TextBoxDescricaoID.Text, TextBoxValorAquisicaoID.Text,
                 TextBoxValorMercadoID.Text, TextBoxValorLiquidacaoID.Text, (string)Session["userId"]);
             //ClearAllText(this);
-            //ListBoxParaTabsProcessosID.ClearSelection();
-            ListBoxParaTabsProcessosID.Items.Clear();
-            listaBens();
-            ListBoxParaTabsProcessosID.DataBind();
+            //ListBoxParaTabsCreditosReclamadosID.ClearSelection();
+            ListBoxParaTabsCreditosReclamadosID.Items.Clear();
+            listaCreditosReclamados();
+            ListBoxParaTabsCreditosReclamadosID.DataBind();
         }
 
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
@@ -166,18 +166,18 @@ namespace ajuUminho.webforms
         protected void ButtonGuardarID_Click(object sender, EventArgs e)
         {
             c65EdicaoBens wseb = new c65EdicaoBens();
-            wseb.criarBens(ListBoxParaTabsProcessosID.SelectedValue.ToString(), HiddenFieldInsolventeID.Value.ToString(), TextBoxTipoAtivoID.Text, TextBoxDescricaoID.Text, TextBoxValorAquisicaoID.Text,
+            wseb.criarBens(ListBoxParaTabsCreditosReclamadosID.SelectedValue.ToString(), HiddenFieldInsolventeID.Value.ToString(), TextBoxTipoAtivoID.Text, TextBoxDescricaoID.Text, TextBoxValorAquisicaoID.Text,
                 TextBoxValorMercadoID.Text, TextBoxValorLiquidacaoID.Text, (string)Session["userId"]);
-            listaBens();
-            ListBoxParaTabsProcessosID.DataBind();
+            listaCreditosReclamados();
+            ListBoxParaTabsCreditosReclamadosID.DataBind();
             //ClearAllText(this);
-            //ListBoxParaTabsProcessosID.ClearSelection();
+            //ListBoxParaTabsCreditosReclamadosID.ClearSelection();
             //string mystring = "Representante Legal criado com sucesso.";
             //this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
 
             //ClearAllText(this);
-            ListBoxParaTabsProcessosID.Items.Clear();
-            listaBens();
+            ListBoxParaTabsCreditosReclamadosID.Items.Clear();
+            listaCreditosReclamados();
         }
     }
 }

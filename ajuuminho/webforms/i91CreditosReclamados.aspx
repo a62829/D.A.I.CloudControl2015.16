@@ -25,19 +25,31 @@
 
             <asp:SiteMapDataSource ID="SiteMapDataSource1" StartingNodeUrl="~/webforms/i102EditarProcesso.aspx" runat="server" />
 
-            <div class="ViewsBoxProcessos">
 
-                <div class="InsideViewsTableBoxProcessos">
+                        <div class="ViewsButtonsBox2">
+                <asp:Button Text="Criar" BorderStyle="None" ID="TabCriarID" CssClass="Initial" runat="server"
+                    OnClick="TabCriar_Click" />
+                <asp:Button Text="Editar" BorderStyle="None" ID="TabEditarID" CssClass="Initial" runat="server"
+                    OnClick="TabEditar_Click" />
+                <asp:Button Text="Eliminar" BorderStyle="None" ID="TabEliminarID" CssClass="Initial" runat="server"
+                    OnClick="TabEliminar_Click" />
+                <asp:Button Text="Pesquisar" BorderStyle="None" ID="TabPesquisarID" CssClass="Initial" runat="server"
+                    OnClick="TabPesquisar_Click" />
+            </div>
+
+            <div class="ViewsBoxProcessosCRUD">
+
+                <div class="InsideViewsTableBoxProcessos" runat="server" id="ContentListBox" visible="false">
                     <div class="titleh4">
                         <h4>Lista de Elementos Financeiros</h4>
                     </div>
 
-<asp:ListBox ID="ListBoxParaTabsCreditosReclamadosID" CssClass="ListBoxParaTabsProcessos-Item" runat="server"  AutoPostBack="True" OnSelectedIndexChanged="ListBoxParaTabsCreditosReclamadosID_SelectedIndexChanged"></asp:ListBox>
+                <asp:ListBox ID="ListBoxParaTabsCreditosReclamadosID" CssClass="ListBoxParaTabsProcessos-Item" runat="server"  AutoPostBack="True" OnSelectedIndexChanged="ListBoxParaTabsCreditosReclamadosID_SelectedIndexChanged"></asp:ListBox>
 
                 </div>
 
-                <div class="InsideViewsDetailsBoxProcessos">
-                    <div class="titleh4">
+                <div class="InsideViewsDetailsBoxProcessos" runat="server" id="ContentDetailsBox" visible="false">
+                    <div class="titleh4" runat="server" id="DetailsTitleBox" visible="false">
                         <h3>Detalhes</h3>
                     </div>
                                         <table class="ContentTable">
@@ -82,9 +94,10 @@
                 </div>
 
                 <div id="ContentButtonsBox">
-                    <asp:Button ID="ButtonEditarID" runat="server" Text="Editar" CssClass="ContentButton" OnClick="ButtonEditarID_Click" />
-                    <asp:Button ID="ButtonEliminarID" runat="server" Text="Eliminar" CssClass="ContentButton" OnClick="ButtonEliminarID_Click" />
-                    <asp:Button ID="ButtonGuardarID" runat="server" Text="Guardar" CssClass="ContentButton" OnClick="ButtonGuardarID_Click" />
+                    <asp:Button ID="ButtonCriarID" runat="server" Text="Criar" CssClass="ContentButton" Visible="false" OnClick="ButtonCriarID_Click" />
+                    <asp:Button ID="ButtonEditarID" runat="server" Text="Editar" CssClass="ContentButton" Visible="false" OnClick="ButtonEditarID_Click" />
+                    <asp:Button ID="ButtonEliminarID" runat="server" Text="Eliminar" CssClass="ContentButton" Visible="false" OnClick="ButtonEliminarID_Click" />
+                    <asp:Button ID="ButtonPesquisarID" runat="server" Text="Pesquisar" CssClass="ContentButton" Visible="false" />
                 </div>
             </div>
         </div>

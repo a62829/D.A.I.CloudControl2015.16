@@ -49,6 +49,51 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.WebControls.SiteMapDataSource SiteMapDataSource1;
         
         /// <summary>
+        /// TabCriarID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button TabCriarID;
+        
+        /// <summary>
+        /// TabEditarID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button TabEditarID;
+        
+        /// <summary>
+        /// TabEliminarID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button TabEliminarID;
+        
+        /// <summary>
+        /// TabPesquisarID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button TabPesquisarID;
+        
+        /// <summary>
+        /// ContentListBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ContentListBox;
+        
+        /// <summary>
         /// ListBoxParaTabsCreditosReclamadosID control.
         /// </summary>
         /// <remarks>
@@ -56,6 +101,24 @@ namespace ajuUminho.webforms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListBox ListBoxParaTabsCreditosReclamadosID;
+        
+        /// <summary>
+        /// ContentDetailsBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ContentDetailsBox;
+        
+        /// <summary>
+        /// DetailsTitleBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DetailsTitleBox;
         
         /// <summary>
         /// LabelCredorID control.
@@ -139,6 +202,15 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.WebControls.TextBox TextBoxValorRecebidoID;
         
         /// <summary>
+        /// ButtonCriarID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonCriarID;
+        
+        /// <summary>
         /// ButtonEditarID control.
         /// </summary>
         /// <remarks>
@@ -157,12 +229,12 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.WebControls.Button ButtonEliminarID;
         
         /// <summary>
-        /// ButtonGuardarID control.
+        /// ButtonPesquisarID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonGuardarID;
+        protected global::System.Web.UI.WebControls.Button ButtonPesquisarID;
     }
 }
