@@ -20,12 +20,11 @@ namespace ajuUminho.Ws
     {
 
         [WebMethod]
-        public void removerCreditoReclamado(string idProcesso, string idCredor)
+        public void removerCreditoReclamado(string idCreditoReclamado)
         {
             // efetuar controlos
             d90CreditosReclamadosDto crdto = new d90CreditosReclamadosDto();
-            string x = crdto.getIdCredorNoProcesso(idProcesso, idCredor);
-            crdto.removerCreditoReclamado(x);
+            crdto.removerCreditoReclamado(idCreditoReclamado);
         }
     }
 }

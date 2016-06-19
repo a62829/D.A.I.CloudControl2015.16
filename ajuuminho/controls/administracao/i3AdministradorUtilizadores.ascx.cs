@@ -48,6 +48,22 @@ namespace ajuUminho.controls.administracao
             }
         }
 
+        protected void listaUser()
+        {
+            ListBoxUtilizadoresID.Items.Clear();
+            gestaoIdentidade cde = new gestaoIdentidade();
+            var lista = cde.getListaUsers();
+            foreach (KeyValuePair<String, String> pair in lista)
+            {
+                ListItem Item = new ListItem();
+                Item.Text = pair.Value.ToString();
+                Item.Value = pair.Key.ToString();
+                ListBoxUtilizadoresID.Items.Add(Item);
+
+            }
+            ListBoxUtilizadoresID.DataBind();
+        }
+
         protected void TabCriarUtilizador_Click(object sender, EventArgs e)
         {
             EnableAllText(this);
@@ -68,6 +84,7 @@ namespace ajuUminho.controls.administracao
 
         protected void TabEditarUtilizador_Click(object sender, EventArgs e)
         {
+            listaUser();
             EnableAllText(this);
             ClearAllText(this);
             TrPasswordID.Visible = false;
@@ -85,6 +102,7 @@ namespace ajuUminho.controls.administracao
 
         protected void TabEliminarUtilizador_Click(object sender, EventArgs e)
         {
+            listaUser();
             DisableAllText(this);
             ClearAllText(this);
             TrPasswordID.Visible = false;
@@ -102,62 +120,41 @@ namespace ajuUminho.controls.administracao
 
         protected void ButtonCriarID_Click(object sender, EventArgs e)
         {
-
-            //if ( (TextBoxUsernameID.Text=="") ||
-            //     (TextBoxPasswordID.Text == "") ||
-            //     (TextBoxConfirmarPasswordID.Text == "") ||
-            //     (TextBoxEmailID.Text == "") ||
-            //     (TextBoxTelefoneID.Text == ""))
-
-            //    {
-            //    string mystring = "Deve preencher todos os campos.";
-            //    this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
-
-            //    }
-
-            //else
-            //{
-                gestaoIdentidade ws1 = new gestaoIdentidade();
-                //if (TextBoxPasswordID.Text == TextBoxConfirmarPasswordID.Text)
-                //{
+                    gestaoIdentidade ws1 = new gestaoIdentidade();
                     ws1.criarUtilizador(TextBoxUsernameID.Text, TextBoxPasswordID.Text, TextBoxEmailID.Text, TextBoxTelefoneID.Text);
                     string mystring = "Utilizador criado com sucesso";
                     this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
                     ClearAllText(this);
-                //}
-                //else {
-                //    string mystring = "Confirmação da Password incorrecta";
-                //    this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
-                //}
-            //}
+
         }
 
         protected void ButtonEditarID_Click(object sender, EventArgs e)
         {
-            if (ListBoxEntidadesID.SelectedIndex == -1)
-            {
-                string mystring = "Primeiro deve seleccionar um utilizador que deseje editar.";
-                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
-            }
-            else
-            {
+            //if (ListBoxUtilizadoresID.SelectedIndex == -1)
+            //{
+            //    string mystring = "Primeiro deve seleccionar um utilizador que deseje editar.";
+            //    this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
+            //}
+            //else
+            //{
 
-                if ((TextBoxUsernameID.Text == "") ||
-                    (TextBoxEmailID.Text == "") ||
-                    (TextBoxTelefoneID.Text == ""))
-                {
-                    string mystring = "Todos os campos devem estar preenchidos.";
-                    this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
-                }
-                else
-                {
-                    //////// CODIGO AQUI
+            //    if ((TextBoxUsernameID.Text == "") ||
+            //        (TextBoxEmailID.Text == "") ||
+            //        (TextBoxTelefoneID.Text == ""))
+            //    {
+            //        string mystring = "Todos os campos devem estar preenchidos.";
+            //        this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
+            //    }
+            //    else
+            //    {
+                    gestaoIdentidade ws1 = new gestaoIdentidade();
+                    ws1.
                     ClearAllText(this);
 
-                }
+            //    }
 
 
-            }
+            //}
         }
 
         protected void ButtonEliminarID_Click(object sender, EventArgs e)

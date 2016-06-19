@@ -192,7 +192,20 @@ namespace ajuUminho.Ws
                 lista.Add(Convert.ToString(dt.Rows[i]["Id"]), Convert.ToString(dt.Rows[i]["Name"]));
             }
             return lista;
+        }
 
+        [WebMethod]
+        public bool editarUtilizador(string userName, string password, string email, string telefone)
+        {
+            gestaoAcessos connn = new gestaoAcessos();
+            if (connn.criarUtilizador(userName, password, email, telefone) == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
 

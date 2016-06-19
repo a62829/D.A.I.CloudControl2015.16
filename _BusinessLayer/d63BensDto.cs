@@ -59,7 +59,7 @@ namespace _BusinessLayer
         {
             this.idBens = idBem;
             this.idInsolventeNoProcesso = idInsolventeNoProcesso;
-            this.TipoAtivo = TipoAtivo;
+            this.TipoAtivo = idTipoAtivo;
             this.descricao = descricao;
             this.valorAquisicao = valorAquisicao;
             this.valorMercado = valorMercado;
@@ -119,6 +119,12 @@ namespace _BusinessLayer
                 lista.Add(i.ToString(), edto);
             }
             return lista;
+        }
+
+        public void removerBem(string idBem)
+        {
+            d63Bens b = new d63Bens();
+            b.removerBem(idBem);
         }
     }
 }

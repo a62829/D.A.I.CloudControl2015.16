@@ -93,10 +93,10 @@ namespace _BusinessLayer
             return lista;
         }
 
-        public void removerCreditoReclamado(string idCredorNoProcesso)
+        public void removerCreditoReclamado(string idCreditoReclamado)
         {
             d90CreditosReclamados c = new d90CreditosReclamados();
-            c.removerCreditoReclamado(idCredorNoProcesso);
+            c.removerCreditoReclamado(idCreditoReclamado);
         }
     }
 }

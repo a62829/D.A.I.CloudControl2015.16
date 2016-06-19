@@ -189,6 +189,11 @@ namespace ajuUminho.App_Code
                 return false;
             }
         }
+
+        public bool EditarUtilizador(string userName, string password, string email, string telefone)
+        {
+
+        }
     }
 
 }

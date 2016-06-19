@@ -16,7 +16,6 @@ namespace _DataLayer
             string valorMercado, string valorLiquidacao, string lastChangeBy)
         {
             con.Open();
-            cmd.Parameters.AddWithValue("@id", idBem);
             cmd.Parameters.AddWithValue("@idInsolventeNoProcesso", idInsolventeNoProcesso);
             cmd.Parameters.AddWithValue("@idTipoAtivo", idTipoAtivo);
             cmd.Parameters.AddWithValue("@descricao", descricao);
@@ -24,7 +23,7 @@ namespace _DataLayer
             cmd.Parameters.AddWithValue("@valorMercado", valorMercado);
             cmd.Parameters.AddWithValue("@valorLiquidacao", valorLiquidacao);
             cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
-            cmd.CommandText = "INSERT INTO dbo.ativo VALUES (@id, @idInsolventeNoProcesso, @idTipoAtivo, @descricao, @valorAquisicao, @valorMercado, @valorLiquidacao, @lastChangeBy);";
+            cmd.CommandText = "INSERT INTO dbo.ativo VALUES (@idInsolventeNoProcesso, @idTipoAtivo, @descricao, @valorAquisicao, @valorMercado, @valorLiquidacao, @lastChangeBy);";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.ExecuteNonQuery();
@@ -95,10 +94,10 @@ namespace _DataLayer
         }
         
 
-        public void removerBem(string idInsolventeNoProcesso)
+        public void removerBem(string idBem)
         {
-            cmd.Parameters.AddWithValue("@idInsolventeNoProcesso", idInsolventeNoProcesso);
-            cmd.CommandText = "DELETE FROM dbo.ativo WHERE idInsolventeNoProcesso = @idInsolventeNoProcesso";
+            cmd.Parameters.AddWithValue("@idBem", idBem);
+            cmd.CommandText = "DELETE FROM dbo.ativo WHERE id = @idBem";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();

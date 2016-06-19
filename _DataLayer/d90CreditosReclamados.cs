@@ -68,10 +68,10 @@ namespace _DataLayer
             return dataTable;
         }
 
-        public void removerCreditoReclamado(string idCredorNoProcesso)
+        public void removerCreditoReclamado(string idCreditoReclamado)
         {
-            cmd.Parameters.AddWithValue("@idCredorNoProcesso", idCredorNoProcesso);
-            cmd.CommandText = "DELETE FROM dbo.reclamacaoCredito WHERE idCredorNoProcesso = @idCredorNoProcesso";
+            cmd.Parameters.AddWithValue("@idCreditoReclamado", idCreditoReclamado);
+            cmd.CommandText = "DELETE FROM dbo.reclamacaoCredito WHERE id = @idCreditoReclamado";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();

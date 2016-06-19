@@ -17,9 +17,10 @@ namespace ajuUminho.webforms
 
                 if (!IsPostBack)
                 {
+                //listaInsolvente();
                 listaBens();
-                listarTipoBem();
-                listaInsolvente();
+                //listarTipoBem();
+
             }
                 else
                 {
@@ -63,8 +64,11 @@ namespace ajuUminho.webforms
 
         protected void TabCriar_Click(object sender, EventArgs e)
         {
+            listarTipoBem();
+            listaInsolvente();
             EnableAllText(this);
             TextBoxInsolventeID.Enabled = false;
+            DropDownList1.Enabled = true;
             ContentListBox.Visible = false;
             ContentDetailsBox.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Bens");
@@ -77,13 +81,14 @@ namespace ajuUminho.webforms
             TabEditarID.CssClass = "Initial";
             TabEliminarID.CssClass = "Initial";
             TabPesquisarID.CssClass = "Initial";
-            ClearAllText(this);
+            //ClearAllText(this);
         }
 
         protected void TabEditar_Click(object sender, EventArgs e)
         {
             EnableAllText(this);
             DropDownList1.Enabled = false;
+            TextBoxInsolventeID.Enabled = false;
             ContentListBox.Visible = true;
             ContentDetailsBox.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBoxBens");
@@ -97,11 +102,13 @@ namespace ajuUminho.webforms
             TabEliminarID.CssClass = "Initial";
             TabPesquisarID.CssClass = "Initial";
             ClearAllText(this);
+            //listaInsolvente();
         }
 
         protected void TabEliminar_Click(object sender, EventArgs e)
         {
             DisableAllText(this);
+            DropDownList1.Enabled = false;
             ContentListBox.Visible = true;
             ContentDetailsBox.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBoxBens");
@@ -115,6 +122,7 @@ namespace ajuUminho.webforms
             TabEliminarID.CssClass = "Clicked";
             TabPesquisarID.CssClass = "Initial";
             ClearAllText(this);
+            //listaInsolvente();
         }
 
         protected void TabPesquisar_Click(object sender, EventArgs e)
@@ -186,18 +194,13 @@ namespace ajuUminho.webforms
         protected void ButtonCriarID_Click(object sender, EventArgs e)
         {
             c65EdicaoBens wseb = new c65EdicaoBens();
-            wseb.criarBens(ListBoxParaTabsProcessosID.SelectedValue.ToString(),HiddenFieldInsolventeID.Value.ToString(), DropDownList1.Text, TextBoxDescricaoID.Text, TextBoxValorAquisicaoID.Text,
+            d41InsolventeDto idto = new d41InsolventeDto();
+            var x = idto.getIdInsolventeNoProcesso((string)Session["idProcesso"], HiddenFieldInsolventeID.Value.ToString());
+            wseb.criarBens(null, x, DropDownList1.SelectedValue.ToString(), TextBoxDescricaoID.Text, TextBoxValorAquisicaoID.Text,
                 TextBoxValorMercadoID.Text, TextBoxValorLiquidacaoID.Text, (string)Session["userId"]);
-            listaBens();
-            ListBoxParaTabsProcessosID.DataBind();
-            //ClearAllText(this);
-            //ListBoxParaTabsProcessosID.ClearSelection();
-            //string mystring = "Representante Legal criado com sucesso.";
-            //this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
-
-            //ClearAllText(this);
             ListBoxParaTabsProcessosID.Items.Clear();
             listaBens();
+            ListBoxParaTabsProcessosID.DataBind();
         }
 
         protected void DropDownListInsolventeID_SelectedIndexChanged(object sender, EventArgs e)
@@ -207,14 +210,9 @@ namespace ajuUminho.webforms
 
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
         {
-            //    c24RemocaoRepresentanteLegal WsERL = new c24RemocaoRepresentanteLegal();
-            //    var y = ListBoxEntidadesID.SelectedValue.ToString();
-            //    WsERL.removerRepresentanteLegal(y);
-            //    listaRepresentanteLegal();
-            //    ClearAllText(this);
-            //    ListBoxEntidadesID.ClearSelection();
-            //    string mystring = "Representante Legal eliminado com sucesso.";
-            //    this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
+            c66RemocaoBens wsrb = new c66RemocaoBens();
+            wsrb.removerBem(ListBoxParaTabsProcessosID.SelectedValue.ToString());
+            listaBens();
         }
 
         protected void listaInsolvente()

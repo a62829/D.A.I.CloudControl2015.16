@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using _BusinessLayer;
 
 namespace ajuUminho.Ws
 {
@@ -16,6 +17,12 @@ namespace ajuUminho.Ws
     // [System.Web.Script.Services.ScriptService]
     public class c66RemocaoBens : System.Web.Services.WebService
     {
-
+        [WebMethod]
+        public void removerBem(string idBem)
+        {
+            // efetuar controlos
+            d63BensDto bdto = new d63BensDto();
+            bdto.removerBem(idBem);
+        }
     }
 }

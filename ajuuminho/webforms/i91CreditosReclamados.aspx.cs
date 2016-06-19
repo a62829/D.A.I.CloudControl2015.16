@@ -18,7 +18,8 @@ namespace ajuUminho.webforms
 
             if (!IsPostBack)
             {
-                listaCredor();
+                
+                //listaCredor();
             }
             else
             {
@@ -27,8 +28,44 @@ namespace ajuUminho.webforms
 
         }
 
+        protected void ClearAllText(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Text = string.Empty;
+                else
+                    ClearAllText(c);
+            }
+        }
+
+        protected void EnableAllText(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Enabled = true;
+                else
+                    EnableAllText(c);
+            }
+        }
+
+        protected void DisableAllText(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Enabled = false;
+                else
+                    DisableAllText(c);
+            }
+        }
+
         protected void TabCriar_Click(object sender, EventArgs e)
         {
+            listaCredor();
+            EnableAllText(this);
+            TextBoxCredorID.Enabled = false;
             ContentListBox.Visible = true;
             ContentDetailsBox.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Processos");
@@ -43,12 +80,16 @@ namespace ajuUminho.webforms
             TabPesquisarID.CssClass = "Initial";
             DropDownListCredorID.Visible = true;
             ListBoxParaTabsCreditosReclamadosID.Visible = false;
+            ClearAllText(this);
         }
 
 
 
         protected void TabEditar_Click(object sender, EventArgs e)
         {
+            listaCredor();
+            EnableAllText(this);
+            TextBoxCredorID.Enabled = false;
             ListBoxParaTabsCreditosReclamadosID.Visible = true;
             ContentListBox.Visible = true;
             ContentDetailsBox.Visible = true;
@@ -62,10 +103,12 @@ namespace ajuUminho.webforms
             TabEditarID.CssClass = "Clicked";
             TabEliminarID.CssClass = "Initial";
             TabPesquisarID.CssClass = "Initial";
+            ClearAllText(this);
         }
 
         protected void TabEliminar_Click(object sender, EventArgs e)
         {
+            DisableAllText(this);
             ContentListBox.Visible = true;
             ContentDetailsBox.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBoxProcessos");
@@ -78,6 +121,7 @@ namespace ajuUminho.webforms
             TabEditarID.CssClass = "Initial";
             TabEliminarID.CssClass = "Clicked";
             TabPesquisarID.CssClass = "Initial";
+            ClearAllText(this);
         }
 
         protected void TabPesquisar_Click(object sender, EventArgs e)
@@ -107,12 +151,14 @@ namespace ajuUminho.webforms
                 Item.Text = pair.Value.descricao.ToString();
                 Item.Value = pair.Value.idCreditoReclamado.ToString();
                 ListBoxParaTabsCreditosReclamadosID.Items.Add(Item);
-                ListBoxParaTabsCreditosReclamadosID.DataBind();
+                
             }
+            ListBoxParaTabsCreditosReclamadosID.DataBind();
         }
 
         protected void listaCredor()
         {
+            DropDownListCredorID.Items.Clear();
             var idProcesso = (string)Session["idProcesso"];
             d37CredorDto cdto = new d37CredorDto();
             var credor = cdto.getListaCredorNoProcesso(idProcesso);
@@ -124,12 +170,15 @@ namespace ajuUminho.webforms
                 Item.Value = pair.Value.id.ToString();
                 DropDownListCredorID.Items.Add(Item);
                 DropDownListCredorID.DataBind();
+                TextBoxCredorID.Text = pair.Value.nome.ToString();
             }
         }
 
         protected void DropDownListCredorID_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             TextBoxCredorID.Text = DropDownListCredorID.SelectedItem.Text.ToString();
+            
             listaCreditosReclamados();
         }
 
@@ -143,7 +192,7 @@ namespace ajuUminho.webforms
             TextBoxValorDividaID.Text = bdto.valorDivida;
             TextBoxValorRecebidoID.Text = bdto.valorRecebido;
             //ListBoxParaTabsCreditosReclamadosID.Items.Clear();
-            listaCreditosReclamados();
+            //listaCreditosReclamados();
             ListBoxParaTabsCreditosReclamadosID.DataBind();
             //listaCredor();
         }
@@ -164,10 +213,10 @@ namespace ajuUminho.webforms
         {
             c95RemocaoCreditosReclamados wseb = new c95RemocaoCreditosReclamados();
             var x = DropDownListCredorID.SelectedValue.ToString();
-            wseb.removerCreditoReclamado((string)Session["idProcesso"], x);
+            wseb.removerCreditoReclamado(ListBoxParaTabsCreditosReclamadosID.SelectedValue.ToString());
             listaCreditosReclamados();
             ListBoxParaTabsCreditosReclamadosID.DataBind();
-            ListBoxParaTabsCreditosReclamadosID.Items.Clear();
+            //ListBoxParaTabsCreditosReclamadosID.Items.Clear();
         }
 
         protected void ButtonCriarID_Click(object sender, EventArgs e)
@@ -180,8 +229,8 @@ namespace ajuUminho.webforms
                 TextBoxValorRecebidoID.Text, (string)Session["userId"]);
             listaCreditosReclamados();
             ListBoxParaTabsCreditosReclamadosID.DataBind();
-            ListBoxParaTabsCreditosReclamadosID.Items.Clear();
-            listaCreditosReclamados();
+            //ListBoxParaTabsCreditosReclamadosID.Items.Clear();
+            //listaCreditosReclamados();
         }
 
         protected void ButtonPesquisarID_Click(object sender, EventArgs e)
