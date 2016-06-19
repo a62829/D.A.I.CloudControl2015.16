@@ -42,7 +42,7 @@
                             <h4>Lista de Eventos</h4>
                         </div>
                         <div class="ListBoxParaTabsProcessos">
-                            <asp:ListBox ID="ListBoxParaTabsProcessosID" CssClass="ListBoxParaTabsProcessos-Item" runat="server"></asp:ListBox>
+                            <asp:ListBox ID="ListBoxParaTabsProcessosID" CssClass="ListBoxParaTabsProcessos-Item" runat="server" OnSelectedIndexChanged="ListBoxParaTabsProcessosID_SelectedIndexChanged" AutoPostBack="True"></asp:ListBox>
                         </div>
                     </div>
 
@@ -58,7 +58,7 @@
                            Tipo de Evento: </asp:Label>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="TextBoxTipoEventoID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
+                                    <asp:TextBox ID="TextBoxTipoEventoID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
@@ -67,7 +67,7 @@
                             Descrição: </asp:Label>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="TextBoxDescricaoID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
+                                    <asp:TextBox ID="TextBoxDescricaoID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
@@ -76,7 +76,7 @@
                            Data e hora: </asp:Label>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="TextBoxDataID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
+                                    <asp:TextBox ID="TextBoxDataID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
                                 </td>
                             </tr>
                         </table>

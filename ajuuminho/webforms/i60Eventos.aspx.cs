@@ -24,8 +24,43 @@ namespace ajuUminho.webforms
  
         }
 
+        protected void ClearAllText(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Text = string.Empty;
+                else
+                    ClearAllText(c);
+            }
+        }
+
+        protected void EnableAllText(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Enabled = true;
+                else
+                    EnableAllText(c);
+            }
+        }
+
+        protected void DisableAllText(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Enabled = false;
+                else
+                    DisableAllText(c);
+            }
+        }
+
         protected void TabCriar_Click(object sender, EventArgs e)
         {
+            EnableAllText(this);
+            TextBoxTipoEventoID.Enabled = false;
             ContentListBox.Visible = false;
             ContentDetailsBox.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Processos");
@@ -42,6 +77,8 @@ namespace ajuUminho.webforms
 
         protected void TabEditar_Click(object sender, EventArgs e)
         {
+            EnableAllText(this);
+            TextBoxTipoEventoID.Enabled = false;
             ContentListBox.Visible = true;
             ContentDetailsBox.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBoxProcessos");
@@ -58,6 +95,7 @@ namespace ajuUminho.webforms
 
         protected void TabEliminar_Click(object sender, EventArgs e)
         {
+            DisableAllText(this);
             ContentListBox.Visible = true;
             ContentDetailsBox.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBoxProcessos");

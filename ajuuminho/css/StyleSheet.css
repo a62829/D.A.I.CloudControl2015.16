@@ -1070,3 +1070,9 @@ table {
     float: left;
     width: 78%;
 }
+
+.RadioButtons {
+    margin: auto;
+    padding: 5px;
+    text-align: center;
+}

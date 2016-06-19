@@ -44,12 +44,10 @@
                             <asp:ListItem>Outras Entidades</asp:ListItem>
                         </asp:DropDownList>
 
-                        <div class="AlignBox" runat="server" Visible="false" id="RadioButtons">
-                            <asp:RadioButtonList ID="RadioButtonListID" runat="server">
-                                <asp:ListItem Selected="True">Insolvente</asp:ListItem>
-                                <asp:ListItem>Credor</asp:ListItem>
+                            <asp:RadioButtonList ID="RadioButtonListID" runat="server" CssClass="RadioButtons" Visible="false">
+                                <asp:ListItem Selected="True"> Atribuir ao Insolvente</asp:ListItem>
+                                <asp:ListItem> Atribuir ao Credor</asp:ListItem>
                             </asp:RadioButtonList>
-                        </div>
 
                     </div>
                 </div>

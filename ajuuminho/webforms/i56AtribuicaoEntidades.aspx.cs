@@ -212,49 +212,59 @@ namespace ajuUminho.webforms
                 ListBoxEntidadesAssociadosID.Items.Clear();
                 ListBoxEntidadesID.Items.Clear();
                 listaInsolventes();
-            }else if (DropDownListEntidadesID.Text == "Representante Legal") {
+                RadioButtonListID.Visible = false;
+            }
+            else if (DropDownListEntidadesID.Text == "Representante Legal") {
                 ListBoxEntidadesAssociadosID.Items.Clear();
                 ListBoxEntidadesID.Items.Clear();
                 listaRepresentantesLegais();
-                //RadioButtons.Visible = true;
+                RadioButtonListID.Visible = true;
             }
             else if (DropDownListEntidadesID.Text == "Credor")  {
                 ListBoxEntidadesAssociadosID.Items.Clear();
                 ListBoxEntidadesID.Items.Clear();
                 listaCredores();
+                RadioButtonListID.Visible = false;
             }
             else if (DropDownListEntidadesID.Text == "Juiz") {
                 ListBoxEntidadesAssociadosID.Items.Clear();
                 ListBoxEntidadesID.Items.Clear();
                 listaJuizes();
+                RadioButtonListID.Visible = false;
             }
             else if (DropDownListEntidadesID.Text == "Prestador de Serviços"){
                 ListBoxEntidadesAssociadosID.Items.Clear();
                 ListBoxEntidadesID.Items.Clear();
                 listaPrestadoresDeServicos();
+                RadioButtonListID.Visible = false;
             }
             else if (DropDownListEntidadesID.Text == "Outras Entidades")
             {
                 ListBoxEntidadesAssociadosID.Items.Clear();
                 ListBoxEntidadesID.Items.Clear();
                 listaOutrasEntidades();
+                RadioButtonListID.Visible = false;
             }
             else if (DropDownListEntidadesID.Text == "Contabilista")
             {
                 ListBoxEntidadesAssociadosID.Items.Clear();
                 ListBoxEntidadesID.Items.Clear();
                 listaContabilistas();
+                RadioButtonListID.Visible = false;
             }
             else if (DropDownListEntidadesID.Text == "Tribunal")
             {
                 ListBoxEntidadesAssociadosID.Items.Clear();
                 ListBoxEntidadesID.Items.Clear();
                 listaTribunais();
-            }else if (DropDownListEntidadesID.Text == "Administrador Judicial")
+                RadioButtonListID.Visible = false;
+            }
+            else if (DropDownListEntidadesID.Text == "Administrador Judicial")
             {
                 ListBoxEntidadesAssociadosID.Items.Clear();
                 ListBoxEntidadesID.Items.Clear();
                 listaAdministradoresJudiciais();
+                RadioButtonListID.Visible = false;
             }
         }
 
@@ -262,7 +272,7 @@ namespace ajuUminho.webforms
         {
             ListBoxEntidadesAssociadosID.Items.Clear();
             ListBoxEntidadesID.Items.Clear();
-            //RadioButtons.Visible = true;
+
             if (RadioButtonListID.SelectedItem.Text == "Insolvente")
             {
                 d21RepresentanteLegalDto idto = new d21RepresentanteLegalDto();

@@ -58,15 +58,6 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.WebControls.DropDownList DropDownListEntidadesID;
         
         /// <summary>
-        /// RadioButtons control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl RadioButtons;
-        
-        /// <summary>
         /// RadioButtonListID control.
         /// </summary>
         /// <remarks>

@@ -69,7 +69,7 @@
                             Tipo de ativo: </asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="TextBoxTipoAtivoID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxTipoAtivoID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -78,7 +78,7 @@
                             Descrição: </asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="TextBoxDescricaoID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxDescricaoID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -87,7 +87,7 @@
                             Valor de aquisição: </asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="TextBoxValorAquisicaoID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxValorAquisicaoID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -96,7 +96,7 @@
                             Valor de mercado: </asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="TextBoxValorMercadoID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxValorMercadoID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -105,7 +105,7 @@
                             Valor de liquidação: </asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="TextBoxValorLiquidacaoID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxValorLiquidacaoID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
                             </td>
                         </tr>
                     </table>

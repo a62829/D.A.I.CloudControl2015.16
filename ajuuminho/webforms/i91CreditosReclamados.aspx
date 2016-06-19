@@ -74,7 +74,7 @@
                             Descrição: </asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="TextBoxDescricaoID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxDescricaoID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -83,7 +83,7 @@
                             Valor em Dívida: </asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="TextBoxValorDividaID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxValorDividaID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -92,7 +92,7 @@
                             Valor Pago: </asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="TextBoxValorRecebidoID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxValorRecebidoID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
                             </td>
                         </tr>
                     </table>

@@ -58,7 +58,7 @@
                           Descrição: </asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="TextBoxDescricaoID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxDescricaoID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -67,7 +67,7 @@
                           Data: </asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="TextBoxDataID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxDataID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -76,7 +76,7 @@
                           Valor: </asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="TextBoxValorID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxValorID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
                             </td>
                         </tr>
                     </table>
