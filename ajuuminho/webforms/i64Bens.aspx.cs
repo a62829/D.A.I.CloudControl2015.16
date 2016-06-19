@@ -46,7 +46,7 @@ namespace ajuUminho.webforms
         {
             ContentListBox.Visible = true;
             ContentDetailsBox.Visible = true;
-            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Bens");
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBoxBens");
             DetailsTitleBox.Visible = true;
             ButtonCriarID.Visible = false;
             ButtonEditarID.Visible = true;
@@ -62,7 +62,7 @@ namespace ajuUminho.webforms
         {
             ContentListBox.Visible = true;
             ContentDetailsBox.Visible = true;
-            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Bens");
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBoxBens");
             DetailsTitleBox.Visible = true;
             ButtonCriarID.Visible = false;
             ButtonEditarID.Visible = false;

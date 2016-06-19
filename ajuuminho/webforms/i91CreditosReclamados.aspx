@@ -39,7 +39,7 @@
 
             <div class="ViewsBoxProcessosCRUD">
 
-                <div class="InsideViewsTableBoxProcessos" runat="server" id="ContentListBox" visible="false">
+                <div class="InsideViewsTableBoxBens" runat="server" id="ContentListBox" visible="false">
                     <div class="titleh4">
                         <h4>Lista de Elementos Financeiros</h4>
                     </div>
@@ -50,7 +50,9 @@
                 <asp:ListBox ID="ListBoxParaTabsCreditosReclamadosID" CssClass="ListBoxParaTabsProcessos-Item" runat="server"  AutoPostBack="True" OnSelectedIndexChanged="ListBoxParaTabsCreditosReclamadosID_SelectedIndexChanged"></asp:ListBox>
                    
                 </div>
-                 <br />
+
+                 <br /> <br />
+
                 <div class="InsideViewsDetailsBoxProcessos" runat="server" id="ContentDetailsBox" visible="false">
                     <div class="titleh4" runat="server" id="DetailsTitleBox" visible="false">
                         <h3>Detalhes</h3>

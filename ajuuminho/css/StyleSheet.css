@@ -802,6 +802,7 @@ table {
   font-size: 10px;
   font-weight:500;
   color: #d7d7d7;
+  height: 22px;
   background-color: #660000;
   text-transform: uppercase;
   padding-bottom:1.5px; /*centrar as letras no botão*/
@@ -911,8 +912,8 @@ table {
 }
 
 .InsideViewsDetailsBoxBens {
-    margin-top: 80px;
     margin: auto;
+    margin-top: 20px;
     width: 100%;
     min-height: 125px;
     text-align: center;
@@ -929,7 +930,7 @@ table {
 
 .InsideViewsDetailsBox2Bens {
     margin: auto;
-    margin-top: 60px;
+    margin-top: 80px;
     width: 100%;
     text-align: center;
     min-height: 50px;

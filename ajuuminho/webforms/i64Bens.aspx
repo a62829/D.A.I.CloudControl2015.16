@@ -59,7 +59,7 @@
                            Insolvente: </asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="TextBoxInsolventeID" runat="server" Enabled="false"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxInsolventeID" runat="server" Enabled="false" CssClass="LabelsInputs-Item"></asp:TextBox>
                                 <asp:HiddenField ID="HiddenFieldInsolventeID" runat="server" />
                             </td>
                         </tr>
