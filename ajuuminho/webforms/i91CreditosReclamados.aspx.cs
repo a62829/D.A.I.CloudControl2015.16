@@ -18,7 +18,7 @@ namespace ajuUminho.webforms
 
             if (!IsPostBack)
             {
-                //listaCreditosReclamados();
+                listaCreditosReclamados();
             }
             else
             {
@@ -141,9 +141,9 @@ namespace ajuUminho.webforms
 
         protected void ButtonEditarID_Click(object sender, EventArgs e)
         {
-            c65EdicaoBens wseb = new c65EdicaoBens();
-            wseb.editarBens(ListBoxParaTabsCreditosReclamadosID.SelectedValue.ToString(), TextBoxTipoAtivoID.Text, TextBoxDescricaoID.Text, TextBoxValorAquisicaoID.Text,
-                TextBoxValorMercadoID.Text, TextBoxValorLiquidacaoID.Text, (string)Session["userId"]);
+            c93EdicaoCreditosReclamados wseb = new c93EdicaoCreditosReclamados();
+            wseb.editarCreditosReclamados(ListBoxParaTabsCreditosReclamadosID.SelectedValue.ToString(), TextBoxDescricaoID.Text, TextBoxValorDividaID.Text,
+                 TextBoxValorRecebidoID.Text, (string)Session["userId"]);
             //ClearAllText(this);
             //ListBoxParaTabsCreditosReclamadosID.ClearSelection();
             ListBoxParaTabsCreditosReclamadosID.Items.Clear();
@@ -163,11 +163,11 @@ namespace ajuUminho.webforms
             //    this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
         }
 
-        protected void ButtonGuardarID_Click(object sender, EventArgs e)
+        protected void ButtonCriarID_Click(object sender, EventArgs e)
         {
-            c65EdicaoBens wseb = new c65EdicaoBens();
-            wseb.criarBens(ListBoxParaTabsCreditosReclamadosID.SelectedValue.ToString(), HiddenFieldInsolventeID.Value.ToString(), TextBoxTipoAtivoID.Text, TextBoxDescricaoID.Text, TextBoxValorAquisicaoID.Text,
-                TextBoxValorMercadoID.Text, TextBoxValorLiquidacaoID.Text, (string)Session["userId"]);
+            c93EdicaoCreditosReclamados wseb = new c93EdicaoCreditosReclamados();
+            wseb.criarCreditoReclamado(ListBoxParaTabsCreditosReclamadosID.SelectedValue.ToString(), HiddenFieldCredorID.Value.ToString(), TextBoxDescricaoID.Text, TextBoxValorDividaID.Text,
+                TextBoxValorRecebidoID.Text, (string)Session["userId"]);
             listaCreditosReclamados();
             ListBoxParaTabsCreditosReclamadosID.DataBind();
             //ClearAllText(this);
@@ -178,6 +178,11 @@ namespace ajuUminho.webforms
             //ClearAllText(this);
             ListBoxParaTabsCreditosReclamadosID.Items.Clear();
             listaCreditosReclamados();
+        }
+
+        protected void ButtonPesquisarID_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

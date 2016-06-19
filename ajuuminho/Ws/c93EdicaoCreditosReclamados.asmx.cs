@@ -17,8 +17,6 @@ namespace ajuUminho.Ws
     // [System.Web.Script.Services.ScriptService]
     public class c93EdicaoCreditosReclamados : System.Web.Services.WebService
     {
-        public class c93EdicaoCreditosReclamados : System.Web.Services.WebService
-        {
             [WebMethod]
             public void editarCreditosReclamados(string idCreditoReclamado, string descricao, string valorDivida,
                 string valorRecebido, string lastChangeBy)
@@ -51,4 +49,3 @@ namespace ajuUminho.Ws
             }
         }
     }
-}
