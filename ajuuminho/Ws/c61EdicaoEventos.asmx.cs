@@ -45,5 +45,12 @@ namespace ajuUminho.Ws
             d59EventoDto cdto = new d59EventoDto();
             return cdto.getListaEventos(idProcesso);
         }
+
+        [WebMethod]
+        public Dictionary<String, d59EventoDto> getListaTipoEvento()
+        {
+            d59EventoDto edto = new d59EventoDto();
+            return edto.getListaTipoEvento();
+        }
     }
 }

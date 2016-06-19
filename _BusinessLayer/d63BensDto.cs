@@ -19,7 +19,8 @@ namespace _BusinessLayer
         public string valorMercado { get; set; }
         public string valorLiquidacao { get; set; }
         public string lastChangeBy { get; set; }
-
+        public string id { get; set; }
+        public string nome { get; set; }
 
         public d63BensDto() { }
 
@@ -33,6 +34,12 @@ namespace _BusinessLayer
             this.valorMercado = Convert.ToString(dt.Rows[i]["valorMercado"]);
             this.valorLiquidacao = Convert.ToString(dt.Rows[i]["valorLiquidacao"]);
             this.lastChangeBy = Convert.ToString(dt.Rows[i]["lastChangeBy"]);
+        }
+
+        public d63BensDto(DataTable dt, int i, string x = "")
+        {
+            this.id = Convert.ToString(dt.Rows[i]["id"]);
+            this.nome = Convert.ToString(dt.Rows[i]["nome"]);
         }
 
         public d63BensDto(string idBem, string TipoAtivo, string descricao, string valorAquisicao,
@@ -97,6 +104,19 @@ namespace _BusinessLayer
             {
                 d63BensDto jdto = new d63BensDto(dt, i);
                 lista.Add(i.ToString(), jdto);
+            }
+            return lista;
+        }
+
+        public Dictionary<String, d63BensDto> getListaTipoBem()
+        {
+            d63Bens e = new d63Bens();
+            DataTable dt = e.getListaTipoBem();
+            Dictionary<String, d63BensDto> lista = new Dictionary<string, d63BensDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d63BensDto edto = new d63BensDto(dt, i, "");
+                lista.Add(i.ToString(), edto);
             }
             return lista;
         }

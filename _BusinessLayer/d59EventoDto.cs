@@ -17,6 +17,8 @@ namespace _BusinessLayer
         public string descricao { get; set; }
         public string dataEvento { get; set; }
         public string lastChangeBy { get; set; }
+        public string id { get; set; }
+        public string nome { get; set; }
 
         public d59EventoDto() { }
 
@@ -28,6 +30,12 @@ namespace _BusinessLayer
             this.descricao = Convert.ToString(dt.Rows[i]["descricao"]);
             this.dataEvento = Convert.ToString(dt.Rows[i]["dataEvento"]);
             this.lastChangeBy = Convert.ToString(dt.Rows[i]["lastChangeBy"]);
+        }
+
+        public d59EventoDto(DataTable dt, int i, string x = "")
+        {
+            this.id = Convert.ToString(dt.Rows[i]["id"]);
+            this.nome = Convert.ToString(dt.Rows[i]["nome"]);
         }
 
         public d59EventoDto(string idEvento, string idProcesso, string idTipoEvento, string descricao, string dataEvento, string lastChangeBy)
@@ -70,6 +78,19 @@ namespace _BusinessLayer
             {
                 d59EventoDto jdto = new d59EventoDto(dt, i);
                 lista.Add(i.ToString(), jdto);
+            }
+            return lista;
+        }
+
+        public Dictionary<String, d59EventoDto> getListaTipoEvento()
+        {
+            d59Evento e = new d59Evento();
+            DataTable dt = e.getListaTipoEvento();
+            Dictionary<String, d59EventoDto> lista = new Dictionary<string, d59EventoDto>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                d59EventoDto edto = new d59EventoDto(dt, i, "");
+                lista.Add(i.ToString(), edto);
             }
             return lista;
         }

@@ -69,7 +69,7 @@
                             Tipo de ativo: </asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="TextBoxTipoAtivoID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
+                                <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True"></asp:DropDownList>
                             </td>
                         </tr>
                         <tr>

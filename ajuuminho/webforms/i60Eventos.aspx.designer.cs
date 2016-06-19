@@ -130,13 +130,13 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.WebControls.Label LabelTipoEventoID;
         
         /// <summary>
-        /// TextBoxTipoEventoID control.
+        /// DropDownList1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxTipoEventoID;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
         
         /// <summary>
         /// LabelDescricaoID control.
