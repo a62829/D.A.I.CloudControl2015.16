@@ -29,7 +29,7 @@
                           Nome: </asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="TextBoxNomeID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxNomeID" runat="server" CssClass="LabelsInputs-Item" Enabled="false" ClientIDMode="Static"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -38,7 +38,7 @@
                            Morada: </asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="TextBoxMoradaID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxMoradaID" runat="server" CssClass="LabelsInputs-Item" Enabled="false" ClientIDMode="Static"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -47,7 +47,7 @@
                            Cód-Postal: </asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="TextBoxCodPostalID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxCodPostalID" runat="server" CssClass="LabelsInputs-Item" Enabled="false" ClientIDMode="Static"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -56,7 +56,7 @@
                           Localidade: </asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="TextBoxLocalidadeID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxLocalidadeID" runat="server" CssClass="LabelsInputs-Item" Enabled="false" ClientIDMode="Static"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -65,7 +65,7 @@
                            Email: </asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="TextBoxEmailID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxEmailID" runat="server" CssClass="LabelsInputs-Item" Enabled="false" ClientIDMode="Static"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -74,7 +74,7 @@
                           Telefone: </asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="TextBoxTelefoneID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxTelefoneID" runat="server" CssClass="LabelsInputs-Item" Enabled="false" ClientIDMode="Static"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -83,7 +83,7 @@
                           Telemóvel: </asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="TextBoxTelemovelID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxTelemovelID" runat="server" CssClass="LabelsInputs-Item" Enabled="false" ClientIDMode="Static"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -92,7 +92,7 @@
                           Fax: </asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="TextBoxFaxID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxFaxID" runat="server" CssClass="LabelsInputs-Item" Enabled="false" ClientIDMode="Static"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -101,7 +101,7 @@
                           Cartão de cidadão: </asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="TextBoxCcID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxCcID" runat="server" CssClass="LabelsInputs-Item" Enabled="false" ClientIDMode="Static"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -110,7 +110,7 @@
                            Iban: </asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="TextBoxIbanID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxIbanID" runat="server" CssClass="LabelsInputs-Item" Enabled="false" ClientIDMode="Static"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -119,7 +119,7 @@
                            NIF: </asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="TextBoxNifID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxNifID" runat="server" CssClass="LabelsInputs-Item" Enabled="false" ClientIDMode="Static"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -128,14 +128,14 @@
                            Alterado por: </asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="TextBoxLastChangedID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxLastChangedID" runat="server" CssClass="LabelsInputs-Item" Enabled="false" ClientIDMode="Static"></asp:TextBox>
                         </td>
                     </tr>
                 </table>
             </div>
 
             <div id="ContentButtonsBox">
-                <asp:Button ID="ButtonCriarID" runat="server" Text="Criar" CssClass="ContentButton" OnClick="ButtonCriarID_Click" Visible="false" />
+                <asp:Button ID="ButtonCriarID" runat="server" Text="Criar" CssClass="ContentButton" OnClick="ButtonCriarID_Click" Visible="false" OnClientClick="return entidadeValida()"/>
                 <asp:Button ID="ButtonEditarID" runat="server" Text="Editar" CssClass="ContentButton" OnClick="ButtonEditarID_Click" Visible="false" />
                 <asp:Button ID="ButtonEliminarID" runat="server" Text="Eliminar" CssClass="ContentButton" Visible="false" OnClick="ButtonEliminarID_Click" />
                 <asp:Button ID="ButtonPesquisarID" runat="server" Text="Pesquiar" CssClass="ContentButton" Visible="false" OnClick="ButtonPesquisarID_Click" />
