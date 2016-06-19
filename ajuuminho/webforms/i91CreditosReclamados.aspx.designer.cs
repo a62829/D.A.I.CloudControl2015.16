@@ -49,40 +49,94 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.WebControls.SiteMapDataSource SiteMapDataSource1;
         
         /// <summary>
-        /// LabelElementoFinanceiroID control.
+        /// ListBoxParaTabsCreditosReclamadosID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelElementoFinanceiroID;
+        protected global::System.Web.UI.WebControls.ListBox ListBoxParaTabsCreditosReclamadosID;
         
         /// <summary>
-        /// TextBoxElementoFinanceiroID control.
+        /// LabelCredorID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxElementoFinanceiroID;
+        protected global::System.Web.UI.WebControls.Label LabelCredorID;
         
         /// <summary>
-        /// LabelTipoCreditoReclamadoID control.
+        /// TextBoxCredorID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelTipoCreditoReclamadoID;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxCredorID;
         
         /// <summary>
-        /// TextBoxTipoCreditoReclamadoID control.
+        /// HiddenFieldCredorID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxTipoCreditoReclamadoID;
+        protected global::System.Web.UI.WebControls.HiddenField HiddenFieldCredorID;
+        
+        /// <summary>
+        /// LabelDescricaoID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelDescricaoID;
+        
+        /// <summary>
+        /// TextBoxDescricaoID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxDescricaoID;
+        
+        /// <summary>
+        /// LabelValorDividaID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelValorDividaID;
+        
+        /// <summary>
+        /// TextBoxValorDividaID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxValorDividaID;
+        
+        /// <summary>
+        /// LabelValorRecebidoID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelValorRecebidoID;
+        
+        /// <summary>
+        /// TextBoxValorRecebidoID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxValorRecebidoID;
         
         /// <summary>
         /// ButtonEditarID control.

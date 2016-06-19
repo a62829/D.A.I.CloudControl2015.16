@@ -575,6 +575,14 @@
       <DependentUpon>c87.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Ws\c93EdicaoCreditosReclamados.asmx.cs">
+      <DependentUpon>c93EdicaoCreditosReclamados.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ws\c95RemocaoCreditosReclamados.asmx.cs">
+      <DependentUpon>c95RemocaoCreditosReclamados.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Ws\cInterfaceEntidade.cs" />
     <Compile Include="Ws\ControloDeEntidades.asmx.cs">
       <DependentUpon>ControloDeEntidades.asmx</DependentUpon>
@@ -627,6 +635,8 @@
     <Content Include="Ws\c65EdicaoBens.asmx" />
     <Content Include="Ws\c66RemocaoBens.asmx" />
     <Content Include="Ws\c87.asmx" />
+    <Content Include="Ws\c93EdicaoCreditosReclamados.asmx" />
+    <Content Include="Ws\c95RemocaoCreditosReclamados.asmx" />
     <Content Include="Ws\ControloDeEntidades.asmx" />
     <Content Include="Ws\gestaoIdentidade.asmx" />
     <Content Include="MyNewSiteMapFile.sitemap" />

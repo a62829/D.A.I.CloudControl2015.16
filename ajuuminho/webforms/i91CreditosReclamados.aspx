@@ -32,24 +32,7 @@
                         <h4>Lista de Elementos Financeiros</h4>
                     </div>
 
-                    <table id="table1">
-                        <tr>
-                            <th>Elemento financeiro</th>
-                            <th>Credito reclamado</th>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </table>
+<asp:ListBox ID="ListBoxParaTabsCreditosReclamadosID" CssClass="ListBoxParaTabsProcessos-Item" runat="server"  AutoPostBack="True" OnSelectedIndexChanged="ListBoxParaTabsCreditosReclamadosID_SelectedIndexChanged"></asp:ListBox>
 
                 </div>
 
@@ -57,32 +40,51 @@
                     <div class="titleh4">
                         <h3>Detalhes</h3>
                     </div>
-                    <table class="ContentTable">
+                                        <table class="ContentTable">
                         <tr>
                             <td>
-                                <asp:Label ID="LabelElementoFinanceiroID" runat="server" Text="Label" CssClass="Labels-Item">
-                           Elemento financeiro: </asp:Label>
+                                <asp:Label ID="LabelCredorID" runat="server" Text="Label" CssClass="Labels-Item">
+                           Credor: </asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="TextBoxElementoFinanceiroID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxCredorID" runat="server" Enabled="false"></asp:TextBox>
+                                <asp:HiddenField ID="HiddenFieldCredorID" runat="server" />
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="LabelTipoCreditoReclamadoID" runat="server" Text="Label" CssClass="Labels-Item"> 
-                           Credito reclamado: </asp:Label>
+                                <asp:Label ID="LabelDescricaoID" runat="server" Text="Label" CssClass="Labels-Item">
+                            Descrição: </asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="TextBoxTipoCreditoReclamadoID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxDescricaoID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label ID="LabelValorDividaID" runat="server" Text="Label" CssClass="Labels-Item">
+                            Valor em Dívida: </asp:Label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="TextBoxValorDividaID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label ID="LabelValorRecebidoID" runat="server" Text="Label" CssClass="Labels-Item">
+                            Valor Pago: </asp:Label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="TextBoxValorRecebidoID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
                             </td>
                         </tr>
                     </table>
                 </div>
 
                 <div id="ContentButtonsBox">
-                    <asp:Button ID="ButtonEditarID" runat="server" Text="Editar" CssClass="ContentButton" />
-                    <asp:Button ID="ButtonEliminarID" runat="server" Text="Eliminar" CssClass="ContentButton" />
-                    <asp:Button ID="ButtonGuardarID" runat="server" Text="Guardar" CssClass="ContentButton" />
+                    <asp:Button ID="ButtonEditarID" runat="server" Text="Editar" CssClass="ContentButton" OnClick="ButtonEditarID_Click" />
+                    <asp:Button ID="ButtonEliminarID" runat="server" Text="Eliminar" CssClass="ContentButton" OnClick="ButtonEliminarID_Click" />
+                    <asp:Button ID="ButtonGuardarID" runat="server" Text="Guardar" CssClass="ContentButton" OnClick="ButtonGuardarID_Click" />
                 </div>
             </div>
         </div>
