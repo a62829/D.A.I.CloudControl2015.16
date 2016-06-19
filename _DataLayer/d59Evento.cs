@@ -16,13 +16,13 @@ namespace _DataLayer
         public void guardar(string idEvento, string idProcesso, string idTipoEvento, string descricao, string dataEvento, string lastChangeBy)
         {
             con.Open();
-            cmd.Parameters.AddWithValue("@id", idEvento);
+            //cmd.Parameters.AddWithValue("@id", idEvento);
             cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
             cmd.Parameters.AddWithValue("@idTipoEvento", idTipoEvento);
             cmd.Parameters.AddWithValue("@descricao", descricao);
-            cmd.Parameters.AddWithValue("@dataEvento", dataEvento);
+            cmd.Parameters.AddWithValue("@dataEvento", DateTime.Parse(dataEvento));
             cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
-            cmd.CommandText = "INSERT INTO dbo.evento VALUES (@id, @idProcesso, @idTipoEvento, @descricao, @dataEvento, @lastChangeBy);";
+            cmd.CommandText = "INSERT INTO dbo.evento VALUES (@idProcesso, @idTipoEvento, @descricao, @dataEvento, @lastChangeBy);";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.ExecuteNonQuery();
@@ -78,7 +78,7 @@ namespace _DataLayer
         public void removerEvento(string idEvento)
         {
             cmd.Parameters.AddWithValue("@idEvento", idEvento);
-            cmd.CommandText = "DELETE FROM dbo.evento WHERE idEvento = @idEvento";
+            cmd.CommandText = "DELETE FROM dbo.evento WHERE id = @idEvento";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();

@@ -137,8 +137,6 @@ namespace ajuUminho.webforms
             TextBoxDataID.Text = edto.dataEvento;
             TextBoxDescricaoID.Text = edto.descricao;
             DropDownList1.Text = edto.nome;
-            //listaEventos();
-            //ListBoxParaTabsProcessosID.DataBind();
         }
 
         protected void listaEventos()
@@ -152,16 +150,14 @@ namespace ajuUminho.webforms
                 Item.Text = pair.Value.descricao.ToString();
                 Item.Value = pair.Value.idEvento.ToString();
                 ListBoxParaTabsProcessosID.Items.Add(Item);
-                ListBoxParaTabsProcessosID.DataBind();
             }
+            ListBoxParaTabsProcessosID.DataBind();
         }
 
         protected void ButtonEditarID_Click(object sender, EventArgs e)
         {
             c61EdicaoEventos wsee = new c61EdicaoEventos();
             wsee.editarEvento(ListBoxParaTabsProcessosID.SelectedValue.ToString(), (string)Session["idProcesso"], DropDownList1.Text, TextBoxDescricaoID.Text, TextBoxDataID.Text, (string)Session["userId"]);
-            //ClearAllText(this);
-            //ListBoxParaTabsProcessosID.ClearSelection();
             ListBoxParaTabsProcessosID.Items.Clear();
             listaEventos();
             ListBoxParaTabsProcessosID.DataBind();
@@ -169,23 +165,18 @@ namespace ajuUminho.webforms
 
         protected void ButtonCriarID_Click(object sender, EventArgs e)
         {
-            //c61EdicaoEventos wseb = new c61EdicaoEventos();
-            //wseb.criarEvento((string)Session["idProcesso"], DropDownList1.Text, TextBoxDescricaoID.Text, TextBoxDataID, (string)Session["userId"]);
-            //listaBens();
-            //ListBoxParaTabsProcessosID.DataBind();
-            ////ClearAllText(this);
-            ////ListBoxParaTabsProcessosID.ClearSelection();
-            ////string mystring = "Representante Legal criado com sucesso.";
-            ////this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
-
-            ////ClearAllText(this);
-            //ListBoxParaTabsProcessosID.Items.Clear();
-            //listaBens();
+            c61EdicaoEventos wseb = new c61EdicaoEventos();
+            wseb.criarEvento(null, (string)Session["idProcesso"], DropDownList1.SelectedValue.ToString(), TextBoxDescricaoID.Text,
+                TextBoxDataID.Text, (string)Session["userId"]);
+            listaEventos();
+            ListBoxParaTabsProcessosID.DataBind();
         }
 
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
         {
-
+            c62RemocaoEventos wseb = new c62RemocaoEventos();
+            wseb.removerEvento(ListBoxParaTabsProcessosID.SelectedValue.ToString());
+            listaEventos();
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)

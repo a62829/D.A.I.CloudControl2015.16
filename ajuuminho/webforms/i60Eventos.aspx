@@ -76,7 +76,7 @@
                            Data e hora: </asp:Label>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="TextBoxDataID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
+                                    <asp:TextBox ID="TextBoxDataID" runat="server" CssClass="LabelsInputs-Item" Enabled="false" placeholder="dd/mm/yyyy hh:mm:ss"></asp:TextBox>
                                 </td>
                             </tr>
                         </table>

@@ -95,6 +95,10 @@ namespace _BusinessLayer
             return lista;
         }
 
-
+        public void removerEvento(string idEvento)
+        {
+            d59Evento c = new d59Evento();
+            c.removerEvento(idEvento);
+        }
     }
 }

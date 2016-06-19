@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using _BusinessLayer;
 
 namespace ajuUminho.Ws
 {
@@ -18,9 +19,11 @@ namespace ajuUminho.Ws
     {
 
         [WebMethod]
-        public string HelloWorld()
+        public void removerEvento(string idEvento)
         {
-            return "Hello World";
+            // efetuar controlos
+            d59EventoDto crdto = new d59EventoDto();
+            crdto.removerEvento(idEvento);
         }
     }
 }
