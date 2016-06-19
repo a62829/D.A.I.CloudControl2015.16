@@ -13,7 +13,7 @@ namespace _BusinessLayer
 
         public string idBens { get; set; }
         public string idInsolventeNoProcesso { get; set; }
-        public string idTipoAtivo { get; set; }
+        public string TipoAtivo { get; set; }
         public string descricao { get; set; }
         public string valorAquisicao { get; set; }
         public string valorMercado { get; set; }
@@ -27,7 +27,7 @@ namespace _BusinessLayer
         {
             this.idBens = Convert.ToString(dt.Rows[i]["id"]);
             this.idInsolventeNoProcesso = Convert.ToString(dt.Rows[i]["idInsolventeNoProcesso"]);
-            this.idTipoAtivo = Convert.ToString(dt.Rows[i]["idTipoAtivo"]);
+            this.TipoAtivo = Convert.ToString(dt.Rows[i]["nome"]);
             this.descricao = Convert.ToString(dt.Rows[i]["descricao"]);
             this.valorAquisicao = Convert.ToString(dt.Rows[i]["valorAquisicao"]);
             this.valorMercado = Convert.ToString(dt.Rows[i]["valorMercado"]);
@@ -35,11 +35,11 @@ namespace _BusinessLayer
             this.lastChangeBy = Convert.ToString(dt.Rows[i]["lastChangeBy"]);
         }
 
-        public d63BensDto(string idBem, string idTipoAtivo, string descricao, string valorAquisicao,
+        public d63BensDto(string idBem, string TipoAtivo, string descricao, string valorAquisicao,
             string valorMercado, string valorLiquidacao, string lastChangeBy)
         {
             this.idBens = idBem;
-            this.idTipoAtivo = idTipoAtivo;
+            this.TipoAtivo = TipoAtivo;
             this.descricao = descricao;
             this.valorAquisicao = valorAquisicao;
             this.valorMercado = valorMercado;
@@ -52,7 +52,7 @@ namespace _BusinessLayer
         {
             this.idBens = idBem;
             this.idInsolventeNoProcesso = idInsolventeNoProcesso;
-            this.idTipoAtivo = idTipoAtivo;
+            this.TipoAtivo = TipoAtivo;
             this.descricao = descricao;
             this.valorAquisicao = valorAquisicao;
             this.valorMercado = valorMercado;
@@ -79,13 +79,13 @@ namespace _BusinessLayer
         public void setBem(d63BensDto bdto)
         {
             d63Bens b = new d63Bens();
-            b.setBem(bdto.idBens, bdto.idTipoAtivo, bdto.descricao, bdto.valorAquisicao, bdto.valorMercado, bdto.valorLiquidacao, bdto.lastChangeBy);
+            b.setBem(bdto.idBens, bdto.TipoAtivo, bdto.descricao, bdto.valorAquisicao, bdto.valorMercado, bdto.valorLiquidacao, bdto.lastChangeBy);
         }
 
         public void guardar(d63BensDto bdto)
         {
             d63Bens b = new d63Bens();
-            b.guardar(bdto.idBens, bdto.idInsolventeNoProcesso, bdto.idTipoAtivo, bdto.descricao, bdto.valorAquisicao, bdto.valorMercado, bdto.valorLiquidacao, bdto.lastChangeBy);
+            b.guardar(bdto.idBens, bdto.idInsolventeNoProcesso, bdto.TipoAtivo, bdto.descricao, bdto.valorAquisicao, bdto.valorMercado, bdto.valorLiquidacao, bdto.lastChangeBy);
         }
 
         public Dictionary<String, d63BensDto> getListaBens(string idInsolventeNoProcesso)

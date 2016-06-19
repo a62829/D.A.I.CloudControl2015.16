@@ -563,6 +563,14 @@
       <DependentUpon>c55RemocaoOutraEntidade.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Ws\c61EdicaoEventos.asmx.cs">
+      <DependentUpon>c61EdicaoEventos.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ws\c62RemocaoEventos.asmx.cs">
+      <DependentUpon>c62RemocaoEventos.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Ws\c65EdicaoBens.asmx.cs">
       <DependentUpon>c65EdicaoBens.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -624,6 +632,8 @@
     <Content Include="Ws\c51EdicaoPrestadorServico.asmx" />
     <Content Include="Ws\c52RemocaoPrestadorServico.asmx" />
     <Content Include="Ws\c55RemocaoOutraEntidade.asmx" />
+    <Content Include="Ws\c61EdicaoEventos.asmx" />
+    <Content Include="Ws\c62RemocaoEventos.asmx" />
     <Content Include="Ws\c65EdicaoBens.asmx" />
     <Content Include="Ws\c66RemocaoBens.asmx" />
     <Content Include="Ws\c87.asmx" />
@@ -672,7 +682,6 @@
       <Name>_BusinessLayer</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

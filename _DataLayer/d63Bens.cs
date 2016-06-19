@@ -12,7 +12,7 @@ namespace _DataLayer
     {
 
 
-        public bool guardar(string idBem, string idInsolventeNoProcesso, string idTipoAtivo, string descricao, string valorAquisicao,
+        public void guardar(string idBem, string idInsolventeNoProcesso, string idTipoAtivo, string descricao, string valorAquisicao,
             string valorMercado, string valorLiquidacao, string lastChangeBy)
         {
             con.Open();
@@ -29,14 +29,13 @@ namespace _DataLayer
             cmd.Connection = con;
             cmd.ExecuteNonQuery();
             con.Close();
-            return true;
         }
 
         public DataTable getListaBens(string idInsolventeNoProcesso)
         {
             SqlDataReader reader;
             cmd.Parameters.AddWithValue("@idInsolventeNoProcesso", idInsolventeNoProcesso);
-            cmd.CommandText = "SELECT * FROM [dbo].[ativo] WHERE idInsolventeNoProcesso = @idInsolventeNoProcesso;";
+            cmd.CommandText = "SELECT A.id, idInsolventeNoProcesso, nome, A.descricao, valorAquisicao, valorMercado, valorLiquidacao, A.lastChangeBy FROM dbo.ativo A INNER JOIN dbo.tipoAtivo T ON A.idTipoAtivo = T.id WHERE idInsolventeNoProcesso = @idInsolventeNoProcesso;";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -73,7 +72,7 @@ namespace _DataLayer
             cmd.Parameters.AddWithValue("@valorMercado", valorMercado);
             cmd.Parameters.AddWithValue("@valorLiquidacao", valorLiquidacao);
             cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
-            cmd.CommandText = "UPDATE dbo.ativo SET idTipoAtivo = @idTipoAtivo, descricao = @descricao, valorAquisicao = @valorAquisicao, valorMercado = @valorMercado, valorLiquidacao = @valorLiquidacao, lastChangeBy = @lastChangeBy WHERE id = @idBem;";
+            cmd.CommandText = "UPDATE dbo.ativo SET descricao = @descricao, valorAquisicao = @valorAquisicao, valorMercado = @valorMercado, valorLiquidacao = @valorLiquidacao, lastChangeBy = @lastChangeBy WHERE id = @idBem;";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.ExecuteNonQuery();
@@ -85,7 +84,7 @@ namespace _DataLayer
             SqlDataReader reader;
             con.Open();
             cmd.Parameters.AddWithValue("@idBem", idBem);
-            cmd.CommandText = "SELECT * FROM dbo.ativo WHERE id = @idBem";
+            cmd.CommandText = "SELECT A.id, idInsolventeNoProcesso, nome, A.descricao, valorAquisicao, valorMercado, valorLiquidacao, A.lastChangeBy FROM dbo.ativo A INNER JOIN dbo.tipoAtivo T ON A.idTipoAtivo = T.id WHERE A.id = @idBem";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             reader = cmd.ExecuteReader();
@@ -94,6 +93,7 @@ namespace _DataLayer
             con.Close();
             return dataTable;
         }
+        
 
         public void removerBem(string idInsolventeNoProcesso)
         {

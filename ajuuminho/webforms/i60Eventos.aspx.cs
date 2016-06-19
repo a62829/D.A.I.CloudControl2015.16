@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using _BusinessLayer;
+using ajuUminho.Ws;
 
 namespace ajuUminho.webforms
 {
@@ -14,11 +16,11 @@ namespace ajuUminho.webforms
 
                 if (!IsPostBack)
                 {
-
+                listaEventos();
             }
                 else {
-
-                }
+                
+            }
  
         }
 
@@ -84,6 +86,44 @@ namespace ajuUminho.webforms
             TabEditarID.CssClass = "Initial";
             TabEliminarID.CssClass = "Initial";
             TabPesquisarID.CssClass = "Clicked";
+        }
+
+        protected void ListBoxParaTabsProcessosID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            c61EdicaoEventos ee = new c61EdicaoEventos();
+            string idEv = ListBoxParaTabsProcessosID.SelectedValue.ToString();
+            d59EventoDto edto = ee.getEvento(idEv);
+            TextBoxDataID.Text = edto.dataEvento;
+            TextBoxDescricaoID.Text = edto.descricao;
+            TextBoxTipoEventoID.Text = edto.idTipoEvento;
+            //listaEventos();
+            //ListBoxParaTabsProcessosID.DataBind();
+        }
+
+        protected void listaEventos()
+        {
+            ListBoxParaTabsProcessosID.Items.Clear();
+            c61EdicaoEventos wsee = new c61EdicaoEventos();
+            var x = wsee.getListaEventos((string)Session["idProcesso"]);
+            foreach (KeyValuePair<String, d59EventoDto> pair in x)
+            {
+                ListItem Item = new ListItem();
+                Item.Text = pair.Value.descricao.ToString();
+                Item.Value = pair.Value.idEvento.ToString();
+                ListBoxParaTabsProcessosID.Items.Add(Item);
+                ListBoxParaTabsProcessosID.DataBind();
+            }
+        }
+
+        protected void ButtonEditarID_Click(object sender, EventArgs e)
+        {
+            c61EdicaoEventos wsee = new c61EdicaoEventos();
+            wsee.editarEvento(ListBoxParaTabsProcessosID.SelectedValue.ToString(), (string)Session["idProcesso"], TextBoxTipoEventoID.Text, TextBoxDescricaoID.Text, TextBoxDataID.Text, (string)Session["userId"]);
+            //ClearAllText(this);
+            //ListBoxParaTabsProcessosID.ClearSelection();
+            ListBoxParaTabsProcessosID.Items.Clear();
+            listaEventos();
+            ListBoxParaTabsProcessosID.DataBind();
         }
     }
 }
