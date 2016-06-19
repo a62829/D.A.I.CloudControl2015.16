@@ -12,24 +12,19 @@ namespace ajuUminho.webforms
     public partial class i101CriarProcesso : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        { 
-            if (!Page.IsCrossPagePostBack)
-            {
+        {
 
-            }
-            else
-            {
                 if (!IsPostBack)
                 {
                     listaEstados();
                     listaTipoProcesso();
                     listaInsolvente();
 
-    }
+                }
                 else {
 
                 }
-            }
+            
         }
 
         protected void ButtonCriarID_Click1(object sender, EventArgs e)
@@ -49,8 +44,8 @@ namespace ajuUminho.webforms
 
 protected void listaEstados()
 {
-    DropDownListIdEstadoID.Items.Clear();
-    c87 wsp = new c87();
+            //DropDownListIdEstadoID.Items.Clear();
+            c87 wsp = new c87();
     var lista = wsp.getListaEstado();
     foreach (KeyValuePair<String, String> pair in lista)
     {
@@ -58,8 +53,8 @@ protected void listaEstados()
         Item.Text = pair.Value.ToString();
         Item.Value = pair.Key.ToString();
         DropDownListIdEstadoID.Items.Add(Item);
-        DropDownListIdEstadoID.DataBind();
     }
+        DropDownListIdEstadoID.DataBind();
 }
 
 protected void listaTipoProcesso()

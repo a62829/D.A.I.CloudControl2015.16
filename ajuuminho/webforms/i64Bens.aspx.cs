@@ -86,6 +86,7 @@ namespace ajuUminho.webforms
 
         protected void TabEditar_Click(object sender, EventArgs e)
         {
+            listaBens();
             EnableAllText(this);
             DropDownList1.Enabled = false;
             TextBoxInsolventeID.Enabled = false;
@@ -107,6 +108,7 @@ namespace ajuUminho.webforms
 
         protected void TabEliminar_Click(object sender, EventArgs e)
         {
+            listaBens();
             DisableAllText(this);
             DropDownList1.Enabled = false;
             ContentListBox.Visible = true;
@@ -231,6 +233,7 @@ namespace ajuUminho.webforms
         protected void listarTipoBem()
         {
             DropDownList1.Items.Clear();
+            ListBoxParaTabsProcessosID.Items.Clear();
             c65EdicaoBens wsee = new c65EdicaoBens();
             var x = wsee.getListaTipoBem();
             foreach (KeyValuePair<String, d63BensDto> pair in x)

@@ -52,6 +52,15 @@ namespace ajuUminho.webforms
                     }
 
                 }
+                else if (DropDownListEntidadesID.Text == "Administrador Judiciaç")
+                {
+                    c27EdicaoAdministradorJudicial caj= new c27EdicaoAdministradorJudicial();
+                    caj.adicionarAdministradorJudicialAoProcesso((string)Session["idProcesso"], ListBoxEntidadesID.SelectedItem.Value.ToString(), Session["userId"].ToString());
+                    ListBoxEntidadesAssociadosID.Items.Clear();
+                    ListBoxEntidadesID.Items.Clear();
+                    listaAdministradoresJudiciais();
+
+                }
                 else if (DropDownListEntidadesID.Text == "Credor")
                 {
                     c39EdicaoCredor ccr = new c39EdicaoCredor();

@@ -52,7 +52,7 @@ namespace _BusinessLayer
         {
             d59Evento rl = new d59Evento();
             DataTable dt = rl.getEvento(idEvento);
-            d59EventoDto rldto = new d59EventoDto(dt, 0);
+            d59EventoDto rldto = new d59EventoDto(dt, 0, "");
             return rldto;
         }
 

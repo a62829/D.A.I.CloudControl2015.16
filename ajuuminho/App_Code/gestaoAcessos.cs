@@ -190,10 +190,10 @@ namespace ajuUminho.App_Code
             }
         }
 
-        public bool EditarUtilizador(string userName, string password, string email, string telefone)
-        {
+        //public bool EditarUtilizador(string userName, string password, string email, string telefone)
+        //{
 
-        }
+        //}
     }
 
 }

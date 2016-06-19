@@ -148,7 +148,7 @@ namespace ajuUminho.controls.administracao
             //    else
             //    {
                     gestaoIdentidade ws1 = new gestaoIdentidade();
-                    ws1.
+                    
                     ClearAllText(this);
 
             //    }
@@ -160,7 +160,7 @@ namespace ajuUminho.controls.administracao
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
         {
 
-            if (ListBoxEntidadesID.SelectedIndex == -1)
+            if (ListBoxUtilizadoresID.SelectedIndex == -1)
             {
                 string mystring = "Primeiro deve seleccionar um utilizador que deseje eliminar.";
                 this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
