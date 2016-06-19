@@ -127,7 +127,7 @@
 
             <div id="ContentButtonsBox">
                 <asp:Button ID="ButtonCriarID" runat="server" Text="Criar" CssClass="ContentButton" OnClick="ButtonCriarID_Click" Visible="false" OnClientClick="return entidadeValidaTribunal()"/>
-                <asp:Button ID="ButtonEditarID" runat="server" Text="Editar" CssClass="ContentButton" OnClick="ButtonEditarID_Click" Visible="false" />
+                <asp:Button ID="ButtonEditarID" runat="server" Text="Editar" CssClass="ContentButton" OnClick="ButtonEditarID_Click" Visible="false" OnClientClick="return entidadeValidaTribunal()"/>
                 <asp:Button ID="ButtonEliminarID" runat="server" Text="Eliminar" CssClass="ContentButton" Visible="false" OnClick="ButtonEliminarID_Click" />
                 <asp:Button ID="ButtonPesquisarID" runat="server" Text="Pesquiar" CssClass="ContentButton" Visible="false" OnClick="ButtonPesquisarID_Click" />
             </div>

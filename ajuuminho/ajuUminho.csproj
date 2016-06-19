@@ -599,6 +599,8 @@
       <DependentUpon>gestaoIdentidade.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Content Include="scripts\entidadeValida.js" />
+    <Content Include="scripts\utilizadorValido.js" />
     <Content Include="webforms\gerirUtilizadoresSistema.aspx" />
     <Content Include="webforms\gestaoEntidades.aspx" />
     <Content Include="webforms\gestaoIdentidades.aspx" />
