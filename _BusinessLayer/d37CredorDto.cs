@@ -138,6 +138,14 @@ namespace _BusinessLayer
             cr.adicionarCredorAoProcesso(idProcesso, idCredor, lastChangeBy);
         }
 
+        public string getIdCredorNoProcesso(string idProcesso, string idCredor)
+        {
+            d37Credor i = new d37Credor();
+            var x = i.getIdCredorNoProcesso(idProcesso, idCredor);
+            var y = Convert.ToString(x.Rows[0]["id"]);
+            return (string)y;
+        }
+
         public void removerCredorDoProcesso(string idProcesso, string idCredor, string lastChangeBy)
         {
             d37Credor cr = new d37Credor();

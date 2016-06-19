@@ -105,47 +105,5 @@ namespace _DataLayer
             cmd.ExecuteNonQuery();
             con.Close();
         }
-
-        //public DataTable getListaPrestadorServicoForaDoProcesso(string id)
-        //{
-        //    SqlDataReader reader;
-        //    cmd.Parameters.AddWithValue("@id", id);
-        //    cmd.CommandText = "SELECT * FROM prestadorServico WHERE NOT EXISTS (SELECT * FROM prestadorServicoNoProcesso WHERE idPrestadorServico = prestadorServico.id AND idProcesso = @id)";
-        //    cmd.CommandType = CommandType.Text;
-        //    cmd.Connection = con;
-        //    cmd.Connection.Open();
-        //    reader = cmd.ExecuteReader();
-        //    DataTable dataTable = new DataTable();
-        //    dataTable.Load(reader);
-        //    con.Close();
-        //    return dataTable;
-        //}
-
-        //public void adicionarPrestadorServicoAoProcesso(string idProcesso, string idPrestacaoServico, string lastChangeBy)
-        //{
-        //    con.Open();
-        //    cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
-        //    cmd.Parameters.AddWithValue("@idPrestadorServico", idPrestacaoServico);
-        //    cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
-        //    cmd.CommandText = "INSERT INTO dbo.prestadorServicoNoProcesso VALUES (@idProcesso, @idPrestadorServico, @lastChangeBy);";
-        //    cmd.CommandType = CommandType.Text;
-        //    cmd.Connection = con;
-        //    cmd.ExecuteNonQuery();
-        //    con.Close();
-        //}
-
-        //public void removerPrestadorServicoDoProcesso(string idProcesso, string idPrestadorServico, string lastChangeBy)
-        //{
-        //    con.Open();
-        //    cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
-        //    cmd.Parameters.AddWithValue("@idPrestadorServico", idPrestadorServico);
-        //    cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
-        //    cmd.CommandText = "DELETE FROM dbo.prestadorServicoNoProcesso WHERE idProcesso = @idProcesso AND idPrestadorServico = @idPrestadorServico";
-        //    cmd.CommandType = CommandType.Text;
-        //    cmd.Connection = con;
-        //    cmd.ExecuteNonQuery();
-
-        //}
-
     }
 }

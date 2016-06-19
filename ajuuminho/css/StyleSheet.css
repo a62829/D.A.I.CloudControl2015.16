@@ -197,29 +197,31 @@ table {
  }
 
 #FooterBox3 {
-      margin-top: 33px;
+      margin-top: 30px;
 }
 
 #HeaderBox {
     margin: auto;
-    width: 1245px;
+    width: 1045px;
     height: 150px;
     background-color: #eee;
     border: 2px solid #ddd;
     border-top: none;
+    padding-right: 3px;
+    padding-left: 3px;
 }
 
 #LogoBox {
     background-image: url("../imagens/logo.png");
     width: 256px;
-    height:120px;
+    height:110px;
     float:left;
-    margin-top: 4px;
+    margin-top: 14px;
 }
 
 #SearchBox {
   margin: auto;
-  width: 984px;
+  width: 784px;
   height: 50px;
   float: left;
   margin-top: 5px;
@@ -227,7 +229,7 @@ table {
 
 #SearchBar {
    height: 34px;
-   width: 920px;
+   width: 720px;
    float: left;
    margin-left: 20px;
 }
@@ -242,7 +244,7 @@ table {
   height: 34px;
   font-size: 12px;
   border: 1px solid #CCC;
-  width: 910px;
+  width: 710px;
   padding-left: 7px;
 }
 
@@ -256,10 +258,9 @@ table {
 
 #MenuBox {  
     margin: auto; 
-    width: 984px;
+    width: 784px;
     height: 75px;
     float:left;
-
 }
 
 #HeaderButtonsBox {
@@ -360,7 +361,7 @@ table {
 #SiteMapPathBox {
     height: 35px;
     margin:auto;
-    width:1240px;
+    width:1040px;
     float:right;
 }
 
@@ -373,54 +374,50 @@ table {
 
 #ViewBigBox {  
     margin: auto;
-    padding-top:5px;
-    padding-bottom:20px;
+    margin-top: 20px;
+    padding-top:25px;
     width: 1245px;
-    min-height: 435px;
+    height: 440px;
     background:#ddd;
     border-top: 2px solid #ccc;
     border-bottom: 2px solid #ccc;
 }
 
 #ProcessesHomeBox {
-    padding-top: 10px;
     width:415px;
-    min-height: 200px;
+    height: 203px;
     float: left;
 }
 
 #CalendarHomeBox {
     float: left;
     width:415px;
+    height: 203px;
 }
 
 #EventsHomeBox {
-    padding-top: 10px;
     width:415px;
-    min-height: 200px;
+    height: 203px;
     float: left;
 }
 
 #OnlineUsersHomeBox {
-    padding-top: 10px;
     margin-top: 30px;
     width:415px;
-    min-height: 200px;
+    height: 203px;
     float: left;
 }
 
 #DayDetailHomeBox {
-    padding-top: 10px;
     width:415px;
-    min-height: 200px;
+    height: 203px;
     float: left;
     margin-top: 30px;
 }
 
 #LastAccessesHomeBox {
-    padding-top: 10px;
     width:415px;
-    min-height: 200px;
+    height: 203px;
     float: left;
     margin-top: 30px;
 }
@@ -806,7 +803,6 @@ table {
   font-weight:500;
   color: #d7d7d7;
   background-color: #660000;
-  height: 25px;
   text-transform: uppercase;
   padding-bottom:1.5px; /*centrar as letras no botão*/
   padding-left:15px;

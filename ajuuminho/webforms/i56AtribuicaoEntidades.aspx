@@ -43,12 +43,14 @@
                             <asp:ListItem>Prestador de Serviços</asp:ListItem>
                             <asp:ListItem>Outras Entidades</asp:ListItem>
                         </asp:DropDownList>
-                        <div class="AlignBox">
-                            <asp:RadioButtonList ID="RadioButtonList1" runat="server" Visible="false">
+
+                        <div class="AlignBox" runat="server" Visible="false" id="RadioButtons">
+                            <asp:RadioButtonList ID="RadioButtonListID" runat="server">
                                 <asp:ListItem Selected="True">Insolvente</asp:ListItem>
                                 <asp:ListItem>Credor</asp:ListItem>
                             </asp:RadioButtonList>
                         </div>
+
                     </div>
                 </div>
 

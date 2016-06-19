@@ -53,6 +53,7 @@
     <Compile Include="d59Evento.cs" />
     <Compile Include="d63Bens.cs" />
     <Compile Include="d85Processo.cs" />
+    <Compile Include="d90CreditosReclamados.cs" />
     <Compile Include="DBcon.cs" />
     <Content Include="InterfaceEntidade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

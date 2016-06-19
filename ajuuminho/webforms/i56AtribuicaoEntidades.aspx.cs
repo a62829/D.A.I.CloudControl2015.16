@@ -39,7 +39,7 @@ namespace ajuUminho.webforms
                 else if (DropDownListEntidadesID.Text == "Representante Legal")
                 {
                     c23EditarRepresentanteLegal crl = new c23EditarRepresentanteLegal();
-                    if (RadioButtonList1.SelectedItem.Text == "Insolvente")
+                    if (RadioButtonListID.SelectedItem.Text == "Insolvente")
                     {
                         crl.adicionarRepresentanteLegalAoInsolventeNoProcesso((string)Session["idProcesso"], ListBoxEntidadesID.SelectedItem.Value.ToString(), Session["userId"].ToString(), pdto.listaIDtoNoProcesso.Values.ToString());
                         ListBoxEntidadesAssociadosID.Items.Clear();
@@ -128,7 +128,7 @@ namespace ajuUminho.webforms
                 else if (DropDownListEntidadesID.Text == "Representante Legal")
                 {
                     c23EditarRepresentanteLegal crl = new c23EditarRepresentanteLegal();
-                    if (RadioButtonList1.SelectedItem.Text == "Insolvente")
+                    if (RadioButtonListID.SelectedItem.Text == "Insolvente")
                     {
                         crl.adicionarRepresentanteLegalAoInsolventeNoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString(), pdto.listaIDtoNoProcesso.Values.ToString());
                         ListBoxEntidadesAssociadosID.Items.Clear();
@@ -213,10 +213,10 @@ namespace ajuUminho.webforms
                 ListBoxEntidadesID.Items.Clear();
                 listaInsolventes();
             }else if (DropDownListEntidadesID.Text == "Representante Legal") {
-                RadioButtonList1.Visible = true;
                 ListBoxEntidadesAssociadosID.Items.Clear();
                 ListBoxEntidadesID.Items.Clear();
                 listaRepresentantesLegais();
+                //RadioButtons.Visible = true;
             }
             else if (DropDownListEntidadesID.Text == "Credor")  {
                 ListBoxEntidadesAssociadosID.Items.Clear();
@@ -262,7 +262,8 @@ namespace ajuUminho.webforms
         {
             ListBoxEntidadesAssociadosID.Items.Clear();
             ListBoxEntidadesID.Items.Clear();
-            if (RadioButtonList1.SelectedItem.Text == "Insolvente")
+            //RadioButtons.Visible = true;
+            if (RadioButtonListID.SelectedItem.Text == "Insolvente")
             {
                 d21RepresentanteLegalDto idto = new d21RepresentanteLegalDto();
                 var x = idto.getListaRepresentanteLegalNoInsolventeNoProcesso((string)Session["idProcesso"]);
