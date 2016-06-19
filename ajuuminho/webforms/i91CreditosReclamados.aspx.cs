@@ -27,6 +27,17 @@ namespace ajuUminho.webforms
 
         }
 
+        protected void ClearAllText(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Text = string.Empty;
+                else
+                    ClearAllText(c);
+            }
+        }
+
         protected void EnableAllText(Control con)
         {
             foreach (Control c in con.Controls)
@@ -64,6 +75,7 @@ namespace ajuUminho.webforms
             TabEditarID.CssClass = "Initial";
             TabEliminarID.CssClass = "Initial";
             TabPesquisarID.CssClass = "Initial";
+            ClearAllText(this);
         }
 
         protected void TabEditar_Click(object sender, EventArgs e)
@@ -81,6 +93,7 @@ namespace ajuUminho.webforms
             TabEditarID.CssClass = "Clicked";
             TabEliminarID.CssClass = "Initial";
             TabPesquisarID.CssClass = "Initial";
+            ClearAllText(this);
         }
 
         protected void TabEliminar_Click(object sender, EventArgs e)
@@ -99,6 +112,7 @@ namespace ajuUminho.webforms
             TabEditarID.CssClass = "Initial";
             TabEliminarID.CssClass = "Clicked";
             TabPesquisarID.CssClass = "Initial";
+            ClearAllText(this);
         }
 
         protected void TabPesquisar_Click(object sender, EventArgs e)

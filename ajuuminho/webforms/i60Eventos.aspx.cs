@@ -17,6 +17,7 @@ namespace ajuUminho.webforms
                 if (!IsPostBack)
                 {
                 listaEventos();
+                listarTipoEvento();
             }
                 else {
                 
@@ -60,7 +61,6 @@ namespace ajuUminho.webforms
         protected void TabCriar_Click(object sender, EventArgs e)
         {
             EnableAllText(this);
-            TextBoxTipoEventoID.Enabled = false;
             ContentListBox.Visible = false;
             ContentDetailsBox.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Processos");
@@ -73,12 +73,13 @@ namespace ajuUminho.webforms
             TabEditarID.CssClass = "Initial";
             TabEliminarID.CssClass = "Initial";
             TabPesquisarID.CssClass = "Initial";
+            ClearAllText(this);
         }
 
         protected void TabEditar_Click(object sender, EventArgs e)
         {
             EnableAllText(this);
-            TextBoxTipoEventoID.Enabled = false;
+            DropDownList1.Enabled = false;
             ContentListBox.Visible = true;
             ContentDetailsBox.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBoxProcessos");
@@ -91,6 +92,7 @@ namespace ajuUminho.webforms
             TabEditarID.CssClass = "Clicked";
             TabEliminarID.CssClass = "Initial";
             TabPesquisarID.CssClass = "Initial";
+            ClearAllText(this);
         }
 
         protected void TabEliminar_Click(object sender, EventArgs e)
@@ -108,6 +110,7 @@ namespace ajuUminho.webforms
             TabEditarID.CssClass = "Initial";
             TabEliminarID.CssClass = "Clicked";
             TabPesquisarID.CssClass = "Initial";
+            ClearAllText(this);
         }
 
         protected void TabPesquisar_Click(object sender, EventArgs e)
@@ -133,7 +136,7 @@ namespace ajuUminho.webforms
             d59EventoDto edto = ee.getEvento(idEv);
             TextBoxDataID.Text = edto.dataEvento;
             TextBoxDescricaoID.Text = edto.descricao;
-            TextBoxTipoEventoID.Text = edto.idTipoEvento;
+            DropDownList1.Text = edto.nome;
             //listaEventos();
             //ListBoxParaTabsProcessosID.DataBind();
         }
@@ -156,12 +159,53 @@ namespace ajuUminho.webforms
         protected void ButtonEditarID_Click(object sender, EventArgs e)
         {
             c61EdicaoEventos wsee = new c61EdicaoEventos();
-            wsee.editarEvento(ListBoxParaTabsProcessosID.SelectedValue.ToString(), (string)Session["idProcesso"], TextBoxTipoEventoID.Text, TextBoxDescricaoID.Text, TextBoxDataID.Text, (string)Session["userId"]);
+            wsee.editarEvento(ListBoxParaTabsProcessosID.SelectedValue.ToString(), (string)Session["idProcesso"], DropDownList1.Text, TextBoxDescricaoID.Text, TextBoxDataID.Text, (string)Session["userId"]);
             //ClearAllText(this);
             //ListBoxParaTabsProcessosID.ClearSelection();
             ListBoxParaTabsProcessosID.Items.Clear();
             listaEventos();
             ListBoxParaTabsProcessosID.DataBind();
+        }
+
+        protected void ButtonCriarID_Click(object sender, EventArgs e)
+        {
+            //c61EdicaoEventos wseb = new c61EdicaoEventos();
+            //wseb.criarEvento((string)Session["idProcesso"], DropDownList1.Text, TextBoxDescricaoID.Text, TextBoxDataID, (string)Session["userId"]);
+            //listaBens();
+            //ListBoxParaTabsProcessosID.DataBind();
+            ////ClearAllText(this);
+            ////ListBoxParaTabsProcessosID.ClearSelection();
+            ////string mystring = "Representante Legal criado com sucesso.";
+            ////this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
+
+            ////ClearAllText(this);
+            //ListBoxParaTabsProcessosID.Items.Clear();
+            //listaBens();
+        }
+
+        protected void ButtonEliminarID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void listarTipoEvento()
+        {
+            DropDownList1.Items.Clear();
+            c61EdicaoEventos wsee = new c61EdicaoEventos();
+            var x = wsee.getListaTipoEvento();
+            foreach (KeyValuePair<String, d59EventoDto> pair in x)
+            {
+                ListItem Item = new ListItem();
+                Item.Text = pair.Value.nome.ToString();
+                Item.Value = pair.Value.id.ToString();
+                DropDownList1.Items.Add(Item);
+                DropDownList1.DataBind();
+            }
         }
     }
 }

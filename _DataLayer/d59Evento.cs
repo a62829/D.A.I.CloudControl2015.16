@@ -93,7 +93,19 @@ namespace _DataLayer
             return r;
         }
 
-        
+        public DataTable getListaTipoEvento()
+        {
+            SqlDataReader reader;
+            con.Open();
+            cmd.CommandText = "SELECT id, nome from dbo.tipoEvento";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            reader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
+        }
 
     }
 }
