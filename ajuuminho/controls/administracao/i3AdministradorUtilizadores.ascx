@@ -34,7 +34,7 @@
                             <asp:Label ID="LabelUsernameID" runat="server" Text="Label" CssClass="Labels-Item"> 
                             Nome de utilizador:  </asp:Label> </td>
                         <td>
-                            <asp:TextBox ID="TextBoxUsernameID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxUsernameID" runat="server" CssClass="LabelsInputs-Item" Enabled="false" ClientIDMode="Static"></asp:TextBox>
                         </td>
                     </tr>
                     <tr ID="TrPasswordID" runat="server" >
@@ -42,7 +42,7 @@
                             <asp:Label ID="LabelPasswordID" runat="server" Text="Label" CssClass="Labels-Item"> 
                             Palavra-passe: </asp:Label> </td>
                         <td>
-                            <asp:TextBox ID="TextBoxPasswordID" type="password" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxPasswordID" type="password" runat="server" CssClass="LabelsInputs-Item" Enabled="false" ClientIDMode="Static"></asp:TextBox>
                         </td>
                     </tr>
                     <tr  ID="TrConfirmarPasswordID" runat="server">
@@ -51,7 +51,7 @@
                             Confirmar palavra-passe:  </asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="TextBoxConfirmarPasswordID" type="password" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxConfirmarPasswordID" type="password" runat="server" CssClass="LabelsInputs-Item" Enabled="false" OnTextChanged="TextBoxConfirmarPasswordID_TextChanged" ClientIDMode="Static"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -60,7 +60,7 @@
                            Correio eletrónico: </asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="TextBoxEmailID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxEmailID" runat="server" CssClass="LabelsInputs-Item" Enabled="false" ClientIDMode="Static" ></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -69,15 +69,15 @@
                           Telefone: </asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="TextBoxTelefoneID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxTelefoneID" runat="server" CssClass="LabelsInputs-Item" Enabled="false" ClientIDMode="Static"></asp:TextBox>
                         </td>
                     </tr>
                 </table>
             </div>
 
             <div id="ContentButtonsBox">
-                <asp:Button ID="ButtonCriarID" runat="server" Text="Criar" CssClass="ContentButton" OnClick="ButtonCriarID_Click" Visible="false" />
-                <asp:Button ID="ButtonEditarID" runat="server" Text="Editar" CssClass="ContentButton" OnClick="ButtonEditarID_Click" Visible="false" />
+                <asp:Button ID="ButtonCriarID" runat="server" Text="Criar" CssClass="ContentButton" OnClick="ButtonCriarID_Click" Visible="false" OnClientClick="return utilizadorValido()"/>
+                <asp:Button ID="ButtonEditarID" runat="server" Text="Editar" CssClass="ContentButton" OnClick="ButtonEditarID_Click" Visible="false" OnClientClick="return utilizadorValidoEditar()"/>
                 <asp:Button ID="ButtonEliminarID" runat="server" Text="Eliminar" CssClass="ContentButton" Visible="false" OnClick="ButtonEliminarID_Click" />
             </div>
         </div>

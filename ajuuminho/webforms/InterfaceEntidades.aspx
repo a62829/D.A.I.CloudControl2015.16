@@ -21,7 +21,7 @@
     <link rel="stylesheet" type="text/css" href="../css/StyleSheet.css" title="StyleSheet" />
     <script src="<%=ResolveUrl("~/scripts/entidadeValida.js")%>" type="text/javascript"></script>
     
-    <script src="../scripts/entidadeValida.js" type="text/javascript"></script>
+<%--    <script src="../scripts/entidadeValida.js" type="text/javascript"></script>--%>
 </head>
 
 <body>

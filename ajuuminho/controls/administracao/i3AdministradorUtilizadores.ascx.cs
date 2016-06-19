@@ -103,33 +103,33 @@ namespace ajuUminho.controls.administracao
         protected void ButtonCriarID_Click(object sender, EventArgs e)
         {
 
-            if ( (TextBoxUsernameID.Text=="") ||
-                 (TextBoxPasswordID.Text == "") ||
-                 (TextBoxConfirmarPasswordID.Text == "") ||
-                 (TextBoxEmailID.Text == "") ||
-                 (TextBoxTelefoneID.Text == ""))
+            //if ( (TextBoxUsernameID.Text=="") ||
+            //     (TextBoxPasswordID.Text == "") ||
+            //     (TextBoxConfirmarPasswordID.Text == "") ||
+            //     (TextBoxEmailID.Text == "") ||
+            //     (TextBoxTelefoneID.Text == ""))
 
-                {
-                string mystring = "Deve preencher todos os campos.";
-                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
+            //    {
+            //    string mystring = "Deve preencher todos os campos.";
+            //    this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
 
-                }
+            //    }
 
-            else
-            {
+            //else
+            //{
                 gestaoIdentidade ws1 = new gestaoIdentidade();
-                if (TextBoxPasswordID.Text == TextBoxConfirmarPasswordID.Text)
-                {
+                //if (TextBoxPasswordID.Text == TextBoxConfirmarPasswordID.Text)
+                //{
                     ws1.criarUtilizador(TextBoxUsernameID.Text, TextBoxPasswordID.Text, TextBoxEmailID.Text, TextBoxTelefoneID.Text);
                     string mystring = "Utilizador criado com sucesso";
                     this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
                     ClearAllText(this);
-                }
-                else {
-                    string mystring = "Confirmação da Password incorrecta";
-                    this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
-                }
-            }
+                //}
+                //else {
+                //    string mystring = "Confirmação da Password incorrecta";
+                //    this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
+                //}
+            //}
         }
 
         protected void ButtonEditarID_Click(object sender, EventArgs e)
@@ -173,6 +173,11 @@ namespace ajuUminho.controls.administracao
                 //////// CODIGO AQUI
                 ClearAllText(this);
             }
+        }
+
+        protected void TextBoxConfirmarPasswordID_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

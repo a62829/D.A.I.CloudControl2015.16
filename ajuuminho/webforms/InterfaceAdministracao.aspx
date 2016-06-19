@@ -12,6 +12,8 @@
     <title>Aju-UMinho</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="../css/StyleSheet.css" title="StyleSheet" />
+    <script src="<%=ResolveUrl("~/scripts/utilizadorValido.js")%>" type="text/javascript"></script>
+
 </head>
 <body>
     <form id="Form" runat="server">
