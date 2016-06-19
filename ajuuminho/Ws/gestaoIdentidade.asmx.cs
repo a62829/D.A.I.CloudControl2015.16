@@ -98,6 +98,14 @@ namespace ajuUminho.Ws
         }
 
         [WebMethod]
+        public System.Data.DataTable getUserDetailById(string idUser)
+        {
+            gestaoAcessos ga = new gestaoAcessos();
+            var x = ga.getUserDetailById(idUser);
+            return x;
+        }
+
+        [WebMethod]
         public System.Data.DataTable getUsers()
         {
             gestaoAcessos ga = new gestaoAcessos();
@@ -195,17 +203,17 @@ namespace ajuUminho.Ws
         }
 
         [WebMethod]
-        public bool editarUtilizador(string userName, string password, string email, string telefone)
+        public void editarUtilizador(string userName, string email, string telefone, string idUser)
         {
             gestaoAcessos connn = new gestaoAcessos();
-            if (connn.criarUtilizador(userName, password, email, telefone) == true)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            connn.setUtilizador(userName, email, telefone, idUser);
+        }
+
+        [WebMethod]
+        public void eliminarUtilizador(string idUser)
+        {
+            gestaoAcessos connn = new gestaoAcessos();
+            connn.eliminarUtilizador(idUser);
         }
 
 
