@@ -5,17 +5,16 @@ namespace _DataLayer
 {
     public class d90CreditosReclamados : DBcon
     {
-        public bool guardar(string idCreditoReclamado, string idCredorNoProcesso, string descricao, string valorDivida,
+        public bool guardar(string idCredorNoProcesso, string descricao, string valorDivida,
               string valorRecebido, string lastChangeBy)
         {
             con.Open();
-            cmd.Parameters.AddWithValue("@id", idCreditoReclamado);
-            cmd.Parameters.AddWithValue("@idInsolventeNoProcesso", idCredorNoProcesso);
+            cmd.Parameters.AddWithValue("@idCredorNoProcesso", idCredorNoProcesso);
             cmd.Parameters.AddWithValue("@descricao", descricao);
-            cmd.Parameters.AddWithValue("@valorAquisicao", valorDivida);
-            cmd.Parameters.AddWithValue("@valorMercado", valorRecebido);
+            cmd.Parameters.AddWithValue("@valorDivida", valorDivida);
+            cmd.Parameters.AddWithValue("@valorRecebido", valorRecebido);
             cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
-            cmd.CommandText = "INSERT INTO dbo.reclamacaoCredito VALUES (@id, @idInsolventeNoProcesso, @descricao, @valorDivida, @valorRecebido, @lastChangeBy);";
+            cmd.CommandText = "INSERT INTO dbo.reclamacaoCredito VALUES (@idCredorNoProcesso, @descricao, @valorDivida, @valorRecebido, @lastChangeBy);";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.ExecuteNonQuery();

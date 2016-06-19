@@ -77,7 +77,7 @@ namespace _BusinessLayer
         public void guardar(d90CreditosReclamadosDto bdto)
         {
             d90CreditosReclamados b = new d90CreditosReclamados();
-            b.guardar(bdto.idCreditoReclamado, bdto.idCredorNoProcesso, bdto.descricao, bdto.valorDivida, bdto.valorRecebido, bdto.lastChangeBy);
+            b.guardar(bdto.idCredorNoProcesso, bdto.descricao, bdto.valorDivida, bdto.valorRecebido, bdto.lastChangeBy);
         }
 
         public Dictionary<String, d90CreditosReclamadosDto> getListaCreditosReclamados(string idCredorNoProcesso)
@@ -91,6 +91,12 @@ namespace _BusinessLayer
                 lista.Add(i.ToString(), jdto);
             }
             return lista;
+        }
+
+        public void removerCreditoReclamado(string idCredorNoProcesso)
+        {
+            d90CreditosReclamados c = new d90CreditosReclamados();
+            c.removerCreditoReclamado(idCredorNoProcesso);
         }
     }
 }
