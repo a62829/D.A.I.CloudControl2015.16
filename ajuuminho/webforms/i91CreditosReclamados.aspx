@@ -43,11 +43,14 @@
                     <div class="titleh4">
                         <h4>Lista de Elementos Financeiros</h4>
                     </div>
-
+                    <div class="DropDpwnEntidadesProcesso">
+                    <asp:DropDownList ID="DropDownListCredorID" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownListCredorID_SelectedIndexChanged"></asp:DropDownList>
+                        </div>
+                    <br />
                 <asp:ListBox ID="ListBoxParaTabsCreditosReclamadosID" CssClass="ListBoxParaTabsProcessos-Item" runat="server"  AutoPostBack="True" OnSelectedIndexChanged="ListBoxParaTabsCreditosReclamadosID_SelectedIndexChanged"></asp:ListBox>
-
+                   
                 </div>
-
+                 <br />
                 <div class="InsideViewsDetailsBoxProcessos" runat="server" id="ContentDetailsBox" visible="false">
                     <div class="titleh4" runat="server" id="DetailsTitleBox" visible="false">
                         <h3>Detalhes</h3>
@@ -59,7 +62,7 @@
                            Credor: </asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="TextBoxCredorID" runat="server" Enabled="false"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxCredorID" runat="server" Enabled="false" CssClass="LabelsInputs-Item"></asp:TextBox>
                                 <asp:HiddenField ID="HiddenFieldCredorID" runat="server" />
                             </td>
                         </tr>

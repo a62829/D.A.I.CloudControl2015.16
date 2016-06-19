@@ -18,7 +18,7 @@ namespace ajuUminho.webforms
 
             if (!IsPostBack)
             {
-                listaCreditosReclamados();
+                listaCredor();
             }
             else
             {
@@ -47,7 +47,7 @@ namespace ajuUminho.webforms
         {
             ContentListBox.Visible = true;
             ContentDetailsBox.Visible = true;
-            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Processos");
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBoxProcessos");
             DetailsTitleBox.Visible = true;
             ButtonCriarID.Visible = false;
             ButtonEditarID.Visible = true;
@@ -63,7 +63,7 @@ namespace ajuUminho.webforms
         {
             ContentListBox.Visible = true;
             ContentDetailsBox.Visible = true;
-            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Processos");
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBoxProcessos");
             DetailsTitleBox.Visible = true;
             ButtonCriarID.Visible = false;
             ButtonEditarID.Visible = false;
@@ -95,13 +95,13 @@ namespace ajuUminho.webforms
         {
             //ListBoxParaTabsCreditosReclamadosID.Items.Clear();
             c93EdicaoCreditosReclamados bdto = new c93EdicaoCreditosReclamados();
-            d37CredorDto cdto = new d37CredorDto();
-            var x = cdto.getListaCredorNoProcesso((string)Session["idProcesso"]);
-            foreach (KeyValuePair<String, d37CredorDto> pair in x)
-            {
-                this.id = pair.Value.id.ToString();
-            }
-            var y = bdto.getListaCreditosReclamados((string)Session["idProcesso"], this.id);
+            //d37CredorDto cdto = new d37CredorDto();
+            //var x = cdto.getListaCredorNoProcesso((string)Session["idProcesso"]);
+            //foreach (KeyValuePair<String, d37CredorDto> pair in x)
+            //{
+            //    this.id = pair.Value.id.ToString();
+            //}
+            var y = bdto.getListaCreditosReclamados((string)Session["idProcesso"], DropDownListCredorID.SelectedValue.ToString());
             foreach (KeyValuePair<String, d90CreditosReclamadosDto> pair in y)
             {
                 ListItem Item = new ListItem();
@@ -119,9 +119,22 @@ namespace ajuUminho.webforms
             var credor = cdto.getListaCredorNoProcesso(idProcesso);
             foreach (KeyValuePair<String, d37CredorDto> pair in credor)
             {
-                TextBoxCredorID.Text = pair.Value.nome.ToString();
-                HiddenFieldCredorID.Value = pair.Value.id.ToString();
+
+                ListItem Item = new ListItem();
+                Item.Text = pair.Value.nome.ToString();
+                Item.Value = pair.Value.id.ToString();
+                DropDownListCredorID.Items.Add(Item);
+                DropDownListCredorID.DataBind();
+                //TextBoxCredorID.Text = pair.Value.nome.ToString();
+                //HiddenFieldCredorID.Value = pair.Value.id.ToString();
             }
+        }
+
+        protected void DropDownListCredorID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TextBoxCredorID.Text = DropDownListCredorID.SelectedItem.Text.ToString();
+            HiddenFieldCredorID.Value = DropDownListCredorID.SelectedValue.ToString();
+            listaCreditosReclamados();
         }
 
         protected void ListBoxParaTabsCreditosReclamadosID_SelectedIndexChanged(object sender, EventArgs e)
