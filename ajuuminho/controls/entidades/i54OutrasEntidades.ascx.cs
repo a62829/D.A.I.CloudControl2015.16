@@ -89,18 +89,20 @@ namespace ajuUminho.controls.entidades
             TextBoxIbanID.Text = oedto.iban;
             TextBoxNifID.Text = oedto.nif;
             TextBoxLastChangedID.Text = oedto.lastChangeBy;
-            ListBoxEntidadesID.Items.Clear();
-            listaOutraEntidade();
+            //ListBoxEntidadesID.Items.Clear();
+            //listaOutraEntidade();
         }
 
         protected void ButtonEditarID_Click(object sender, EventArgs e)
         {
-            ListBoxEntidadesID.ClearSelection();
             c55RemocaoOutraEntidade WsEOE = new c55RemocaoOutraEntidade();
             WsEOE.editarOutraEntidade(ListBoxEntidadesID.SelectedValue.ToString(), TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text);
             ClearAllText(this);
+            ListBoxEntidadesID.ClearSelection();
+            ListBoxEntidadesID.Items.Clear();
+            listaOutraEntidade();
         }
 
         protected void listaOutraEntidade()
@@ -119,10 +121,12 @@ namespace ajuUminho.controls.entidades
 
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
         {
-            ListBoxEntidadesID.ClearSelection();
             c55RemocaoOutraEntidade WsERL = new c55RemocaoOutraEntidade();
             WsERL.removerOutraEntidade(ListBoxEntidadesID.SelectedValue.ToString());
             ClearAllText(this);
+            ListBoxEntidadesID.ClearSelection();
+            ListBoxEntidadesID.Items.Clear();
+            listaOutraEntidade();
         }
 
         protected void ButtonPesquisarID_Click(object sender, EventArgs e)

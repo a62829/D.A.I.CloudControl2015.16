@@ -149,7 +149,7 @@ namespace ajuUminho.webforms
             //ListBoxParaTabsCreditosReclamadosID.Items.Clear();
             listaCreditosReclamados();
             ListBoxParaTabsCreditosReclamadosID.DataBind();
-            listaCredor();
+            //listaCredor();
         }
 
         protected void ButtonEditarID_Click(object sender, EventArgs e)
