@@ -64,6 +64,18 @@ namespace ajuUminho.controls.administracao
             ListBoxUtilizadoresID.DataBind();
         }
 
+        protected void listaUserDetail ()
+        {
+            gestaoIdentidade cde = new gestaoIdentidade();
+            var dt = cde.getUserDetailById(ListBoxUtilizadoresID.SelectedValue.ToString());
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                TextBoxUsernameID.Text = Convert.ToString(dt.Rows[i]["UserName"]);
+                TextBoxTelefoneID.Text = Convert.ToString(dt.Rows[i]["PhoneNumber"]);
+                TextBoxEmailID.Text = Convert.ToString(dt.Rows[i]["Email"]);
+            }
+        }
+
         protected void TabCriarUtilizador_Click(object sender, EventArgs e)
         {
             EnableAllText(this);
@@ -120,54 +132,41 @@ namespace ajuUminho.controls.administracao
 
         protected void ButtonCriarID_Click(object sender, EventArgs e)
         {
-                    gestaoIdentidade ws1 = new gestaoIdentidade();
-                    ws1.criarUtilizador(TextBoxUsernameID.Text, TextBoxPasswordID.Text, TextBoxEmailID.Text, TextBoxTelefoneID.Text);
-                    string mystring = "Utilizador criado com sucesso";
-                    this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
-                    ClearAllText(this);
+            gestaoIdentidade ws1 = new gestaoIdentidade();
+            ws1.criarUtilizador(TextBoxUsernameID.Text, TextBoxPasswordID.Text, TextBoxEmailID.Text, TextBoxTelefoneID.Text);
+            string mystring = "Utilizador criado com sucesso";
+            this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
+            ClearAllText(this);
 
         }
 
         protected void ButtonEditarID_Click(object sender, EventArgs e)
         {
-            //if (ListBoxUtilizadoresID.SelectedIndex == -1)
-            //{
-            //    string mystring = "Primeiro deve seleccionar um utilizador que deseje editar.";
-            //    this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
-            //}
-            //else
-            //{
-
-            //    if ((TextBoxUsernameID.Text == "") ||
-            //        (TextBoxEmailID.Text == "") ||
-            //        (TextBoxTelefoneID.Text == ""))
-            //    {
-            //        string mystring = "Todos os campos devem estar preenchidos.";
-            //        this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
-            //    }
-            //    else
-            //    {
-                    gestaoIdentidade ws1 = new gestaoIdentidade();
-                    ws1.
-                    ClearAllText(this);
-
-            //    }
-
-
-            //}
-        }
-
-        protected void ButtonEliminarID_Click(object sender, EventArgs e)
-        {
-
-            if (ListBoxEntidadesID.SelectedIndex == -1)
+            if (ListBoxUtilizadoresID.SelectedIndex == -1)
             {
                 string mystring = "Primeiro deve seleccionar um utilizador que deseje eliminar.";
                 this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
             }
             else
             {
-                //////// CODIGO AQUI
+                gestaoIdentidade ws1 = new gestaoIdentidade();
+                ws1.editarUtilizador(TextBoxUsernameID.Text, TextBoxEmailID.Text, TextBoxTelefoneID.Text, ListBoxUtilizadoresID.SelectedValue.ToString());
+            ClearAllText(this);
+            }
+        }
+
+        protected void ButtonEliminarID_Click(object sender, EventArgs e)
+        {
+
+            if (ListBoxUtilizadoresID.SelectedIndex == -1)
+            {
+                string mystring = "Primeiro deve seleccionar um utilizador que deseje eliminar.";
+                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
+            }
+            else
+            {
+                gestaoIdentidade ws1 = new gestaoIdentidade();
+                ws1.eliminarUtilizador(ListBoxUtilizadoresID.SelectedValue.ToString());
                 ClearAllText(this);
             }
         }
@@ -175,6 +174,11 @@ namespace ajuUminho.controls.administracao
         protected void TextBoxConfirmarPasswordID_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void ListBoxUtilizadoresID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listaUserDetail();
         }
     }
 }

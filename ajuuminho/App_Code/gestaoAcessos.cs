@@ -10,11 +10,43 @@ namespace ajuUminho.App_Code
 {
     public class gestaoAcessos : DBcon
     {
+        public string userName { get; set; }
+        public string email { get; set; }
+        public string phoneNumber { get; set; }
+
+        public gestaoAcessos()
+        {
+
+        }
+
+        public gestaoAcessos (string userName, string email, string phoneNumber)
+        {
+            this.userName = userName;
+            this.email = email;
+            this.phoneNumber = phoneNumber;
+        }
+
         public System.Data.DataTable getUserDetail(string nome)
         {
             //Listar os Perfis de um Utilizador
             SqlDataReader reader;
             cmd.CommandText = "SELECT UserName, Email, PhoneNumber FROM [dbo].[AspNetUsers] WHERE [dbo].[AspNetUsers].[UserName]='" + nome + "';";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.Connection.Open();
+            reader = cmd.ExecuteReader();
+            var dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
+        }
+
+        public System.Data.DataTable getUserDetailById(string idUser)
+        {
+            //Listar os Perfis de um Utilizador
+            SqlDataReader reader;
+            cmd.Parameters.AddWithValue("@id", idUser);
+            cmd.CommandText = "SELECT UserName, Email, PhoneNumber FROM [dbo].[AspNetUsers] WHERE [dbo].[AspNetUsers].[Id]=@id;";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -108,7 +140,7 @@ namespace ajuUminho.App_Code
         {
             //Listar os Perfis de um Utilizador
             SqlDataReader reader;
-            cmd.CommandText = "SELECT UserName,Id FROM [dbo].[AspNetUsers];";
+            cmd.CommandText = "SELECT UserName,Id,Email PhoneNumber FROM [dbo].[AspNetUsers];";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             con.Open();
@@ -190,9 +222,29 @@ namespace ajuUminho.App_Code
             }
         }
 
-        public bool EditarUtilizador(string userName, string password, string email, string telefone)
+        public void setUtilizador(string userName, string email, string telefone, string idUser)
         {
+            con.Open();
+            cmd.Parameters.AddWithValue("@id", idUser);
+            cmd.Parameters.AddWithValue("@userName", userName);
+            cmd.Parameters.AddWithValue("@email", email);
+            cmd.Parameters.AddWithValue("@telefone", telefone);
+            cmd.CommandText = "UPDATE dbo.AspNetUsers SET UserName = @userName, Email = @email, PhoneNumber = @telefone WHERE Id = @id;";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
 
+        public void eliminarUtilizador(string idUser)
+        {
+            con.Open();
+            cmd.Parameters.AddWithValue("@id", idUser);
+            cmd.CommandText = "DELETE FROM dbo.AspNetUsers WHERE Id = @idUser;";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+            con.Close();
         }
     }
 

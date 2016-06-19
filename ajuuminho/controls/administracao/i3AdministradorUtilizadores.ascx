@@ -22,7 +22,7 @@
                 <%--<div id="EntidadesBox">--%>
                 <%--<div id="ListEdentidades">--%>
                 <div class="AlignBox">
-                    <asp:ListBox ID="ListBoxUtilizadoresID" runat="server" CssClass="ListBoxEntidades-Item" AutoPostBack="True"></asp:ListBox>
+                    <asp:ListBox ID="ListBoxUtilizadoresID" runat="server" CssClass="ListBoxEntidades-Item" AutoPostBack="True" OnSelectedIndexChanged="ListBoxUtilizadoresID_SelectedIndexChanged"></asp:ListBox>
                 </div>
             </div>
 
