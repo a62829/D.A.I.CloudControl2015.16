@@ -39,7 +39,7 @@ namespace ajuUminho.webforms
                 else if (DropDownListEntidadesID.Text == "Representante Legal")
                 {
                     c23EditarRepresentanteLegal crl = new c23EditarRepresentanteLegal();
-                    if (RadioButtonList1.SelectedItem.Text == "Insolvente")
+                    if (RadioButtonListID.SelectedItem.Text == "Insolvente")
                     {
                         crl.adicionarRepresentanteLegalAoInsolventeNoProcesso((string)Session["idProcesso"], ListBoxEntidadesID.SelectedItem.Value.ToString(), Session["userId"].ToString(), pdto.listaIDtoNoProcesso.Values.ToString());
                         ListBoxEntidadesAssociadosID.Items.Clear();
@@ -128,7 +128,7 @@ namespace ajuUminho.webforms
                 else if (DropDownListEntidadesID.Text == "Representante Legal")
                 {
                     c23EditarRepresentanteLegal crl = new c23EditarRepresentanteLegal();
-                    if (RadioButtonList1.SelectedItem.Text == "Insolvente")
+                    if (RadioButtonListID.SelectedItem.Text == "Insolvente")
                     {
                         crl.adicionarRepresentanteLegalAoInsolventeNoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString(), pdto.listaIDtoNoProcesso.Values.ToString());
                         ListBoxEntidadesAssociadosID.Items.Clear();
@@ -212,49 +212,59 @@ namespace ajuUminho.webforms
                 ListBoxEntidadesAssociadosID.Items.Clear();
                 ListBoxEntidadesID.Items.Clear();
                 listaInsolventes();
-            }else if (DropDownListEntidadesID.Text == "Representante Legal") {
-                RadioButtonList1.Visible = true;
+                RadioButtonListID.Visible = false;
+            }
+            else if (DropDownListEntidadesID.Text == "Representante Legal") {
                 ListBoxEntidadesAssociadosID.Items.Clear();
                 ListBoxEntidadesID.Items.Clear();
                 listaRepresentantesLegais();
+                RadioButtonListID.Visible = true;
             }
             else if (DropDownListEntidadesID.Text == "Credor")  {
                 ListBoxEntidadesAssociadosID.Items.Clear();
                 ListBoxEntidadesID.Items.Clear();
                 listaCredores();
+                RadioButtonListID.Visible = false;
             }
             else if (DropDownListEntidadesID.Text == "Juiz") {
                 ListBoxEntidadesAssociadosID.Items.Clear();
                 ListBoxEntidadesID.Items.Clear();
                 listaJuizes();
+                RadioButtonListID.Visible = false;
             }
             else if (DropDownListEntidadesID.Text == "Prestador de Serviços"){
                 ListBoxEntidadesAssociadosID.Items.Clear();
                 ListBoxEntidadesID.Items.Clear();
                 listaPrestadoresDeServicos();
+                RadioButtonListID.Visible = false;
             }
             else if (DropDownListEntidadesID.Text == "Outras Entidades")
             {
                 ListBoxEntidadesAssociadosID.Items.Clear();
                 ListBoxEntidadesID.Items.Clear();
                 listaOutrasEntidades();
+                RadioButtonListID.Visible = false;
             }
             else if (DropDownListEntidadesID.Text == "Contabilista")
             {
                 ListBoxEntidadesAssociadosID.Items.Clear();
                 ListBoxEntidadesID.Items.Clear();
                 listaContabilistas();
+                RadioButtonListID.Visible = false;
             }
             else if (DropDownListEntidadesID.Text == "Tribunal")
             {
                 ListBoxEntidadesAssociadosID.Items.Clear();
                 ListBoxEntidadesID.Items.Clear();
                 listaTribunais();
-            }else if (DropDownListEntidadesID.Text == "Administrador Judicial")
+                RadioButtonListID.Visible = false;
+            }
+            else if (DropDownListEntidadesID.Text == "Administrador Judicial")
             {
                 ListBoxEntidadesAssociadosID.Items.Clear();
                 ListBoxEntidadesID.Items.Clear();
                 listaAdministradoresJudiciais();
+                RadioButtonListID.Visible = false;
             }
         }
 
@@ -262,7 +272,8 @@ namespace ajuUminho.webforms
         {
             ListBoxEntidadesAssociadosID.Items.Clear();
             ListBoxEntidadesID.Items.Clear();
-            if (RadioButtonList1.SelectedItem.Text == "Insolvente")
+
+            if (RadioButtonListID.SelectedItem.Text == "Insolvente")
             {
                 d21RepresentanteLegalDto idto = new d21RepresentanteLegalDto();
                 var x = idto.getListaRepresentanteLegalNoInsolventeNoProcesso((string)Session["idProcesso"]);

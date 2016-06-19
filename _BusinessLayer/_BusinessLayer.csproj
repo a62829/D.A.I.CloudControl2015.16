@@ -53,6 +53,7 @@
     <Compile Include="d59EventoDto.cs" />
     <Compile Include="d63BensDto.cs" />
     <Compile Include="d85ProcessoDto.cs" />
+    <Compile Include="d90CreditosReclamadosDto.cs" />
     <Compile Include="Entidade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

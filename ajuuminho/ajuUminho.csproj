@@ -563,6 +563,14 @@
       <DependentUpon>c55RemocaoOutraEntidade.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Ws\c61EdicaoEventos.asmx.cs">
+      <DependentUpon>c61EdicaoEventos.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ws\c62RemocaoEventos.asmx.cs">
+      <DependentUpon>c62RemocaoEventos.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Ws\c65EdicaoBens.asmx.cs">
       <DependentUpon>c65EdicaoBens.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -573,6 +581,14 @@
     </Compile>
     <Compile Include="Ws\c87.asmx.cs">
       <DependentUpon>c87.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ws\c93EdicaoCreditosReclamados.asmx.cs">
+      <DependentUpon>c93EdicaoCreditosReclamados.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ws\c95RemocaoCreditosReclamados.asmx.cs">
+      <DependentUpon>c95RemocaoCreditosReclamados.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Ws\cInterfaceEntidade.cs" />
@@ -624,9 +640,13 @@
     <Content Include="Ws\c51EdicaoPrestadorServico.asmx" />
     <Content Include="Ws\c52RemocaoPrestadorServico.asmx" />
     <Content Include="Ws\c55RemocaoOutraEntidade.asmx" />
+    <Content Include="Ws\c61EdicaoEventos.asmx" />
+    <Content Include="Ws\c62RemocaoEventos.asmx" />
     <Content Include="Ws\c65EdicaoBens.asmx" />
     <Content Include="Ws\c66RemocaoBens.asmx" />
     <Content Include="Ws\c87.asmx" />
+    <Content Include="Ws\c93EdicaoCreditosReclamados.asmx" />
+    <Content Include="Ws\c95RemocaoCreditosReclamados.asmx" />
     <Content Include="Ws\ControloDeEntidades.asmx" />
     <Content Include="Ws\gestaoIdentidade.asmx" />
     <Content Include="MyNewSiteMapFile.sitemap" />
@@ -672,7 +692,6 @@
       <Name>_BusinessLayer</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

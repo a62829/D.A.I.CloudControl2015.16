@@ -102,6 +102,7 @@ namespace ajuUminho.controls.administracao
                 ListBoxPerfisAssociadosID.DataBind();
                 ListBoxPerfisID.DataBind();
                 listaRolesUserDontHave();
+
                 listaUserRoles();
             }
         }
@@ -123,8 +124,9 @@ namespace ajuUminho.controls.administracao
                 Item.Text = pair.Value.ToString();
                 Item.Value = pair.Key.ToString();
                 ListBoxIdentidadesID.Items.Add(Item);
-                ListBoxIdentidadesID.DataBind();
+                
             }
+            ListBoxIdentidadesID.DataBind();
         }
 
         protected void listaRoles()

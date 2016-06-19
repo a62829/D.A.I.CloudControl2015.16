@@ -21,8 +21,8 @@ namespace ajuUminho.webforms
             }
                 else
                 {
-
-                }
+                
+            }
 
         }
 
@@ -46,7 +46,7 @@ namespace ajuUminho.webforms
         {
             ContentListBox.Visible = true;
             ContentDetailsBox.Visible = true;
-            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Bens");
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBoxBens");
             DetailsTitleBox.Visible = true;
             ButtonCriarID.Visible = false;
             ButtonEditarID.Visible = true;
@@ -62,7 +62,7 @@ namespace ajuUminho.webforms
         {
             ContentListBox.Visible = true;
             ContentDetailsBox.Visible = true;
-            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Bens");
+            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBoxBens");
             DetailsTitleBox.Visible = true;
             ButtonCriarID.Visible = false;
             ButtonEditarID.Visible = false;
@@ -92,7 +92,7 @@ namespace ajuUminho.webforms
 
         protected void listaBens()
         {
-            //ListBoxParaTabsProcessosID.Items.Clear();
+            ListBoxParaTabsProcessosID.Items.Clear();
             c65EdicaoBens bdto = new c65EdicaoBens();
             d41InsolventeDto idto = new d41InsolventeDto();
             var x = idto.getListaInsolventeNoProcesso((string)Session["idProcesso"]);
@@ -118,13 +118,13 @@ namespace ajuUminho.webforms
             string idRl = ListBoxParaTabsProcessosID.SelectedValue.ToString();
             d63BensDto bdto = eb.getBem(idRl);
             TextBoxDescricaoID.Text = bdto.descricao;
-            TextBoxTipoAtivoID.Text = bdto.idTipoAtivo;
+            TextBoxTipoAtivoID.Text = bdto.TipoAtivo;
             TextBoxValorAquisicaoID.Text = bdto.valorAquisicao;
             TextBoxValorMercadoID.Text = bdto.valorMercado;
             TextBoxValorLiquidacaoID.Text = bdto.valorLiquidacao;
             //ListBoxParaTabsProcessosID.Items.Clear();
-            listaBens();
-            ListBoxParaTabsProcessosID.DataBind();
+            //listaBens();
+            //ListBoxParaTabsProcessosID.DataBind();
             listaInsolvente();
         }
 

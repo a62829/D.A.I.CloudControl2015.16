@@ -12,7 +12,6 @@
 <body>
     <form id="Form" runat="server">
         <uc:i14TerminoDeSessao runat="server" ID="headerID" />
-        <div id="BigBox">
             <div id="ViewBigBox">
                 <div id="ProcessesHomeBox">
                     <div class="AlignBox">
@@ -99,7 +98,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </form>
 </body>
 </html>
