@@ -89,19 +89,21 @@ namespace ajuUminho.controls.entidades
             TextBoxIbanID.Text = psdto.iban;
             TextBoxNifID.Text = psdto.nif;
             TextBoxLastChangedID.Text = psdto.lastChangeBy;
-            ListBoxEntidadesID.ClearSelection();
+            //ListBoxEntidadesID.ClearSelection();
             //ListBoxEntidadesID.Items.Clear();
             //listaRepresentanteLegal();
         }
 
         protected void ButtonEditarID_Click(object sender, EventArgs e)
         {
-            ListBoxEntidadesID.ClearSelection();
             c51EdicaoPrestadorServico WsEPS = new c51EdicaoPrestadorServico();
             WsEPS.editarPrestadorServico(ListBoxEntidadesID.SelectedValue.ToString(), TextBoxNomeID.Text, TextBoxMoradaID.Text, TextBoxCodPostalID.Text, TextBoxLocalidadeID.Text,
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text);
             ClearAllText(this);
+            ListBoxEntidadesID.ClearSelection();
+            ListBoxEntidadesID.Items.Clear();
+            listaPrestadorServico();
         }
 
         protected void listaPrestadorServico()
@@ -124,6 +126,8 @@ namespace ajuUminho.controls.entidades
             WsERL.removerPrestadorServico(ListBoxEntidadesID.SelectedValue.ToString());
             ClearAllText(this);
             ListBoxEntidadesID.ClearSelection();
+            ListBoxEntidadesID.Items.Clear();
+            listaPrestadorServico();
         }
 
         protected void ButtonPesquisarID_Click(object sender, EventArgs e)
