@@ -1,8 +1,10 @@
-﻿using System;
+﻿using _BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+
 
 namespace ajuUminho.Ws
 {
@@ -18,9 +20,12 @@ namespace ajuUminho.Ws
     {
 
         [WebMethod]
-        public string HelloWorld()
+        public void removerCreditoReclamado(string idProcesso, string idCredor)
         {
-            return "Hello World";
+            // efetuar controlos
+            d90CreditosReclamadosDto crdto = new d90CreditosReclamadosDto();
+            string x = crdto.getIdCredorNoProcesso(idProcesso, idCredor);
+            crdto.removerCreditoReclamado(x);
         }
     }
 }

@@ -105,5 +105,19 @@ namespace _DataLayer
             cmd.ExecuteNonQuery();
             con.Close();
         }
+
+        public DataTable getListaTipoBem()
+        {
+            SqlDataReader reader;
+            con.Open();
+            cmd.CommandText = "SELECT id, nome from dbo.tipoAtivo";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            reader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            con.Close();
+            return dataTable;
+        }
     }
 }

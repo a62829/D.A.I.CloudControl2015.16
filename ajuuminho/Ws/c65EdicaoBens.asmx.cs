@@ -51,5 +51,12 @@ namespace ajuUminho.Ws
             return cdto.getListaBens(x);
         }
 
+        [WebMethod]
+        public Dictionary<String, d63BensDto> getListaTipoBem()
+        {
+            d63BensDto bdto = new d63BensDto();
+            return bdto.getListaTipoBem();
+        }
+
     }
 }

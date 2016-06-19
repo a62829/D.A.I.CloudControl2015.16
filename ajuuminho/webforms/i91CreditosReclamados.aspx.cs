@@ -29,7 +29,7 @@ namespace ajuUminho.webforms
 
         protected void TabCriar_Click(object sender, EventArgs e)
         {
-            ContentListBox.Visible = false;
+            ContentListBox.Visible = true;
             ContentDetailsBox.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Processos");
             DetailsTitleBox.Visible = false;
@@ -41,10 +41,13 @@ namespace ajuUminho.webforms
             TabEditarID.CssClass = "Initial";
             TabEliminarID.CssClass = "Initial";
             TabPesquisarID.CssClass = "Initial";
+            DropDownListCredorID.Visible = true;
+            ListBoxParaTabsCreditosReclamadosID.Visible = false;
         }
 
         protected void TabEditar_Click(object sender, EventArgs e)
         {
+            ListBoxParaTabsCreditosReclamadosID.Visible = true;
             ContentListBox.Visible = true;
             ContentDetailsBox.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBoxProcessos");
@@ -93,15 +96,9 @@ namespace ajuUminho.webforms
 
         protected void listaCreditosReclamados()
         {
-            //ListBoxParaTabsCreditosReclamadosID.Items.Clear();
             c93EdicaoCreditosReclamados bdto = new c93EdicaoCreditosReclamados();
-            //d37CredorDto cdto = new d37CredorDto();
-            //var x = cdto.getListaCredorNoProcesso((string)Session["idProcesso"]);
-            //foreach (KeyValuePair<String, d37CredorDto> pair in x)
-            //{
-            //    this.id = pair.Value.id.ToString();
-            //}
             var y = bdto.getListaCreditosReclamados((string)Session["idProcesso"], DropDownListCredorID.SelectedValue.ToString());
+            ListBoxParaTabsCreditosReclamadosID.Items.Clear();
             foreach (KeyValuePair<String, d90CreditosReclamadosDto> pair in y)
             {
                 ListItem Item = new ListItem();
@@ -125,15 +122,12 @@ namespace ajuUminho.webforms
                 Item.Value = pair.Value.id.ToString();
                 DropDownListCredorID.Items.Add(Item);
                 DropDownListCredorID.DataBind();
-                //TextBoxCredorID.Text = pair.Value.nome.ToString();
-                //HiddenFieldCredorID.Value = pair.Value.id.ToString();
             }
         }
 
         protected void DropDownListCredorID_SelectedIndexChanged(object sender, EventArgs e)
         {
             TextBoxCredorID.Text = DropDownListCredorID.SelectedItem.Text.ToString();
-            HiddenFieldCredorID.Value = DropDownListCredorID.SelectedValue.ToString();
             listaCreditosReclamados();
         }
 
@@ -142,7 +136,7 @@ namespace ajuUminho.webforms
             c93EdicaoCreditosReclamados eb = new c93EdicaoCreditosReclamados();
             string idRl = ListBoxParaTabsCreditosReclamadosID.SelectedValue.ToString();
             d90CreditosReclamadosDto bdto = eb.getCreditoReclamado(idRl);
-            TextBoxCredorID.Text = bdto.idCredorNoProcesso;
+            HiddenFieldCredorID.Value = bdto.idCredorNoProcesso;
             TextBoxDescricaoID.Text = bdto.descricao;
             TextBoxValorDividaID.Text = bdto.valorDivida;
             TextBoxValorRecebidoID.Text = bdto.valorRecebido;
@@ -166,29 +160,24 @@ namespace ajuUminho.webforms
 
         protected void ButtonEliminarID_Click(object sender, EventArgs e)
         {
-            //    c24RemocaoRepresentanteLegal WsERL = new c24RemocaoRepresentanteLegal();
-            //    var y = ListBoxEntidadesID.SelectedValue.ToString();
-            //    WsERL.removerRepresentanteLegal(y);
-            //    listaRepresentanteLegal();
-            //    ClearAllText(this);
-            //    ListBoxEntidadesID.ClearSelection();
-            //    string mystring = "Representante Legal eliminado com sucesso.";
-            //    this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
+            c95RemocaoCreditosReclamados wseb = new c95RemocaoCreditosReclamados();
+            var x = DropDownListCredorID.SelectedValue.ToString();
+            wseb.removerCreditoReclamado((string)Session["idProcesso"], x);
+            listaCreditosReclamados();
+            ListBoxParaTabsCreditosReclamadosID.DataBind();
+            ListBoxParaTabsCreditosReclamadosID.Items.Clear();
         }
 
         protected void ButtonCriarID_Click(object sender, EventArgs e)
         {
+            d90CreditosReclamadosDto crdto = new d90CreditosReclamadosDto();
             c93EdicaoCreditosReclamados wseb = new c93EdicaoCreditosReclamados();
-            wseb.criarCreditoReclamado(ListBoxParaTabsCreditosReclamadosID.SelectedValue.ToString(), HiddenFieldCredorID.Value.ToString(), TextBoxDescricaoID.Text, TextBoxValorDividaID.Text,
+            var x = DropDownListCredorID.SelectedValue.ToString();
+            var y = crdto.getIdCredorNoProcesso((string)Session["idProcesso"], x);
+            wseb.criarCreditoReclamado(null, y, TextBoxDescricaoID.Text, TextBoxValorDividaID.Text,
                 TextBoxValorRecebidoID.Text, (string)Session["userId"]);
             listaCreditosReclamados();
             ListBoxParaTabsCreditosReclamadosID.DataBind();
-            //ClearAllText(this);
-            //ListBoxParaTabsCreditosReclamadosID.ClearSelection();
-            //string mystring = "Representante Legal criado com sucesso.";
-            //this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
-
-            //ClearAllText(this);
             ListBoxParaTabsCreditosReclamadosID.Items.Clear();
             listaCreditosReclamados();
         }
