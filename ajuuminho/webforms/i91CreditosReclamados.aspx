@@ -26,7 +26,7 @@
             <asp:SiteMapDataSource ID="SiteMapDataSource1" StartingNodeUrl="~/webforms/i102EditarProcesso.aspx" runat="server" />
 
 
-                        <div class="ViewsButtonsBox2">
+            <div class="ViewsButtonsBox2">
                 <asp:Button Text="Criar" BorderStyle="None" ID="TabCriarID" CssClass="Initial" runat="server"
                     OnClick="TabCriar_Click" />
                 <asp:Button Text="Editar" BorderStyle="None" ID="TabEditarID" CssClass="Initial" runat="server"
@@ -40,24 +40,27 @@
             <div class="ViewsBoxProcessosCRUD">
 
                 <div class="InsideViewsTableBoxBens" runat="server" id="ContentListBox" visible="false">
-                    <div class="titleh4">
+                    <div class="titleh4" runat="server" id="DetailsTitleBox1" visible="false">
                         <h4>Lista de Elementos Financeiros</h4>
                     </div>
+                    <div class="titleh4" runat="server" id="DetailsTitleBoxCriar" visible="false">
+                        <h4>Registar Crédito Reclamado</h4>
+                    </div>
                     <div class="DropDpwnEntidadesProcesso">
-                    <asp:DropDownList ID="DropDownListCredorID" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownListCredorID_SelectedIndexChanged"></asp:DropDownList>
-                        </div>
+                        <asp:DropDownList ID="DropDownListCredorID" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownListCredorID_SelectedIndexChanged"></asp:DropDownList>
+                    </div>
                     <br />
-                <asp:ListBox ID="ListBoxParaTabsCreditosReclamadosID" CssClass="ListBoxParaTabsProcessos-Item" runat="server"  AutoPostBack="True" OnSelectedIndexChanged="ListBoxParaTabsCreditosReclamadosID_SelectedIndexChanged"></asp:ListBox>
-                   
+                    <asp:ListBox ID="ListBoxParaTabsCreditosReclamadosID" CssClass="ListBoxParaTabsProcessos-Item" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ListBoxParaTabsCreditosReclamadosID_SelectedIndexChanged"></asp:ListBox>
+
                 </div>
 
-                 <br /> <br />
+                <br runat="server" id="br1" />
 
                 <div class="InsideViewsDetailsBoxProcessos" runat="server" id="ContentDetailsBox" visible="false">
-                    <div class="titleh4" runat="server" id="DetailsTitleBox" visible="false">
+                    <div class="titleh4" runat="server" id="DetailsTitleBox2" visible="false">
                         <h3>Detalhes</h3>
                     </div>
-                                        <table class="ContentTable">
+                    <table class="ContentTable">
                         <tr>
                             <td>
                                 <asp:Label ID="LabelCredorID" runat="server" Text="Label" CssClass="Labels-Item">

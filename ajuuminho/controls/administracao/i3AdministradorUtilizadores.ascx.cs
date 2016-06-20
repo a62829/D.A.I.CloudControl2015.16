@@ -144,14 +144,14 @@ namespace ajuUminho.controls.administracao
         {
             if (ListBoxUtilizadoresID.SelectedIndex == -1)
             {
-                string mystring = "Primeiro deve seleccionar um utilizador que deseje eliminar.";
+                string mystring = "Primeiro deve seleccionar um utilizador que deseje editar.";
                 this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
             }
             else
             {
                 gestaoIdentidade ws1 = new gestaoIdentidade();
                 ws1.editarUtilizador(TextBoxUsernameID.Text, TextBoxEmailID.Text, TextBoxTelefoneID.Text, ListBoxUtilizadoresID.SelectedValue.ToString());
-            ClearAllText(this);
+                ClearAllText(this);
             }
         }
 
@@ -169,11 +169,6 @@ namespace ajuUminho.controls.administracao
                 ws1.eliminarUtilizador(ListBoxUtilizadoresID.SelectedValue.ToString());
                 ClearAllText(this);
             }
-        }
-
-        protected void TextBoxConfirmarPasswordID_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         protected void ListBoxUtilizadoresID_SelectedIndexChanged(object sender, EventArgs e)

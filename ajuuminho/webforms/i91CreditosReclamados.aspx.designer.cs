@@ -94,6 +94,24 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl ContentListBox;
         
         /// <summary>
+        /// DetailsTitleBox1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DetailsTitleBox1;
+        
+        /// <summary>
+        /// DetailsTitleBoxCriar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DetailsTitleBoxCriar;
+        
+        /// <summary>
         /// DropDownListCredorID control.
         /// </summary>
         /// <remarks>
@@ -112,6 +130,15 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.WebControls.ListBox ListBoxParaTabsCreditosReclamadosID;
         
         /// <summary>
+        /// br1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl br1;
+        
+        /// <summary>
         /// ContentDetailsBox control.
         /// </summary>
         /// <remarks>
@@ -121,13 +148,13 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl ContentDetailsBox;
         
         /// <summary>
-        /// DetailsTitleBox control.
+        /// DetailsTitleBox2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DetailsTitleBox;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DetailsTitleBox2;
         
         /// <summary>
         /// LabelCredorID control.

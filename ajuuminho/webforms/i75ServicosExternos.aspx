@@ -40,7 +40,7 @@
 
                 <div class="InsideViewsTableBoxProcessos" runat="server" id="ContentListBox" visible="false">
                     <div class="titleh4">
-                        <h4>Lista de Elementos Financeiros</h4>
+                        <h4>Lista de Serviços Externos</h4>
                     </div>
                     <div class="ListBoxParaTabsProcessos">
                         <asp:ListBox ID="ListBoxParaTabsProcessosID" CssClass="ListBoxParaTabsProcessos-Item" runat="server"></asp:ListBox>
@@ -50,6 +50,9 @@
                 <div class="InsideViewsDetailsBoxProcessos" runat="server" id="ContentDetailsBox" visible="false">
                     <div class="titleh4" runat="server" id="DetailsTitleBox" visible="false">
                         <h4>Detalhes</h4>
+                    </div>
+                    <div class="titleh4" runat="server" id="DetailsTitleBoxCriar" visible="false">
+                        <h4>Criar Serviço Externo</h4>
                     </div>
                     <table class="ContentTable">
                         <tr>

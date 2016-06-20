@@ -51,7 +51,7 @@
                             Confirmar palavra-passe:  </asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="TextBoxConfirmarPasswordID" type="password" runat="server" CssClass="LabelsInputs-Item" Enabled="false" OnTextChanged="TextBoxConfirmarPasswordID_TextChanged" ClientIDMode="Static"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxConfirmarPasswordID" type="password" runat="server" CssClass="LabelsInputs-Item" Enabled="false" ClientIDMode="Static"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>

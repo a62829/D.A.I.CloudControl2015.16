@@ -50,7 +50,9 @@
                         <div class="titleh4" runat="server" id="DetailsTitleBox" visible="false">
                             <h4>Detalhes do Evento</h4>
                         </div>
-
+                        <div class="titleh4" runat="server" id="DetailsTitleBoxCriar" visible="false">
+                            <h4>Criar Evento</h4>
+                        </div>
                         <table class="ContentTable">
                             <tr>
                                 <td>
@@ -58,7 +60,7 @@
                            Tipo de Evento: </asp:Label>
                                 </td>
                                 <td>
-                                    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"></asp:DropDownList>
+                                    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" CssClass="Dropdowns-Item" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"></asp:DropDownList>
                                 </td>
                             </tr>
                             <tr>

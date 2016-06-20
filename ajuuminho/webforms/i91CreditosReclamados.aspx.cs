@@ -67,9 +67,13 @@ namespace ajuUminho.webforms
             EnableAllText(this);
             TextBoxCredorID.Enabled = false;
             ContentListBox.Visible = true;
+            ContentListBox.Attributes.Add("class", "i91CreditosReclamados");
+            br1.Visible = false;
             ContentDetailsBox.Visible = true;
-            ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Processos");
-            DetailsTitleBox.Visible = false;
+            ContentDetailsBox.Attributes.Add("class", "i91CreditosReclamadosDropdown");
+            DetailsTitleBox1.Visible = false;
+            DetailsTitleBox2.Visible = false;
+            DetailsTitleBoxCriar.Visible = true;
             ButtonCriarID.Visible = true;
             ButtonEditarID.Visible = false;
             ButtonEliminarID.Visible = false;
@@ -92,9 +96,13 @@ namespace ajuUminho.webforms
             TextBoxCredorID.Enabled = false;
             ListBoxParaTabsCreditosReclamadosID.Visible = true;
             ContentListBox.Visible = true;
+            ContentListBox.Attributes.Add("class", "InsideViewsTableBoxBens");
+            br1.Visible = true;
             ContentDetailsBox.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBoxProcessos");
-            DetailsTitleBox.Visible = true;
+            DetailsTitleBox1.Visible = true;
+            DetailsTitleBox2.Visible = true;
+            DetailsTitleBoxCriar.Visible = false;
             ButtonCriarID.Visible = false;
             ButtonEditarID.Visible = true;
             ButtonEliminarID.Visible = false;
@@ -110,9 +118,13 @@ namespace ajuUminho.webforms
         {
             DisableAllText(this);
             ContentListBox.Visible = true;
+            ContentListBox.Attributes.Add("class", "InsideViewsTableBoxBens");
             ContentDetailsBox.Visible = true;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBoxProcessos");
-            DetailsTitleBox.Visible = true;
+            br1.Visible = true;
+            DetailsTitleBox1.Visible = true;
+            DetailsTitleBox2.Visible = true;
+            DetailsTitleBoxCriar.Visible = false;
             ButtonCriarID.Visible = false;
             ButtonEditarID.Visible = false;
             ButtonEliminarID.Visible = true;
@@ -127,9 +139,13 @@ namespace ajuUminho.webforms
         protected void TabPesquisar_Click(object sender, EventArgs e)
         {
             ContentListBox.Visible = false;
+            ContentListBox.Attributes.Add("class", "InsideViewsTableBoxBens");
             ContentDetailsBox.Visible = false;
             ContentDetailsBox.Attributes.Add("class", "InsideViewsDetailsBox2Processos");
-            DetailsTitleBox.Visible = false;
+            br1.Visible = false;
+            DetailsTitleBox1.Visible = false;
+            DetailsTitleBox2.Visible = false;
+            DetailsTitleBoxCriar.Visible = false;
             ButtonCriarID.Visible = false;
             ButtonEditarID.Visible = false;
             ButtonEliminarID.Visible = false;

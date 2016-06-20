@@ -51,6 +51,9 @@
                     <div class="titleh4" runat="server" id="DetailsTitleBox" visible="false">
                         <h4>Detalhes</h4>
                     </div>
+                    <div class="titleh4" runat="server" id="DetailsTitleBoxCriar" visible="false">
+                        <h4>Criar Movimento Financeiro</h4>
+                    </div>
                     <table class="ContentTable">
                         <tr>
                             <td>

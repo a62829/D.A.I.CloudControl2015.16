@@ -52,6 +52,9 @@
                     <div class="titleh4" runat="server" id="DetailsTitleBox" visible="false">
                         <h4>Detalhes do Evento</h4>
                     </div>
+                    <div class="titleh4" runat="server" id="DetailsTitleBoxCriar" visible="false">
+                        <h4>Criar Bem</h4>
+                    </div>
                     <table class="ContentTable">
                         <tr>
                             <td>
@@ -69,7 +72,7 @@
                             Tipo de ativo: </asp:Label>
                             </td>
                             <td>
-                                <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True"></asp:DropDownList>
+                                <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" CssClass="Dropdowns-Item"></asp:DropDownList>
                             </td>
                         </tr>
                         <tr>
