@@ -48,7 +48,10 @@ namespace ajuUminho.webforms
                     }
                     else
                     {
-                       // crl.adicionarRepresentanteLegalAoCredorNoProcesso(pdto.idProcesso.ToString(), ListBoxEntidadesID.SelectedItem.Value.ToString(), Session["userId"].ToString(), pdto.listaIDtoNoProcesso.Values.ToString());
+                        crl.adicionarRepresentanteLegalAoCredorNoProcesso((string)Session["idProcesso"], ListBoxEntidadesID.SelectedItem.Value.ToString(), Session["userId"].ToString(), pdto.listaCrDtoNoProcesso.Values.ToString());
+                        ListBoxEntidadesAssociadosID.Items.Clear();
+                        ListBoxEntidadesID.Items.Clear();
+                        listaRepresentantesLegais();
                     }
 
                 }
@@ -136,24 +139,27 @@ namespace ajuUminho.webforms
                 }
                 else if (DropDownListEntidadesID.Text == "Representante Legal")
                 {
-                    c23EditarRepresentanteLegal crl = new c23EditarRepresentanteLegal();
+                    c24RemocaoRepresentanteLegal crl = new c24RemocaoRepresentanteLegal();
                     if (RadioButtonListID.SelectedItem.Text == "Insolvente")
                     {
-                        crl.adicionarRepresentanteLegalAoInsolventeNoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString(), pdto.listaIDtoNoProcesso.Values.ToString());
+                        crl.removerRepresentanteLegalDoInsolventeNoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString() /*,pdto.listaIDtoNoProcesso.Values.ToString()*/);
                         ListBoxEntidadesAssociadosID.Items.Clear();
                         ListBoxEntidadesID.Items.Clear();
                         listaRepresentantesLegais();
                     }
                     else
                     {
-                        // crl.adicionarRepresentanteLegalAoCredorNoProcesso(pdto.idProcesso.ToString(), ListBoxEntidadesID.SelectedItem.Value.ToString(), Session["userId"].ToString(), pdto.listaIDtoNoProcesso.Values.ToString());
+                        crl.removerRepresentanteLegalDoCredorNoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString() /*,pdto.listaIDtoNoProcesso.Values.ToString()*/);
+                        ListBoxEntidadesAssociadosID.Items.Clear();
+                        ListBoxEntidadesID.Items.Clear();
+                        listaRepresentantesLegais();
                     }
 
                 }
                 else if (DropDownListEntidadesID.Text == "Credor")
                 {
-                    c39EdicaoCredor ccr = new c39EdicaoCredor();
-                    ccr.adicionarCredorAoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString());
+                    c40RemocaoCredor ccr = new c40RemocaoCredor();
+                    ccr.removerCredorDoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString());
                     ListBoxEntidadesAssociadosID.Items.Clear();
                     ListBoxEntidadesID.Items.Clear();
                     listaCredores();
@@ -161,8 +167,8 @@ namespace ajuUminho.webforms
                 }
                 else if (DropDownListEntidadesID.Text == "Juiz")
                 {
-                    c35EdicaoJuiz cj = new c35EdicaoJuiz();
-                    cj.adicionarJuizAoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString());
+                    c36RemocaoJuiz cj = new c36RemocaoJuiz();
+                    cj.removerJuizDoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString());
                     ListBoxEntidadesAssociadosID.Items.Clear();
                     ListBoxEntidadesID.Items.Clear();
                     listaJuizes();
@@ -170,8 +176,8 @@ namespace ajuUminho.webforms
                 }
                 else if (DropDownListEntidadesID.Text == "Prestador de Serviços")
                 {
-                    c51EdicaoPrestadorServico cps = new c51EdicaoPrestadorServico();
-                    cps.adicionarPrestadorServicoAoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString());
+                    c52RemocaoPrestadorServico cps = new c52RemocaoPrestadorServico();
+                    cps.removerPrestadorServicoDoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString());
                     ListBoxEntidadesAssociadosID.Items.Clear();
                     ListBoxEntidadesID.Items.Clear();
                     listaPrestadoresDeServicos();
@@ -179,15 +185,15 @@ namespace ajuUminho.webforms
                 else if (DropDownListEntidadesID.Text == "Outras Entidades")
                 {
                     c55RemocaoOutraEntidade coe = new c55RemocaoOutraEntidade();
-                    coe.adicionarOutraEntidadeAoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString());
+                    coe.removerOutraEntidadeDoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString());
                     ListBoxEntidadesAssociadosID.Items.Clear();
                     ListBoxEntidadesID.Items.Clear();
                     listaOutrasEntidades();
                 }
                 else if (DropDownListEntidadesID.Text == "Contabilista")
                 {
-                    c47EdicaoContabilista c = new c47EdicaoContabilista();
-                        c.adicionarContabilistaAoInsolventeNoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString(), pdto.listaIDtoNoProcesso.Values.ToString());
+                    c48RemocaoContabilista c = new c48RemocaoContabilista();
+                        c.removerContabilistaDoInsolventeNoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString()/*, pdto.listaIDtoNoProcesso.Values.ToString()*/);
                         ListBoxEntidadesAssociadosID.Items.Clear();
                         ListBoxEntidadesID.Items.Clear();
                         listaContabilistas();
@@ -325,8 +331,6 @@ namespace ajuUminho.webforms
                     ListBoxEntidadesID.DataBind();
                 }
             }
-
-
         }
 
         protected void listaAdministradoresJudiciais()
@@ -513,6 +517,55 @@ namespace ajuUminho.webforms
             }
         }
 
+        protected void RadioButtonListID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ListBoxEntidadesAssociadosID.Items.Clear();
+            ListBoxEntidadesID.Items.Clear();
 
+            if (RadioButtonListID.SelectedItem.Text == "Insolvente")
+            {
+                d21RepresentanteLegalDto idto = new d21RepresentanteLegalDto();
+                var x = idto.getListaRepresentanteLegalNoInsolventeNoProcesso((string)Session["idProcesso"]);
+                foreach (KeyValuePair<String, d21RepresentanteLegalDto> pair in x)
+                {
+                    ListItem Item = new ListItem();
+                    Item.Text = pair.Value.nome.ToString();
+                    Item.Value = pair.Value.id.ToString();
+                    ListBoxEntidadesAssociadosID.Items.Add(Item);
+                    ListBoxEntidadesAssociadosID.DataBind();
+                }
+                var y = idto.getListaRepresentanteLegalForaDoInsolventeNoProcesso((string)Session["idProcesso"]);
+                foreach (KeyValuePair<String, d21RepresentanteLegalDto> pair in y)
+                {
+                    ListItem Item = new ListItem();
+                    Item.Text = pair.Value.nome.ToString();
+                    Item.Value = pair.Value.id.ToString();
+                    ListBoxEntidadesID.Items.Add(Item);
+                    ListBoxEntidadesID.DataBind();
+                }
+
+            }
+            else {
+                d21RepresentanteLegalDto idto = new d21RepresentanteLegalDto();
+                var x = idto.getListaRepresentanteLegalNoCredorNoProcesso((string)Session["idProcesso"]);
+                foreach (KeyValuePair<String, d21RepresentanteLegalDto> pair in x)
+                {
+                    ListItem Item = new ListItem();
+                    Item.Text = pair.Value.nome.ToString();
+                    Item.Value = pair.Value.id.ToString();
+                    ListBoxEntidadesAssociadosID.Items.Add(Item);
+                    ListBoxEntidadesAssociadosID.DataBind();
+                }
+                var y = idto.getListaRepresentanteLegalForaDoCredorNoProcesso((string)Session["idProcesso"]);
+                foreach (KeyValuePair<String, d21RepresentanteLegalDto> pair in y)
+                {
+                    ListItem Item = new ListItem();
+                    Item.Text = pair.Value.nome.ToString();
+                    Item.Value = pair.Value.id.ToString();
+                    ListBoxEntidadesID.Items.Add(Item);
+                    ListBoxEntidadesID.DataBind();
+                }
+            }
+        }
     }
 }
