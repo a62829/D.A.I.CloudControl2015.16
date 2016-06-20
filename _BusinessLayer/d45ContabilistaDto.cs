@@ -150,10 +150,10 @@ namespace _BusinessLayer
         //    cr.removerContabilistaDoCredorNoProcesso(idProcesso, idTribunal, lastChangeBy);
         //}
 
-        public void removerContabilistaDoInsolventeNoProcesso(string idProcesso, string idTribunal, string lastChangeBy)
+        public void removerContabilistaDoInsolventeNoProcesso(string idProcesso, string idInsolvente, string lastChangeBy)
         {
             d45Contabilista cr = new d45Contabilista();
-            cr.removerContabilistaDoInsolventeNoProcesso(idProcesso, idTribunal, lastChangeBy);
+            cr.removerContabilistaDoInsolventeNoProcesso(idProcesso, idInsolvente, lastChangeBy);
         }
     }
 }

@@ -44,7 +44,7 @@
                             <asp:ListItem>Outras Entidades</asp:ListItem>
                         </asp:DropDownList>
 
-                            <asp:RadioButtonList ID="RadioButtonListID" runat="server" CssClass="RadioButtons" Visible="false">
+                            <asp:RadioButtonList ID="RadioButtonListID" runat="server" CssClass="RadioButtons" Visible="false" AutoPostBack="True" OnSelectedIndexChanged="RadioButtonListID_SelectedIndexChanged">
                                 <asp:ListItem Selected="True"> Atribuir ao Insolvente</asp:ListItem>
                                 <asp:ListItem> Atribuir ao Credor</asp:ListItem>
                             </asp:RadioButtonList>
