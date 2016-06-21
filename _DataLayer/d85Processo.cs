@@ -86,17 +86,14 @@ namespace _DataLayer
             con.Close();
         }
 
-        public void setProcesso (string idLegal, string idEstado, string idTipoProcesso, string dataInicio, string dataEncerramento, string lastChangeBy, string id)
+        public void setProcesso (string idEstado, string idTipoProcesso, string lastChangeBy, string idProcesso)
         {
             con.Open();
-            cmd.Parameters.AddWithValue("@id", id);
-            cmd.Parameters.AddWithValue("@idLegal", idLegal);
+            cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
             cmd.Parameters.AddWithValue("@idEstado", idEstado);
             cmd.Parameters.AddWithValue("@idTipoProcesso", idTipoProcesso);
-            cmd.Parameters.AddWithValue("@dataInicio", dataInicio);
-            cmd.Parameters.AddWithValue("@dataEncerramento", dataEncerramento);
             cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
-            cmd.CommandText = "UPDATE dbo.processo SET idLegal = @idLegal, idEstado = @idEstado, idTipoProcesso = @idTipoProcesso, dataInicio = @dataInicio, dataEncerramento = @dataEncerramento, lastChangeBy = @lastChangeBy WHERE id = @id;";
+            cmd.CommandText = "UPDATE dbo.processo SET idEstado = @idEstado, idTipoProcesso = @idTipoProcesso, lastChangeBy = @lastChangeBy WHERE id = @idProcesso;";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.ExecuteNonQuery();

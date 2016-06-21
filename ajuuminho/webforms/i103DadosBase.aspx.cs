@@ -17,48 +17,58 @@ namespace ajuUminho.webforms
             {
                 listaEstados();
                 listaTipoProcesso();
+                listaProcesso();
             }
             else {
-                listaEstados();
-                listaTipoProcesso();
+                //listaEstados();
+                //listaTipoProcesso();
             }
         }
 
         protected void listaEstados()
         {
-            DropDownListIdEstadoID.Items.Clear();
             c87 WsERL = new c87();
             var lista = WsERL.getListaEstado();
+            DropDownListIdEstadoID.Items.Clear();
             foreach (KeyValuePair<String, String> pair in lista)
             {
                 ListItem Item = new ListItem();
                 Item.Text = pair.Value.ToString();
                 Item.Value = pair.Key.ToString();
                 DropDownListIdEstadoID.Items.Add(Item);
-                DropDownListIdEstadoID.DataBind();
             }
+            DropDownListIdEstadoID.DataBind();
         }
 
         protected void listaTipoProcesso()
         {
-            DropDownListIdTipoProcessoID.Items.Clear();
             c87 WsERL = new c87();
             var lista = WsERL.getListaTipoProcesso();
+            DropDownListIdTipoProcessoID.Items.Clear();
             foreach (KeyValuePair<String, String> pair in lista)
             {
                 ListItem Item = new ListItem();
                 Item.Text = pair.Value.ToString();
                 Item.Value = pair.Key.ToString();
                 DropDownListIdTipoProcessoID.Items.Add(Item);
-                DropDownListIdTipoProcessoID.DataBind();
             }
+            DropDownListIdTipoProcessoID.DataBind();
         }
 
         protected void listaProcesso()
         {
             d85ProcessoDto pdto = new d85ProcessoDto();
-            pdto.getProcessoCompleto((string)Session["idProcesso"]);
+             var x = pdto.getProcessoCompleto((string)Session["idProcesso"]);
+            //DropDownListIdEstadoID.SelectedItem.Value = x.idEstado;
+            //DropDownListIdTipoProcessoID.SelectedItem.Value = x.idTipoProcesso;
 
         }
+
+        protected void ButtonEditarID_Click(object sender, EventArgs e)
+        {
+            c87 wsp = new c87();
+            wsp.setProcesso(DropDownListIdEstadoID.SelectedValue.ToString(), DropDownListIdTipoProcessoID.SelectedValue.ToString(), (string)Session["userId"], (string)Session["idProcesso"]);
+        }
+
     }
 }

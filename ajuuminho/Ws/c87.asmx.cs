@@ -24,10 +24,10 @@ namespace ajuUminho.Ws
         }
 
         [WebMethod]
-        public void setProcesso(string idLegal, string idEstado, string idTipoProcesso, string dataInicio, string dataEncerramento, string lastChangeBy, string idProcesso)
+        public void setProcesso(string idEstado, string idTipoProcesso,string lastChangeBy, string idProcesso)
         {
 
-            d85ProcessoDto pdto = new d85ProcessoDto(idProcesso, idLegal, idEstado, idTipoProcesso, dataInicio, dataEncerramento, lastChangeBy);
+            d85ProcessoDto pdto = new d85ProcessoDto(idEstado, idTipoProcesso, lastChangeBy, idProcesso);
             pdto.setProcesso(pdto);
         }
 

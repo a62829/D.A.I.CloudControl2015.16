@@ -28,6 +28,14 @@ namespace _BusinessLayer
 
         public d85ProcessoDto () { }
 
+        public d85ProcessoDto(string idEstado, string idTipoProcesso, string lastChangeBy, string idProcesso)
+        {
+            this.idProcesso = idProcesso;
+            this.idEstado = idEstado;
+            this.idTipoProcesso = idTipoProcesso;
+            this.lastChangeBy = lastChangeBy;
+        }
+
         public d85ProcessoDto(DataTable processoBase, int i)
         {
             this.idProcesso = Convert.ToString(processoBase.Rows[i]["id"]);
@@ -109,7 +117,7 @@ namespace _BusinessLayer
         public void setProcesso(d85ProcessoDto pdto)
         {
             d85Processo p = new d85Processo();
-            p.setProcesso( pdto.idLegal, pdto.idEstado, pdto.idTipoProcesso, pdto.dataInicio, pdto.dataEncerramento, pdto.lastChangeBy, pdto.idProcesso);
+            p.setProcesso(pdto.idEstado, pdto.idTipoProcesso,pdto.lastChangeBy, pdto.idProcesso);
         }
 
         public void /*criarProcesso*/ guardar(d85ProcessoDto pdto, string idInsolvente)
