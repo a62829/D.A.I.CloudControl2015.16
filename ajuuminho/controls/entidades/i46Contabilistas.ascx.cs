@@ -61,7 +61,7 @@ namespace ajuUminho.controls.entidades
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text);
 
-            string mystring = "Representante Legal criado com sucesso.";
+            string mystring = "Contabilista criado com sucesso.";
             this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
             foreach (TextBox textbox in this.Controls.OfType<TextBox>())
             {
@@ -104,6 +104,8 @@ namespace ajuUminho.controls.entidades
             ListBoxEntidadesID.ClearSelection();
             ListBoxEntidadesID.Items.Clear();
             listaContabilista();
+            string mystring = "Contabilista editado com sucesso.";
+            this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
         }
 
         protected void listaContabilista()
@@ -128,6 +130,8 @@ namespace ajuUminho.controls.entidades
             ListBoxEntidadesID.ClearSelection();
             ListBoxEntidadesID.Items.Clear();
             listaContabilista();
+            string mystring = "Contabilista eliminado com sucesso.";
+            this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
         }
 
         protected void ButtonPesquisarID_Click(object sender, EventArgs e)

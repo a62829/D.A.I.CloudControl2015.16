@@ -63,7 +63,7 @@ namespace ajuUminho.controls.entidades
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text);
 
-            string mystring = "Representante Legal criado com sucesso.";
+            string mystring = "Credor criado com sucesso.";
             this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
             foreach (TextBox textbox in this.Controls.OfType<TextBox>())
             {
@@ -106,7 +106,8 @@ namespace ajuUminho.controls.entidades
             ListBoxEntidadesID.ClearSelection();
             ListBoxEntidadesID.Items.Clear();
             listaCredor();
-
+            string mystring = "Credor editado com sucesso.";
+            this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
         }
 
         protected void listaCredor()
@@ -131,6 +132,8 @@ namespace ajuUminho.controls.entidades
             ListBoxEntidadesID.ClearSelection();
             ListBoxEntidadesID.Items.Clear();
             listaCredor();
+            string mystring = "Credor eliminado com sucesso.";
+            this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
         }
 
         protected void TabCriarCredor_Click(object sender, EventArgs e)
