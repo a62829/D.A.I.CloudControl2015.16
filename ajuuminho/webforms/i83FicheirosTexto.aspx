@@ -28,7 +28,7 @@
             <div class="ViewsBoxProcessos">
 
                 <div class="InsideViewsTableBoxProcessos">
-                    <div class="titleh4big">
+                    <div class="titleh4">
                         <h4>Lista de Ficheiros</h4>
                     </div>
 

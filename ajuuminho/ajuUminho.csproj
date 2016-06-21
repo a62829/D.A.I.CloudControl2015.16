@@ -336,25 +336,6 @@
     <Compile Include="webforms\gerirUtilizadoresSistema.aspx.designer.cs">
       <DependentUpon>gerirUtilizadoresSistema.aspx</DependentUpon>
     </Compile>
-    <Compile Include="webforms\gestaoEntidades.aspx.cs">
-      <DependentUpon>gestaoEntidades.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="webforms\gestaoEntidades.aspx.designer.cs">
-      <DependentUpon>gestaoEntidades.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="webforms\gestaoIdentidades.aspx.cs">
-      <DependentUpon>gestaoIdentidades.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="webforms\gestaoIdentidades.aspx.designer.cs">
-      <DependentUpon>gestaoIdentidades.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="webforms\gestaoProcessos.aspx.cs">
-      <DependentUpon>gestaoProcessos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="webforms\gestaoProcessos.aspx.designer.cs">
-      <DependentUpon>gestaoProcessos.aspx</DependentUpon>
-    </Compile>
     <Compile Include="webforms\home.aspx.cs">
       <DependentUpon>home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -602,9 +583,6 @@
     <Content Include="scripts\entidadeValida.js" />
     <Content Include="scripts\utilizadorValido.js" />
     <Content Include="webforms\gerirUtilizadoresSistema.aspx" />
-    <Content Include="webforms\gestaoEntidades.aspx" />
-    <Content Include="webforms\gestaoIdentidades.aspx" />
-    <Content Include="webforms\gestaoProcessos.aspx" />
     <Content Include="webforms\home.aspx" />
     <Content Include="webforms\i101CriarProcesso.aspx" />
     <Content Include="webforms\i102EditarProcesso.aspx" />

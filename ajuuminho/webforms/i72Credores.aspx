@@ -30,7 +30,7 @@
                 <br /><br /><br /><br /><br />
 
                 <div class="AtribuirEntidadesBox">
-                    <div class="titleh4big">
+                    <div class="titleh4">
                         <h4>Atribuir credor ao processo</h4>
                     </div>
                     <div class="AtribuirEntidadesListBox1">
