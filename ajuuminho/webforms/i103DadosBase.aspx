@@ -54,7 +54,7 @@
                            Estado: </asp:Label>
                                 </td>
                                 <td>
-                                    <asp:DropDownList ID="DropDownListIdEstadoID" runat="server" CssClass="Dropdowns-Item"></asp:DropDownList>
+                                    <asp:DropDownList ID="DropDownListIdEstadoID" runat="server" CssClass="Dropdowns-Item" AutoPostBack="True"></asp:DropDownList>
                                 </td>
                             </tr>
                             <tr>
@@ -63,13 +63,13 @@
                            Tipo processo: </asp:Label>
                                 </td>
                                 <td>
-                                    <asp:DropDownList ID="DropDownListIdTipoProcessoID" runat="server" CssClass="Dropdowns-Item"></asp:DropDownList>
+                                    <asp:DropDownList ID="DropDownListIdTipoProcessoID" runat="server" CssClass="Dropdowns-Item" AutoPostBack="True"></asp:DropDownList>
                                 </td>
                             </tr>
                         </table>
 
                         <div id="ContentButtonsBox">
-                            <asp:Button ID="ButtonEditarID" runat="server" Text="Editar" CssClass="ContentButton" />
+                            <asp:Button ID="ButtonEditarID" runat="server" Text="Editar" CssClass="ContentButton" OnClick="ButtonEditarID_Click" />
                         </div>
                     </div>
                 </div>
