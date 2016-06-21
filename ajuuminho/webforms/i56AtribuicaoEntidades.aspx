@@ -29,7 +29,8 @@
 
                 <div class="EntidadesProcessoBox">
                     <div class="titleh4">
-                        <h4>Selecione uma entidade</h4>
+                        <h4>Selecione uma entidade<asp:HiddenField ID="HiddenFieldForId" runat="server" />
+                        </h4>
                     </div>
                     <div class="DropDpwnEntidadesProcesso">
                         <asp:DropDownList ID="DropDownListEntidadesID" CssClass="DropDpwnEntidadesProcesso-Item" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownListEntidadesID_SelectedIndexChanged">

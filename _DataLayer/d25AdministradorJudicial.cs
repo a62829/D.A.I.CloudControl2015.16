@@ -115,7 +115,7 @@ namespace _DataLayer
         {
             SqlDataReader reader;
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.CommandText = "SELECT * FROM administradorJudicial WHERE NOT EXISTS (SELECT * FROM administradorJudicialNoProcesso WHERE idAdministradorJudicial = administradorJudicial.id AND idProcesso = '1')";
+            cmd.CommandText = "SELECT * FROM administradorJudicial WHERE NOT EXISTS (SELECT * FROM administradorJudicialNoProcesso WHERE idAdministradorJudicial = administradorJudicial.id AND idProcesso = @id)";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -156,7 +156,7 @@ namespace _DataLayer
             SqlDataReader reader;
             cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
             cmd.Parameters.AddWithValue("@idAdministradorJudicial", idAdministradorJudicial);
-            cmd.CommandText = "SELECT * FROM administradorJudicial WHERE NOT EXISTS (SELECT * FROM administradorJudicialNoProcesso WHERE idAdministradorJudicial = administradorJudicial.id AND idProcesso = '1')";
+            cmd.CommandText = "SELECT * FROM administradorJudicial WHERE NOT EXISTS (SELECT * FROM administradorJudicialNoProcesso WHERE idAdministradorJudicial = administradorJudicial.id AND idProcesso = @idProcesso)";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();

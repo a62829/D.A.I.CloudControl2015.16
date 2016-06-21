@@ -113,7 +113,7 @@ namespace _DataLayer
         {
             SqlDataReader reader;
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.CommandText = "SELECT * FROM contabilista WHERE NOT ( EXISTS( Select * FROM insolventeNoProcesso WHERE idContabilista = contabilista.id AND idProcesso = '1'))";
+            cmd.CommandText = "SELECT * FROM contabilista WHERE NOT ( EXISTS( Select * FROM insolventeNoProcesso WHERE idContabilista = contabilista.id AND idProcesso = @id))";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
             cmd.Connection.Open();
@@ -137,34 +137,6 @@ namespace _DataLayer
             cmd.ExecuteNonQuery();
             con.Close();
         }
-
-        //public void adicionarContabilistaAoCredorNoProcesso(string idProcesso, string idContabilista, string lastChangeBy, string idCredor)
-        //{
-        //    con.Open();
-        //    cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
-        //    cmd.Parameters.AddWithValue("@idContabilista", idContabilista);
-        //    cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
-        //    cmd.Parameters.AddWithValue("@idCredor", idCredor);
-        //    cmd.CommandText = "UPDATE dbo.credorNoProcesso SET idContabilista = @idContabilista WHERE idProcesso = @idProcesso AND idCredor = @idCredor;";
-        //    cmd.CommandType = CommandType.Text;
-        //    cmd.Connection = con;
-        //    cmd.ExecuteNonQuery();
-        //    con.Close();
-        //}
-
-        //public void removerContabilistaDoCredorNoProcesso(string idProcesso, string idCredor, string lastChangeBy)
-        //{
-        //    con.Open();
-        //    cmd.Parameters.AddWithValue("@idProcesso", idProcesso);
-        //    cmd.Parameters.AddWithValue("@idCredor", idCredor);
-        //    cmd.Parameters.AddWithValue("@lastChangeBy", lastChangeBy);
-        //    cmd.CommandText = "UPDATE dbo.credorNoProcesso SET idContabilista = null WHERE idProcesso = @idProcesso AND idCredor = @idCredor";
-        //    cmd.CommandType = CommandType.Text;
-        //    cmd.Connection = con;
-        //    cmd.ExecuteNonQuery();
-
-
-        //}
 
         public void removerContabilistaDoInsolventeNoProcesso(string idProcesso, string idInsolvente, string lastChangeBy)
         {

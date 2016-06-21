@@ -20,7 +20,7 @@ namespace ajuUminho.webforms
         protected void ButtonMoreID_Click(object sender, EventArgs e)
         {
             d85ProcessoDto pdto = new d85ProcessoDto();
-            pdto.getProcessoCompleto((string)Session["idProcesso"]);
+            var processo = pdto.getProcessoCompleto((string)Session["idProcesso"]);
             if (ListBoxEntidadesID.SelectedIndex == -1)
             {
                 string mystring = "Selecione item a adicionar";
@@ -55,7 +55,7 @@ namespace ajuUminho.webforms
                     }
 
                 }
-                else if (DropDownListEntidadesID.Text == "Administrador Judiciaç")
+                else if (DropDownListEntidadesID.Text == "Administrador Judicial")
                 {
                     c27EdicaoAdministradorJudicial caj= new c27EdicaoAdministradorJudicial();
                     caj.adicionarAdministradorJudicialAoProcesso((string)Session["idProcesso"], ListBoxEntidadesID.SelectedItem.Value.ToString(), Session["userId"].ToString());
@@ -100,12 +100,17 @@ namespace ajuUminho.webforms
                 }
                 else if (DropDownListEntidadesID.Text == "Contabilista")
                 {
-                    c47EdicaoContabilista c = new c47EdicaoContabilista();
 
-                        c.adicionarContabilistaAoInsolventeNoProcesso((string)Session["idProcesso"], ListBoxEntidadesID.SelectedItem.Value.ToString(), Session["userId"].ToString(), pdto.listaIDtoNoProcesso.Values.ToString());
-                        ListBoxEntidadesAssociadosID.Items.Clear();
-                        ListBoxEntidadesID.Items.Clear();
-                        listaContabilistas();
+                    c47EdicaoContabilista c = new c47EdicaoContabilista();
+                    foreach (KeyValuePair<String, d41InsolventeDto> pair in processo.listaIDtoNoProcesso)
+                    {
+                        HiddenFieldForId.Value = pair.Value.id.ToString();
+                    }
+                    c.adicionarContabilistaAoInsolventeNoProcesso((string)Session["idProcesso"], ListBoxEntidadesID.SelectedItem.Value.ToString(), 
+                            Session["userId"].ToString(), HiddenFieldForId.Value.ToString());
+                    ListBoxEntidadesAssociadosID.Items.Clear();
+                    ListBoxEntidadesID.Items.Clear();
+                    listaContabilistas();
                 }
                 else if (DropDownListEntidadesID.Text == "Tribunal")
                 {
@@ -205,6 +210,14 @@ namespace ajuUminho.webforms
                     ListBoxEntidadesAssociadosID.Items.Clear();
                     ListBoxEntidadesID.Items.Clear();
                     listaTribunais();
+                }
+                else if (DropDownListEntidadesID.Text == "Administrador Judicial")
+                {
+                    c28RemocaoAdministradorJudicial ct = new c28RemocaoAdministradorJudicial();
+                    ct.removerAdministradorJudicialDoProcesso((string)Session["idProcesso"], ListBoxEntidadesAssociadosID.SelectedItem.Value.ToString(), Session["userId"].ToString());
+                    ListBoxEntidadesAssociadosID.Items.Clear();
+                    ListBoxEntidadesID.Items.Clear();
+                    listaAdministradoresJudiciais();
                 }
             }
         }
