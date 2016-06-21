@@ -41,7 +41,7 @@
                         <table class="ContentTable">
                             <tr>
                                 <td>
-                                    <asp:Label ID="LabelIdLegalID" runat="server" Text="Label" CssClass="Labels-Item">
+                                    <asp:Label ID="LabelIdLegalID" runat="server" Text="Label" CssClass="Labels-Item" Enabled="false">
                           Número processo: </asp:Label>
                                 </td>
                                 <td>

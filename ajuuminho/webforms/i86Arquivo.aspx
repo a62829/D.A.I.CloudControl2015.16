@@ -52,6 +52,14 @@
                         <h4>Detalhes do processo aquivado</h4>
                     </div>
 
+                    <div class="titleh4" runat="server" id="DetailsTitleBox2" visible="false">
+                        <h4>Suspender processo</h4>
+                    </div>
+
+                    <div class="titleh4" runat="server" id="DetailsTitleBox3" visible="false">
+                        <h4>Arquivar processo</h4>
+                    </div>
+
                     <table class="ContentTable">
                         <tr>
                             <td>

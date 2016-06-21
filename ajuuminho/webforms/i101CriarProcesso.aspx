@@ -25,59 +25,60 @@
 
             <asp:SiteMapDataSource ID="SiteMapDataSource1" StartingNodeUrl="~/webforms/InterfaceProcesso.aspx" SiteMapProvider="MyNewSiteMapProvider" runat="server" />
 
+            <div class="ViewsBoxProcessos">
 
-                    <div class="ViewsBoxProcessos">
+                <div class="InsideViewsTableBoxProcessos">
+                    <div class="titleh4">
+                        <h4>Dados base</h4>
+                    </div>
 
-                        <div class="InsideViewsTableBoxProcessos">
-                            <div class="titleh4">
-                                <h4>Dados base</h4>
-                            </div>
-
-                            <table class="ContentTable">
-                                <tr>
-                                    <td>
-                                        <asp:Label ID="LabelIdLegalID" runat="server" Text="Label" CssClass="Labels-Item">
+                    <table class="ContentTable">
+                        <tr>
+                            <td>
+                                <asp:Label ID="LabelIdLegalID" runat="server" Text="Label" CssClass="Labels-Item">
                           Número processo: </asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:TextBox ID="TextBoxIdLegalID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <asp:Label ID="LabelIdEstadoID" runat="server" Text="Label" CssClass="Labels-Item">
+                            </td>
+                            <td>
+                                <asp:TextBox ID="TextBoxIdLegalID" runat="server" CssClass="LabelsInputs-Item"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label ID="LabelIdEstadoID" runat="server" Text="Label" CssClass="Labels-Item">
                            Estado: </asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:DropDownList ID="DropDownListIdEstadoID" runat="server" CssClass="Dropdowns-Item"></asp:DropDownList>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <asp:Label ID="LabelIdTipoProcessoID" runat="server" Text="Label" CssClass="Labels-Item"> 
+                            </td>
+                            <td>
+                                <asp:DropDownList ID="DropDownListIdEstadoID" runat="server" CssClass="Dropdowns-Item"></asp:DropDownList>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label ID="LabelIdTipoProcessoID" runat="server" Text="Label" CssClass="Labels-Item"> 
                            Tipo processo: </asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:DropDownList ID="DropDownListIdTipoProcessoID" runat="server" CssClass="Dropdowns-Item"></asp:DropDownList>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
+                            </td>
+                            <td>
+                                <asp:DropDownList ID="DropDownListIdTipoProcessoID" runat="server" CssClass="Dropdowns-Item"></asp:DropDownList>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
 
-                        <div class="InsideViewsDetailsBoxProcessos">
-                            <div class="titleh4">
-                                <h4>Selecione um insolvente</h4>
-                            </div>
-                            <div class="AlignBox">
-                                <asp:ListBox ID="ListBoxInsolventesID" runat="server" CssClass="ListBoxInsolventesProcesso-Item" AutoPostBack="True"></asp:ListBox>
-                            </div>
-                        </div>
-
-                        <div id="ContentButtonsBox">
-                            <asp:Button ID="ButtonCriarID" runat="server" Text="Criar" CssClass="ContentButton" OnClick="ButtonCriarID_Click1" />
-                        </div>
+                <div class="InsideViewsDetailsBoxProcessos">
+                    <div class="titleh4">
+                        <h4>Selecione um insolvente</h4>
+                    </div>
+                    <div class="AlignBox">
+                        <asp:ListBox ID="ListBoxInsolventesID" runat="server" CssClass="ListBoxInsolventesProcesso-Item" AutoPostBack="True"></asp:ListBox>
                     </div>
                 </div>
+
+                <br />
+
+                <div id="ContentButtonsBox">
+                    <asp:Button ID="ButtonCriarID" runat="server" Text="Criar" CssClass="ContentButton" OnClick="ButtonCriarID_Click1" />
+                </div>
+            </div>
+        </div>
 
     </form>
     <div id="FooterBox">
