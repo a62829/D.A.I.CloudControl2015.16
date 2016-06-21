@@ -19,8 +19,8 @@ namespace ajuUminho.controls.utilizadores
             }
             else
             {
-                //StatusText.Text = "Invalid username or password.";
-                //LoginStatus.Visible = true;
+                string mystring = "Nome de utilizador ou palavra pass inválida.";
+                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Erro", "alert('" + mystring + "');", true);
             }
 
         }

@@ -809,6 +809,7 @@ table {
   padding-left:15px;
   padding-right:15px;
   cursor: pointer;
+  border-radius: 3px;
 }
 
 .ContentButton:hover, .MoreButton:hover, .LessButton:hover, .AdicionarPerfilButton:hover {
@@ -931,6 +932,14 @@ table {
 .InsideViewsDetailsBox2Bens {
     margin: auto;
     margin-top: 70px;
+    width: 100%;
+    text-align: center;
+    min-height: 50px;
+}
+
+.InsideViewsDetailsBoxArquivo {
+    margin: auto;
+    margin-top: 75px;
     width: 100%;
     text-align: center;
     min-height: 50px;

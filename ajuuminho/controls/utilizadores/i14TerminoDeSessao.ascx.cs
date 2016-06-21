@@ -15,14 +15,7 @@ namespace ajuUminho.controls.utilizadores
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack) {
-
-            }
-            else
-            {
-
-            }
-
+            User.Text = HttpContext.Current.Session["userName"].ToString();
         }
 
         protected void signOut(object sender, EventArgs e)
