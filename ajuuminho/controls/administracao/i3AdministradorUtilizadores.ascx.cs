@@ -48,11 +48,11 @@ namespace ajuUminho.controls.administracao
             }
         }
 
-        protected void listaUser()
+        protected void listarUtilizador()
         {
             ListBoxUtilizadoresID.Items.Clear();
-            gestaoIdentidade cde = new gestaoIdentidade();
-            var lista = cde.getListaUsers();
+            c1Utilizadores cde = new c1Utilizadores();
+            var lista = cde.listarUtilizadores();
             foreach (KeyValuePair<String, String> pair in lista)
             {
                 ListItem Item = new ListItem();
@@ -64,10 +64,10 @@ namespace ajuUminho.controls.administracao
             ListBoxUtilizadoresID.DataBind();
         }
 
-        protected void listaUserDetail ()
+        protected void listarDadosUtilizador ()
         {
-            gestaoIdentidade cde = new gestaoIdentidade();
-            var dt = cde.getUserDetailById(ListBoxUtilizadoresID.SelectedValue.ToString());
+            c1Utilizadores cde = new c1Utilizadores();
+            var dt = cde.listarDadosUtilizador(ListBoxUtilizadoresID.SelectedValue.ToString());
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 TextBoxUsernameID.Text = Convert.ToString(dt.Rows[i]["UserName"]);
@@ -96,7 +96,7 @@ namespace ajuUminho.controls.administracao
 
         protected void TabEditarUtilizador_Click(object sender, EventArgs e)
         {
-            listaUser();
+            listarUtilizador();
             EnableAllText(this);
             ClearAllText(this);
             TrPasswordID.Visible = false;
@@ -114,7 +114,7 @@ namespace ajuUminho.controls.administracao
 
         protected void TabEliminarUtilizador_Click(object sender, EventArgs e)
         {
-            listaUser();
+            listarUtilizador();
             DisableAllText(this);
             ClearAllText(this);
             TrPasswordID.Visible = false;
@@ -132,7 +132,7 @@ namespace ajuUminho.controls.administracao
 
         protected void ButtonCriarID_Click(object sender, EventArgs e)
         {
-            gestaoIdentidade ws1 = new gestaoIdentidade();
+            c1Utilizadores ws1 = new c1Utilizadores();
             ws1.criarUtilizador(TextBoxUsernameID.Text, TextBoxPasswordID.Text, TextBoxEmailID.Text, TextBoxTelefoneID.Text);
             string mystring = "Utilizador criado com sucesso";
             this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
@@ -149,7 +149,7 @@ namespace ajuUminho.controls.administracao
             }
             else
             {
-                gestaoIdentidade ws1 = new gestaoIdentidade();
+                c1Utilizadores ws1 = new c1Utilizadores();
                 ws1.editarUtilizador(TextBoxUsernameID.Text, TextBoxEmailID.Text, TextBoxTelefoneID.Text, ListBoxUtilizadoresID.SelectedValue.ToString());
                 ClearAllText(this);
             }
@@ -165,7 +165,7 @@ namespace ajuUminho.controls.administracao
             }
             else
             {
-                gestaoIdentidade ws1 = new gestaoIdentidade();
+                c1Utilizadores ws1 = new c1Utilizadores();
                 ws1.eliminarUtilizador(ListBoxUtilizadoresID.SelectedValue.ToString());
                 ClearAllText(this);
             }
@@ -173,7 +173,7 @@ namespace ajuUminho.controls.administracao
 
         protected void ListBoxUtilizadoresID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listaUserDetail();
+            listarDadosUtilizador();
         }
     }
 }

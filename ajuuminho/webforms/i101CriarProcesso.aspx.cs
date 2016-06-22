@@ -27,9 +27,9 @@ namespace ajuUminho.webforms
             
         }
 
-        protected void ButtonCriarID_Click1(object sender, EventArgs e)
+protected void ButtonCriarID_Click1(object sender, EventArgs e)
 {
-    c87 ws = new c87();
+    c87SuspenderProcesso ws = new c87SuspenderProcesso();
     ws.criarProcesso(TextBoxIdLegalID.Text, DropDownListIdEstadoID.SelectedItem.Value, DropDownListIdTipoProcessoID.SelectedItem.Value, "1111", ListBoxInsolventesID.SelectedItem.Value);
 
     string mystring = "Processo criado com sucesso";
@@ -44,8 +44,8 @@ namespace ajuUminho.webforms
 
 protected void listaEstados()
 {
-            //DropDownListIdEstadoID.Items.Clear();
-            c87 wsp = new c87();
+    //DropDownListIdEstadoID.Items.Clear();
+    c87SuspenderProcesso wsp = new c87SuspenderProcesso();
     var lista = wsp.getListaEstado();
     foreach (KeyValuePair<String, String> pair in lista)
     {
@@ -60,7 +60,7 @@ protected void listaEstados()
 protected void listaTipoProcesso()
 {
     DropDownListIdTipoProcessoID.Items.Clear();
-    c87 wsp = new c87();
+    c87SuspenderProcesso wsp = new c87SuspenderProcesso();
     var lista = wsp.getListaTipoProcesso();
     foreach (KeyValuePair<String, String> pair in lista)
     {

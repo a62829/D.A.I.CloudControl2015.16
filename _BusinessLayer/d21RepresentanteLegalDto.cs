@@ -75,22 +75,22 @@ namespace _BusinessLayer
             return rldto;
         }
 
-        public void setRepresentanteLegal(d21RepresentanteLegalDto rldto)
+        public void editarRepresentanteLegal(d21RepresentanteLegalDto rldto)
         {
             d21RepresentanteLegal rl = new d21RepresentanteLegal();
-            rl.setRepresentanteLegal(rldto.nome, rldto.morada, rldto.codPostal, rldto.localidade, rldto.email, rldto.telefone, rldto.telemovel, rldto.fax, rldto.cc, rldto.iban, rldto.nif, rldto.lastChangeBy, rldto.id);
+            rl.editarRepresentanteLegal(rldto.nome, rldto.morada, rldto.codPostal, rldto.localidade, rldto.email, rldto.telefone, rldto.telemovel, rldto.fax, rldto.cc, rldto.iban, rldto.nif, rldto.lastChangeBy, rldto.id);
         }
 
-        public void guardar(d21RepresentanteLegalDto rldto)
+        public void criarRepresentanteLegal(d21RepresentanteLegalDto rldto)
         {
             d21RepresentanteLegal rl = new d21RepresentanteLegal();
-            rl.guardar(rldto.nome, rldto.morada, rldto.codPostal, rldto.localidade, rldto.email, rldto.telefone, rldto.telemovel, rldto.fax, rldto.cc, rldto.iban, rldto.nif, rldto.lastChangeBy);
+            rl.criarRepresentanteLegal(rldto.nome, rldto.morada, rldto.codPostal, rldto.localidade, rldto.email, rldto.telefone, rldto.telemovel, rldto.fax, rldto.cc, rldto.iban, rldto.nif, rldto.lastChangeBy);
         }
 
-        public Dictionary<String, d21RepresentanteLegalDto> getListaRepresentanteLegal()
+        public Dictionary<String, d21RepresentanteLegalDto> listarRepresentanteLegal()
         {
             d21RepresentanteLegal rl = new d21RepresentanteLegal();
-            DataTable dt = rl.getListaRepresentanteLegal();
+            DataTable dt = rl.listarRepresentanteLegal();
             Dictionary<String, d21RepresentanteLegalDto> lista = new Dictionary<String, d21RepresentanteLegalDto>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {

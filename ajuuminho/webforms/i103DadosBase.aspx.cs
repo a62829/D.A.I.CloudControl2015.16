@@ -27,7 +27,7 @@ namespace ajuUminho.webforms
 
         protected void listaEstados()
         {
-            c87 WsERL = new c87();
+            c87SuspenderProcesso WsERL = new c87SuspenderProcesso();
             var lista = WsERL.getListaEstado();
             DropDownListIdEstadoID.Items.Clear();
             foreach (KeyValuePair<String, String> pair in lista)
@@ -42,7 +42,7 @@ namespace ajuUminho.webforms
 
         protected void listaTipoProcesso()
         {
-            c87 WsERL = new c87();
+            c87SuspenderProcesso WsERL = new c87SuspenderProcesso();
             var lista = WsERL.getListaTipoProcesso();
             DropDownListIdTipoProcessoID.Items.Clear();
             foreach (KeyValuePair<String, String> pair in lista)
@@ -66,7 +66,7 @@ namespace ajuUminho.webforms
 
         protected void ButtonEditarID_Click(object sender, EventArgs e)
         {
-            c87 wsp = new c87();
+            c87SuspenderProcesso wsp = new c87SuspenderProcesso();
             wsp.setProcesso(DropDownListIdEstadoID.SelectedValue.ToString(), DropDownListIdTipoProcessoID.SelectedValue.ToString(), (string)Session["userId"], (string)Session["idProcesso"]);
         }
 

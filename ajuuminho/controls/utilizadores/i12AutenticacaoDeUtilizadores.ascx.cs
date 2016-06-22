@@ -12,7 +12,7 @@ namespace ajuUminho.controls.utilizadores
     {
         protected void SignIn(object sender, EventArgs e)
         {
-            gestaoIdentidade ws1 = new gestaoIdentidade();
+            c11Autenticacao ws1 = new c11Autenticacao();
             if (ws1.signIn(TextBoxUserNameID.Text, TextBoxPasswordID.Text) == true)
             {
                 Response.Redirect("~/webforms/home.aspx");

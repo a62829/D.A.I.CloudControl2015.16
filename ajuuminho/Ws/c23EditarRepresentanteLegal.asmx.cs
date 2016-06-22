@@ -22,7 +22,7 @@ namespace ajuUminho.Ws
             string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
             d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto(id, nome, morada, codPostal, localidade, email, telefone, telemovel, fax, cc, iban, nif, lastChangeBy);
-            rldto.setRepresentanteLegal(rldto);
+            rldto.editarRepresentanteLegal(rldto);
         }
 
         [WebMethod]
@@ -30,7 +30,7 @@ namespace ajuUminho.Ws
             string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
             d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto(nome, morada, codPostal, localidade, email, telefone, telemovel, fax , cc , iban, nif, lastChangeBy);
-            rldto.guardar(rldto);
+            rldto.criarRepresentanteLegal(rldto);
         }
 
         [WebMethod]
@@ -41,10 +41,10 @@ namespace ajuUminho.Ws
         }
 
         [WebMethod]
-        public Dictionary<String, d21RepresentanteLegalDto> getListaRepresentanteLegal()
+        public Dictionary<String, d21RepresentanteLegalDto> listarRepresentanteLegal()
         {
             d21RepresentanteLegalDto rldto = new d21RepresentanteLegalDto();
-            return rldto.getListaRepresentanteLegal();
+            return rldto.listarRepresentanteLegal();
         }
 
         [WebMethod]

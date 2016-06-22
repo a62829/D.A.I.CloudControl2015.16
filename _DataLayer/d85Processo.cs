@@ -11,7 +11,7 @@ namespace _DataLayer
 
         }
 
-        public bool /*criarProcesso*/ guardar(string idLegal, string idEstado, string idTipoProcesso, string dataInicio, string lastChangeBy, string idInsolvente)
+        public bool /*criarProcesso*/ criarProcesso(string idLegal, string idEstado, string idTipoProcesso, string dataInicio, string lastChangeBy, string idInsolvente)
         {
             con.Open();
             cmd.Parameters.AddWithValue("@idLegal", idLegal);

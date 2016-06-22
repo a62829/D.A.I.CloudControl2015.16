@@ -20,7 +20,7 @@ namespace ajuUminho.controls.utilizadores
 
         protected void signOut(object sender, EventArgs e)
         {
-            gestaoIdentidade ws1 = new gestaoIdentidade();
+            c13TerminoSessao ws1 = new c13TerminoSessao();
             if (ws1.signOut() == true)
             {
                 Response.Redirect("~/webforms/login.aspx");

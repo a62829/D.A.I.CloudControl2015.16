@@ -66,8 +66,8 @@ namespace ajuUminho.webforms
         {
             ListBox1.Items.Clear();
             string user = DropDownList3.SelectedValue;
-            gestaoIdentidade ws1 = new gestaoIdentidade();
-            foreach (var u in ws1.getUserRoles(user))
+            c7AtribuicaoDePerfil ws1 = new c7AtribuicaoDePerfil();
+            foreach (var u in ws1.listarPerfisAtribuidos(user))
             {
                 ListBox1.Items.Add(u);
             }
@@ -84,7 +84,7 @@ namespace ajuUminho.webforms
 
         protected void signOut(object sender, EventArgs e)
         {
-            gestaoIdentidade ws1 = new gestaoIdentidade();
+            c13TerminoSessao ws1 = new c13TerminoSessao();
             if (ws1.signOut() == true)
             {
                 Response.Redirect("~/webforms/Login.aspx");

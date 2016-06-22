@@ -13,7 +13,7 @@ namespace ajuUminho.Ws
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
     // [System.Web.Script.Services.ScriptService]
-    public class c87 : System.Web.Services.WebService
+    public class c87SuspenderProcesso : System.Web.Services.WebService
     {
 
         [WebMethod]
@@ -35,7 +35,7 @@ namespace ajuUminho.Ws
         public void criarProcesso(string idLegal, string idEstado, string idTipoProcesso, string lastChangeBy, string idInsolvente)
         {
             d85ProcessoDto pdto = new d85ProcessoDto(idLegal, idEstado, idTipoProcesso, DateTime.Now.ToString(), lastChangeBy);
-            pdto.guardar(pdto, idInsolvente);
+            pdto.criarProcesso(pdto, idInsolvente);
         }
 
         [WebMethod]

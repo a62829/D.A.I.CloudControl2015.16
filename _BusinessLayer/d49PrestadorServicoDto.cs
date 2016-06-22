@@ -138,6 +138,14 @@ namespace _BusinessLayer
             t.adicionarPrestadorServicoAoProcesso(idProcesso, idPrestadorServico, lastChangeBy);
         }
 
+        public string getIdPrestadorServicoNoProcesso(string idProcesso, string idPrestadorServico)
+        {
+            d49PrestadorServico ps = new d49PrestadorServico();
+            var x = ps.getIdPrestadorServicoNoProcesso(idProcesso, idPrestadorServico);
+            var y = Convert.ToString(x.Rows[0]["id"]);
+            return (string)y;
+        }
+
         public void removerPrestadorServicoDoProcesso(string idProcesso, string idPrestadorServico, string lastChangeBy)
         {
             d49PrestadorServico cr = new d49PrestadorServico();

@@ -41,7 +41,7 @@ namespace ajuUminho.App_Code
             return dataTable;
         }
 
-        public System.Data.DataTable getUserDetailById(string idUser)
+        public System.Data.DataTable listarDadosUtilizador(string idUser)
         {
             //Listar os Perfis de um Utilizador
             SqlDataReader reader;
@@ -96,7 +96,7 @@ namespace ajuUminho.App_Code
             userStore.UpdateAsync(userdb);
         }
 
-        public IList<string> getUserRoles(string user)
+        public IList<string> listarPerfisAtribuidos(string user)
         {
             //Listar os Perfis de um Utilizador
             var userStore = new UserStore<IdentityUser>();
@@ -105,7 +105,7 @@ namespace ajuUminho.App_Code
             return userdb;
         }
 
-        public DataTable getRoles()
+        public DataTable listarPerfis()
         {
             //Listar os Perfis de um Utilizador
             SqlDataReader reader;
@@ -120,7 +120,7 @@ namespace ajuUminho.App_Code
             return dataTable;
         }
 
-        public System.Data.DataTable getRolesUserDontHave(string idUser)
+        public System.Data.DataTable listarPerfisNaoAtribuidos(string idUser)
         {
             //Listar os Perfis de um Utilizador
             SqlDataReader reader;
@@ -136,7 +136,7 @@ namespace ajuUminho.App_Code
             return dataTable;
         }
 
-        public System.Data.DataTable getUsers()
+        public System.Data.DataTable listarUtilizadores()
         {
             //Listar os Perfis de um Utilizador
             SqlDataReader reader;
@@ -222,7 +222,7 @@ namespace ajuUminho.App_Code
             }
         }
 
-        public void setUtilizador(string userName, string email, string telefone, string idUser)
+        public void editarUtilizador(string userName, string email, string telefone, string idUser)
         {
             con.Open();
             cmd.Parameters.AddWithValue("@id", idUser);

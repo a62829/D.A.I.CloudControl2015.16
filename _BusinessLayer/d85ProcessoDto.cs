@@ -120,10 +120,10 @@ namespace _BusinessLayer
             p.setProcesso(pdto.idEstado, pdto.idTipoProcesso,pdto.lastChangeBy, pdto.idProcesso);
         }
 
-        public void /*criarProcesso*/ guardar(d85ProcessoDto pdto, string idInsolvente)
+        public void /*criarProcesso*/ criarProcesso(d85ProcessoDto pdto, string idInsolvente)
         {
             d85Processo rl = new d85Processo();
-            rl.guardar(pdto.idLegal, pdto.idEstado, pdto.idTipoProcesso, pdto.dataInicio, pdto.lastChangeBy, idInsolvente);
+            rl.criarProcesso(pdto.idLegal, pdto.idEstado, pdto.idTipoProcesso, pdto.dataInicio, pdto.lastChangeBy, idInsolvente);
         }
         public Dictionary<String, d85ProcessoDto> getListaProcesso()
         {

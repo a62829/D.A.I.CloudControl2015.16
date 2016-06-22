@@ -85,7 +85,7 @@ namespace ajuUminho.webforms
         protected void listaProcesso()
         {
             ListBoxProcessosID.Items.Clear();
-            c87 WsERL = new c87();
+            c87SuspenderProcesso WsERL = new c87SuspenderProcesso();
             var lista = WsERL.getListaProcesso();
             foreach (KeyValuePair<String, d85ProcessoDto> pair in lista)
             {
@@ -99,7 +99,7 @@ namespace ajuUminho.webforms
 
         protected d85ProcessoDto listaProcessoCompleto(string idProcesso)
         {
-            c87 wsp = new c87();
+            c87SuspenderProcesso wsp = new c87SuspenderProcesso();
             d85ProcessoDto pdto = wsp.getProcessoCompleto(idProcesso);
             return pdto;
         }

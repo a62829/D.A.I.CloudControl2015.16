@@ -125,6 +125,8 @@
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -180,6 +182,7 @@
     <Content Include="imagens\logo.png" />
     <Content Include="packages.config" />
     <Content Include="fonts\Helvetica.otf" />
+    <Compile Include="App_Code\d2Utilizadores.cs" />
     <Compile Include="App_Code\DBcon.cs" />
     <Compile Include="controls\administracao\i10ConfirmarPerfil.ascx.cs">
       <DependentUpon>i10ConfirmarPerfil.ascx</DependentUpon>
@@ -476,6 +479,18 @@
     <Compile Include="webforms\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Ws\c11Autenticacao.asmx.cs">
+      <DependentUpon>c11Autenticacao.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ws\c13TerminoSessao.asmx.cs">
+      <DependentUpon>c13TerminoSessao.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ws\c1Utilizadores.asmx.cs">
+      <DependentUpon>c1Utilizadores.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Ws\c23EditarRepresentanteLegal.asmx.cs">
       <DependentUpon>c23EditarRepresentanteLegal.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -560,8 +575,24 @@
       <DependentUpon>c66RemocaoBens.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Ws\c87.asmx.cs">
-      <DependentUpon>c87.asmx</DependentUpon>
+    <Compile Include="Ws\c6RemocaoUtilizadores.asmx.cs">
+      <DependentUpon>c6RemocaoUtilizadores.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ws\c76EdicaoServicosExternos.asmx.cs">
+      <DependentUpon>c76EdicaoServicosExternos.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ws\c77RemocaoServicosExternos.asmx.cs">
+      <DependentUpon>c77RemocaoServicosExternos.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ws\c7AtribuicaoDePerfil.asmx.cs">
+      <DependentUpon>c7AtribuicaoDePerfil.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ws\c87SuspenderProcesso.asmx.cs">
+      <DependentUpon>c87SuspenderProcesso.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Ws\c93EdicaoCreditosReclamados.asmx.cs">
@@ -603,6 +634,9 @@
     <Content Include="webforms\InterfaceRelatorios.aspx" />
     <Content Include="webforms\InterfaceUtilizadores.aspx" />
     <Content Include="webforms\login.aspx" />
+    <Content Include="Ws\c11Autenticacao.asmx" />
+    <Content Include="Ws\c13TerminoSessao.asmx" />
+    <Content Include="Ws\c1Utilizadores.asmx" />
     <Content Include="Ws\c23EditarRepresentanteLegal.asmx" />
     <Content Include="Ws\c24RemocaoRepresentanteLegal.asmx" />
     <Content Include="Ws\c27EdicaoAdministradorJudicial.asmx" />
@@ -624,7 +658,11 @@
     <Content Include="Ws\c62RemocaoEventos.asmx" />
     <Content Include="Ws\c65EdicaoBens.asmx" />
     <Content Include="Ws\c66RemocaoBens.asmx" />
-    <Content Include="Ws\c87.asmx" />
+    <Content Include="Ws\c6RemocaoUtilizadores.asmx" />
+    <Content Include="Ws\c76EdicaoServicosExternos.asmx" />
+    <Content Include="Ws\c77RemocaoServicosExternos.asmx" />
+    <Content Include="Ws\c7AtribuicaoDePerfil.asmx" />
+    <Content Include="Ws\c87SuspenderProcesso.asmx" />
     <Content Include="Ws\c93EdicaoCreditosReclamados.asmx" />
     <Content Include="Ws\c95RemocaoCreditosReclamados.asmx" />
     <Content Include="Ws\ControloDeEntidades.asmx" />
@@ -671,6 +709,9 @@
       <Project>{6a0955a2-d621-4c77-8cac-647e03593447}</Project>
       <Name>_BusinessLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

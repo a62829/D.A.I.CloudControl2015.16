@@ -94,13 +94,49 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl ContentListBox;
         
         /// <summary>
-        /// ListBoxParaTabsProcessosID control.
+        /// DetailsTitleBox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBoxParaTabsProcessosID;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DetailsTitleBox1;
+        
+        /// <summary>
+        /// DetailsTitleBoxCriar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DetailsTitleBoxCriar;
+        
+        /// <summary>
+        /// DropDownListPrestadorServicoID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListPrestadorServicoID;
+        
+        /// <summary>
+        /// ListBoxParaTabsPrestacaoServicosID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox ListBoxParaTabsPrestacaoServicosID;
+        
+        /// <summary>
+        /// br1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl br1;
         
         /// <summary>
         /// ContentDetailsBox control.
@@ -112,22 +148,40 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl ContentDetailsBox;
         
         /// <summary>
-        /// DetailsTitleBox control.
+        /// DetailsTitleBox2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DetailsTitleBox;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DetailsTitleBox2;
         
         /// <summary>
-        /// DetailsTitleBoxCriar control.
+        /// LabelPrestadorServicosID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DetailsTitleBoxCriar;
+        protected global::System.Web.UI.WebControls.Label LabelPrestadorServicosID;
+        
+        /// <summary>
+        /// TextBoxPrestadorServicosID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxPrestadorServicosID;
+        
+        /// <summary>
+        /// HiddenFieldPrestadorServicosID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField HiddenFieldPrestadorServicosID;
         
         /// <summary>
         /// LabelDescricaoID control.
@@ -148,40 +202,40 @@ namespace ajuUminho.webforms {
         protected global::System.Web.UI.WebControls.TextBox TextBoxDescricaoID;
         
         /// <summary>
-        /// LabelDataID control.
+        /// LabelValorPagarID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelDataID;
+        protected global::System.Web.UI.WebControls.Label LabelValorPagarID;
         
         /// <summary>
-        /// TextBoxDataID control.
+        /// TextBoxValorPagarID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxDataID;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxValorPagarID;
         
         /// <summary>
-        /// LabelValorID control.
+        /// LabelValorPagoID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelValorID;
+        protected global::System.Web.UI.WebControls.Label LabelValorPagoID;
         
         /// <summary>
-        /// TextBoxValorID control.
+        /// TextBoxValorPagoID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxValorID;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxValorPagoID;
         
         /// <summary>
         /// ButtonCriarID control.

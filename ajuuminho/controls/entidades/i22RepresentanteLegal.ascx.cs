@@ -113,7 +113,7 @@ namespace ajuUminho.controls.entidades
         {
             ListBoxEntidadesID.Items.Clear();
             c23EditarRepresentanteLegal WsERL = new c23EditarRepresentanteLegal();
-            this.lista = WsERL.getListaRepresentanteLegal();
+            this.lista = WsERL.listarRepresentanteLegal();
             foreach (KeyValuePair<String, d21RepresentanteLegalDto> pair in lista)
             {
                 ListItem Item = new ListItem();

@@ -52,6 +52,7 @@
     <Compile Include="d53OutraEntidade.cs" />
     <Compile Include="d59Evento.cs" />
     <Compile Include="d63Bens.cs" />
+    <Compile Include="d74ServicosExternos.cs" />
     <Compile Include="d85Processo.cs" />
     <Compile Include="d90CreditosReclamados.cs" />
     <Compile Include="DBcon.cs" />

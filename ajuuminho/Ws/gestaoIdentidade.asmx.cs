@@ -77,18 +77,6 @@ namespace ajuUminho.Ws
             ga.removeRoleToUser(user, role);
         }
 
-        [WebMethod]
-        public IList<string> getUserRoles(string user)
-        {
-            gestaoAcessos ga = new gestaoAcessos();
-            return ga.getUserRoles(user);
-        }
-        [WebMethod]
-        public System.Data.DataTable getRoles()
-        {
-            gestaoAcessos ga = new gestaoAcessos();
-            return ga.getRoles();
-        }
 
         [WebMethod]
         public System.Data.DataTable getUserDetail(string nome)
@@ -98,10 +86,10 @@ namespace ajuUminho.Ws
         }
 
         [WebMethod]
-        public System.Data.DataTable getUserDetailById(string idUser)
+        public System.Data.DataTable listarDadosUtilizador(string idUser)
         {
             gestaoAcessos ga = new gestaoAcessos();
-            var x = ga.getUserDetailById(idUser);
+            var x = ga.listarDadosUtilizador(idUser);
             return x;
         }
 
@@ -109,7 +97,7 @@ namespace ajuUminho.Ws
         public System.Data.DataTable getUsers()
         {
             gestaoAcessos ga = new gestaoAcessos();
-            return ga.getUsers();
+            return ga.listarUtilizadores();
         }
 
         [WebMethod]
@@ -119,34 +107,7 @@ namespace ajuUminho.Ws
             connn.setUserPassword(user, newPassword);
         }
 
-        [WebMethod]
-        public bool signIn(string userName, string Password)
-        {
-            gestaoAcessos connn = new gestaoAcessos();
-            if (connn.signIn(userName, Password) == true)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
 
-        }
-        [WebMethod]
-        public bool signOut()
-        {
-            gestaoAcessos connn = new gestaoAcessos();
-            if (connn.signOut() == true)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
         [WebMethod]
         public bool criarUtilizador (string userName, string password, string email, string telefone)
         {
@@ -165,7 +126,7 @@ namespace ajuUminho.Ws
         public Dictionary<String, String> getListaUsers()
         {
             gestaoAcessos ga = new gestaoAcessos();
-            DataTable dt = ga.getUsers();
+            DataTable dt = ga.listarUtilizadores();
             Dictionary<String, String> lista = new Dictionary<String, String>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -176,37 +137,10 @@ namespace ajuUminho.Ws
         }
 
         [WebMethod]
-        public Dictionary<String, String> getListaRoles()
-        {
-            gestaoAcessos ga = new gestaoAcessos();
-            DataTable dt = ga.getRoles();
-            Dictionary<String, String> lista = new Dictionary<String, String>();
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                lista.Add(Convert.ToString(dt.Rows[i]["Id"]), Convert.ToString(dt.Rows[i]["Name"]));
-            }
-            return lista;
-
-        }
-
-        [WebMethod]
-        public Dictionary<String, String> getListaRolesUserDontHave(string idUser)
-        {
-            gestaoAcessos ga = new gestaoAcessos();
-            DataTable dt = ga.getRolesUserDontHave(idUser);
-            Dictionary<String, String> lista = new Dictionary<String, String>();
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                lista.Add(Convert.ToString(dt.Rows[i]["Id"]), Convert.ToString(dt.Rows[i]["Name"]));
-            }
-            return lista;
-        }
-
-        [WebMethod]
         public void editarUtilizador(string userName, string email, string telefone, string idUser)
         {
             gestaoAcessos connn = new gestaoAcessos();
-            connn.setUtilizador(userName, email, telefone, idUser);
+            connn.editarUtilizador(userName, email, telefone, idUser);
         }
 
         [WebMethod]

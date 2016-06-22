@@ -38,27 +38,42 @@
 
             <div class="ViewsBoxProcessosCRUD">
 
-                <div class="InsideViewsTableBoxProcessos" runat="server" id="ContentListBox" visible="false">
-                    <div class="titleh4">
-                        <h4>Lista de Serviços Externos</h4>
-                    </div>
-                    <div class="ListBoxParaTabsProcessos">
-                        <asp:ListBox ID="ListBoxParaTabsProcessosID" CssClass="ListBoxParaTabsProcessos-Item" runat="server"></asp:ListBox>
-                    </div>
-                </div>
-
-                <div class="InsideViewsDetailsBoxProcessos" runat="server" id="ContentDetailsBox" visible="false">
-                    <div class="titleh4" runat="server" id="DetailsTitleBox" visible="false">
-                        <h4>Detalhes</h4>
+                <div class="InsideViewsTableBoxBens" runat="server" id="ContentListBox" visible="false">
+                    <div class="titleh4" runat="server" id="DetailsTitleBox1" visible="false">
+                        <h4>Lista de Elementos Financeiros</h4>
                     </div>
                     <div class="titleh4" runat="server" id="DetailsTitleBoxCriar" visible="false">
-                        <h4>Criar Serviço Externo</h4>
+                        <h4>Registar Prestação de Serviços</h4>
+                    </div>
+                    <div class="DropDpwnEntidadesProcesso">
+                        <asp:DropDownList ID="DropDownListPrestadorServicoID" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownListPrestadorServicoID_SelectedIndexChanged"></asp:DropDownList>
+                    </div>
+                    <br />
+                    <asp:ListBox ID="ListBoxParaTabsPrestacaoServicosID" CssClass="ListBoxParaTabsProcessos-Item" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ListBoxParaTabsPrestacaoServicosID_SelectedIndexChanged" ></asp:ListBox>
+
+                </div>
+
+                <br runat="server" id="br1" />
+
+                <div class="InsideViewsDetailsBoxProcessos" runat="server" id="ContentDetailsBox" visible="false">
+                    <div class="titleh4" runat="server" id="DetailsTitleBox2" visible="false">
+                        <h3>Detalhes</h3>
                     </div>
                     <table class="ContentTable">
                         <tr>
                             <td>
+                                <asp:Label ID="LabelPrestadorServicosID" runat="server" Text="Label" CssClass="Labels-Item">
+                           Prestador do Serviço: </asp:Label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="TextBoxPrestadorServicosID" runat="server" Enabled="false" CssClass="LabelsInputs-Item"></asp:TextBox>
+                                <asp:HiddenField ID="HiddenFieldPrestadorServicosID" runat="server" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
                                 <asp:Label ID="LabelDescricaoID" runat="server" Text="Label" CssClass="Labels-Item">
-                          Descrição: </asp:Label>
+                            Descrição: </asp:Label>
                             </td>
                             <td>
                                 <asp:TextBox ID="TextBoxDescricaoID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
@@ -66,20 +81,20 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="LabelDataID" runat="server" Text="Label" CssClass="Labels-Item"> 
-                          Data: </asp:Label>
+                                <asp:Label ID="LabelValorPagarID" runat="server" Text="Label" CssClass="Labels-Item">
+                            Valor a pagar </asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="TextBoxDataID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxValorPagarID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="LabelValorID" runat="server" Text="Label" CssClass="Labels-Item"> 
-                          Valor: </asp:Label>
+                                <asp:Label ID="LabelValorPagoID" runat="server" Text="Label" CssClass="Labels-Item">
+                            Valor Pago: </asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="TextBoxValorID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxValorPagoID" runat="server" CssClass="LabelsInputs-Item" Enabled="false"></asp:TextBox>
                             </td>
                         </tr>
                     </table>
@@ -87,10 +102,10 @@
                 </div>
 
                 <div id="ContentButtonsBox">
-                    <asp:Button ID="ButtonCriarID" runat="server" Text="Criar" CssClass="ContentButton" Visible="false" />
-                    <asp:Button ID="ButtonEditarID" runat="server" Text="Editar" CssClass="ContentButton" Visible="false" />
-                    <asp:Button ID="ButtonEliminarID" runat="server" Text="Eliminar" CssClass="ContentButton" Visible="false" />
-                    <asp:Button ID="ButtonPesquisarID" runat="server" Text="Pesquisar" CssClass="ContentButton" Visible="false" />
+                    <asp:Button ID="ButtonCriarID" runat="server" Text="Criar" CssClass="ContentButton" Visible="false" OnClick="ButtonCriarID_Click" />
+                    <asp:Button ID="ButtonEditarID" runat="server" Text="Editar" CssClass="ContentButton" Visible="false" OnClick="ButtonEditarID_Click" />
+                    <asp:Button ID="ButtonEliminarID" runat="server" Text="Eliminar" CssClass="ContentButton" Visible="false" OnClick="ButtonEliminarID_Click" />
+                    <asp:Button ID="ButtonPesquisarID" runat="server" Text="Pesquisar" CssClass="ContentButton" Visible="false" OnClick="ButtonPesquisarID_Click" />
                 </div>
             </div>
         </div>

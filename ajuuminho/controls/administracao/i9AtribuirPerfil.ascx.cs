@@ -18,8 +18,8 @@ namespace ajuUminho.controls.administracao
         {
             if (!IsPostBack)
             {
-                listaUser();
-                listaRoles();
+                listarUtilizador();
+                listarPerfis();
             } else
             {
 
@@ -39,10 +39,10 @@ namespace ajuUminho.controls.administracao
             else
             {
                 string roleName = TextBoxAdicionarPerfilID.Text;
-                gestaoIdentidade ws1 = new gestaoIdentidade();
+                c7AtribuicaoDePerfil ws1 = new c7AtribuicaoDePerfil();
                 ws1.insertRole(roleName);
                 ListBoxPerfisID.DataBind();
-                listaRoles();
+                listarPerfis();
             }
         }
 
@@ -57,12 +57,12 @@ namespace ajuUminho.controls.administracao
             {
                
                 string role = ListBoxPerfisID.SelectedItem.Text;
-                gestaoIdentidade ws1 = new gestaoIdentidade();
+                c7AtribuicaoDePerfil ws1 = new c7AtribuicaoDePerfil();
                 //ws1.removeRoleFromSystem(role); metodo para remover role do sistem
                 
                 ListBoxPerfisID.DataBind();
                 
-                listaRoles();
+                listarPerfis();
             }
         }
 
@@ -76,12 +76,12 @@ namespace ajuUminho.controls.administracao
             else {
                 string user = ListBoxIdentidadesID.SelectedValue;
                 string role = ListBoxPerfisID.SelectedItem.Text;
-                gestaoIdentidade ws1 = new gestaoIdentidade();
-                ws1.setRoleToUser(user, role);
+                c7AtribuicaoDePerfil ws1 = new c7AtribuicaoDePerfil();
+                ws1.atribuirPerfil(user, role);
                 ListBoxPerfisAssociadosID.DataBind();
                 ListBoxPerfisID.DataBind();
-                listaRolesUserDontHave();
-                listaUserRoles();
+                listarPerfisNaoAtribuidos();
+                listarPerfisAtribuidos();
             }
         }
 
@@ -97,26 +97,26 @@ namespace ajuUminho.controls.administracao
             {
                 string user = ListBoxIdentidadesID.SelectedValue;
                 string role = ListBoxPerfisAssociadosID.SelectedItem.Text;
-                gestaoIdentidade ws1 = new gestaoIdentidade();
-                ws1.removeRoleToUser(user, role);
+                c7AtribuicaoDePerfil ws1 = new c7AtribuicaoDePerfil();
+                ws1.removerPerfilDoUtilizador(user, role);
                 ListBoxPerfisAssociadosID.DataBind();
                 ListBoxPerfisID.DataBind();
-                listaRolesUserDontHave();
+                listarPerfisNaoAtribuidos();
 
-                listaUserRoles();
+                listarPerfisAtribuidos();
             }
         }
 
         protected void ListBoxIdentidadesID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listaUserRoles();
-            listaRolesUserDontHave();
+            listarPerfisAtribuidos();
+            listarPerfisNaoAtribuidos();
         }
-        protected void listaUser()
+        protected void listarUtilizador()
         {
             ListBoxIdentidadesID.Items.Clear();
-            gestaoIdentidade cde = new gestaoIdentidade();
-            var lista = cde.getListaUsers();
+            c7AtribuicaoDePerfil cde = new c7AtribuicaoDePerfil();
+            var lista = cde.listarUtilizador();
             //ListBoxIdentidadesID.DataSource = lista;
             foreach (KeyValuePair<String, String> pair in lista)
             {
@@ -129,11 +129,11 @@ namespace ajuUminho.controls.administracao
             ListBoxIdentidadesID.DataBind();
         }
 
-        protected void listaRoles()
+        protected void listarPerfis()
         {
             ListBoxPerfisID.Items.Clear();
-            gestaoIdentidade cde = new gestaoIdentidade();
-            var lista = cde.getListaRoles();
+            c7AtribuicaoDePerfil cde = new c7AtribuicaoDePerfil();
+            var lista = cde.listarPerfis();
             //ListBoxIdentidadesID.DataSource = lista;
             foreach (KeyValuePair<String, String> pair in lista)
             {
@@ -145,11 +145,11 @@ namespace ajuUminho.controls.administracao
             }
         }
 
-        protected void listaRolesUserDontHave()
+        protected void listarPerfisNaoAtribuidos()
         {
             ListBoxPerfisID.Items.Clear();
-            gestaoIdentidade cde = new gestaoIdentidade();
-            var lista = cde.getListaRolesUserDontHave(ListBoxIdentidadesID.SelectedValue.ToString());
+            c7AtribuicaoDePerfil cde = new c7AtribuicaoDePerfil();
+            var lista = cde.listarPerfisNaoAtribuidos(ListBoxIdentidadesID.SelectedValue.ToString());
             foreach (KeyValuePair<String, String> pair in lista)
             {
                 ListItem Item = new ListItem();
@@ -160,12 +160,12 @@ namespace ajuUminho.controls.administracao
             }
         }
 
-        protected void listaUserRoles()
+        protected void listarPerfisAtribuidos()
         {
             ListBoxPerfisAssociadosID.Items.Clear();
-            gestaoIdentidade ws1 = new gestaoIdentidade();
+            c7AtribuicaoDePerfil ws1 = new c7AtribuicaoDePerfil();
             string user = ListBoxIdentidadesID.SelectedItem.Value;
-            foreach (var u in ws1.getUserRoles(user))
+            foreach (var u in ws1.listarPerfisAtribuidos(user))
             {
                 ListBoxPerfisAssociadosID.Items.Add(u);
 

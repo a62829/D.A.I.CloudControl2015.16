@@ -9,7 +9,7 @@ namespace _DataLayer
 
         public d21RepresentanteLegal() { }
 
-        public bool guardar(string nome, string morada, string codPostal, string localidade, string email, string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
+        public bool criarRepresentanteLegal(string nome, string morada, string codPostal, string localidade, string email, string telefone, string telemovel, string fax, string cc, string iban, string nif, string lastChangeBy)
         {
             con.Open();
             cmd.Parameters.AddWithValue("@nome", nome);
@@ -34,7 +34,7 @@ namespace _DataLayer
 
 
 
-        public DataTable getListaRepresentanteLegal()
+        public DataTable listarRepresentanteLegal()
         {
             SqlDataReader reader;
             cmd.CommandText = "SELECT * FROM [dbo].[representanteLegal];";
@@ -78,7 +78,7 @@ namespace _DataLayer
             return dataTable;
         }
 
-        public void setRepresentanteLegal(string nome, string morada, string codPostal, string localidade, 
+        public void editarRepresentanteLegal(string nome, string morada, string codPostal, string localidade, 
             string email, string telefone, string telemovel, string fax, string cc, string iban, string nif, 
             string lastChangeBy, string id)
         {
