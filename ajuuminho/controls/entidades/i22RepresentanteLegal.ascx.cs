@@ -106,6 +106,8 @@ namespace ajuUminho.controls.entidades
             listaRepresentanteLegal();
             ListBoxEntidadesID.DataBind();
             ClearAllText(this);
+            string mystring = "Representante Legal editado com sucesso.";
+            this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
             //ListBoxEntidadesID.ClearSelection();
         }
 

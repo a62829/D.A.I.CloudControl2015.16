@@ -103,6 +103,8 @@ namespace ajuUminho.controls.entidades
             ListBoxEntidadesID.ClearSelection();
             ListBoxEntidadesID.Items.Clear();
             listaOutraEntidade();
+            string mystring = "Outra Entidade editada com sucesso.";
+            this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
         }
 
         protected void listaOutraEntidade()
@@ -127,6 +129,8 @@ namespace ajuUminho.controls.entidades
             ListBoxEntidadesID.ClearSelection();
             ListBoxEntidadesID.Items.Clear();
             listaOutraEntidade();
+            string mystring = "Outra Entidade eliminado com sucesso.";
+            this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
         }
 
         protected void ButtonPesquisarID_Click(object sender, EventArgs e)

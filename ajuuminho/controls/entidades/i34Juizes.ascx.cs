@@ -62,7 +62,7 @@ namespace ajuUminho.controls.entidades
                 TextBoxEmailID.Text, TextBoxTelefoneID.Text, TextBoxTelemovelID.Text, TextBoxFaxID.Text, TextBoxCcID.Text, TextBoxIbanID.Text,
                 TextBoxNifID.Text, TextBoxLastChangedID.Text);
 
-            string mystring = "Representante Legal criado com sucesso.";
+            string mystring = "Juiz criado com sucesso.";
             this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
             foreach (TextBox textbox in this.Controls.OfType<TextBox>())
             {
@@ -106,6 +106,8 @@ namespace ajuUminho.controls.entidades
             ListBoxEntidadesID.ClearSelection();
             ListBoxEntidadesID.Items.Clear();
             listaJuiz();
+            string mystring = "Juiz editado com sucesso.";
+            this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
         }
 
         protected void listaJuiz()
@@ -135,7 +137,8 @@ namespace ajuUminho.controls.entidades
             ListBoxEntidadesID.ClearSelection();
             ListBoxEntidadesID.Items.Clear();
             listaJuiz();
-
+            string mystring = "Juiz eliminado com sucesso.";
+            this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Sucesso", "alert('" + mystring + "');", true);
         }
 
         protected void TabCriarJuiz_Click(object sender, EventArgs e)
